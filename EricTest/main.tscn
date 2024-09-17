@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
+
+[ext_resource type="PackedScene" uid="uid://cs7i63hnmmbom" path="res://maps.tscn" id="1_sau4g"]
+[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://Player/player.tscn" id="3_33e1k"]
+[ext_resource type="PackedScene" uid="uid://djkwf5q44ewp0" path="res://Enemies/Crab/enemy_crab.tscn" id="3_pt27v"]
+[ext_resource type="PackedScene" uid="uid://cvohrtyy52rgo" path="res://Enemies/enemy_clown.tscn" id="4_q03bq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Test_Map" parent="." instance=ExtResource("1_sau4g")]
+
+[node name="Player" parent="." instance=ExtResource("3_33e1k")]
+position = Vector2(-164, -10)
+
+[node name="enemy_crab" parent="." instance=ExtResource("3_pt27v")]
+position = Vector2(359, -4)
+
+[node name="EnemyClown" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("4_q03bq")]
+position = Vector2(-54, -4)
+patrol_points = NodePath("PatrolPoints")
+wait_time = 2
+
+[node name="PatrolPoints" type="Node2D" parent="EnemyClown"]
+
+[node name="Point1" type="Marker2D" parent="EnemyClown/PatrolPoints"]
+position = Vector2(-69, 4)
+
+[node name="Point2" type="Marker2D" parent="EnemyClown/PatrolPoints"]
+position = Vector2(38, 4)

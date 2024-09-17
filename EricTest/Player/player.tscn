@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://c8jwrhwlt58ok"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_sdt82"]
+[ext_resource type="Texture2D" uid="uid://dxnm0oy4sq5xa" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 01.png" id="2_ualmr"]
+[ext_resource type="Texture2D" uid="uid://btttf70adli5n" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 02.png" id="3_0g020"]
+[ext_resource type="Texture2D" uid="uid://70vnv33v40v1" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 03.png" id="4_qj7ly"]
+[ext_resource type="Texture2D" uid="uid://d00yv5wesvvf7" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 04.png" id="5_suiqi"]
+[ext_resource type="Texture2D" uid="uid://dgt8o3rhdnaxy" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 05.png" id="6_4glcb"]
+[ext_resource type="Texture2D" uid="uid://d38bp77i75x4o" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 06.png" id="7_typ7b"]
+[ext_resource type="Texture2D" uid="uid://d011dggwh58o2" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 07.png" id="8_i33yg"]
+[ext_resource type="Texture2D" uid="uid://bjy3gt8hlg0nb" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 08.png" id="9_yfha5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08y5j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ualmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0g020")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qj7ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_suiqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4glcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_typ7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_i33yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yfha5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xi7bv"]
+radius = 7.0
+height = 24.0
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_sdt82")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -14)
+sprite_frames = SubResource("SpriteFrames_08y5j")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -12)
+shape = SubResource("CapsuleShape2D_xi7bv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -90)
+zoom = Vector2(3, 3)
