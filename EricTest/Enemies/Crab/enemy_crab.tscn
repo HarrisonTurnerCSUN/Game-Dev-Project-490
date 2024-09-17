@@ -1,0 +1,185 @@
+[gd_scene load_steps=30 format=3 uid="uid://djkwf5q44ewp0"]
+
+[ext_resource type="Texture2D" uid="uid://c328gjm6xgarx" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 01.png" id="1_n6ee2"]
+[ext_resource type="Texture2D" uid="uid://c350p1haneq5h" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 02.png" id="2_x3etr"]
+[ext_resource type="Texture2D" uid="uid://dt3ggnaayy211" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 03.png" id="3_87q78"]
+[ext_resource type="Texture2D" uid="uid://crv2lylh0wqfv" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 04.png" id="4_1vieh"]
+[ext_resource type="Texture2D" uid="uid://y7608chqodx8" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="5_lyvbg"]
+[ext_resource type="Texture2D" uid="uid://d2p6556onu66d" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="6_1j275"]
+[ext_resource type="Texture2D" uid="uid://cdojap67a8gte" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="7_168l3"]
+[ext_resource type="Texture2D" uid="uid://cvgiqjms8435t" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="8_e1onq"]
+[ext_resource type="Texture2D" uid="uid://d2x628sblfgj" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="9_v04p8"]
+[ext_resource type="Texture2D" uid="uid://bl1epwmaok13f" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="10_rogsq"]
+[ext_resource type="Texture2D" uid="uid://i3wu42q557yp" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="11_x8odd"]
+[ext_resource type="Texture2D" uid="uid://bia0ae4kmh4y7" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="12_s0adr"]
+[ext_resource type="Texture2D" uid="uid://cdwko5c7qvkai" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="13_byr3i"]
+[ext_resource type="Texture2D" uid="uid://dg75aqv2onqja" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="14_86dkr"]
+[ext_resource type="Texture2D" uid="uid://dgo7vu2m38ykk" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="15_ild6f"]
+[ext_resource type="Texture2D" uid="uid://bqwfcrh12b2k3" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="16_hfeng"]
+[ext_resource type="Texture2D" uid="uid://bnn02d7fktotm" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="17_37pyn"]
+[ext_resource type="Texture2D" uid="uid://dg4f7ukacigfo" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="18_twvkg"]
+[ext_resource type="Texture2D" uid="uid://cms8ovcff3bts" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="19_2w3wt"]
+[ext_resource type="Script" path="res://Enemies/Crab/gravity.gd" id="20_t8ufk"]
+[ext_resource type="Script" path="res://Enemies/Crab/node_finite_state_machine.gd" id="21_ed37c"]
+[ext_resource type="Script" path="res://Enemies/Crab/state_machine_controller.gd" id="21_jakwb"]
+[ext_resource type="Script" path="res://Enemies/Crab/run_state.gd" id="22_kjiks"]
+[ext_resource type="Script" path="res://Enemies/Crab/idle_state.gd" id="23_d2h22"]
+[ext_resource type="Script" path="res://Enemies/Crab/attack.gd" id="25_6krub"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0degn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n6ee2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_x3etr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_87q78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1vieh")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 3.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lyvbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1j275")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_168l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_e1onq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_v04p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rogsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x8odd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s0adr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_byr3i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_86dkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ild6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hfeng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_37pyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_twvkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2w3wt")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnsuo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hmc8m"]
+radius = 30.7591
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oj78v"]
+radius = 7.0
+height = 68.0
+
+[node name="enemy_crab" type="CharacterBody2D"]
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_0degn")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_gnsuo")
+debug_color = Color(0.958227, 9.62615e-07, 0.528294, 0.42)
+
+[node name="Gravity" type="Node" parent="." node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("20_t8ufk")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="StateMachineController" type="Node" parent="." node_paths=PackedStringArray("node_finite_state_machine")]
+script = ExtResource("21_jakwb")
+node_finite_state_machine = NodePath("../StateMachine")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("21_ed37c")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("23_d2h22")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+slow_down_speed = 200
+
+[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("22_kjiks")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+speed = 100
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("25_6krub")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="RunArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunArea"]
+position = Vector2(0, -10)
+scale = Vector2(4, 4)
+shape = SubResource("CircleShape2D_hmc8m")
+debug_color = Color(0.659641, 0.514862, 0, 0.42)
+
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(0, -2)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(2, -6)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oj78v")
+
+[connection signal="body_entered" from="RunArea" to="StateMachineController" method="_on_run_area_body_entered"]
+[connection signal="body_exited" from="RunArea" to="StateMachineController" method="_on_run_area_body_exited"]
+[connection signal="body_entered" from="AttackArea" to="StateMachineController" method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="StateMachineController" method="_on_attack_area_body_exited"]
