@@ -1,0 +1,17 @@
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\bin\Debug\senior game project.deps.json
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\bin\Debug\senior game project.runtimeconfig.json
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\bin\Debug\senior game project.dll
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\bin\Debug\senior game project.pdb
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.csproj.AssemblyReference.cache
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.AssemblyInfoInputs.cache
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.AssemblyInfo.cs
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.csproj.CoreCompileInputs.cache
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior g.27B930D6.Up2Date
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.dll
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\refint\senior game project.dll
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.pdb
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\senior game project.genruntimeconfig.cache
+C:\Users\Christian\Documents\senior-game-project\.godot\mono\temp\obj\Debug\ref\senior game project.dll
