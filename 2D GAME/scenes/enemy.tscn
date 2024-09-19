@@ -1,0 +1,139 @@
+[gd_scene load_steps=20 format=3 uid="uid://c6hg7c14qvgh6"]
+
+[ext_resource type="Texture2D" uid="uid://ue1yxhi0b6r3" path="res://Enemies/Mushroom/Idle (32x32).png" id="1_ttylk"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_y37b8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fsmr"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3unqd"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp2sl"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sfhk"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nncit"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjtin"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdmdp"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnxdo"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g48t"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8gbr"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnldc"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxhep"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27kjf"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(384, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0s0l"]
+atlas = ExtResource("1_ttylk")
+region = Rect2(416, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h0m85"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fsmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3unqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp2sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sfhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nncit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjtin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdmdp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnxdo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g48t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8gbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnldc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxhep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27kjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0s0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obapl"]
+size = Vector2(48, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wwde"]
+size = Vector2(52, 39)
+
+[node name="Enemy" type="RigidBody2D"]
+script = ExtResource("1_y37b8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(13.5, 13.5)
+scale = Vector2(1.84375, 1.84375)
+sprite_frames = SubResource("SpriteFrames_h0m85")
+autoplay = "default"
+frame_progress = 0.0150142
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 25.5)
+shape = SubResource("RectangleShape2D_obapl")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14, 25.5)
+shape = SubResource("RectangleShape2D_1wwde")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
