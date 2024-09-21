@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=6 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cs7i63hnmmbom" path="res://maps.tscn" id="1_sau4g"]
 [ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://Player/player.tscn" id="3_33e1k"]
 [ext_resource type="PackedScene" uid="uid://djkwf5q44ewp0" path="res://Enemies/Crab/enemy_crab.tscn" id="3_pt27v"]
 [ext_resource type="PackedScene" uid="uid://cvohrtyy52rgo" path="res://Enemies/enemy_clown.tscn" id="4_q03bq"]
+[ext_resource type="PackedScene" uid="uid://ct7fxhlqanlrv" path="res://Enemies/Shark/enemy_squid.tscn" id="5_uouuh"]
 
 [node name="Main" type="Node2D"]
 
@@ -26,3 +27,8 @@ position = Vector2(-69, 4)
 position = Vector2(38, 4)
 
 [node name="Player" parent="." instance=ExtResource("3_33e1k")]
+
+[node name="enemy_crab2" parent="." instance=ExtResource("3_pt27v")]
+
+[node name="EnemySquid" parent="." instance=ExtResource("5_uouuh")]
+position = Vector2(158, -13)

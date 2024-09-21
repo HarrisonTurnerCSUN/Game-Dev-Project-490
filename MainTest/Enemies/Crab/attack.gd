@@ -7,7 +7,7 @@ extends NodeState
 var player : CharacterBody2D
 var max_speed : int
 
-func on_process(delta :float):
+func on_process(_delta :float):
 	pass
 	
 func on_physics_process(delta :float):

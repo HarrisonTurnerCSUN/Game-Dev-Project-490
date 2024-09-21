@@ -1,4 +1,4 @@
-class_name NodeState
+class_name NodeStateSquid
 extends Node
 
 func on_process(_delta :float):
