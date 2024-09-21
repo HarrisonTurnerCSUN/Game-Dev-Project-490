@@ -15,6 +15,10 @@ run/main_scene="res://main menu/menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SaveController="*res://Utilities/SaveController.cs"
+
 [display]
 
 window/size/mode=3

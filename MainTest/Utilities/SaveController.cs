@@ -2,7 +2,8 @@ using Godot;
 using System;
 using System.Text.Json;
 
-public partial class GameController : Node
+
+public partial class SaveController : Node
 {
 	public static PlayerData playerData = new PlayerData();
 	
@@ -19,7 +20,13 @@ public partial class GameController : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GD.Print("SaveController initialized");
 		playerData.init();
+		GD.Print("playerData initialized");
+		gameData.init();
+		GD.Print("gameData initialized");
+		GD.Print(gameData.WindowMode);
+		
 		//playerData = new PlayerData
 		//{
 		//	checkpoint = 0,
@@ -82,5 +89,9 @@ public partial class GameController : Node
 			//Newtonsoft.Json.JsonConvert.PopulateObject(jsonString, gameData);
 			gameData = JsonSerializer.Deserialize<GameData>(jsonString)!;
 		}
+	}
+	
+	public GameData getGameData(){
+		return gameData;
 	}
 }
