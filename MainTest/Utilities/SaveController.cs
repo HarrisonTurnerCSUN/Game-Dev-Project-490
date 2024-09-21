@@ -91,7 +91,7 @@ public partial class SaveController : Node
 		}
 	}
 	
-	public GameData getGameData(){
-		return gameData;
+	public static void setWindowMode(int x){
+		gameData.setWindowMode(x);
 	}
 }
