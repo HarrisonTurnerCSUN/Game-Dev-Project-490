@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dg4f7ukacigfo" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="18_twvkg"]
 [ext_resource type="Texture2D" uid="uid://cms8ovcff3bts" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="19_2w3wt"]
 [ext_resource type="Script" path="res://Enemies/Crab/gravity.gd" id="20_t8ufk"]
-[ext_resource type="Script" path="res://Enemies/Crab/node_finite_state_machine.gd" id="21_ed37c"]
+[ext_resource type="Script" path="res://Utilities/state_machine/node_finite_state_machine.gd" id="21_ed37c"]
 [ext_resource type="Script" path="res://Enemies/Crab/state_machine_controller.gd" id="21_jakwb"]
 [ext_resource type="Script" path="res://Enemies/Crab/run_state.gd" id="22_kjiks"]
 [ext_resource type="Script" path="res://Enemies/Crab/idle_state.gd" id="23_d2h22"]
