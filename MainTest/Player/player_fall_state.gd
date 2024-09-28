@@ -2,7 +2,7 @@ extends NodeState
 
 @export var character_body_2d : CharacterBody2D
 @export var animated_sprite_2d : AnimatedSprite2D
-@export var gravity := 450.0
+@export var gravity : int = 450
 
 func on_process(_delta :float):
 	pass

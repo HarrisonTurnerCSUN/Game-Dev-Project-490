@@ -1,5 +1,6 @@
-[gd_scene load_steps=52 format=3 uid="uid://b6jpciqqr0frf"]
+[gd_scene load_steps=53 format=3 uid="uid://b6jpciqqr0frf"]
 
+[ext_resource type="Script" path="res://Player/player_state_test.gd" id="1_yoyix"]
 [ext_resource type="Texture2D" uid="uid://bicnq3ap6tfdv" path="res://Assets/Character Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="2_hhdb3"]
 [ext_resource type="Texture2D" uid="uid://b1x30mq6gjos4" path="res://Assets/Character Sprites/1-Player-Bomb Guy/1-Idle/2.png" id="3_fbaer"]
 [ext_resource type="Texture2D" uid="uid://hnk7qmv7ve73" path="res://Assets/Character Sprites/1-Player-Bomb Guy/1-Idle/3.png" id="4_iary3"]
@@ -221,6 +222,7 @@ size = Vector2(16, 23)
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
+script = ExtResource("1_yoyix")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -13)
@@ -249,13 +251,17 @@ script = ExtResource("46_0q543")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Fall" type="Node" parent="StateMachine"]
+[node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("47_u48wi")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("48_daych")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Jump" type="Node" parent="StateMachine"]
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
 script = ExtResource("49_j6613")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
