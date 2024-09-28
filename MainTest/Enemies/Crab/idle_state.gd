@@ -4,7 +4,7 @@ extends NodeState
 @export var animated_sprite_2d : AnimatedSprite2D
 @export var slow_down_speed : int = 50
 
-func on_process(delta :float):
+func on_process(_delta :float):
 	pass
 	
 func on_physics_process(delta :float):

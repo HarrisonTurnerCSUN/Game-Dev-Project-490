@@ -20,4 +20,15 @@ public partial class Menu : Control
 	{
 		GetTree().Quit();
 	}
+	
+	public override void _Ready(){
+		SaveController.loadGame();
+		if (SaveController.gameData.WindowMode == 0){
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+			DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.Borderless,false);
+		} else if (SaveController.gameData.WindowMode == 1){
+			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+			DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.Borderless,false);
+		}
+	}
 }

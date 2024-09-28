@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+
 public class PlayerData
 {
 	//List of player data variables
