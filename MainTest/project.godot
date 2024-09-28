@@ -21,8 +21,8 @@ SaveController="*res://Utilities/SaveController.cs"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
