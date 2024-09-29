@@ -1,7 +1,9 @@
-[gd_scene load_steps=39 format=4 uid="uid://cn8eluy7dmdsl"]
+[gd_scene load_steps=41 format=4 uid="uid://cn8eluy7dmdsl"]
 
+[ext_resource type="Script" path="res://Levels/level_1.gd" id="1_elykg"]
 [ext_resource type="Texture2D" uid="uid://boglrmhlpgp36" path="res://Assets/Background/background_layer_1.png" id="1_iulhg"]
 [ext_resource type="Texture2D" uid="uid://od7ms4huuo0s" path="res://Assets/Background/background_layer_2.png" id="2_3f80s"]
+[ext_resource type="AudioStream" uid="uid://dvnqjowrco3fh" path="res://AudioAssets/JDSherbert - Ambiences Music Pack [FREE]/wav/JDSherbert - Ambiences Music Pack - Dark Dark Woods.wav" id="2_owkif"]
 [ext_resource type="Texture2D" uid="uid://blea3niex2y4b" path="res://Assets/Background/background_layer_3.png" id="3_5h8xy"]
 [ext_resource type="Texture2D" uid="uid://cqp2yme1p3irs" path="res://Assets/Background/decorations/fence_1.png" id="4_7vuo6"]
 [ext_resource type="Texture2D" uid="uid://dvs1q5y1d5hwp" path="res://Assets/Background/decorations/sign.png" id="7_lhrii"]
@@ -8567,6 +8569,8 @@ sources/20 = SubResource("TileSetAtlasSource_yfij1")
 sources/22 = SubResource("TileSetAtlasSource_d2vv4")
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_elykg")
+music = ExtResource("2_owkif")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+AudioManager="*res://Global Scripts/Audio_Manager.gd"
 SaveController="*res://Utilities/SaveController.cs"
 
 [display]
