@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cquw3v3t7ohfu"
+path="res://.godot/imported/13 anxious INITIAL.wav-4ee654622b63683bf3eb3335a762c7d9.sample"
+
+[deps]
+
+source_file="res://AudioAssets/Infinity Crystal_ Awakening wavs/13 anxious INITIAL.wav"
+dest_files=["res://.godot/imported/13 anxious INITIAL.wav-4ee654622b63683bf3eb3335a762c7d9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

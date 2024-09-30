@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqyr7y5yhg4d1"
+path="res://.godot/imported/9 coasting INITIAL.wav-a461655a8f0ffeb5b5e0599b9344e724.sample"
+
+[deps]
+
+source_file="res://AudioAssets/Infinity Crystal_ Awakening wavs/9 coasting INITIAL.wav"
+dest_files=["res://.godot/imported/9 coasting INITIAL.wav-a461655a8f0ffeb5b5e0599b9344e724.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

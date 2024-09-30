@@ -48,7 +48,6 @@ frame_progress = 0.334012
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.40598e-06, -1.42857)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k1ted")
 
 [node name="StateMachineController" type="Node" parent="." node_paths=PackedStringArray("node_finite_state_machine_bat")]
@@ -68,7 +67,6 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 script = ExtResource("9_0jcv8")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
-speed = 100
 
 [node name="AggroArea" type="Area2D" parent="."]
 collision_layer = 4
@@ -80,6 +78,8 @@ debug_color = Color(0.71919, 0.301603, 0.928012, 0.42)
 
 [node name="batAggro" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_jw3qm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 
 [connection signal="body_entered" from="AggroArea" to="StateMachineController" method="_on_aggro_area_body_entered"]
 [connection signal="body_exited" from="AggroArea" to="StateMachineController" method="_on_aggro_area_body_exited"]
