@@ -22,6 +22,9 @@ func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
 	if direction and character_body_2d.is_on_floor():
 		transition.emit("Run")
+		
+	if GameInputEvents.jump_input():
+		transition.emit("Jump")
 	
 func enter():
 	animated_sprite_2d.play("idle")

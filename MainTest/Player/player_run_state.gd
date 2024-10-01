@@ -5,7 +5,7 @@ extends NodeState
 
 @export_category("Player run state")
 @export var speed : int = 200
-@export var max_horizontal_speed : int = 600
+@export var max_horizontal_speed : int = 200
 
 func on_process(_delta :float):
 	pass
@@ -27,6 +27,12 @@ func on_physics_process(_delta :float):
 	#Transition
 	if direction == 0:
 		transition.emit("Idle")
+		
+	if GameInputEvents.jump_input():
+		transition.emit("Jump")
+		
+	if !character_body_2d.is_on_floor():
+		transition.emit("Fall")
 	
 func enter():
 	animated_sprite_2d.play("run")
