@@ -233,7 +233,5 @@ position = Vector2(0, -11.5)
 shape = SubResource("RectangleShape2D_y2vll")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1, -14)
+position = Vector2(3, -13)
 zoom = Vector2(3, 3)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
