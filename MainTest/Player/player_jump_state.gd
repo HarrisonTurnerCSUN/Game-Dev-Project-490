@@ -17,7 +17,10 @@ func on_process(_delta :float):
 	if character_body_2d.is_on_floor():
 		character_body_2d.velocity.y = jump
 	
-	var direction : float = GameInputEvents.movement_input() 
+	var direction : float = GameInputEvents.movement_input()
+	
+	if direction != 0:
+		animated_sprite_2d.flip_h = false if direction > 0 else true 
 	
 	if !character_body_2d.is_on_floor():
 		character_body_2d.velocity.x += direction * jump_speed
