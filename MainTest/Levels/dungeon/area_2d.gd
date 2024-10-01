@@ -1,5 +1,6 @@
 extends Area2D
 
+
 var entered
 
 func _ready():
@@ -17,4 +18,4 @@ func _on_body_exited(_body):
 func _process(_delta):
 	if entered == true:
 		if Input.is_action_just_pressed("ui_accept"):
-			get_tree().change_scene_to_file("res://dungeon_map.tscn")
+			get_tree().change_scene_to_file("res://Levels/dungeon/dungeon_map.tscn")

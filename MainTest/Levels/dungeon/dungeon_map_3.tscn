@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=4 uid="uid://b5ylbxav4vpwr"]
 
-[ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_6s5tf"]
-[ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="2_w4a8s"]
-[ext_resource type="Script" path="res://area_2d.gd" id="3_kvx4p"]
-[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://Player/player.tscn" id="4_jeali"]
+[ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_k5e6c"]
+[ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="2_n2kot"]
+[ext_resource type="Script" path="res://Levels/dungeon/area_2d.gd" id="3_f7d7w"]
+[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://Player/player.tscn" id="4_x7wd8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwuj8"]
-texture = ExtResource("1_6s5tf")
+texture = ExtResource("1_k5e6c")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -177,7 +177,7 @@ texture = ExtResource("1_6s5tf")
 sources/0 = SubResource("TileSetAtlasSource_xwuj8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vy4ll"]
-texture = ExtResource("2_w4a8s")
+texture = ExtResource("2_n2kot")
 0:0/0 = 0
 2:0/0 = 0
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -412,10 +412,13 @@ tile_set = SubResource("TileSet_spk4t")
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(88, -10)
 collision_mask = 3
-script = ExtResource("3_kvx4p")
+script = ExtResource("3_f7d7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_e67qp")
 
-[node name="Player" parent="." instance=ExtResource("4_jeali")]
+[node name="Player" parent="." instance=ExtResource("4_x7wd8")]
 position = Vector2(107, -3)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

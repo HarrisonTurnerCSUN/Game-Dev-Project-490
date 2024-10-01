@@ -38,7 +38,13 @@ func _process(_delta):
 	if entered_door != "" and Input.is_action_just_pressed("ui_accept"):
 		if entered_door == "right":
 			print("Going to Dungeon 2")
-			get_tree().change_scene_to_file("res://dungeon_map_2.tscn")
+			get_tree().change_scene_to_file("res://Levels/dungeon/dungeon_map_2.tscn")
 		elif entered_door == "left":
 			print("Going to Dungeon 3")
-			get_tree().change_scene_to_file("res://dungeon_map_3.tscn")
+			get_tree().change_scene_to_file("res://Levels/dungeon/dungeon_map_3.tscn")
+		elif entered_door == "dungeon2_to_main":
+			print("Returning to Main Dungeon from Dungeon 2")
+			get_tree().change_scene_to_file("res://Levels/dungeon/dungeon_map.tscn")  # Dungeon 2 door to Main Dungeon
+		elif entered_door == "dungeon3_to_main":
+			print("Returning to Main Dungeon from Dungeon 3")
+			get_tree().change_scene_to_file("res://Levels/dungeon/dungeon_map.tscn")  # Dungeon 3 door to Main Dungeon
