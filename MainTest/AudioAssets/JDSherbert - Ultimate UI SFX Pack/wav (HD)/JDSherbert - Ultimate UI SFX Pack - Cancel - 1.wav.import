@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mmd4dif8do1l"
+path="res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - Cancel - 1.wav-163fba67c74b692cc7cfe6ce507c9b1d.sample"
+
+[deps]
+
+source_file="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Cancel - 1.wav"
+dest_files=["res://.godot/imported/JDSherbert - Ultimate UI SFX Pack - Cancel - 1.wav-163fba67c74b692cc7cfe6ce507c9b1d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

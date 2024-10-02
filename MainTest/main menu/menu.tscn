@@ -1,6 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://l02drjbslctq"]
+[gd_scene load_steps=10 format=3 uid="uid://l02drjbslctq"]
 
 [ext_resource type="Script" path="res://main menu/scripts/Menu.cs" id="1_kn3e4"]
+[ext_resource type="AudioStream" uid="uid://p4jxryyy8gmq" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Open - 1.wav" id="2_lg50x"]
+[ext_resource type="AudioStream" uid="uid://bsx0kjqu3oob5" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Select - 1.wav" id="3_qgst0"]
+[ext_resource type="AudioStream" uid="uid://4qd4kgdi8bl2" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav" id="4_ca3qg"]
+[ext_resource type="AudioStream" uid="uid://33covk1redgh" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav" id="5_3wlha"]
 
 [sub_resource type="SystemFont" id="SystemFont_a5fwv"]
 font_names = PackedStringArray("Impact")
@@ -115,6 +119,21 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4oqfj")
 text = "Quit"
+
+[node name="AudioPopUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_lg50x")
+bus = &"SFX"
+
+[node name="AudioSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qgst0")
+bus = &"SFX"
+
+[node name="AudioCursor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ca3qg")
+bus = &"SFX"
+
+[node name="AudioClose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3wlha")
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="Play"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="Options"]

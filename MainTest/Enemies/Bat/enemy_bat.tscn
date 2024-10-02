@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://by4o4uwnh25rr"]
+
+[ext_resource type="Texture2D" uid="uid://r05kp23n7nan" path="res://Assets/Character Sprites/Bat/Bat1.png" id="1_jbveb"]
+[ext_resource type="Texture2D" uid="uid://jlnhfk5um7up" path="res://Assets/Character Sprites/Bat/Bat2.png" id="2_glqus"]
+[ext_resource type="Texture2D" uid="uid://udt24vdrb1ay" path="res://Assets/Character Sprites/Bat/Bat3.png" id="3_mtpds"]
+[ext_resource type="Texture2D" uid="uid://bml61c20bsckh" path="res://Assets/Character Sprites/Bat/Bat4.png" id="4_88xan"]
+[ext_resource type="Script" path="res://Enemies/Bat/state_machine_controller.gd" id="6_oanu8"]
+[ext_resource type="Script" path="res://Enemies/Bat/state_machine.gd" id="7_witqv"]
+[ext_resource type="Script" path="res://Enemies/Bat/idle.gd" id="8_h47we"]
+[ext_resource type="Script" path="res://Enemies/Bat/aggro.gd" id="9_0jcv8"]
+[ext_resource type="AudioStream" uid="uid://doyicryo53dmj" path="res://AudioAssets/crazy-bat-43208.mp3" id="9_jw3qm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4agqt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jbveb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_glqus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mtpds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_88xan")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1ted"]
+size = Vector2(80, 48.5714)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50mdj"]
+radius = 228.571
+
+[node name="enemy_bat" type="CharacterBody2D"]
+scale = Vector2(0.35, 0.35)
+collision_mask = 3
+motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4agqt")
+autoplay = "default"
+frame_progress = 0.334012
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.40598e-06, -1.42857)
+shape = SubResource("RectangleShape2D_k1ted")
+
+[node name="StateMachineController" type="Node" parent="." node_paths=PackedStringArray("node_finite_state_machine_bat")]
+script = ExtResource("6_oanu8")
+node_finite_state_machine_bat = NodePath("../StateMachine")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("7_witqv")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("8_h47we")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Aggro" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("9_0jcv8")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="AggroArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroArea"]
+shape = SubResource("CircleShape2D_50mdj")
+debug_color = Color(0.71919, 0.301603, 0.928012, 0.42)
+
+[node name="batAggro" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_jw3qm")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="body_entered" from="AggroArea" to="StateMachineController" method="_on_aggro_area_body_entered"]
+[connection signal="body_exited" from="AggroArea" to="StateMachineController" method="_on_aggro_area_body_exited"]
+[connection signal="finished" from="batAggro" to="StateMachine/Aggro" method="_on_bat_aggro_finished"]

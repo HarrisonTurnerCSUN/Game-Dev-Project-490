@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnk801w8pwvaw"
+path="res://.godot/imported/18 trust LOOP.wav-8f96a361de285ab9a93d3a36d1226df6.sample"
+
+[deps]
+
+source_file="res://AudioAssets/Infinity Crystal_ Awakening wavs/18 trust LOOP.wav"
+dest_files=["res://.godot/imported/18 trust LOOP.wav-8f96a361de285ab9a93d3a36d1226df6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

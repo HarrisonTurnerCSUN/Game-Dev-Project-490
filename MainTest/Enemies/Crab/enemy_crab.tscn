@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://djkwf5q44ewp0"]
+[gd_scene load_steps=32 format=3 uid="uid://djkwf5q44ewp0"]
 
 [ext_resource type="Texture2D" uid="uid://c328gjm6xgarx" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 01.png" id="1_n6ee2"]
 [ext_resource type="Texture2D" uid="uid://c350p1haneq5h" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/07-Attack/Attack 02.png" id="2_x3etr"]
@@ -20,11 +20,13 @@
 [ext_resource type="Texture2D" uid="uid://dg4f7ukacigfo" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="18_twvkg"]
 [ext_resource type="Texture2D" uid="uid://cms8ovcff3bts" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="19_2w3wt"]
 [ext_resource type="Script" path="res://Enemies/Crab/gravity.gd" id="20_t8ufk"]
-[ext_resource type="Script" path="res://Enemies/Crab/node_finite_state_machine.gd" id="21_ed37c"]
+[ext_resource type="Script" path="res://Utilities/state_machine/node_finite_state_machine.gd" id="21_ed37c"]
 [ext_resource type="Script" path="res://Enemies/Crab/state_machine_controller.gd" id="21_jakwb"]
 [ext_resource type="Script" path="res://Enemies/Crab/run_state.gd" id="22_kjiks"]
 [ext_resource type="Script" path="res://Enemies/Crab/idle_state.gd" id="23_d2h22"]
 [ext_resource type="Script" path="res://Enemies/Crab/attack.gd" id="25_6krub"]
+[ext_resource type="AudioStream" uid="uid://dsd8x48kl38yd" path="res://AudioAssets/12_Player_Movement_SFX/08_Step_rock_02.wav" id="26_aaedw"]
+[ext_resource type="AudioStream" uid="uid://dbjqrovhte02" path="res://AudioAssets/10_Battle_SFX/08_Bite_04.wav" id="27_tmndk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0degn"]
 animations = [{
@@ -179,7 +181,17 @@ position = Vector2(2, -6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_oj78v")
 
+[node name="crab_run" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_aaedw")
+bus = &"SFX"
+
+[node name="crab_attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("27_tmndk")
+bus = &"SFX"
+
 [connection signal="body_entered" from="RunArea" to="StateMachineController" method="_on_run_area_body_entered"]
 [connection signal="body_exited" from="RunArea" to="StateMachineController" method="_on_run_area_body_exited"]
 [connection signal="body_entered" from="AttackArea" to="StateMachineController" method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="StateMachineController" method="_on_attack_area_body_exited"]
+[connection signal="finished" from="crab_run" to="StateMachine/Run" method="_on_crab_run_finished"]
+[connection signal="finished" from="crab_attack" to="StateMachine/Attack" method="_on_crab_attack_finished"]

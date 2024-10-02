@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kkx7vnq1jsx"
+path="res://.godot/imported/2 dungeon INITIAL.wav-4a52e9d49f71a9792b5ef88c2b07d901.sample"
+
+[deps]
+
+source_file="res://AudioAssets/Infinity Crystal_ Awakening wavs/2 dungeon INITIAL.wav"
+dest_files=["res://.godot/imported/2 dungeon INITIAL.wav-4a52e9d49f71a9792b5ef88c2b07d901.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
