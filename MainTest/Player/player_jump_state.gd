@@ -34,6 +34,9 @@ func on_process(_delta :float):
 		
 	if !character_body_2d.is_on_floor() and character_body_2d.velocity.y > 0:
 		transition.emit("Fall")
+		
+	if GameInputEvents.shift_input():
+		transition.emit("AirDash")
 	
 func on_physics_process(_delta :float):
 	pass
