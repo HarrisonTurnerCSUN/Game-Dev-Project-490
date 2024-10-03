@@ -8,6 +8,9 @@ extends NodeState
 @export var gravity : int = 800
 
 func on_process(_delta :float):
+	pass
+	
+func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
 	
 	if direction != 0:
@@ -26,8 +29,6 @@ func on_process(_delta :float):
 		
 	if GameInputEvents.shift_input():
 		transition.emit("Roll")
-func on_physics_process(_delta :float):
-	pass
 	
 func enter():
 	animation_player.play("Crouch")

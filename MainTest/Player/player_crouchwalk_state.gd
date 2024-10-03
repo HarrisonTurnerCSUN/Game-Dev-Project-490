@@ -9,6 +9,9 @@ extends NodeState
 @export var max_horizontal_speed : int = 150
 
 func on_process(_delta :float):
+	pass
+		
+func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
 	
 	#This allows increasing speed with an upper and lower bound
@@ -29,9 +32,6 @@ func on_process(_delta :float):
 		
 	if !character_body_2d.is_on_floor() and character_body_2d.velocity.y > 0:
 		transition.emit("Fall")
-		
-func on_physics_process(_delta :float):
-	pass
 	
 func enter():
 	animation_player.play("Crouch_Walk")

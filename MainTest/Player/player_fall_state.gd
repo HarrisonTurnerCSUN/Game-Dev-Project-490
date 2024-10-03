@@ -19,6 +19,9 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.shift_input():
 		transition.emit("AirDash")
 	
+	if GameInputEvents.jump_input():
+		print("double")
+		transition.emit("DoubleJump")
 	
 func enter():
 	animation_player.play("Fall")
