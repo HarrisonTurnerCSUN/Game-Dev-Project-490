@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_k5e6c"]
 [ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="2_n2kot"]
 [ext_resource type="Script" path="res://Levels/dungeon/area_2d.gd" id="3_f7d7w"]
-[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://Player/player.tscn" id="4_x7wd8"]
+[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://player.tscn" id="4_x7wd8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwuj8"]
 texture = ExtResource("1_k5e6c")

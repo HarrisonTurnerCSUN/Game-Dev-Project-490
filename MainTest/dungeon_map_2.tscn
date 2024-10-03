@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="1_ot3pr"]
 [ext_resource type="AudioStream" uid="uid://dd3k612eh722g" path="res://AudioAssets/JDSherbert - Ambiences Music Pack [FREE]/wav/JDSherbert - Ambiences Music Pack - Bloodrat Sewers.wav" id="2_8f075"]
 [ext_resource type="Script" path="res://door.gd" id="3_83wqf"]
-[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://Player/player.tscn" id="4_cn1g4"]
+[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://player.tscn" id="4_cn1g4"]
 [ext_resource type="PackedScene" uid="uid://by4o4uwnh25rr" path="res://Enemies/Bat/enemy_bat.tscn" id="5_lhfu3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dh4c"]
