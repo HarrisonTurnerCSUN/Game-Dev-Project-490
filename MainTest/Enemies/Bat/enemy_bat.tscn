@@ -38,6 +38,7 @@ radius = 228.571
 
 [node name="enemy_bat" type="CharacterBody2D"]
 scale = Vector2(0.35, 0.35)
+collision_layer = 4
 collision_mask = 3
 motion_mode = 1
 
