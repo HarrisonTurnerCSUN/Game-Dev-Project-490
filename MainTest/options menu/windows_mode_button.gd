@@ -1,8 +1,6 @@
 extends Control
 
-
 @onready var option_button = $HBoxContainer/OptionButton as OptionButton
-
 const WINDOW_MODE_ARRAY: Array[String]= [
 	"Full-Screen",
 	"Window Mode"
@@ -14,7 +12,12 @@ const WINDOW_MODE_ARRAY: Array[String]= [
 func _ready():
 	add_window_mode_items()
 	option_button.item_selected.connect(on_window_mode_selected)
-	
+	# makes it so button selection indicator is correct
+	if DisplayServer.window_get_mode(0) == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		option_button.selected = 0
+	else :
+		option_button.selected = 1
+	print(option_button.selected)
 
 	
 func add_window_mode_items()-> void:
@@ -22,6 +25,7 @@ func add_window_mode_items()-> void:
 		option_button.add_item(window_mode)
 
 func on_window_mode_selected(index: int)-> void:
+		
 	match index:
 		0: #Fullscreen
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

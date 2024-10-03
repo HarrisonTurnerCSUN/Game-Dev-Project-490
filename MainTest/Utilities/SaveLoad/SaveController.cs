@@ -24,6 +24,7 @@ public partial class SaveController : Node
 		playerData.init();
 		GD.Print("playerData initialized");
 		gameData.init();
+		loadGame();
 		GD.Print("gameData initialized");
 		GD.Print(gameData.WindowMode);
 		
@@ -90,8 +91,12 @@ public partial class SaveController : Node
 			gameData = JsonSerializer.Deserialize<GameData>(jsonString)!;
 		}
 	}
-	
+
 	public static void setWindowMode(int x){
 		gameData.setWindowMode(x);
+	}
+	
+	public void getWindowMode(){
+		gameData.getWindowMode();
 	}
 }
