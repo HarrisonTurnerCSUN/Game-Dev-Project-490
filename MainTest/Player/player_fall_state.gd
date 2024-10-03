@@ -1,8 +1,8 @@
 extends NodeState
 
 @export var character_body_2d : CharacterBody2D
-@export var animated_sprite_2d : AnimatedSprite2D
 @export var gravity : int = 700
+@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 func on_process(_delta :float):
 	pass
@@ -18,8 +18,8 @@ func on_physics_process(_delta :float):
 	
 	
 func enter():
-	animated_sprite_2d.play("idle")
+	animation_player.play("Fall")
 	
 func exit():
-	animated_sprite_2d.stop()
+	animation_player.stop()
 	

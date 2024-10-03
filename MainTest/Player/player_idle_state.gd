@@ -1,8 +1,8 @@
 extends NodeState
 
 @export var character_body_2d : CharacterBody2D
-@export var animated_sprite_2d : AnimatedSprite2D
-
+@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@export var gravity : int = 700
 @export_category("Friction")
 @export var friction : int = 500
 
@@ -25,10 +25,15 @@ func on_physics_process(_delta :float):
 		
 	if GameInputEvents.jump_input():
 		transition.emit("Jump")
-	
+		
+	if GameInputEvents.attack1_input():
+		transition.emit("Attack1")
+		
+	if GameInputEvents.control_input():
+		transition.emit("Crouch")
 func enter():
-	animated_sprite_2d.play("idle")
+	animation_player.play("Idle")
 	
 func exit():
-	animated_sprite_2d.stop()
+	animation_player.stop()
 	
