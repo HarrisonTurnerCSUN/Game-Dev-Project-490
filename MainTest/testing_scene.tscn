@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://wfncg8fm6a6e"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/level_1.tscn" id="1_r1d1h"]
-[ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/playerState.tscn" id="2_h4s4v"]
+[ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_h4s4v"]
 
 [node name="TestingScene" type="Node2D"]
 
@@ -10,3 +10,4 @@ position = Vector2(16, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_h4s4v")]
 position = Vector2(97, -65)
+script = null

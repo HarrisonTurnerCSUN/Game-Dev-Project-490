@@ -1,10 +1,9 @@
 [gd_scene load_steps=44 format=3 uid="uid://b6jpciqqr0frf"]
 
-[ext_resource type="Script" path="res://Player/player_state_test.gd" id="1_yoyix"]
+[ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
 [ext_resource type="Texture2D" uid="uid://ct40eem1k50us" path="res://Assets/Character Sprites/Player Sprites/_Crouch.png" id="7_nbj1r"]
 [ext_resource type="Texture2D" uid="uid://bdul0kt3fbdfn" path="res://Assets/Character Sprites/Player Sprites/_CrouchWalk.png" id="8_hl7ro"]
-[ext_resource type="Script" path="res://Player/attack_1.gd" id="8_krcut"]
 [ext_resource type="Texture2D" uid="uid://dstcr50vsxb7k" path="res://Assets/Character Sprites/Player Sprites/_Run.png" id="8_qc51x"]
 [ext_resource type="Texture2D" uid="uid://dvtwlwfo5vgwe" path="res://Assets/Character Sprites/Player Sprites/_SlideFull.png" id="9_egbae"]
 [ext_resource type="Texture2D" uid="uid://dvvnpjo08me4y" path="res://Assets/Character Sprites/Player Sprites/_Jump.png" id="9_mef24"]
@@ -12,23 +11,24 @@
 [ext_resource type="Texture2D" uid="uid://bus2qpv3v6qwt" path="res://Assets/Character Sprites/Player Sprites/_Dash.png" id="10_o50mt"]
 [ext_resource type="Texture2D" uid="uid://csdll7mjqomo1" path="res://Assets/Character Sprites/Player Sprites/_Roll.png" id="11_fkajl"]
 [ext_resource type="Texture2D" uid="uid://cyvw1xhq061qb" path="res://Assets/Character Sprites/Player Sprites/_Attack.png" id="12_egyuu"]
-[ext_resource type="Script" path="res://Player/player_crouch_state.gd" id="16_uqk85"]
-[ext_resource type="Script" path="res://Player/player_slide_state.gd" id="17_f3dmy"]
-[ext_resource type="Script" path="res://Player/player_crouchwalk_state.gd" id="18_u4au7"]
-[ext_resource type="Script" path="res://Player/player_dash_state.gd" id="20_gehup"]
-[ext_resource type="Script" path="res://Player/player_roll_state.gd" id="22_mko7b"]
-[ext_resource type="Script" path="res://Player/player_airdash_state.gd" id="23_x70n5"]
-[ext_resource type="Script" path="res://Player/player_doublejump_state.gd" id="24_ssfdh"]
-[ext_resource type="Script" path="res://Player/player_land_state.gd" id="25_2f2j1"]
-[ext_resource type="Script" path="res://Player/player_wallslide_state.gd" id="26_yxvy2"]
-[ext_resource type="Script" path="res://Player/player_walljump_state.gd" id="27_p22l2"]
-[ext_resource type="Script" path="res://Player/player_hurt_state.gd" id="28_jafe2"]
-[ext_resource type="Script" path="res://Player/player_climb_state.gd" id="29_cvr1v"]
+[ext_resource type="Script" path="res://Player/Level/player_idle_state.gd" id="13_6sckc"]
+[ext_resource type="Script" path="res://Player/Level/player_fall_state.gd" id="14_l401m"]
+[ext_resource type="Script" path="res://Player/Level/player_run_state.gd" id="15_ryg3i"]
+[ext_resource type="Script" path="res://Player/Level/player_jump_state.gd" id="16_x5mm7"]
+[ext_resource type="Script" path="res://Player/Level/attack_1.gd" id="17_onbaw"]
+[ext_resource type="Script" path="res://Player/Level/player_crouch_state.gd" id="18_vl5dx"]
+[ext_resource type="Script" path="res://Player/Level/player_slide_state.gd" id="19_s8xet"]
+[ext_resource type="Script" path="res://Player/Level/player_crouchwalk_state.gd" id="20_lrmes"]
+[ext_resource type="Script" path="res://Player/Level/player_dash_state.gd" id="21_3gj3a"]
+[ext_resource type="Script" path="res://Player/Level/player_roll_state.gd" id="22_kqydj"]
+[ext_resource type="Script" path="res://Player/Level/player_airdash_state.gd" id="23_3o8wo"]
+[ext_resource type="Script" path="res://Player/Level/player_doublejump_state.gd" id="24_b6qn1"]
+[ext_resource type="Script" path="res://Player/Level/player_land_state.gd" id="25_e5wc7"]
+[ext_resource type="Script" path="res://Player/Level/player_wallslide_state.gd" id="26_fuyu1"]
+[ext_resource type="Script" path="res://Player/Level/player_walljump_state.gd" id="27_5x4nw"]
+[ext_resource type="Script" path="res://Player/Level/player_hurt_state.gd" id="28_sbp36"]
+[ext_resource type="Script" path="res://Player/Level/player_climb_state.gd" id="29_uka0c"]
 [ext_resource type="Script" path="res://Utilities/state_machine/node_finite_state_machine.gd" id="45_cyayl"]
-[ext_resource type="Script" path="res://Player/player_idle_state.gd" id="46_0q543"]
-[ext_resource type="Script" path="res://Player/player_fall_state.gd" id="47_u48wi"]
-[ext_resource type="Script" path="res://Player/player_run_state.gd" id="48_daych"]
-[ext_resource type="Script" path="res://Player/player_jump_state.gd" id="49_j6613"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68n11"]
 radius = 1.93803
@@ -1161,7 +1161,7 @@ size = Vector2(14, 37)
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_yoyix")
+script = ExtResource("1_5mcup")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(3, -40)
@@ -1201,67 +1201,67 @@ script = ExtResource("45_cyayl")
 initial_node_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("46_0q543")
+script = ExtResource("13_6sckc")
 character_body_2d = NodePath("../..")
 
 [node name="Fall" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("47_u48wi")
+script = ExtResource("14_l401m")
 character_body_2d = NodePath("../..")
 
 [node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("48_daych")
+script = ExtResource("15_ryg3i")
 character_body_2d = NodePath("../..")
 
 [node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("49_j6613")
+script = ExtResource("16_x5mm7")
 character_body_2d = NodePath("../..")
 
 [node name="Attack1" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("8_krcut")
+script = ExtResource("17_onbaw")
 character_body_2d = NodePath("../..")
 
 [node name="Crouch" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("16_uqk85")
+script = ExtResource("18_vl5dx")
 character_body_2d = NodePath("../..")
 
 [node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("17_f3dmy")
+script = ExtResource("19_s8xet")
 character_body_2d = NodePath("../..")
 
 [node name="CrouchWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("18_u4au7")
+script = ExtResource("20_lrmes")
 character_body_2d = NodePath("../..")
 
 [node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("20_gehup")
+script = ExtResource("21_3gj3a")
 character_body_2d = NodePath("../..")
 
 [node name="Roll" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("22_mko7b")
+script = ExtResource("22_kqydj")
 character_body_2d = NodePath("../..")
 
 [node name="AirDash" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("23_x70n5")
+script = ExtResource("23_3o8wo")
 character_body_2d = NodePath("../..")
 
 [node name="DoubleJump" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("24_ssfdh")
+script = ExtResource("24_b6qn1")
 character_body_2d = NodePath("../..")
 
 [node name="Land" type="Node" parent="StateMachine"]
-script = ExtResource("25_2f2j1")
+script = ExtResource("25_e5wc7")
 
 [node name="WallSlide" type="Node" parent="StateMachine"]
-script = ExtResource("26_yxvy2")
+script = ExtResource("26_fuyu1")
 
 [node name="WallJump" type="Node" parent="StateMachine"]
-script = ExtResource("27_p22l2")
+script = ExtResource("27_5x4nw")
 
 [node name="Hurt" type="Node" parent="StateMachine"]
-script = ExtResource("28_jafe2")
+script = ExtResource("28_sbp36")
 
 [node name="Climb" type="Node" parent="StateMachine"]
-script = ExtResource("29_cvr1v")
+script = ExtResource("29_uka0c")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.52
