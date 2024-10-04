@@ -1240,11 +1240,13 @@ character_body_2d = NodePath("../..")
 script = ExtResource("22_mko7b")
 character_body_2d = NodePath("../..")
 
-[node name="AirDash" type="Node" parent="StateMachine"]
+[node name="AirDash" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("23_x70n5")
+character_body_2d = NodePath("../..")
 
-[node name="DoubleJump" type="Node" parent="StateMachine"]
+[node name="DoubleJump" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("24_ssfdh")
+character_body_2d = NodePath("../..")
 
 [node name="Land" type="Node" parent="StateMachine"]
 script = ExtResource("25_2f2j1")
