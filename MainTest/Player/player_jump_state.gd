@@ -12,6 +12,9 @@ extends NodeState
 @export var gravity : int = 800
 
 func on_process(_delta :float):
+	pass
+	
+func on_physics_process(_delta :float):
 	
 	character_body_2d.velocity.y += gravity * _delta
 	
@@ -38,8 +41,8 @@ func on_process(_delta :float):
 	if GameInputEvents.shift_input():
 		transition.emit("AirDash")
 	
-func on_physics_process(_delta :float):
-	pass
+	if GameInputEvents.jump_input():
+		transition.emit("DoubleJump")
 	
 func enter():
 	animation_player.play("Jump")
