@@ -2,7 +2,7 @@ extends NodeStateBat
 
 @export var character_body_2d : CharacterBody2D
 @export var speed : int = 100  # Ensure a reasonable default speed
-@onready var bat_aggro: AudioStreamPlayer2D = $"../../batAggro"
+#@onready var bat_aggro: AudioStreamPlayer2D = $"../../batAggro"
 @onready var navigation_agent_2d: NavigationAgent2D = $"../../NavigationAgent2D"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 

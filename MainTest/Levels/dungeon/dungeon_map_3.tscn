@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_k5e6c"]
 [ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="2_n2kot"]
 [ext_resource type="Script" path="res://Levels/dungeon/area_2d.gd" id="3_f7d7w"]
-[ext_resource type="PackedScene" uid="uid://c8jwrhwlt58ok" path="res://Player/Level/player.tscn" id="4_x7wd8"]
+[ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="4_5jjse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwuj8"]
 texture = ExtResource("1_k5e6c")
@@ -417,8 +417,8 @@ script = ExtResource("3_f7d7w")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_e67qp")
 
-[node name="Player" parent="." instance=ExtResource("4_x7wd8")]
-position = Vector2(107, -3)
+[node name="Player2" parent="." instance=ExtResource("4_5jjse")]
+position = Vector2(139, -2)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
