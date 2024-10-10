@@ -1,6 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8cfmhl3gu8rq"]
+[gd_scene load_steps=12 format=3 uid="uid://b8cfmhl3gu8rq"]
 
+[ext_resource type="Script" path="res://Objects/static_body_2d.gd" id="1_hsgwr"]
 [ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="1_nclb5"]
+[ext_resource type="PackedScene" uid="uid://donm4ytxds3iv" path="res://Levels/dungeon/key.tscn" id="1_yveuk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrpwc"]
+radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxpbn"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wl54h"]
+radius = 11.0454
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u03co"]
 atlas = ExtResource("1_nclb5")
@@ -33,22 +44,40 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2yj7a")
 }],
-"loop": true,
+"loop": false,
 "name": &"open",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qrpwc"]
-radius = 15.0333
-
 [node name="chest" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_hsgwr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_qrpwc")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("CircleShape2D_sxpbn")
+
+[node name="Area2D2" type="Area2D" parent="StaticBody2D"]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D2"]
+shape = SubResource("CircleShape2D_wl54h")
+
+[node name="key" parent="StaticBody2D/Area2D2" instance=ExtResource("1_yveuk")]
+visible = false
+position = Vector2(-24, 7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_50brd")
 animation = &"open"
 frame_progress = 0.743334
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("CircleShape2D_qrpwc")
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/Area2D2" to="StaticBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="animation_finished" from="StaticBody2D/AnimatedSprite2D" to="StaticBody2D" method="_on_animated_sprite_2d_animation_finished"]

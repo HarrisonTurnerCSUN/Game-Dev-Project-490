@@ -31,6 +31,7 @@ func on_physics_process(_delta :float):
 		
 	if GameInputEvents.control_input():
 		transition.emit("Crouch")
+	
 func enter():
 	animation_player.play("Idle")
 	

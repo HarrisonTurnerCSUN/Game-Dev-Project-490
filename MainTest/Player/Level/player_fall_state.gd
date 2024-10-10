@@ -15,7 +15,13 @@ func on_physics_process(_delta :float):
 	#Transition
 	if character_body_2d.is_on_floor():
 		transition.emit("Idle")
+		
+	if GameInputEvents.shift_input():
+		transition.emit("AirDash")
 	
+	if GameInputEvents.jump_input():
+		print("double")
+		transition.emit("DoubleJump")
 	
 func enter():
 	animation_player.play("Fall")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://cs7i63hnmmbom"]
+[gd_scene load_steps=14 format=4 uid="uid://cs7i63hnmmbom"]
 
 [ext_resource type="Texture2D" uid="uid://boglrmhlpgp36" path="res://Assets/Background/background_layer_1.png" id="1_ja6on"]
 [ext_resource type="Texture2D" uid="uid://od7ms4huuo0s" path="res://Assets/Background/background_layer_2.png" id="2_vefnp"]
 [ext_resource type="Texture2D" uid="uid://blea3niex2y4b" path="res://Assets/Background/background_layer_3.png" id="3_wpdbm"]
 [ext_resource type="Texture2D" uid="uid://c1hc783avluml" path="res://Assets/Tiles/desert-ruins.png" id="4_l8rlc"]
+[ext_resource type="PackedScene" uid="uid://b1kgbovmf7biy" path="res://Player/Overworld/playerOverworld.tscn" id="5_5pma3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a626l"]
 texture = ExtResource("1_ja6on")
@@ -758,3 +759,6 @@ collision_enabled = false
 position = Vector2(0, -64)
 tile_map_data = PackedByteArray("AADx/wQAAgABAAsAAADy/wQAAgACAAsAAADz/wQAAgACAAsAAAD0/wQAAgACAAsAAAD1/wQAAgACAAsAAAD2/wQAAgACAAsAAAD3/wQAAgACAAsAAAD4/wQAAgACAAsAAAD5/wQAAgACAAsAAAD6/wQAAgACAAsAAAD7/wQAAgACAAsAAAD8/wQAAgACAAsAAAD9/wQAAgACAAsAAAD+/wQAAgACAAsAAAD//wQAAgADAAsAAAAAAAQAAgACAAsAAAABAAQAAgADAAsAAAACAAQAAgACAAsAAAADAAQAAgADAAsAAAAFAAQAAgADAAsAAAAGAAQAAgACAAsAAAAHAAQAAgADAAsAAAAIAAQAAgACAAsAAAAJAAQAAgADAAsAAAAKAAQAAgACAAsAAAALAAQAAgACAAsAAAAMAAQAAgACAAsAAAANAAQAAgACAAsAAAAOAAQAAgACAAsAAAAPAAQAAgACAAsAAAAQAAQAAgADAAsAAAARAAQAAgACAAsAAAAZAAQAAgAEAAsAAAASAAQAAgADAAsAAAATAAQAAgACAAsAAAAUAAQAAgADAAsAAAAVAAQAAgACAAsAAAAWAAQAAgADAAsAAAAXAAQAAgACAAsAAAAYAAQAAgADAAsAAAAEAAQAAgADAAsAAAA=")
 tile_set = SubResource("TileSet_8w6ti")
+
+[node name="Player" parent="." instance=ExtResource("5_5pma3")]
+position = Vector2(-139, -63)
