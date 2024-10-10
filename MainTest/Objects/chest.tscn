@@ -11,7 +11,7 @@ radius = 12.0416
 radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wl54h"]
-radius = 12.0
+radius = 11.0454
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u03co"]
 atlas = ExtResource("1_nclb5")
@@ -70,7 +70,7 @@ shape = SubResource("CircleShape2D_wl54h")
 
 [node name="key" parent="StaticBody2D/Area2D2" instance=ExtResource("1_yveuk")]
 visible = false
-position = Vector2(-24, 6)
+position = Vector2(-24, 7)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
 position = Vector2(0, -2)

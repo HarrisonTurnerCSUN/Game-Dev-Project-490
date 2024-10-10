@@ -65,11 +65,19 @@ func grab_key():
 
 # Function to show the key when the chest opens
 func show_key():
-	key_sprite.visible = true  # Make the key visible
-	key_sprite.position.y -= 10  # Move the key slightly up to simulate it popping out
-	key_sprite.scale = Vector2(1.2, 1.2)  # Optionally, scale the key for a pop effect
-	key_sprite.z_index = 1
-	print("Key has popped out!")
+	if key_sprite:
+		# Set the key's position relative to the chest, e.g., drop it to the left
+		var drop_offset = Vector2(-15, 0)  # Offset to the left by 50 pixels
+		key_sprite.position = key_sprite.position + drop_offset  # Move key left
+		key_sprite.visible = true  # Make the key visible
+		
+		# Optional: Simulate the key falling down a bit
+		# Drop the key slightly down by adjusting the y-position
+		key_sprite.position.y += 5  # You can adjust the value to make the key drop lower
+		
+		print("Key has dropped to the left of the chest and is now visible!")
+	else:
+		print("Error: Key sprite not found!")  # Debug if key sprite isn't found
 
 # Handle animation completion and show the key
 func _on_animated_sprite_2d_animation_finished():
