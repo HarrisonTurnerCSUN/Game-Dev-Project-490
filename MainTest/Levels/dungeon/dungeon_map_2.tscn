@@ -438,7 +438,7 @@ position = Vector2(1707, -62)
 navigation_polygon = SubResource("NavigationPolygon_mmtbs")
 
 [node name="Player" parent="." instance=ExtResource("7_logdv")]
-position = Vector2(2785, 103)
+position = Vector2(2705, 85)
 
 [node name="chest" parent="." instance=ExtResource("8_s473k")]
 position = Vector2(2827, 98)

@@ -8,7 +8,7 @@ public class GameData
 	public int WindowMode {get; set;}
 	
 	public void init (){
-		WindowMode = 1;
+		WindowMode = 0;
 	}
 	
 	public void setWindowMode (int x){

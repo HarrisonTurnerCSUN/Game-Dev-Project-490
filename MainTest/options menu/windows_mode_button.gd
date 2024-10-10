@@ -15,6 +15,12 @@ func _ready():
 	add_window_mode_items()
 	option_button.item_selected.connect(on_window_mode_selected)
 	
+	# makes it so button selection indicator is correct
+	if DisplayServer.window_get_mode(0) == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		option_button.selected = 0
+	else :
+		option_button.selected = 1
+	print(option_button.selected)
 
 	
 func add_window_mode_items()-> void:
