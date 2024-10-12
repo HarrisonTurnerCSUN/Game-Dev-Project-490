@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://5slp0c8ps1rm"]
+[gd_scene load_steps=6 format=3 uid="uid://5slp0c8ps1rm"]
 
 [ext_resource type="PackedScene" uid="uid://ojb5f2q6u7nt" path="res://options menu/hotkey_rebind_button.tscn" id="1_cw1gw"]
 [ext_resource type="PackedScene" uid="uid://cbppsi4qcjr2l" path="res://options menu/windows_mode_button.tscn" id="1_vomyb"]
+[ext_resource type="PackedScene" uid="uid://g16pkvo53ek1" path="res://options menu/volume_slider.tscn" id="2_kxvsl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fn1xa"]
 
@@ -27,9 +28,10 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -57,7 +59,6 @@ alignment = 1
 layout_mode = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -66,6 +67,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -9.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -78,25 +81,30 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Master" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Sound1"
+text = "Master"
 
-[node name="Label2" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="volume_slider" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("2_kxvsl")]
 layout_mode = 2
-text = "Sound2"
+bus_name = "Master"
 
-[node name="Label3" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="Music" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Sound3"
+text = "Music
+"
 
-[node name="Label4" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="volume_slider2" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("2_kxvsl")]
 layout_mode = 2
-text = "Sound4"
+bus_name = "Music"
 
-[node name="Label5" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+[node name="SFX" type="Label" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Sound5"
+text = "SFX"
+
+[node name="volume_slider3" parent="TabContainer/Sound/MarginContainer/VBoxContainer" instance=ExtResource("2_kxvsl")]
+layout_mode = 2
+bus_name = "SFX"
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
