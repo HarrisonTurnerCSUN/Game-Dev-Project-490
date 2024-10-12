@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cngy5hfh44ptj" path="res://Objects/obj_flag.tscn" id="6_00nj6"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="6_yeune"]
 [ext_resource type="PackedScene" uid="uid://by4o4uwnh25rr" path="res://Enemies/Bat/enemy_bat.tscn" id="7_ga0h3"]
-[ext_resource type="PackedScene" uid="uid://6sejajyifwgl" path="res://Enemies/Executioner/enemy_undead.tscn" id="8_1w8i3"]
+[ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="8_pw0hb"]
 
 [node name="Main" type="Node2D"]
 
@@ -45,5 +45,5 @@ position = Vector2(152, -61)
 [node name="enemy_bat" parent="." instance=ExtResource("7_ga0h3")]
 position = Vector2(2364, -92)
 
-[node name="enemy_undead" parent="." instance=ExtResource("8_1w8i3")]
-position = Vector2(2831, -42)
+[node name="enemy_undead_executioner" parent="." instance=ExtResource("8_pw0hb")]
+position = Vector2(429, -58)
