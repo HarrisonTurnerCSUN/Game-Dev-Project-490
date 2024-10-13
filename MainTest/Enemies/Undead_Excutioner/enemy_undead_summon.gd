@@ -1,9 +1,7 @@
 extends CharacterBody2D
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var health: Health = $Health
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var health: Health = $Health
 
 const MINION_RESOURCE := "res://Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
 
@@ -110,8 +108,3 @@ func die() -> void:
 
 func get_health() -> Health:
 	return health
-
-func summon_minion(p_position: Vector2) -> void:
-	var minion: CharacterBody2D = load(MINION_RESOURCE).instantiate()
-	get_parent().add_child(minion)
-	minion.position = p_position

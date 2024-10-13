@@ -1,0 +1,66 @@
+[gd_resource type="BehaviorTree" load_steps=16 format=3 uid="uid://byjutdu5wqmaa"]
+
+[ext_resource type="Script" path="res://demo/ai/tasks/get_first_in_group.gd" id="1_iiqwt"]
+[ext_resource type="Script" path="res://demo/ai/tasks/pursue.gd" id="2_6vd13"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_ppxfy"]
+var/speed/name = &"speed"
+var/speed/type = 3
+var/speed/value = 150.0
+var/speed/hint = 1
+var/speed/hint_string = "10,1000,10"
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_ggr06"]
+text = "SPause"
+
+[sub_resource type="BBNode" id="BBNode_nnypp"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_phmus"]
+animation_player = SubResource("BBNode_nnypp")
+animation_name = &"Idle"
+blend = 0.1
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_7338d"]
+min_duration = 0.5
+max_duration = 0.7
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_fmub1"]
+text = "SChase"
+
+[sub_resource type="BBNode" id="BBNode_acyvx"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_jj2bq"]
+animation_player = SubResource("BBNode_acyvx")
+animation_name = &"Idle"
+blend = 0.1
+
+[sub_resource type="BTAction" id="BTAction_8uscx"]
+script = ExtResource("1_iiqwt")
+group = &"Player"
+output_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_vg6rt"]
+script = ExtResource("2_6vd13")
+target_var = &"target"
+speed_var = &"speed"
+approach_distance = 8.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_fsw6c"]
+time_limit = 3.0
+children = [SubResource("BTAction_vg6rt")]
+
+[sub_resource type="BTSequence" id="BTSequence_jppdl"]
+custom_name = "Pursue player"
+children = [SubResource("BTConsolePrint_fmub1"), SubResource("BTPlayAnimation_jj2bq"), SubResource("BTAction_8uscx"), SubResource("BTTimeLimit_fsw6c")]
+
+[sub_resource type="BTSequence" id="BTSequence_r5kvb"]
+custom_name = "Pause before action"
+children = [SubResource("BTConsolePrint_ggr06"), SubResource("BTPlayAnimation_phmus"), SubResource("BTRandomWait_7338d"), SubResource("BTSequence_jppdl")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_ppxfy")
+root_task = SubResource("BTSequence_r5kvb")
