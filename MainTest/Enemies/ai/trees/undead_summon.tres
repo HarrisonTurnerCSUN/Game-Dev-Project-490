@@ -24,7 +24,7 @@ blend = 0.1
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_7338d"]
 min_duration = 0.5
-max_duration = 0.7
+max_duration = 1.0
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_fmub1"]
 text = "SChase"
@@ -47,10 +47,10 @@ output_var = &"target"
 script = ExtResource("2_6vd13")
 target_var = &"target"
 speed_var = &"speed"
-approach_distance = 8.0
+approach_distance = -20.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_fsw6c"]
-time_limit = 3.0
+time_limit = 8.0
 children = [SubResource("BTAction_vg6rt")]
 
 [sub_resource type="BTSequence" id="BTSequence_jppdl"]

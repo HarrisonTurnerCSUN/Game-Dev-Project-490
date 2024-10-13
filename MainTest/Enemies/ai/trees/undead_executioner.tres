@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=40 format=3 uid="uid://drfs5irx3u084"]
+[gd_resource type="BehaviorTree" load_steps=49 format=3 uid="uid://drfs5irx3u084"]
 
 [ext_resource type="Script" path="res://demo/ai/tasks/get_first_in_group.gd" id="1_qvoto"]
 [ext_resource type="Script" path="res://demo/ai/tasks/pursue.gd" id="2_x5xpu"]
@@ -30,12 +30,59 @@ animation_name = &"Idle"
 blend = 0.1
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_a2frv"]
-min_duration = 0.5
-max_duration = 0.7
+min_duration = 0.4
+max_duration = 0.6
 
 [sub_resource type="BTSequence" id="BTSequence_arw5k"]
 custom_name = "Pause before action"
 children = [SubResource("BTConsolePrint_psjkf"), SubResource("BTPlayAnimation_3ox1h"), SubResource("BTRandomWait_a2frv")]
+
+[sub_resource type="BTConsolePrint" id="BTConsolePrint_0b6pv"]
+text = "Chase"
+
+[sub_resource type="BBNode" id="BBNode_8ens0"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_rnwm0"]
+animation_player = SubResource("BBNode_8ens0")
+animation_name = &"Idle"
+blend = 0.1
+
+[sub_resource type="BTAction" id="BTAction_jqn6i"]
+script = ExtResource("1_qvoto")
+group = &"Player"
+output_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_80m8w"]
+script = ExtResource("2_x5xpu")
+target_var = &"target"
+speed_var = &"speed"
+approach_distance = -10.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_2t7ve"]
+time_limit = 3.0
+children = [SubResource("BTAction_80m8w")]
+
+[sub_resource type="BTAction" id="BTAction_q2whv"]
+script = ExtResource("3_i5tkq")
+target_var = &"target"
+
+[sub_resource type="BTWait" id="BTWait_p0gqt"]
+duration = 0.1
+
+[sub_resource type="BBNode" id="BBNode_niit4"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_t7qqb"]
+await_completion = 1.0
+animation_player = SubResource("BBNode_niit4")
+animation_name = &"Skill1"
+
+[sub_resource type="BTSequence" id="BTSequence_imbeq"]
+custom_name = "Skill1"
+children = [SubResource("BTConsolePrint_0b6pv"), SubResource("BTPlayAnimation_rnwm0"), SubResource("BTAction_jqn6i"), SubResource("BTTimeLimit_2t7ve"), SubResource("BTAction_q2whv"), SubResource("BTWait_p0gqt"), SubResource("BTPlayAnimation_t7qqb")]
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_vbroy"]
 text = "Chase"
@@ -58,18 +105,11 @@ output_var = &"target"
 script = ExtResource("2_x5xpu")
 target_var = &"target"
 speed_var = &"speed"
-approach_distance = 10.0
+approach_distance = 0.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_fy6d0"]
 time_limit = 3.0
 children = [SubResource("BTAction_tpgc2")]
-
-[sub_resource type="BTSequence" id="BTSequence_7cx58"]
-custom_name = "Pursue player"
-children = [SubResource("BTConsolePrint_vbroy"), SubResource("BTPlayAnimation_wyt4w"), SubResource("BTAction_qmol7"), SubResource("BTTimeLimit_fy6d0")]
-
-[sub_resource type="BTConsolePrint" id="BTConsolePrint_ykyws"]
-text = "Attack"
 
 [sub_resource type="BTAction" id="BTAction_y611e"]
 script = ExtResource("3_i5tkq")
@@ -87,15 +127,13 @@ await_completion = 1.0
 animation_player = SubResource("BBNode_0pu6a")
 animation_name = &"Attacking"
 
-[sub_resource type="BTAction" id="BTAction_jtub5"]
-script = ExtResource("2_x5xpu")
-target_var = &"target"
-speed_var = &"speed"
-approach_distance = 10.0
+[sub_resource type="BTSequence" id="BTSequence_7cx58"]
+custom_name = "Attack"
+children = [SubResource("BTConsolePrint_vbroy"), SubResource("BTPlayAnimation_wyt4w"), SubResource("BTAction_qmol7"), SubResource("BTTimeLimit_fy6d0"), SubResource("BTAction_y611e"), SubResource("BTWait_b6i3w"), SubResource("BTPlayAnimation_pg2rb")]
+metadata/_weight_ = 1.0
 
-[sub_resource type="BTSequence" id="BTSequence_nfgnt"]
-custom_name = "Melee attack"
-children = [SubResource("BTConsolePrint_ykyws"), SubResource("BTAction_y611e"), SubResource("BTWait_b6i3w"), SubResource("BTPlayAnimation_pg2rb"), SubResource("BTAction_jtub5")]
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_58fvk"]
+children = [SubResource("BTSequence_imbeq"), SubResource("BTSequence_7cx58")]
 
 [sub_resource type="BTConsolePrint" id="BTConsolePrint_7x0x2"]
 text = "Summon"
@@ -158,7 +196,8 @@ custom_name = "Summon minion"
 children = [SubResource("BTConsolePrint_7x0x2"), SubResource("BTCheckVar_kpf7k"), SubResource("BTPlayAnimation_p8ut0"), SubResource("BTWait_ol45g"), SubResource("BTAction_p2q8d"), SubResource("BTCooldown_4fpio"), SubResource("BTWait_mabsf")]
 
 [sub_resource type="BTSequence" id="BTSequence_o500g"]
-children = [SubResource("BTSequence_arw5k"), SubResource("BTSequence_7cx58"), SubResource("BTSequence_nfgnt"), SubResource("BTSequence_0p4gj")]
+custom_name = "Main"
+children = [SubResource("BTSequence_arw5k"), SubResource("BTProbabilitySelector_58fvk"), SubResource("BTSequence_0p4gj")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_cc0db")

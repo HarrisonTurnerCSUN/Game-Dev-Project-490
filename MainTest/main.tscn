@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/level_1.tscn" id="1_lghu7"]
+[ext_resource type="PackedScene" uid="uid://chtuem0sxc7a0" path="res://Enemies/Pirate/enemy_pirate.tscn" id="4_xqn4c"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="6_yeune"]
 [ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="8_pw0hb"]
 
@@ -13,3 +14,6 @@ position = Vector2(152, -61)
 
 [node name="enemy_undead_executioner" parent="." instance=ExtResource("8_pw0hb")]
 position = Vector2(429, -58)
+
+[node name="enemy_pirate" parent="." instance=ExtResource("4_xqn4c")]
+position = Vector2(1313, -97)

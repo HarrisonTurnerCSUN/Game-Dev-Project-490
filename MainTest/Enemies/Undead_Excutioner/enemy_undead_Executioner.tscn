@@ -12,11 +12,12 @@
 [ext_resource type="BehaviorTree" uid="uid://drfs5irx3u084" path="res://Enemies/ai/trees/undead_executioner.tres" id="9_gxyan"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahrxk"]
-radius = 4.0
+radius = 5.0
+height = 42.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0ebh"]
 radius = 7.0
-height = 42.0
+height = 50.0
 
 [sub_resource type="Animation" id="Animation_1hnos"]
 resource_name = "Attacking"
@@ -337,10 +338,15 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpipi"]
-radius = 7.0
-height = 52.0
+radius = 5.0
+height = 36.0
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_a6tqq"]
+var/speed/name = &"speed"
+var/speed/type = 3
+var/speed/value = 150.0
+var/speed/hint = 1
+var/speed/hint_string = "10,1000,10"
 
 [node name="enemy_undead_executioner" type="CharacterBody2D"]
 collision_layer = 4
@@ -361,8 +367,9 @@ script = ExtResource("3_bywyy")
 knockback_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
-position = Vector2(14, -13)
+position = Vector2(4, 3)
 shape = SubResource("CapsuleShape2D_ahrxk")
+debug_color = Color(0.862286, 0.0877487, 0.839839, 0.42)
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
 collision_layer = 4
@@ -373,7 +380,7 @@ health = NodePath("../../Health")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
 position = Vector2(-6, 4)
 shape = SubResource("CapsuleShape2D_w0ebh")
-debug_color = Color(0.92976, 0.0647381, 0.630775, 0.42)
+debug_color = Color(1.39579e-06, 0.643866, 0.292006, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

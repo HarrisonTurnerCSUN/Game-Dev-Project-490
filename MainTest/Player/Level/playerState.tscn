@@ -34,10 +34,10 @@
 [ext_resource type="Script" path="res://Utilities/state_machine/node_finite_state_machine.gd" id="45_cyayl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej113"]
+size = Vector2(9, 20)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqulf"]
-radius = 7.0
-height = 36.0
+radius = 5.0
 
 [sub_resource type="Animation" id="Animation_dguap"]
 resource_name = "Attack1"
@@ -633,7 +633,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2vll"]
-size = Vector2(12, 36)
+size = Vector2(7, 28)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
@@ -652,7 +652,7 @@ script = ExtResource("3_5byb4")
 knockback_enabled = true
 
 [node name="Attack1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
-position = Vector2(15, 17)
+position = Vector2(6, 22)
 shape = SubResource("RectangleShape2D_ej113")
 debug_color = Color(0.689918, 0.319865, 0.9502, 0.42)
 
@@ -664,7 +664,7 @@ script = ExtResource("4_an74e")
 health = NodePath("../../Health")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(-2, -18)
+position = Vector2(0, -17)
 shape = SubResource("CapsuleShape2D_lqulf")
 debug_color = Color(0, 0.645486, 0.25902, 0.42)
 
@@ -675,7 +675,7 @@ libraries = {
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -18)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_y2vll")
 
 [node name="Camera2D" type="Camera2D" parent="."]
