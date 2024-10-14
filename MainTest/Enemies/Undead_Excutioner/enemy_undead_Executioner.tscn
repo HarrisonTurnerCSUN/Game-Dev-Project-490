@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://demo/agents/scripts/hurtbox.gd" id="4_hmkoa"]
 [ext_resource type="Texture2D" uid="uid://dhv012wey5xsp" path="res://Assets/Character Sprites/Undead Executioner/summon.png" id="5_u31y7"]
 [ext_resource type="Script" path="res://demo/agents/scripts/health.gd" id="9_6fvw5"]
-[ext_resource type="BehaviorTree" uid="uid://drfs5irx3u084" path="res://Enemies/ai/trees/undead_executioner.tres" id="9_gxyan"]
+[ext_resource type="BehaviorTree" uid="uid://dny3kkwspuutb" path="res://ai/trees/undead_executioner.tres" id="9_t44f2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahrxk"]
 radius = 5.0
@@ -342,11 +342,6 @@ radius = 5.0
 height = 36.0
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_a6tqq"]
-var/speed/name = &"speed"
-var/speed/type = 3
-var/speed/value = 150.0
-var/speed/hint = 1
-var/speed/hint_string = "10,1000,10"
 
 [node name="enemy_undead_executioner" type="CharacterBody2D"]
 collision_layer = 4
@@ -392,7 +387,7 @@ position = Vector2(-5, -45)
 shape = SubResource("CapsuleShape2D_vpipi")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("9_gxyan")
+behavior_tree = ExtResource("9_t44f2")
 blackboard_plan = SubResource("BlackboardPlan_a6tqq")
 
 [node name="Health" type="Node" parent="."]
