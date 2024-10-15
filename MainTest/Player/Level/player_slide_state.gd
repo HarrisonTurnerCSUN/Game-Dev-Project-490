@@ -22,7 +22,7 @@ func on_physics_process(_delta :float):
 		sprite_2d.flip_h = false if direction > 0 else true 
 		
 	character_body_2d.move_and_slide()
-	
+	print("Slide")
 	#Transitions
 	if character_body_2d.is_on_floor() && !GameInputEvents.control_input():
 		transition.emit("Idle")

@@ -92,11 +92,11 @@ public partial class SaveController : Node
 		}
 	}
 
-	public static void setWindowMode(int x){
-		gameData.setWindowMode(x);
+	public static void setWindowMode(int x){ gameData.setWindowMode(x); }
+	public void getWindowMode(){ gameData.getWindowMode(); }
+	
+	public static void setVolume(String bus_name,float vol) { 
+		gameData.setVolume(bus_name,vol); 
 	}
 	
-	public void getWindowMode(){
-		gameData.getWindowMode();
-	}
 }
