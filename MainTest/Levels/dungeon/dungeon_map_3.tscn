@@ -418,7 +418,7 @@ script = ExtResource("3_f7d7w")
 shape = SubResource("CircleShape2D_e67qp")
 
 [node name="Player2" parent="." instance=ExtResource("4_5jjse")]
-position = Vector2(139, -2)
+position = Vector2(90, -3)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

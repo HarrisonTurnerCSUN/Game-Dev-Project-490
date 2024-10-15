@@ -65,6 +65,7 @@ func grab_key():
 	key_grabbed = true  # Mark the key as grabbed
 	key_sprite.visible = false  # Hide the key to simulate it being picked up
 	print("Player grabbed the key!")
+	KeyManager.has_key = true
 	print("Key visibility after grabbing: ", key_sprite.visible)
 
 # Function to show the key when the chest opens
