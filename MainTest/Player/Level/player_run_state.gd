@@ -24,7 +24,6 @@ func on_physics_process(_delta :float):
 		sprite_2d.flip_h = false if direction > 0 else true
 		
 	character_body_2d.move_and_slide()
-	print("Run")
 	#Transition
 	if direction == 0:
 		transition.emit("Idle")

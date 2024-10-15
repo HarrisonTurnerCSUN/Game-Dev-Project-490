@@ -25,7 +25,6 @@ func on_physics_process(_delta :float):
 												-max_fall_horizontal_speed,
 												max_fall_horizontal_speed)
 	character_body_2d.move_and_slide()
-	print("Fall")
 	#Transition
 	if character_body_2d.is_on_floor():
 		transition.emit("Idle")

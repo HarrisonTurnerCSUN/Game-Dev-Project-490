@@ -14,7 +14,6 @@ func on_physics_process(_delta :float):
 	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x,0,friction)
 	
 	character_body_2d.move_and_slide()
-	print("Idle")
 	#Transitions
 	if !character_body_2d.is_on_floor():
 		transition.emit("Fall")
