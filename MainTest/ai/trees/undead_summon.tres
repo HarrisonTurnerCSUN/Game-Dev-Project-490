@@ -1,0 +1,60 @@
+[gd_resource type="BehaviorTree" load_steps=14 format=3 uid="uid://i2qghrjyrknb"]
+
+[ext_resource type="Script" path="res://demo/ai/tasks/get_first_in_group.gd" id="1_xjd4v"]
+[ext_resource type="Script" path="res://demo/ai/tasks/pursue.gd" id="2_64ohn"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_0whoh"]
+var/speed/name = &"speed"
+var/speed/type = 3
+var/speed/value = 150.0
+var/speed/hint = 1
+var/speed/hint_string = "10,1000,10"
+
+[sub_resource type="BBNode" id="BBNode_7gp3b"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_ji64d"]
+animation_player = SubResource("BBNode_7gp3b")
+animation_name = &"Idle"
+blend = 0.1
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_jkw1o"]
+min_duration = 0.5
+max_duration = 1.0
+
+[sub_resource type="BBNode" id="BBNode_1y0ha"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_jaa51"]
+animation_player = SubResource("BBNode_1y0ha")
+animation_name = &"Idle"
+blend = 0.1
+
+[sub_resource type="BTAction" id="BTAction_grmkx"]
+script = ExtResource("1_xjd4v")
+group = &"Player"
+output_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_tplgm"]
+script = ExtResource("2_64ohn")
+target_var = &"target"
+speed_var = &"speed"
+approach_distance = -20.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_p4m2o"]
+time_limit = 8.0
+children = [SubResource("BTAction_tplgm")]
+
+[sub_resource type="BTSequence" id="BTSequence_3sfp7"]
+custom_name = "Pursue player"
+children = [SubResource("BTPlayAnimation_jaa51"), SubResource("BTAction_grmkx"), SubResource("BTTimeLimit_p4m2o")]
+
+[sub_resource type="BTSequence" id="BTSequence_2xecp"]
+custom_name = "Pause before action"
+children = [SubResource("BTPlayAnimation_ji64d"), SubResource("BTRandomWait_jkw1o"), SubResource("BTSequence_3sfp7")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_0whoh")
+root_task = SubResource("BTSequence_2xecp")
