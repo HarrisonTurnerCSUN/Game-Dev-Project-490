@@ -21,17 +21,32 @@ func on_physics_process(_delta :float):
 		
 	character_body_2d.move_and_slide()
 	
-	if direction.x != 0:
-		animation_player.flip_h = true if direction.x > 0 else false
+	#if direction.x != 0:
+	#	animation_player.flip_h = true if direction.x > 0 else false
+	if direction.x > 0:
+		animation_player.play("RunEast")
+	if direction.x < 0:
+		animation_player.play("RunWest")
+	if direction.y > 0  || (direction.y > 0 && direction.x != 0):
+		animation_player.play("RunSouth")
+	if direction.y < 0 || (direction.y < 0 && direction.x != 0):
+		animation_player.play("RunNorth")
 	#Transitions
 	if direction.x == 0 and direction.y == 0:
 		transition.emit("Idle")
 		
-	if direction and GameInputEvents.shift_input():
-		transition.emit("Run")
+	#if direction and GameInputEvents.shift_input():
+	#	transition.emit("Run")
 	
 func enter():
-	animation_player.play("Idle")
+	if direction.x > 0:
+		animation_player.play("RunWest")
+	if direction.x < 0:
+		animation_player.play("RunEast")
+	if direction.y > 0  || (direction.y > 0 && direction.x != 0):
+		animation_player.play("RunSouth")
+	if direction.y < 0  || (direction.y > 0 && direction.x != 0):
+		animation_player.play("RunNorth")
 	
 func exit():
 	animation_player.stop()

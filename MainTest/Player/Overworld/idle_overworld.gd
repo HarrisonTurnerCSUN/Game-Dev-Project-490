@@ -26,7 +26,14 @@ func on_physics_process(_delta :float):
 		transition.emit("Run")
 	
 func enter():
-	animation_player.play("Idle")
+	if GameInputEvents.movement_input() > 0:
+		animation_player.play("IdleEast")
+	if GameInputEvents.movement_input() < 0:
+		animation_player.play("IdleWest")
+	if GameInputEvents.movement_input_y() > 0:
+		animation_player.play("IdleSouth")
+	if GameInputEvents.movement_input_y() < 0:
+		animation_player.play("IdleNorth")
 	
 func exit():
 	animation_player.stop()
