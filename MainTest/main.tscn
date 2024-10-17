@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=8 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/level_1.tscn" id="1_lghu7"]
-[ext_resource type="PackedScene" uid="uid://chtuem0sxc7a0" path="res://Enemies/Pirate/enemy_pirate.tscn" id="4_xqn4c"]
+[ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Enemies/Goblin/enemy_goblin.tscn" id="5_0rn77"]
+[ext_resource type="PackedScene" uid="uid://cjpdotglraqe6" path="res://Enemies/Skeleton/enemy_skeleton.tscn" id="5_h4sux"]
+[ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Enemies/Mushroom/enemy_mushroom.tscn" id="5_x5ops"]
+[ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Enemies/Eyeball/enemy_eyeball.tscn" id="6_4kxcn"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="6_yeune"]
-[ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="8_pw0hb"]
+[ext_resource type="PackedScene" uid="uid://16cubl6ttua6" path="res://Enemies/Bat/enemy_bat.tscn" id="7_250u4"]
 
 [node name="Main" type="Node2D"]
 
@@ -12,8 +15,17 @@
 [node name="Player" parent="." instance=ExtResource("6_yeune")]
 position = Vector2(152, -61)
 
-[node name="enemy_undead_executioner" parent="." instance=ExtResource("8_pw0hb")]
-position = Vector2(429, -58)
+[node name="enemy_goblin" parent="." instance=ExtResource("5_0rn77")]
+position = Vector2(2745, -112)
 
-[node name="enemy_pirate" parent="." instance=ExtResource("4_xqn4c")]
-position = Vector2(1313, -97)
+[node name="enemy_skeleton" parent="." instance=ExtResource("5_h4sux")]
+position = Vector2(2600, -108)
+
+[node name="enemy_mushroom" parent="." instance=ExtResource("5_x5ops")]
+position = Vector2(2375, -76)
+
+[node name="enemy_eyeball" parent="." instance=ExtResource("6_4kxcn")]
+position = Vector2(596, -69)
+
+[node name="enemy_bat" parent="." instance=ExtResource("7_250u4")]
+position = Vector2(401, -75)

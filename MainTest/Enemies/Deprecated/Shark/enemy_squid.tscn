@@ -1,0 +1,184 @@
+[gd_scene load_steps=30 format=3 uid="uid://ct7fxhlqanlrv"]
+
+[ext_resource type="Texture2D" uid="uid://bgoefa5j5w8wq" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/07-Attack/Attack 01.png" id="1_7uodn"]
+[ext_resource type="Texture2D" uid="uid://btrt20gur8bfa" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/07-Attack/Attack 02.png" id="2_qpkqe"]
+[ext_resource type="Texture2D" uid="uid://cxyt6fjwwrhkm" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/07-Attack/Attack 03.png" id="3_4c2l5"]
+[ext_resource type="Texture2D" uid="uid://cd7xtehkkp5d4" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/07-Attack/Attack 04.png" id="4_1agj2"]
+[ext_resource type="Texture2D" uid="uid://dmwqu34qjcmru" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/07-Attack/Attack 05.png" id="5_efnh2"]
+[ext_resource type="Texture2D" uid="uid://bjm7wymgeo0ls" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 01.png" id="6_knmd2"]
+[ext_resource type="Texture2D" uid="uid://deqy4qgce2ybu" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 02.png" id="7_wouci"]
+[ext_resource type="Texture2D" uid="uid://7h24oug1reh3" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 03.png" id="8_vohx0"]
+[ext_resource type="Texture2D" uid="uid://1b8aas5hqywt" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 04.png" id="9_dgr6w"]
+[ext_resource type="Texture2D" uid="uid://dum1102mrafqy" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 05.png" id="10_55vkj"]
+[ext_resource type="Texture2D" uid="uid://mr1iivogjux7" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 06.png" id="11_22tyj"]
+[ext_resource type="Texture2D" uid="uid://dasdkdfp8r374" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 07.png" id="12_8m1e4"]
+[ext_resource type="Texture2D" uid="uid://dpdou46j8r1vw" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 08.png" id="13_wv4w6"]
+[ext_resource type="Script" path="res://Enemies/Deprecated/Shark/gravity.gd" id="14_35xg5"]
+[ext_resource type="Texture2D" uid="uid://cqcgcppub011f" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/02-Run/Run 01.png" id="14_gio6x"]
+[ext_resource type="Texture2D" uid="uid://bs12fks6fap1w" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/02-Run/Run 02.png" id="15_ll0r8"]
+[ext_resource type="Script" path="res://Enemies/Deprecated/Shark/state_machine_controller.gd" id="15_wo3oq"]
+[ext_resource type="Texture2D" uid="uid://cg5tjrmu6t05q" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/02-Run/Run 03.png" id="16_g0w55"]
+[ext_resource type="Script" path="res://Enemies/Deprecated/Shark/state_machine.gd" id="16_rlxdj"]
+[ext_resource type="Script" path="res://Enemies/Deprecated/Shark/idle.gd" id="17_1h5uo"]
+[ext_resource type="Texture2D" uid="uid://cfk2v3vgrwqru" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/02-Run/Run 04.png" id="17_ik31s"]
+[ext_resource type="Texture2D" uid="uid://whd4yev8tuc6" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/02-Run/Run 05.png" id="18_a3ggu"]
+[ext_resource type="Script" path="res://Enemies/Deprecated/Shark/attack.gd" id="18_l4nac"]
+[ext_resource type="Texture2D" uid="uid://d28lxqsca2o38" path="res://Assets/Character Sprites/Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/02-Run/Run 06.png" id="19_l37di"]
+[ext_resource type="Script" path="res://Enemies/Deprecated/Shark/run.gd" id="19_xqdkk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssc0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7uodn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qpkqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4c2l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1agj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_efnh2")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_knmd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wouci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vohx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dgr6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_55vkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_22tyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8m1e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wv4w6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_gio6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ll0r8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_g0w55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ik31s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_a3ggu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_l37di")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yj1em"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6g1g"]
+size = Vector2(52, 12.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpkkf"]
+size = Vector2(48, 24)
+
+[node name="EnemyShark" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_ssc0v")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.156167
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_yj1em")
+
+[node name="Gravity" type="Node" parent="." node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("14_35xg5")
+character_body_2d = NodePath("..")
+animated_sprite_2d = NodePath("../AnimatedSprite2D")
+
+[node name="StateMachineController" type="Node" parent="." node_paths=PackedStringArray("node_finite_state_machine_squid")]
+script = ExtResource("15_wo3oq")
+node_finite_state_machine_squid = NodePath("../StateMachine")
+
+[node name="StateMachine" type="Node2D" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("16_rlxdj")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("17_1h5uo")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+slow_down_speed = 200
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("18_l4nac")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Run" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("19_xqdkk")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+speed = 100
+
+[node name="RunArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RunArea"]
+position = Vector2(0, -25)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_k6g1g")
+debug_color = Color(0.65427, 0.517664, 7.70092e-07, 0.42)
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_cpkkf")
+debug_color = Color(0.381647, 0.474282, 1, 0.42)
+
+[connection signal="body_entered" from="RunArea" to="StateMachineController" method="_on_run_area_body_entered"]
+[connection signal="body_exited" from="RunArea" to="StateMachineController" method="_on_run_area_body_exited"]
+[connection signal="body_entered" from="AttackArea" to="StateMachineController" method="_on_attack_area_body_entered"]
+[connection signal="body_exited" from="AttackArea" to="StateMachineController" method="_on_attack_area_body_exited"]
