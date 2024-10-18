@@ -4,9 +4,9 @@ extends NodeState
 @export var animation_player: AnimatedSprite2D
 
 @export_category("Speed")
-@export var speed : int = 200
-@export var acceleration : int = 2
-@export var max_horizontal_speed : int = 200
+@export var speed : int = 150
+@export var acceleration : int = 5
+@export var max_horizontal_speed : int = 150
 var direction: Vector2
 func on_process(_delta :float):
 	pass
