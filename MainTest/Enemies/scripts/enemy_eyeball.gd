@@ -82,7 +82,7 @@ func is_good_position(p_position: Vector2) -> bool:
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
 	apply_knockback(knockback)
-	#animation_player.play(&"hurt")
+	animation_player.play(&"Hurt")
 	var btplayer := get_node_or_null(^"BTPlayer") as BTPlayer
 	if btplayer:
 		btplayer.set_active(false)
@@ -110,9 +110,9 @@ func die() -> void:
 		return
 	death.emit()
 	_is_dead = true
-	process_mode = Node.PROCESS_MODE_DISABLED
+	sprite.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	collision_shape_2d.set_deferred(&"disabled", true)
+	collision_shape_2d.set_deferred("disabled", true)
 
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:

@@ -136,9 +136,9 @@ func die() -> void:
 		return
 	death.emit()
 	_is_dead = true
-	process_mode = Node.PROCESS_MODE_DISABLED
+	sprite.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	collision_shape_2d.set_deferred(&"disabled", true)
+	collision_shape_2d.set_deferred("disabled", true)
 
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
