@@ -7,5 +7,6 @@ public partial class OptionsMenu : Control
 	private void Back()
 	{
 		GetTree().ChangeSceneToFile("res://main menu/menu.tscn");
+		SaveController.saveGame();
 	}
 }

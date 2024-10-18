@@ -39,7 +39,16 @@ public partial class Menu : Control
 		_audioSelect = GetNode<AudioStreamPlayer>("AudioSelect");
 		_audioCursor = GetNode<AudioStreamPlayer>("AudioCursor");
 		_audioClose = GetNode<AudioStreamPlayer>("AudioClose");
+		
+		int busIndex;
 		SaveController.loadGame();
+		busIndex = AudioServer.GetBusIndex("Master");
+		GD.Print(SaveController.gameData.MasterVol);
+		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(SaveController.gameData.MasterVol));
+		busIndex = AudioServer.GetBusIndex("Music");
+		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(SaveController.gameData.MusicVol));
+		busIndex = AudioServer.GetBusIndex("SFX");
+		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(SaveController.gameData.SFXVol));
 		if (SaveController.gameData.WindowMode == 0){
 			_audioSelect.Play();
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
@@ -49,5 +58,6 @@ public partial class Menu : Control
 			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
 			DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.Borderless,false);
 		}
+		
 	}
 }

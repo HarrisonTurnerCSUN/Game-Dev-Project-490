@@ -14,7 +14,7 @@ func on_process(_delta :float):
 	
 func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
-	
+	print("Dash")
 	#This allows increasing speed with an upper and lower bound
 	#ie: you can build momentum up to a cap, this could be fun(ny)
 	if direction:

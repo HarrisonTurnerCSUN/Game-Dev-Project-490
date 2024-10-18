@@ -13,7 +13,7 @@ var player_near_key = false
 # Function runs when the scene is loaded
 func _ready():
 	key_sprite.visible = false  # Hide the key initially
-	
+
 
 	if not animated_sprite:
 		print("Error: Could not find AnimatedSprite2D!")
@@ -53,15 +53,20 @@ func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		print("Interact key pressed")  # Debug input detection
 		_on_interact()
-
-		if player_near_key and not key_grabbed:
+		print("Player near key: ", player_near_key)  # Check if the player is near the key
+		print("Key grabbed: ", key_grabbed)  # Check if the key has already been grabbed
+		if player_near_key:
+			print("Calling grab_key()...")  # Debug to see if we're entering this condition
 			grab_key()
 
 # Function to handle grabbing the key
 func grab_key():
+	print("Key visibility before grabbing: ", key_sprite.visible)
 	key_grabbed = true  # Mark the key as grabbed
 	key_sprite.visible = false  # Hide the key to simulate it being picked up
 	print("Player grabbed the key!")
+	KeyManager.has_key = true
+	print("Key visibility after grabbing: ", key_sprite.visible)
 
 # Function to show the key when the chest opens
 func show_key():

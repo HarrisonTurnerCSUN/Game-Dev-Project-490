@@ -1,0 +1,90 @@
+[gd_scene load_steps=15 format=3 uid="uid://dxjhdwok1ebmt"]
+
+[ext_resource type="Texture2D" uid="uid://biu0amut343lj" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 01.png" id="1_ex3wu"]
+[ext_resource type="Script" path="res://Enemies/Deprecated/enemy_clown.gd" id="1_wl1hd"]
+[ext_resource type="Texture2D" uid="uid://cftx8aw74utry" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 02.png" id="2_pb1bm"]
+[ext_resource type="Texture2D" uid="uid://vl2sjrrqfuce" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 03.png" id="3_d7gsb"]
+[ext_resource type="Texture2D" uid="uid://yl56pvffk1iu" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 04.png" id="4_ot4d3"]
+[ext_resource type="Texture2D" uid="uid://yok8r0lmutms" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/09-Idle Sword/Idle Sword 05.png" id="5_qgray"]
+[ext_resource type="Texture2D" uid="uid://4mq3t2y86h48" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 01.png" id="6_tjfpr"]
+[ext_resource type="Texture2D" uid="uid://cm7a6s42gbom1" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 02.png" id="7_pfbwy"]
+[ext_resource type="Texture2D" uid="uid://bnc6ugb7ewme3" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 03.png" id="8_w8lff"]
+[ext_resource type="Texture2D" uid="uid://blcl1pvvy0aa5" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 04.png" id="9_j0kuh"]
+[ext_resource type="Texture2D" uid="uid://cwid7ae1rmgon" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 05.png" id="10_1gkmt"]
+[ext_resource type="Texture2D" uid="uid://v0myqmhhaxj" path="res://Assets/Character Sprites/Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/10-Run Sword/Run Sword 06.png" id="11_rbiod"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gcdwh"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ex3wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pb1bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d7gsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ot4d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qgray")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tjfpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pfbwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_w8lff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_j0kuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_1gkmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rbiod")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fx63"]
+size = Vector2(17, 25)
+
+[node name="EnemyClown" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_wl1hd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_gcdwh")
+animation = &"walk"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -12.5)
+shape = SubResource("RectangleShape2D_7fx63")
+debug_color = Color(0.857482, 0.0630914, 0.863416, 0.42)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

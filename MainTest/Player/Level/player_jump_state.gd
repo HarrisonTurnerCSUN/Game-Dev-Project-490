@@ -31,7 +31,6 @@ func on_physics_process(_delta :float):
 		character_body_2d.velocity.x = clampi(character_body_2d.velocity.x, -max_jump_speed,max_jump_speed)
 		
 	character_body_2d.move_and_slide()
-	
 	if character_body_2d.is_on_floor():
 		transition.emit("Idle")
 		

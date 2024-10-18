@@ -51,3 +51,5 @@ script = ExtResource("6_7o4a6")
 animation_player = NodePath("../../AnimationPlayer")
 animation = &"dodge"
 hurtbox_collision = NodePath("../../Root/Hurtbox/HurtboxCollisionShape2D")
+
+[node name="Camera2D" type="Camera2D" parent="." index="6"]
