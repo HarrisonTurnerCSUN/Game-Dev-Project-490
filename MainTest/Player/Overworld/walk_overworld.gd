@@ -39,14 +39,26 @@ func on_physics_process(_delta :float):
 	#	transition.emit("Run")
 	
 func enter():
-	if direction.x > 0:
-		animation_player.play("RunWest")
-	if direction.x < 0:
-		animation_player.play("RunEast")
-	if direction.y > 0  || (direction.y > 0 && direction.x != 0):
-		animation_player.play("RunSouth")
-	if direction.y < 0  || (direction.y > 0 && direction.x != 0):
-		animation_player.play("RunNorth")
+	direction.x = GameInputEvents.movement_input()
+	direction.y = GameInputEvents.movement_input_y()
+	
+	var input = direction.normalized()
+	
+	var Animation_Tree  = get_node("./AnimationTree")
+	var Playback = Animation_Tree.Get("parameters/playback")
+	
+	if input == Vector2.ZERO:
+		Playback.Travel("Idle_BlendSpace2D")
+	else:
+		Animation_Tree.Set("parameters/Idle_BlendSpace2D/blend_position", input)
+	#if direction.x > 0:
+		#animation_player.play("RunWest")
+	#if direction.x < 0:
+		#animation_player.play("RunEast")
+	#if direction.y > 0  || (direction.y > 0 && direction.x != 0):
+		#animation_player.play("RunSouth")
+	#if direction.y < 0  || (direction.y > 0 && direction.x != 0):
+		#animation_player.play("RunNorth")
 	
 func exit():
 	animation_player.stop()

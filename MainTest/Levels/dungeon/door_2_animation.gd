@@ -3,6 +3,7 @@ extends Area2D
 @export_category("Door data")
 @export var door_destination : String
 
+
 var entered = false
 var can_process_input = true
 
