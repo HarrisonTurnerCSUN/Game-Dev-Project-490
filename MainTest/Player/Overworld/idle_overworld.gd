@@ -6,8 +6,8 @@ extends NodeState
 @export_category("Friction")
 @export var friction : int = 500
 var direction: Vector2
-var last_direction := Vector2(0,-1)
-
+#var last_direction := Vector2(0,-1)
+var last_direction : Vector2
 func on_process(_delta :float):
 	pass
 	
@@ -16,23 +16,16 @@ func on_physics_process(_delta :float):
 	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x,0,friction)
 	character_body_2d.velocity.y = move_toward(character_body_2d.velocity.y,0,friction)
 	
-	character_body_2d.move_and_slide()
-	
-	#Transitions
 	var direction_x : float = GameInputEvents.movement_input()
 	var direction_y : float = GameInputEvents.movement_input_y()
 	
 	direction.x = GameInputEvents.movement_input()
 	direction.y = GameInputEvents.movement_input_y()
 	var input = direction.normalized()
-	var idle = !input
+	#last_direction = character_body_2d.velocity.normalized()
+	#Animation_Tree.set("parameters/Idle_BlendSpace2D/blend_position",input)
 	
-	if !idle:
-		last_direction = character_body_2d.velocity
-	
-	#Animation_Tree.set("parameters/conditions/Idle",idle)
-	Animation_Tree.set("parameters/Idle_BlendSpace2D/blend_position",last_direction)
-	
+	character_body_2d.move_and_slide()
 	#Transitions
 	if direction_x or direction_y :
 		transition.emit("Walk")
@@ -45,13 +38,10 @@ func enter():
 	direction.y = GameInputEvents.movement_input_y()
 	
 	var input = direction.normalized()
-	var idle = !input
+	#last_direction = character_body_2d.velocity.normalized()
+	#Animation_Tree.set("parameters/Idle_BlendSpace2D/blend_position",input)
 	
-	if !idle:
-		last_direction = character_body_2d.velocity
-	
-	Animation_Tree.set("parameters/conditions/Idle",idle)
-	Animation_Tree.set("parameters/Idle_BlendSpace2D/blend_position",last_direction)
+	character_body_2d.move_and_slide()
 	
 	
 func exit():

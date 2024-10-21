@@ -9,7 +9,9 @@ extends NodeState
 @export var acceleration : int = 2
 @export var max_horizontal_speed : int = 200
 var direction: Vector2
-var last_direction := Vector2(0,-1)
+#var last_direction := Vector2(0,-1)
+var last_direction : Vector2
+
 func on_process(_delta :float):
 	pass
 	
@@ -18,18 +20,12 @@ func on_physics_process(_delta :float):
 	direction.y = GameInputEvents.movement_input_y()
 	
 	var input = direction.normalized()
-	var idle = !input
-	
+	last_direction = character_body_2d.velocity.normalized()
 	character_body_2d.velocity = lerp(character_body_2d.velocity, input * speed, _delta * acceleration)
-		
+	
+	#Animation_Tree.set("parameters/Walk_BlendSpace2D/blend_position",input)
+	
 	character_body_2d.move_and_slide()
-	
-	if !idle:
-		last_direction = character_body_2d.velocity
-	
-	#Animation_Tree.set("parameters/conditions/Walk",!idle)
-	Animation_Tree.set("parameters/Walk_BlendSpace2D/blend_position",last_direction)
-	
 	#Transitions
 	if direction.x == 0 and direction.y == 0:
 		transition.emit("Idle")
@@ -41,14 +37,11 @@ func enter():
 	direction.x = GameInputEvents.movement_input()
 	direction.y = GameInputEvents.movement_input_y()
 	
-	var input = direction.normalized()
-	var idle = !input
+	#var input = direction.normalized()
+	#last_direction = character_body_2d.velocity.normalized()
+	#Animation_Tree.set("parameters/Walk_BlendSpace2D/blend_position",input)
 	
-	if !idle:
-		last_direction = character_body_2d.velocity
-	
-	#Animation_Tree.set("parameters/conditions/Walk",!idle)
-	Animation_Tree.set("parameters/Walk_BlendSpace2D/blend_position",last_direction)
+	character_body_2d.move_and_slide()
 	
 func exit():
 	#animation_player.stop()
