@@ -128,18 +128,17 @@ duration = 0.1
 saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
 
-[sub_resource type="BTWait" id="BTWait_g2xwx"]
-duration = 0.1
-
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_wsxc2"]
 await_completion = 2.0
 animation_player = SubResource("BBNode_ndah0")
 animation_name = &"Attack1"
-children = [SubResource("BTWait_g2xwx")]
+
+[sub_resource type="BTWait" id="BTWait_g2xwx"]
+duration = 0.1
 
 [sub_resource type="BTSequence" id="BTSequence_eyiuc"]
 custom_name = "Approach and melee attack"
-children = [SubResource("BTPlayAnimation_qgeqw"), SubResource("BTTimeLimit_4ro27"), SubResource("BTAction_s5fqe"), SubResource("BTWait_k5hge"), SubResource("BTPlayAnimation_iqjo7"), SubResource("BTWait_gemid"), SubResource("BTPlayAnimation_wsxc2")]
+children = [SubResource("BTPlayAnimation_qgeqw"), SubResource("BTTimeLimit_4ro27"), SubResource("BTAction_s5fqe"), SubResource("BTWait_k5hge"), SubResource("BTPlayAnimation_iqjo7"), SubResource("BTWait_gemid"), SubResource("BTPlayAnimation_wsxc2"), SubResource("BTWait_g2xwx")]
 metadata/_weight_ = 2.0
 
 [sub_resource type="BTAction" id="BTAction_d20iu"]
@@ -178,6 +177,7 @@ saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
 
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_fb7lo"]
+await_completion = 3.604
 animation_player = SubResource("BBNode_4f5qu")
 animation_name = &"RangeAttack1"
 

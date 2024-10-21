@@ -19,6 +19,7 @@ var _moved_this_frame: bool = false
 @onready var health: Health = $Health
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 
 
 func _ready() -> void:
@@ -28,7 +29,6 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	_post_physics_process.call_deferred()
-
 
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
@@ -52,8 +52,12 @@ func update_facing() -> void:
 func face_dir(dir: float) -> void:
 	if dir > 0.0:
 		sprite.flip_h = false  # Face right
+		hurtbox.scale.x = 1
+		collision_shape_2d.scale.x = 1
 	elif dir < 0.0:
 		sprite.flip_h = true   # Face left
+		hurtbox.scale.x = -1
+		collision_shape_2d.scale.x = -1
 	_frames_since_facing_update = 0
 
 func get_facing() -> float:
@@ -112,7 +116,7 @@ func die() -> void:
 	_is_dead = true
 	sprite.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	collision_shape_2d.set_deferred("disabled", true)
+	collision_shape_2d.set_deferred(&"disabled", true)
 
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
