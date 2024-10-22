@@ -1,9 +1,9 @@
 [gd_scene load_steps=30 format=3 uid="uid://cd7p2s0pahbv6"]
 
-[ext_resource type="Texture2D" uid="uid://b8d3rfrvjgwxd" path="res://Free/Main Characters/Ninja Frog/Jump (32x32).png" id="1_iox1o"]
+[ext_resource type="Texture2D" uid="uid://b8d3rfrvjgwxd" path="res://Items/Main Characters/Ninja Frog/Jump (32x32).png" id="1_iox1o"]
 [ext_resource type="Script" path="res://scenes/main_character.cs" id="1_ryw4s"]
-[ext_resource type="Texture2D" uid="uid://dlpxkst150q4o" path="res://Free/Main Characters/Ninja Frog/Idle (32x32).png" id="2_r2wrn"]
-[ext_resource type="Texture2D" uid="uid://dyv18ok0wvjxs" path="res://Free/Main Characters/Ninja Frog/Run (32x32).png" id="4_ijnat"]
+[ext_resource type="Texture2D" uid="uid://dlpxkst150q4o" path="res://Items/Main Characters/Ninja Frog/Idle (32x32).png" id="2_r2wrn"]
+[ext_resource type="Texture2D" uid="uid://dyv18ok0wvjxs" path="res://Items/Main Characters/Ninja Frog/Run (32x32).png" id="4_ijnat"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4edt"]
 atlas = ExtResource("2_r2wrn")

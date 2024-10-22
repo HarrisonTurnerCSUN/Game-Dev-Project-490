@@ -18,7 +18,7 @@ const DEAD_SPEED := 50.0
 
 var _is_dead: bool = false
 @onready var projectile: Sprite2D = $Root/projectile
-@onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
+#@onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var root: Node2D = $Root
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -44,7 +44,7 @@ func _die() -> void:
 	_is_dead = true
 	animation_player.play("Death")
 	animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
-	collision_shape_2d.set_deferred(&"disabled", true)
+	#collision_shape_2d.set_deferred(&"disabled", true)
 	#await animation_player.finished
 
 func _on_animation_finished(anim_name: String) -> void:

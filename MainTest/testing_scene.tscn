@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://wfncg8fm6a6e"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/level_1.tscn" id="1_r1d1h"]
-[ext_resource type="PackedScene" uid="uid://b1kgbovmf7biy" path="res://Player/Overworld/playerOverworld.tscn" id="2_4p10c"]
+[ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_h4s4v"]
 
 [node name="TestingScene" type="Node2D"]
 
 [node name="Level1" parent="." instance=ExtResource("1_r1d1h")]
 position = Vector2(16, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_4p10c")]
-position = Vector2(292, -110)
+[node name="Player" parent="." instance=ExtResource("2_h4s4v")]
+position = Vector2(97, -65)
+script = null
