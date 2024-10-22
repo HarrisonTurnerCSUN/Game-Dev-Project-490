@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://0fvkaelgle07"]
 
-[ext_resource type="Texture2D" uid="uid://ubygs2ry1rec" path="res://Green.png" id="1_ljcom"]
-[ext_resource type="Texture2D" uid="uid://censcv37qjfcq" path="res://Terrain (16x16).png" id="2_srdd5"]
-[ext_resource type="PackedScene" uid="uid://cd7p2s0pahbv6" path="res://scenes/main_character.tscn" id="3_xwh6m"]
+[ext_resource type="Texture2D" path="res://Green.png" id="1_ljcom"]
+[ext_resource type="Texture2D" path="res://Terrain (16x16).png" id="2_srdd5"]
+[ext_resource type="PackedScene" uid="uid://cd7p2s0pahbv6" path="res://Hscenes/main_character.tscn" id="3_xwh6m"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_xki0y"]
-[ext_resource type="PackedScene" uid="uid://b6pveuiui26qw" path="res://scenes/collectible.tscn" id="5_ef7aq"]
-[ext_resource type="PackedScene" uid="uid://cwm1n1gb6mtj1" path="res://scenes/finish.tscn" id="6_77qf4"]
+[ext_resource type="PackedScene" uid="uid://b6pveuiui26qw" path="res://Hscenes/collectible.tscn" id="5_ef7aq"]
+[ext_resource type="PackedScene" uid="uid://cwm1n1gb6mtj1" path="res://Hscenes/finish.tscn" id="6_77qf4"]
 [ext_resource type="Script" path="res://scenes/finish.gd" id="7_qsiht"]
-[ext_resource type="Texture2D" uid="uid://011qas5o1md8" path="res://Free/Other/Dust Particle.png" id="8_mhihf"]
-[ext_resource type="PackedScene" uid="uid://c6hg7c14qvgh6" path="res://scenes/enemy.tscn" id="9_sqk3a"]
+[ext_resource type="Texture2D" uid="uid://011qas5o1md8" path="res://Items/Other/Dust Particle.png" id="8_mhihf"]
+[ext_resource type="PackedScene" uid="uid://c6hg7c14qvgh6" path="res://Hscenes/enemy.tscn" id="9_sqk3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a48ig"]
 texture = ExtResource("2_srdd5")
