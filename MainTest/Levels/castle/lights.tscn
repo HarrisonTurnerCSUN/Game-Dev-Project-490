@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://cyv44rslsvcug"]
+
+[ext_resource type="Texture2D" uid="uid://5vvcomidig4y" path="res://Assets/Tiles/castle.png/anim_light3.png" id="1_yu3k3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alj8v"]
+atlas = ExtResource("1_yu3k3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l52d"]
+atlas = ExtResource("1_yu3k3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0u26"]
+atlas = ExtResource("1_yu3k3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01g2x"]
+atlas = ExtResource("1_yu3k3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuvnt"]
+atlas = ExtResource("1_yu3k3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_siuu2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alj8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l52d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0u26")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01g2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuvnt")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="lights" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_siuu2")
+animation = &"new_animation"
+frame_progress = 0.979312
