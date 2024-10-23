@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ha2c5sfcswao"]
+[gd_scene load_steps=40 format=3 uid="uid://ha2c5sfcswao"]
 
 [ext_resource type="Script" path="res://demo/agents/scripts/hurtbox.gd" id="1_24s3x"]
 [ext_resource type="Script" path="res://Enemies/scripts/enemy_eyeball.gd" id="1_tcnbb"]
@@ -11,6 +11,13 @@
 [ext_resource type="BehaviorTree" uid="uid://bgnasfo1mabyi" path="res://ai/trees/melee_projectile_flying.tres" id="8_mb4vv"]
 [ext_resource type="Texture2D" uid="uid://deffs3pvh5pcq" path="res://Assets/Character Sprites/Flying eye/Attack2.png" id="9_amk4h"]
 [ext_resource type="Texture2D" uid="uid://ufoxe7qddxcs" path="res://Assets/Character Sprites/Flying eye/Take Hit.png" id="10_4mxsb"]
+[ext_resource type="AudioStream" uid="uid://63sjrj3q41n4" path="res://AudioAssets/Enemies/EyeballSounds/spit53.wav" id="12_28kou"]
+[ext_resource type="AudioStream" uid="uid://oxk4i3ygr546" path="res://AudioAssets/Enemies/EyeballSounds/monster-Wing53.wav" id="12_77fmo"]
+[ext_resource type="AudioStream" uid="uid://dbgbrnud27d6a" path="res://AudioAssets/Enemies/EyeballSounds/monster-bite-44538.wav" id="12_cv8gl"]
+[ext_resource type="AudioStream" uid="uid://y0qb5fnrg6o" path="res://AudioAssets/Enemies/EyeballSounds/SmallMonsterAttack53.wav" id="13_a8f3o"]
+[ext_resource type="AudioStream" uid="uid://bfwpsssaqkld2" path="res://AudioAssets/Enemies/EyeballSounds/monster-Idle53.wav" id="13_e75dp"]
+[ext_resource type="AudioStream" uid="uid://go1cmepkda20" path="res://AudioAssets/Enemies/EyeballSounds/paind27.wav" id="14_58oo8"]
+[ext_resource type="AudioStream" uid="uid://dnrnmwea5fsqj" path="res://AudioAssets/Enemies/EyeballSounds/monster-death-grunt.mp3" id="15_gu1yc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ydv6l"]
 radius = 6.66667
@@ -50,6 +57,10 @@ height = 5.33333
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_systs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d264w"]
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_blush"]
 radius = 3.0
 height = 12.0
 
@@ -740,6 +751,18 @@ tracks/56/keys = {
 "update": 0,
 "values": [Vector2(12, 4), Vector2(9.33333, 2.66667), Vector2(9.33333, -2.38419e-07), Vector2(9.33333, -2.38419e-07), Vector2(10.6667, -2.38419e-07), Vector2(12, -2.38419e-07), Vector2(12, 8), Vector2(12, 8), Vector2(12, 8)]
 }
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("Attack1Sound:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_hqico"]
 resource_name = "Attack2"
@@ -1428,6 +1451,18 @@ tracks/56/keys = {
 "update": 0,
 "values": [Vector2(12, 4), Vector2(6.66667, -1.33333), Vector2(5.33333, -4), Vector2(6.66667, -4), Vector2(13.3333, -2.66667), Vector2(24, -18.6667), Vector2(13.3333, -10.6667), Vector2(13.3333, -10.6667)]
 }
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("Attack2Sound:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_5s7md"]
 resource_name = "Death"
@@ -1588,6 +1623,18 @@ tracks/12/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("DeathSound:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_w53hs"]
 resource_name = "Hurt"
@@ -1747,6 +1794,18 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("HurtSound:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_m4cvx"]
@@ -2437,6 +2496,18 @@ tracks/56/keys = {
 "update": 0,
 "values": [Vector2(12, 4), Vector2(12, 4), Vector2(12, 5.33333), Vector2(12, 6.66667), Vector2(12, 5.33333), Vector2(12, 4), Vector2(12, 4), Vector2(12, 2.66667), Vector2(12, 2.66667)]
 }
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("IdleSound:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_34wfd"]
 length = 0.001
@@ -3119,6 +3190,90 @@ tracks/56/path = NodePath("Sprite2D/Hitbox/Hit5:disabled")
 tracks/56/interp = 1
 tracks/56/loop_wrap = true
 tracks/56/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("Attack1Sound:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/58/type = "value"
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/path = NodePath("Attack2Sound:playing")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/59/type = "value"
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/path = NodePath("RangeAttack1Sound:playing")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/60/type = "value"
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/path = NodePath("DeathSound:playing")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/61/type = "value"
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/path = NodePath("HurtSound:playing")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/62/type = "value"
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/path = NodePath("WalkSound:playing")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/63/type = "value"
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/path = NodePath("IdleSound:playing")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -3812,6 +3967,18 @@ tracks/56/keys = {
 "update": 0,
 "values": [Vector2(10.6667, 2.66667), Vector2(9.33333, 2.66667), Vector2(9.33333, 2.66667), Vector2(16, 5.33333), Vector2(16, 5.33333), Vector2(16, 5.33333), Vector2(16, 6.66667)]
 }
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("RangeAttack1Sound:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_83qon"]
 resource_name = "Walk"
@@ -4501,6 +4668,18 @@ tracks/56/keys = {
 "update": 0,
 "values": [Vector2(12, 2.66667), Vector2(12, 4), Vector2(12, 5.33333), Vector2(12, 6.66667), Vector2(12, 5.88235), Vector2(12, 4), Vector2(12, 3.56989), Vector2(12, 3.13978), Vector2(12, 2.70968)]
 }
+tracks/57/type = "value"
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/path = NodePath("WalkSound:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/keys = {
+"times": PackedFloat32Array(0, 0.27),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fv215"]
 _data = {
@@ -4527,7 +4706,6 @@ texture = ExtResource("2_exvnn")
 hframes = 8
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
-visible = false
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_24s3x")
@@ -4557,7 +4735,6 @@ shape = SubResource("CapsuleShape2D_m7bj2")
 debug_color = Color(0, 0.622008, 0.549653, 0.42)
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
-visible = false
 position = Vector2(0, 6)
 collision_layer = 0
 collision_mask = 2
@@ -4601,11 +4778,45 @@ behavior_tree = ExtResource("8_mb4vv")
 blackboard_plan = SubResource("BlackboardPlan_systs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -18)
+position = Vector2(3, -18)
 shape = SubResource("CapsuleShape2D_d264w")
 debug_color = Color(0.651047, 0.519323, 1.92523e-07, 0.42)
+
+[node name="FlippedCollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, -18)
+shape = SubResource("CapsuleShape2D_blush")
+debug_color = Color(0.652442, 0.518607, 0, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_fv215")
 }
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_77fmo")
+max_distance = 350.0
+
+[node name="IdleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_e75dp")
+max_distance = 350.0
+
+[node name="RangeAttack1Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_28kou")
+max_distance = 350.0
+
+[node name="Attack1Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_cv8gl")
+max_distance = 350.0
+bus = &"SFX"
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_58oo8")
+max_distance = 350.0
+
+[node name="Attack2Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_a8f3o")
+max_distance = 350.0
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_gu1yc")
+max_distance = 350.0
