@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1f3umo7hk1pe"]
+
+[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="1_iat1v"]
+[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="2_x7mis"]
+[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="3_iqtsu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ydv6l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c504l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opm7d"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_systs"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="Sprite2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_iat1v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CircleShape2D_ydv6l")
+debug_color = Color(0.850907, 0.118383, 0.851189, 0.42)
+
+[node name="Hitbox" type="Area2D" parent="Sprite2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_x7mis")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CircleShape2D_c504l")
+debug_color = Color(0, 0.647092, 0.220438, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_opm7d")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_iqtsu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+blackboard_plan = SubResource("BlackboardPlan_systs")

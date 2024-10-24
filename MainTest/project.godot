@@ -13,11 +13,10 @@ config_version=5
 config/name="senior game project"
 run/main_scene="res://main menu/menu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://icon.svg"
 
 [autoload]
 
-SaveController="*res://Utilities/SaveLoad/SaveController.cs"
+SaveController="*res://Global Scripts/Utilities/SaveLoad/SaveController.cs"
 AudioManager="*res://Global Scripts/Audio_Manager.gd"
 KeyManager="*res://Global Scripts/key_manager.gd"
 

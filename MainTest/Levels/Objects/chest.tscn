@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8cfmhl3gu8rq"]
+
+[ext_resource type="Script" path="res://Levels/Objects/Scripts/static_body_2d.gd" id="1_hsgwr"]
+[ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="1_nclb5"]
+[ext_resource type="PackedScene" uid="uid://donm4ytxds3iv" path="res://Levels/Objects/key.tscn" id="1_yveuk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qrpwc"]
+radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxpbn"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wl54h"]
+radius = 15.1327
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u03co"]
+atlas = ExtResource("1_nclb5")
+region = Rect2(240, 44, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l28jg"]
+atlas = ExtResource("1_nclb5")
+region = Rect2(256, 44, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ai8r"]
+atlas = ExtResource("1_nclb5")
+region = Rect2(272, 44, 16, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yj7a"]
+atlas = ExtResource("1_nclb5")
+region = Rect2(288, 44, 16, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50brd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u03co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l28jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ai8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yj7a")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="chest" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource("1_hsgwr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_qrpwc")
+
+[node name="Area2D" type="Area2D" parent="StaticBody2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D"]
+shape = SubResource("CircleShape2D_sxpbn")
+
+[node name="Area2D2" type="Area2D" parent="StaticBody2D"]
+z_index = 1
+position = Vector2(-2, -1)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D2"]
+position = Vector2(-15, 2)
+shape = SubResource("CircleShape2D_wl54h")
+
+[node name="key" parent="StaticBody2D/Area2D2" instance=ExtResource("1_yveuk")]
+visible = false
+light_mask = 4
+position = Vector2(-24, 7)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_50brd")
+animation = &"open"
+frame_progress = 0.743334
+
+[connection signal="body_entered" from="StaticBody2D/Area2D" to="StaticBody2D" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="StaticBody2D/Area2D2" to="StaticBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="animation_finished" from="StaticBody2D/AnimatedSprite2D" to="StaticBody2D" method="_on_animated_sprite_2d_animation_finished"]

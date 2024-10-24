@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c2a6axwr84jye"
+path="res://.godot/imported/22 romance LOOP.wav-06ecba97503e20db597df8b8ef1014e8.sample"
+
+[deps]
+
+source_file="res://Assets/AudioAssets/Infinity Crystal_ Awakening wavs/22 romance LOOP.wav"
+dest_files=["res://.godot/imported/22 romance LOOP.wav-06ecba97503e20db597df8b8ef1014e8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

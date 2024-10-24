@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cccut3d2kje15"]
 
 [ext_resource type="Script" path="res://Overworld/playerOverworld/player_overworld_inventory.gd" id="1_pd8n3"]
-[ext_resource type="Texture2D" uid="uid://c357t3vagx3b5" path="res://Items/Background/Blue.png" id="2_p2cp6"]
-[ext_resource type="Texture2D" uid="uid://cav1i08a3y68b" path="res://Items/Background/Pink.png" id="3_6hx0s"]
-[ext_resource type="Texture2D" uid="uid://71dqlib10rxl" path="res://Items/Background/Green.png" id="4_bbr4s"]
+[ext_resource type="Texture2D" uid="uid://c357t3vagx3b5" path="res://Assets/Items/Background/Blue.png" id="2_p2cp6"]
+[ext_resource type="Texture2D" uid="uid://cav1i08a3y68b" path="res://Assets/Items/Background/Pink.png" id="3_6hx0s"]
+[ext_resource type="Texture2D" uid="uid://71dqlib10rxl" path="res://Assets/Items/Background/Green.png" id="4_bbr4s"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

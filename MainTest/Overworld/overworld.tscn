@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://c5kdh643robcg"]
 
-[ext_resource type="Texture2D" uid="uid://lnov142mpo5q" path="res://Overworld/PixelWoods/Terrain(main)/terrain tiles.png" id="1_r1s8q"]
+[ext_resource type="Texture2D" uid="uid://lnov142mpo5q" path="res://Assets/PixelWoods/Terrain(main)/terrain tiles.png" id="1_r1s8q"]
 [ext_resource type="PackedScene" uid="uid://b1kgbovmf7biy" path="res://Overworld/playerOverworld/playerOverworld.tscn" id="2_ptdvr"]
 [ext_resource type="PackedScene" uid="uid://dd2bbr6do08g1" path="res://Overworld/ItemsPickup/health_potion.tscn" id="7_2e6ti"]
 

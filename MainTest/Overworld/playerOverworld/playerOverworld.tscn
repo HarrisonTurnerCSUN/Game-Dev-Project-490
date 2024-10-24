@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player/Overworld/player_overworld.gd" id="1_1yvpy"]
 [ext_resource type="Texture2D" uid="uid://djpxu3rmgwb0v" path="res://Assets/32x32-pixelKnight/32x32-pixelKnight/sheets/idle.png" id="2_4rcfw"]
-[ext_resource type="Script" path="res://Utilities/state_machine/node_finite_state_machine.gd" id="2_j5i18"]
+[ext_resource type="Script" path="res://Global Scripts/Utilities/state_machine/node_finite_state_machine.gd" id="2_j5i18"]
 [ext_resource type="Script" path="res://Overworld/playerOverworld/idle_overworld.gd" id="3_k2vhs"]
 [ext_resource type="Texture2D" uid="uid://dbtbs40q2hl7g" path="res://Assets/32x32-pixelKnight/32x32-pixelKnight/sheets/run.png" id="3_t42g0"]
 [ext_resource type="Script" path="res://Overworld/playerOverworld/walk_overworld.gd" id="4_ilk8g"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://l02drjbslctq"]
 
 [ext_resource type="Script" path="res://main menu/scripts/Menu.cs" id="1_kn3e4"]
-[ext_resource type="AudioStream" uid="uid://p4jxryyy8gmq" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Open - 1.wav" id="2_lg50x"]
-[ext_resource type="AudioStream" uid="uid://bsx0kjqu3oob5" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Select - 1.wav" id="3_qgst0"]
-[ext_resource type="AudioStream" uid="uid://4qd4kgdi8bl2" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav" id="4_ca3qg"]
-[ext_resource type="AudioStream" uid="uid://33covk1redgh" path="res://AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav" id="5_3wlha"]
+[ext_resource type="AudioStream" uid="uid://p4jxryyy8gmq" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Open - 1.wav" id="2_lg50x"]
+[ext_resource type="AudioStream" uid="uid://bsx0kjqu3oob5" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Select - 1.wav" id="3_qgst0"]
+[ext_resource type="AudioStream" uid="uid://4qd4kgdi8bl2" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav" id="4_ca3qg"]
+[ext_resource type="AudioStream" uid="uid://33covk1redgh" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav" id="5_3wlha"]
 
 [sub_resource type="SystemFont" id="SystemFont_a5fwv"]
 font_names = PackedStringArray("Impact")
