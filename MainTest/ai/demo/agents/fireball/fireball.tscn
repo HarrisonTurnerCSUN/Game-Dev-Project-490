@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://ai/demo/agents/fireball/fireball.gd" id="1_ituf4"]
 [ext_resource type="Texture2D" uid="uid://dwhhxj5557qrb" path="res://ai/demo/assets/shadow.png" id="2_6n8mx"]
 [ext_resource type="Texture2D" uid="uid://235liwnxn1n5" path="res://ai/demo/assets/fireball.png" id="3_1an0e"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="4_rjhgc"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_rjhgc"]
 [ext_resource type="Texture2D" uid="uid://bdusy0qqtw0th" path="res://ai/demo/assets/smoke.png" id="5_dcbp6"]
 
 [sub_resource type="Curve" id="Curve_mukra"]

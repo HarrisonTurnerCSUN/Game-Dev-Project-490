@@ -12,14 +12,14 @@ public partial class Menu : Control
 	private void Play()
 	{
 		_audioPopUp.Play();
-		GetTree().ChangeSceneToFile("res://main.tscn");
+		GetTree().ChangeSceneToFile("res://Levels/Testing/main.tscn");
 	}
 
 	// Called when the Options button is pressed
 	private void Options()
 	{
 		_audioCursor.Play();
-		GetTree().ChangeSceneToFile("res://options menu/options_menu.tscn");
+		GetTree().ChangeSceneToFile("res://main menu/options menu/options_menu.tscn");
 	}
 
 	// Called when the Quit button is pressed
@@ -31,7 +31,7 @@ public partial class Menu : Control
 	
 	public override void _Ready(){
 		//BGM
-		var music = (AudioStream)GD.Load("res://AudioAssets/Infinity Crystal_ Awakening wavs/1 titles LOOP.wav");
+		var music = (AudioStream)GD.Load("res://Assets/AudioAssets/Infinity Crystal_ Awakening wavs/1 titles LOOP.wav");
 		var audioManager = GetNode("/root/AudioManager");
 		audioManager.Call("play_music", music);
 		//SFX

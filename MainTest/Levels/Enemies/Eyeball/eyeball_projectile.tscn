@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/eyeball_projectile.gd" id="1_txc2o"]
 [ext_resource type="Texture2D" uid="uid://dwhhxj5557qrb" path="res://ai/demo/assets/shadow.png" id="2_qnb4j"]
 [ext_resource type="Texture2D" uid="uid://b480bf0phgahk" path="res://Assets/Character Sprites/Flying eye/projectile_sprite.png" id="3_lfvnd"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="4_b2q66"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_b2q66"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17fgh"]
 radius = 4.0

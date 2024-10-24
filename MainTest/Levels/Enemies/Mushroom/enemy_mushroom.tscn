@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://qbonyhrk8qe2"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_ground_melee.gd" id="1_22qhw"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="1_avjdy"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_avjdy"]
 [ext_resource type="Texture2D" uid="uid://icby8uxf4sk0" path="res://Assets/Character Sprites/Mushroom/Idle.png" id="1_yof8g"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="2_cjarp"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="3_x8p2n"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="2_cjarp"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="3_x8p2n"]
 [ext_resource type="Texture2D" uid="uid://bgem6mbsxvxa8" path="res://Assets/Character Sprites/Mushroom/Run.png" id="5_vone6"]
 [ext_resource type="Texture2D" uid="uid://dxjsyigukwf5a" path="res://Assets/Character Sprites/Mushroom/Death.png" id="6_wyx0h"]
 [ext_resource type="Texture2D" uid="uid://bicofekf4ykuw" path="res://Assets/Character Sprites/Mushroom/Attack.png" id="7_htmn3"]

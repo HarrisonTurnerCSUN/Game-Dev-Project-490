@@ -1,10 +1,10 @@
 [gd_scene load_steps=40 format=3 uid="uid://ha2c5sfcswao"]
 
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="1_24s3x"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_24s3x"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_eyeball.gd" id="1_tcnbb"]
 [ext_resource type="Texture2D" uid="uid://p64w5os0pg0n" path="res://Assets/Character Sprites/Flying eye/Flight.png" id="2_exvnn"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="2_y07pc"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="3_x8yv6"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="2_y07pc"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="3_x8yv6"]
 [ext_resource type="Texture2D" uid="uid://bysnitg03a5mc" path="res://Assets/Character Sprites/Flying eye/Death.png" id="6_yd4pi"]
 [ext_resource type="Texture2D" uid="uid://cc3i3nyenjvw2" path="res://Assets/Character Sprites/Flying eye/Attack.png" id="7_xv7fo"]
 [ext_resource type="Texture2D" uid="uid://cdiygcnkn0jey" path="res://Assets/Character Sprites/Flying eye/Attack3.png" id="8_egsnu"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="3_5byb4"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="4_an74e"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_5byb4"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="4_an74e"]
 [ext_resource type="Texture2D" uid="uid://ct40eem1k50us" path="res://Assets/Character Sprites/Player Sprites/_Crouch.png" id="7_nbj1r"]
 [ext_resource type="Texture2D" uid="uid://bdul0kt3fbdfn" path="res://Assets/Character Sprites/Player Sprites/_CrouchWalk.png" id="8_hl7ro"]
 [ext_resource type="Texture2D" uid="uid://dstcr50vsxb7k" path="res://Assets/Character Sprites/Player Sprites/_Run.png" id="8_qc51x"]
@@ -30,7 +30,7 @@
 [ext_resource type="Script" path="res://Player/Level/player_walljump_state.gd" id="27_5x4nw"]
 [ext_resource type="Script" path="res://Player/Level/player_hurt_state.gd" id="28_sbp36"]
 [ext_resource type="Script" path="res://Player/Level/player_climb_state.gd" id="29_uka0c"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="32_5e2yj"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="32_5e2yj"]
 [ext_resource type="Script" path="res://Global Scripts/Utilities/state_machine/node_finite_state_machine.gd" id="45_cyayl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej113"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c1f3umo7hk1pe"]
 
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="1_iat1v"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="2_x7mis"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="3_iqtsu"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_iat1v"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="2_x7mis"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="3_iqtsu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ydv6l"]
 

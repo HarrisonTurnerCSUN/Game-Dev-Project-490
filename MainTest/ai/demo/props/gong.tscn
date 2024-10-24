@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://i476iia1ua8q" path="res://ai/demo/assets/env_gong.png" id="1_kbnv6"]
 [ext_resource type="Texture2D" uid="uid://dwhhxj5557qrb" path="res://ai/demo/assets/shadow.png" id="1_vl1mv"]
 [ext_resource type="Texture2D" uid="uid://dj4oayt5ttvh8" path="res://ai/demo/assets/fx.png" id="2_dib3m"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="5_xeb5y"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="6_6a3q1"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="5_xeb5y"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="6_6a3q1"]
 
 [sub_resource type="Animation" id="Animation_i5ovs"]
 length = 0.001

@@ -1,7 +1,7 @@
 [gd_resource type="BehaviorTree" load_steps=14 format=3 uid="uid://i2qghrjyrknb"]
 
-[ext_resource type="Script" path="res://ai/demo/ai/tasks/get_first_in_group.gd" id="1_xjd4v"]
-[ext_resource type="Script" path="res://ai/demo/ai/tasks/pursue.gd" id="2_64ohn"]
+[ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_xjd4v"]
+[ext_resource type="Script" path="res://ai/tasks/pursue.gd" id="2_64ohn"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_0whoh"]
 var/speed/name = &"speed"

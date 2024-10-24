@@ -7,7 +7,7 @@ signal death
 # Resource file to use in summon_minion() method.
 
 # Projectile resource.
-const Projectile := preload("res://Enemies/Eyeball/eyeball_projectile.tscn")
+const Projectile := preload("res://Levels/Enemies/Eyeball/eyeball_projectile.tscn")
 
 var summon_count: int = 0
 

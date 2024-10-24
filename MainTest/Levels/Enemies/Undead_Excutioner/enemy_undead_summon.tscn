@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_undead_executioner.gd" id="1_jmb8h"]
 [ext_resource type="Texture2D" uid="uid://dhn7fxo7ryykr" path="res://Assets/Character Sprites/Undead Executioner/summonAppear.png" id="1_y7iv3"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="2_bjvj3"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="3_6mvug"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="2_bjvj3"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="3_6mvug"]
 [ext_resource type="Texture2D" uid="uid://c0tnr5nc8g3i6" path="res://Assets/Character Sprites/Undead Executioner/summonDeath.png" id="4_swp3j"]
 [ext_resource type="Texture2D" uid="uid://bpf6rmieycid6" path="res://Assets/Character Sprites/Undead Executioner/summonIdle.png" id="5_yk6hp"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="6_fcckw"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="6_fcckw"]
 [ext_resource type="BehaviorTree" uid="uid://i2qghrjyrknb" path="res://ai/trees/undead_summon.tres" id="7_a5g6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i6yye"]

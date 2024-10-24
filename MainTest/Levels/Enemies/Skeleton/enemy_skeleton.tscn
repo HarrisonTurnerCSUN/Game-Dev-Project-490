@@ -1,10 +1,10 @@
 [gd_scene load_steps=20 format=3 uid="uid://cjpdotglraqe6"]
 
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="1_iyp6m"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_iyp6m"]
 [ext_resource type="Texture2D" uid="uid://dhip2tipxltc" path="res://Assets/Character Sprites/Skeleton/Idle.png" id="1_k3ta4"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_ground_melee.gd" id="1_uk2qv"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="2_mth3n"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="3_ew1o2"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="2_mth3n"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="3_ew1o2"]
 [ext_resource type="Texture2D" uid="uid://b1tngfdlcudde" path="res://Assets/Character Sprites/Skeleton/Death.png" id="6_s0hyu"]
 [ext_resource type="BehaviorTree" uid="uid://qo3onnqp60br" path="res://ai/trees/simple_ground_melee.tres" id="7_2gwe7"]
 [ext_resource type="Texture2D" uid="uid://b4qp6l1pchkow" path="res://Assets/Character Sprites/Skeleton/Walk.png" id="7_sac6a"]

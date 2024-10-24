@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://16cubl6ttua6"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_flying_simple.gd" id="1_pcc5j"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hurtbox.gd" id="1_wtanv"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_wtanv"]
 [ext_resource type="Texture2D" uid="uid://cn8xv75at3gdo" path="res://Assets/Character Sprites/NewBat/Bat_Sprite_Sheet.png" id="2_1h4oq"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/hitbox.gd" id="2_exor2"]
-[ext_resource type="Script" path="res://ai/demo/agents/scripts/health.gd" id="3_s80we"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="2_exor2"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="3_s80we"]
 [ext_resource type="BehaviorTree" uid="uid://qo3onnqp60br" path="res://ai/trees/simple_ground_melee.tres" id="6_yshp3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ydv6l"]
