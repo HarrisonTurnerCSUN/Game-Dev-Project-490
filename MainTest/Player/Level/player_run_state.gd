@@ -18,7 +18,7 @@ func on_physics_process(_delta :float):
 	#ie: you can build momentum up to a cap, this could be fun(ny)
 	if direction:
 		character_body_2d.velocity.x += direction * speed
-		character_body_2d.velocity.x = clampi(character_body_2d.velocity.x, -max_horizontal_speed,max_horizontal_speed)
+		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_horizontal_speed,max_horizontal_speed)
 	
 	if direction != 0:
 		sprite_2d.flip_h = false if direction > 0 else true

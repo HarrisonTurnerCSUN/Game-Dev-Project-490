@@ -21,7 +21,7 @@ func on_physics_process(_delta :float):
 	
 	if !character_body_2d.is_on_floor():
 		character_body_2d.velocity.x += direction * fall_horizontal_speed
-		character_body_2d.velocity.x = clampi(character_body_2d.velocity.x, 
+		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, 
 												-max_fall_horizontal_speed,
 												max_fall_horizontal_speed)
 	character_body_2d.move_and_slide()
