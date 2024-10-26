@@ -1,9 +1,27 @@
 extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var camera: Camera2D = $Camera2D
+
 var _moved_this_frame: bool = false
 var _is_dead: bool = false
+@export_category("Camera Settings")
+@export var left: int = -10000000
+@export var right: int = 10000000
+@export var top: int = -10000000
+@export var bottom: int = 10000000
+@export var camera_zoom_x: float = 3.0
+@export var camera_zoom_y: float = 3.0 
 
+
+func _ready() -> void:
+	camera.limit_bottom = bottom
+	camera.limit_top = top
+	camera.limit_left = left
+	camera.limit_right = right
+	camera.zoom.x = camera_zoom_x
+	camera.zoom.y = camera_zoom_y
+	
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
 	apply_knockback(knockback)

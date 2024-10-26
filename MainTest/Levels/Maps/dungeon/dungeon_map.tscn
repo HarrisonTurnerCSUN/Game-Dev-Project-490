@@ -456,7 +456,7 @@ position = Vector2(2961, 137)
 
 [node name="right" parent="." instance=ExtResource("5_ec67b")]
 position = Vector2(3027, 129)
-door_destination = "res://Levels/dungeon/dungeon_map_2.tscn"
+door_destination = "res://Levels/Maps/dungeon/dungeon_map_2.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="right"]
 position = Vector2(1, 0)
@@ -464,7 +464,7 @@ shape = SubResource("CircleShape2D_bkgo8")
 
 [node name="Door2" parent="." instance=ExtResource("5_ec67b")]
 position = Vector2(2883, 127)
-door_destination = "res://Levels/dungeon/dungeon_map_3.tscn"
+door_destination = "res://Levels/Maps/dungeon/dungeon_map_3.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
 position = Vector2(1, -1)

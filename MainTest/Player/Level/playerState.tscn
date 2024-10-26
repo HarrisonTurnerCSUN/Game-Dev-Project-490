@@ -680,6 +680,7 @@ shape = SubResource("RectangleShape2D_y2vll")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+limit_smoothed = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("45_cyayl")

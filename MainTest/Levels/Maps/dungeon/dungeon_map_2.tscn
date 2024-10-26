@@ -422,7 +422,7 @@ position = Vector2(2827, 98)
 
 [node name="Door2" parent="." instance=ExtResource("7_k1mmy")]
 position = Vector2(103, -8)
-door_destination = "res://Levels/dungeon/dungeon_map.tscn"
+door_destination = "res://Levels/Maps/dungeon/dungeon_map.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
 position = Vector2(0, 1)
