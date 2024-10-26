@@ -17,8 +17,8 @@ signal death
 const MINION_RESOURCE := "res://demo/agents/03_agent_imp.tscn"
 
 # Projectile resource.
-const NinjaStar := preload("res://demo/agents/ninja_star/ninja_star.tscn")
-const Fireball := preload("res://demo/agents/fireball/fireball.tscn")
+const NinjaStar := preload("res://ai/demo/agents/ninja_star/ninja_star.tscn")
+const Fireball := preload("res://ai/demo/agents/fireball/fireball.tscn")
 
 var summon_count: int = 0
 

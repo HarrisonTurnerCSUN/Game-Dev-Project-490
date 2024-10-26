@@ -22,7 +22,7 @@ var _moved_this_frame: bool = false
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var flipped_collision_shape_2d: CollisionShape2D = $FlippedCollisionShape2D
-
+const jump_power = -400
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
@@ -30,6 +30,8 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if is_on_wall() and &"InRange":
+		velocity.y = jump_power
 	_post_physics_process.call_deferred()
 
 func _post_physics_process() -> void:
