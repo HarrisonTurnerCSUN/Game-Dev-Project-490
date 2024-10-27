@@ -30,13 +30,18 @@ func on_physics_process(_delta :float):
 	#ie: you can build momentum up to a cap, this could be fun(ny)
 	if direction:
 		character_body_2d.velocity.x += direction * speed
-		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_horizontal_speed,max_horizontal_speed)
+		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_horizontal_speed, max_horizontal_speed)
 	
 	if direction != 0:
 		sprite_2d.flip_h = false if direction > 0 else true
 		hitbox.scale.x = -1 if sprite_2d.flip_h else 1  # Update hitbox scale based on sprite flip
 		
 	character_body_2d.move_and_slide()
+	
+	# Smooth stop when landing
+	if character_body_2d.is_on_floor() and direction == 0:
+		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.3)  # Adjust the lerp factor as needed
+		
 	#Transition
 	if direction == 0:
 		transition.emit("Idle")
@@ -61,7 +66,7 @@ func on_physics_process(_delta :float):
 
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
-		character_body_2d.velocity = lerp(character_body_2d.velocity, Vector2.ZERO, 0.5)
+		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.2)  # Adjust as needed
 	_moved_this_frame = false
 	
 func move(p_velocity: Vector2) -> void:
@@ -98,5 +103,5 @@ func enter():
 	animation_player.play("Run")
 	
 func exit():
-	pass
-	#animation_player.stop()
+	#pass
+	animation_player.stop()

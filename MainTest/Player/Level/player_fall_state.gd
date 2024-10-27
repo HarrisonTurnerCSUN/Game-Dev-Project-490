@@ -27,33 +27,38 @@ func on_process(_delta :float):
 	pass
 	
 func on_physics_process(_delta :float):
-	character_body_2d.velocity.y += gravity * _delta
 	var direction : float = GameInputEvents.movement_input()
-	
+	# Apply gravity to simulate falling
+	if not character_body_2d.is_on_floor():
+		character_body_2d.velocity.y += gravity * _delta  # Fall only when airborne
+
 	if direction != 0:
 		sprite_2d.flip_h = false if direction > 0 else true
 		hitbox.scale.x = -1 if sprite_2d.flip_h else 1  # Update hitbox scale based on sprite flip
 	
 	if !character_body_2d.is_on_floor():
-		character_body_2d.velocity.x += direction * fall_horizontal_speed
-		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, 
-												-max_fall_horizontal_speed,
-												max_fall_horizontal_speed)
+		character_body_2d.velocity.x += direction * fall_horizontal_speed * _delta
+		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_fall_horizontal_speed, max_fall_horizontal_speed)
+	else:
+		# Decelerate faster when grounded
+		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.4)
+
 	character_body_2d.move_and_slide()
+	
 	#Transition
-	if character_body_2d.is_on_floor():
+	if character_body_2d.is_on_floor() and character_body_2d.velocity.y >= 0:
 		transition.emit("Idle")
 		
 	if GameInputEvents.shift_input():
 		transition.emit("AirDash")
 	
-	if GameInputEvents.jump_input():
-		print("double")
+	if GameInputEvents.jump_input() and character_body_2d.velocity.y > -100:
+		#print("double")
 		transition.emit("DoubleJump")
 
 func _post_physics_process() -> void:
-	if not _moved_this_frame:
-		character_body_2d.velocity = lerp(character_body_2d.velocity, Vector2.ZERO, 0.5)
+	if character_body_2d.is_on_floor():
+		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.2)  # Adjust as needed
 	_moved_this_frame = false
 	
 func move(p_velocity: Vector2) -> void:
@@ -88,7 +93,7 @@ func die() -> void:
 	
 func enter():
 	animation_player.play("Fall")
-	
+	character_body_2d.velocity.y += gravity * 0.1  # Small boost to start the fall
 func exit():
 	pass
 	#animation_player.stop()

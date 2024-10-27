@@ -15,6 +15,7 @@ signal death
 
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
+const MOVEMENT_THRESHOLD: float = 0.1
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
@@ -27,15 +28,26 @@ func on_physics_process(_delta :float):
 	
 	var direction : float = GameInputEvents.movement_input()
 	
-	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x,0,friction)
+	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x, 0, friction * _delta)
 	character_body_2d.move_and_slide()
 	
+	# Apply gravity if character is in the air
+	if !character_body_2d.is_on_floor():
+		character_body_2d.velocity.y += gravity * _delta
+	else:
+		character_body_2d.velocity.y = 0
+		
 	#Transitions
 	if !character_body_2d.is_on_floor():
 		transition.emit("Fall")
 	
-	if direction and character_body_2d.is_on_floor():
+	#if direction and character_body_2d.is_on_floor():
+	if abs(direction) > MOVEMENT_THRESHOLD and character_body_2d.is_on_floor():
 		transition.emit("Run")
+	elif !character_body_2d.is_on_floor():
+		transition.emit("Fall")
+	else:
+		transition.emit("Idle")
 		
 	if GameInputEvents.jump_input():
 		transition.emit("Jump")
@@ -48,7 +60,7 @@ func on_physics_process(_delta :float):
 		
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
-		character_body_2d.velocity = lerp(character_body_2d.velocity, Vector2.ZERO, 0.5)
+		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.2)  # Adjust as needed
 	_moved_this_frame = false
 	
 func move(p_velocity: Vector2) -> void:
@@ -82,9 +94,10 @@ func die() -> void:
 	pass
 	
 func enter():
+	#animation_player.play("Idle", blend_time=0.1)
 	animation_player.play("Idle")
 	
 func exit():
-	pass
-	#animation_player.stop()
+	#await get_tree().create_timer(0.01).timeout
+	animation_player.stop()
 	
