@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wlvjjegh3mtt"
-path="res://.godot/imported/dark_potion.png-465467ae9c592bcd23a4904f634c5030.ctex"
+uid="uid://bxx5r8fvx0k4d"
+path="res://.godot/imported/ice_potion.png-53191c35077d5204125e681d2865ae10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Items/dark_potion.png"
-dest_files=["res://.godot/imported/dark_potion.png-465467ae9c592bcd23a4904f634c5030.ctex"]
+source_file="res://Overworld/Potions/ice_potion.png"
+dest_files=["res://.godot/imported/ice_potion.png-53191c35077d5204125e681d2865ae10.ctex"]
 
 [params]
 

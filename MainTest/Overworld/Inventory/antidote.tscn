@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dadyw5mfd33qs"]
+
+[ext_resource type="PackedScene" uid="uid://csl2vhovuxb17" path="res://Overworld/Inventory/collectible.tscn" id="1_qejub"]
+[ext_resource type="Resource" uid="uid://03t8ji23756y" path="res://Overworld/Inventory/Items/antidote.tres" id="2_3uryr"]
+[ext_resource type="Texture2D" uid="uid://cfir4f2yv6426" path="res://Overworld/Potions/antidote_potion.png" id="2_pwrro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqauj"]
+resource_local_to_scene = true
+size = Vector2(12, 15)
+
+[node name="antidote" instance=ExtResource("1_qejub")]
+itemRes = ExtResource("2_3uryr")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_nqauj")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(2, -1.90735e-06)
+scale = Vector2(0.21875, 0.234375)
+texture = ExtResource("2_pwrro")

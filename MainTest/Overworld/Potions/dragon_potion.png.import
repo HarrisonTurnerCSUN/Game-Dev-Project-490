@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8eyl11r3141"
-path="res://.godot/imported/curse_potion.png-35bc4dc844c4f72261eba5201876254b.ctex"
+uid="uid://cfi3kbh7j3byy"
+path="res://.godot/imported/dragon_potion.png-110e61577b458618370bc6744f46c599.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Items/curse_potion.png"
-dest_files=["res://.godot/imported/curse_potion.png-35bc4dc844c4f72261eba5201876254b.ctex"]
+source_file="res://Overworld/Potions/dragon_potion.png"
+dest_files=["res://.godot/imported/dragon_potion.png-110e61577b458618370bc6744f46c599.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr0e4s2sl5rct"
-path="res://.godot/imported/invisibility_potion.png-bb6cc26e34c8b0a876b9a5931ef652d5.ctex"
+uid="uid://dgoey8wkym2ra"
+path="res://.godot/imported/inventorySlot.png-c6bca457df2f9ad2eb184a052f662a9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Items/invisibility_potion.png"
-dest_files=["res://.godot/imported/invisibility_potion.png-bb6cc26e34c8b0a876b9a5931ef652d5.ctex"]
+source_file="res://Overworld/Potions/inventorySlot.png"
+dest_files=["res://.godot/imported/inventorySlot.png-c6bca457df2f9ad2eb184a052f662a9f.ctex"]
 
 [params]
 

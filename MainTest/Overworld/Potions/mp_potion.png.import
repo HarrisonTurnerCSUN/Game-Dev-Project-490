@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkr3733sx32pd"
-path="res://.godot/imported/earth_potion.png-6fd89d5a10da31bea63c20af0d9a4d1f.ctex"
+uid="uid://bwsywu8jeubwg"
+path="res://.godot/imported/mp_potion.png-ff272a71e152755617bf5e11a0f64e5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Items/earth_potion.png"
-dest_files=["res://.godot/imported/earth_potion.png-6fd89d5a10da31bea63c20af0d9a4d1f.ctex"]
+source_file="res://Overworld/Potions/mp_potion.png"
+dest_files=["res://.godot/imported/mp_potion.png-ff272a71e152755617bf5e11a0f64e5d.ctex"]
 
 [params]
 

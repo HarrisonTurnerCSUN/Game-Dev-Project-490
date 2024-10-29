@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byqoufdylcevb"
-path="res://.godot/imported/defense_potion.png-30ed2cb9f0db4ac0db5a12d18b015b1e.ctex"
+uid="uid://c8eyl11r3141"
+path="res://.godot/imported/curse_potion.png-e0af4d20b9368c617f6616ddfea9ad57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Items/defense_potion.png"
-dest_files=["res://.godot/imported/defense_potion.png-30ed2cb9f0db4ac0db5a12d18b015b1e.ctex"]
+source_file="res://Overworld/Potions/curse_potion.png"
+dest_files=["res://.godot/imported/curse_potion.png-e0af4d20b9368c617f6616ddfea9ad57.ctex"]
 
 [params]
 

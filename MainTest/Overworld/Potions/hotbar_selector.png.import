@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjtx7a5b1cbta"
-path="res://.godot/imported/wind_potion.png-7fd0236b1430599f6f70de68da0404d5.ctex"
+uid="uid://cs5iesqr03uvw"
+path="res://.godot/imported/hotbar_selector.png-0a7d56c2d746fb462c4e246aea7d60a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Items/wind_potion.png"
-dest_files=["res://.godot/imported/wind_potion.png-7fd0236b1430599f6f70de68da0404d5.ctex"]
+source_file="res://Overworld/Potions/hotbar_selector.png"
+dest_files=["res://.godot/imported/hotbar_selector.png-0a7d56c2d746fb462c4e246aea7d60a3.ctex"]
 
 [params]
 

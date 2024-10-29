@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://csl2vhovuxb17"]
+
+[ext_resource type="Script" path="res://Overworld/Inventory/collectible.gd" id="1_b56c1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tej8j"]
+resource_local_to_scene = true
+
+[node name="Collectible" type="Area2D"]
+script = ExtResource("1_b56c1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tej8j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

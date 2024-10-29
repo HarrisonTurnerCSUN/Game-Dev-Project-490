@@ -1,15 +1,15 @@
-[gd_scene load_steps=66 format=3 uid="uid://b1kgbovmf7biy"]
+[gd_scene load_steps=67 format=3 uid="uid://b1kgbovmf7biy"]
 
 [ext_resource type="Script" path="res://Player/Overworld/player_overworld.gd" id="1_1yvpy"]
 [ext_resource type="Texture2D" uid="uid://djpxu3rmgwb0v" path="res://Assets/32x32-pixelKnight/32x32-pixelKnight/sheets/idle.png" id="2_4rcfw"]
 [ext_resource type="Script" path="res://Global Scripts/Utilities/state_machine/node_finite_state_machine.gd" id="2_j5i18"]
+[ext_resource type="Resource" uid="uid://bmjyv78rm5enx" path="res://Overworld/Inventory/Items/playerInventory.tres" id="2_s2fsh"]
 [ext_resource type="Script" path="res://Overworld/playerOverworld/idle_overworld.gd" id="3_k2vhs"]
 [ext_resource type="Texture2D" uid="uid://dbtbs40q2hl7g" path="res://Assets/32x32-pixelKnight/32x32-pixelKnight/sheets/run.png" id="3_t42g0"]
 [ext_resource type="Script" path="res://Overworld/playerOverworld/walk_overworld.gd" id="4_ilk8g"]
-[ext_resource type="PackedScene" uid="uid://cccut3d2kje15" path="res://Overworld/playerOverworld/player_overworld_inventory.tscn" id="7_tywom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw3hd"]
-size = Vector2(20, 30)
+size = Vector2(6, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20wdx"]
 atlas = ExtResource("2_4rcfw")
@@ -606,11 +606,15 @@ states/Walk_BlendSpace2D/node = SubResource("AnimationNodeBlendSpace2D_t4ry4")
 states/Walk_BlendSpace2D/position = Vector2(617, 100)
 transitions = ["Idle_BlendSpace2D", "Walk_BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_c6lm4"), "Walk_BlendSpace2D", "Idle_BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_8t4re"), "Start", "Idle_BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_m1w3n")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iu47"]
+size = Vector2(18, 29)
+
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(281, -147)
 script = ExtResource("1_1yvpy")
+inventory = ExtResource("2_s2fsh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 3)
 shape = SubResource("RectangleShape2D_vw3hd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -653,8 +657,11 @@ Animation_Tree = NodePath("../../AnimatedSprite2D/AnimationTree")
 
 [node name="Run" type="Node" parent="StateMachine"]
 
-[node name="Control" parent="." instance=ExtResource("7_tywom")]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="hurtbox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(2, 2.5)
+shape = SubResource("RectangleShape2D_3iu47")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
