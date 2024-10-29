@@ -498,7 +498,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_sf5eq"]
 resource_name = "Dash"
-length = 0.1
+length = 0.13
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -543,7 +543,7 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0333333),
+"times": PackedFloat32Array(0, 0.075),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
@@ -587,7 +587,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_frypo"]
 resource_name = "Fall"
-length = 0.2
+length = 0.27
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -632,7 +632,7 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"times": PackedFloat32Array(0, 0.09, 0.18),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]
@@ -839,7 +839,7 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id="Animation_nmu1n"]
 resource_name = "Jump"
-length = 0.2
+length = 0.27
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -884,7 +884,7 @@ tracks/3/path = NodePath("Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"times": PackedFloat32Array(0, 0.09, 0.18),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [0, 1, 2]

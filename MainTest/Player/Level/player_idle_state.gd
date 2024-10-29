@@ -6,7 +6,7 @@ signal death
 
 @export var character_body_2d : CharacterBody2D
 @export var gravity : int = 700
-@export var friction : int = 500
+@export var friction : int = 700
 
 @onready var health: Health = $"../../Health"
 @onready var hitbox: Hitbox = $"../../Sprite2D/Hitbox"
@@ -16,16 +16,22 @@ signal death
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
 const MOVEMENT_THRESHOLD: float = 0.1
+var _dash_timer: float = 0.0
+var _is_dashing: bool = false
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
 
 func on_process(_delta :float):
-	pass
+	# Handle dash cooldown
+	if _dash_timer > 0:
+		_dash_timer -= _delta
+	else:
+		_is_dashing = false  # Reset dashing if timer has expired
+
 	
 func on_physics_process(_delta :float):
-	
 	var direction : float = GameInputEvents.movement_input()
 	
 	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x, 0, friction * _delta)
@@ -57,6 +63,9 @@ func on_physics_process(_delta :float):
 		
 	if GameInputEvents.control_input():
 		transition.emit("Crouch")
+		
+	if GameInputEvents.shift_input() and _dash_timer <= 0:
+		transition.emit("Dash")
 		
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
@@ -98,6 +107,7 @@ func enter():
 	animation_player.play("Idle")
 	
 func exit():
+	pass
 	#await get_tree().create_timer(0.01).timeout
-	animation_player.stop()
+	#animation_player.stop()
 	

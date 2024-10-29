@@ -2,20 +2,23 @@ extends NodeState
 
 signal death
 
+@export_category("Jump state")
 @export var character_body_2d : CharacterBody2D
+@export var jump_power : int = 350
+@export var gravity : int = 700
+@export var air_horizontal_speed: int = 200  # Simplified for air movement
+@export var max_air_horizontal_speed: int = 200
+
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var health: Health = $"../../Health"
 
-@export_category("Jump state")
-@export var jump : float = -350
-@export var jump_speed : int = 200
-@export var max_jump_speed : int = 200
-@export var gravity : int = 800
 
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
 var _has_jumped: bool = false  # Flag to track if the jump has been initiated
+var _dash_timer: float = 0.0
+var _is_dashing: bool = false
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
@@ -25,40 +28,42 @@ func on_process(_delta: float):
 	pass
 	
 func on_physics_process(_delta: float):
-	var direction : float = GameInputEvents.movement_input()
-	
-	# Check for jump input and ground state
-	if character_body_2d.is_on_floor():
-		character_body_2d.velocity.y = jump  # Apply jump velocity
-		_has_jumped = true  # Set flag to true after jumping
-	
-		# Apply gravity to the vertical velocity
+	if _dash_timer > 0:
+		_dash_timer -= _delta
+		_dash_timer = clamp(_dash_timer, 0, 6)  # Assuming 6 seconds is the maximum
+	var direction: float = GameInputEvents.movement_input()
+
+	# Apply gravity to the vertical velocity
 	character_body_2d.velocity.y += gravity * _delta
 	
+	# Allow air control regardless of direction input
 	if direction != 0:
 		sprite_2d.flip_h = false if direction > 0 else true 
-	
-	if !character_body_2d.is_on_floor():
-		# Apply horizontal movement while in the air
-		character_body_2d.velocity.x += direction * jump_speed
-		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_jump_speed, max_jump_speed)
-	else:
+
+	# Apply horizontal movement while in the air
+	var target_velocity_x = direction * air_horizontal_speed
+	character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, target_velocity_x, 0.1)  # Smooth transition
+
+	# Clamp horizontal velocity to max limit
+	character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_air_horizontal_speed, max_air_horizontal_speed)
+
+	if character_body_2d.is_on_floor():
 		# Dampen horizontal velocity when on the floor
-		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.3)  # Adjust as needed
+		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.3)
 
 	# Move the character
 	character_body_2d.move_and_slide()
 	
 	# Transition states
-	if character_body_2d.is_on_floor():
-		transition.emit("Idle")
-		_has_jumped = false  # Reset jump flag when on the ground
-		
-	if !character_body_2d.is_on_floor() and character_body_2d.velocity.y > 0:
+	# Transition to Fall if velocity.y > 0 (falling down) or Idle if grounded
+	if character_body_2d.velocity.y > 50:
 		transition.emit("Fall")
+	elif character_body_2d.is_on_floor():
+		_has_jumped = false  # Reset jump flag when on the ground
+		transition.emit("Idle")
 		
-	if GameInputEvents.shift_input():
-		transition.emit("AirDash")
+	if GameInputEvents.shift_input() and _dash_timer <= 0:
+		transition.emit("Dash")
 	
 	if GameInputEvents.jump_input() and _has_jumped:
 		transition.emit("DoubleJump")
@@ -96,6 +101,7 @@ func die() -> void:
 	_is_dead = true
 
 func enter():
+	character_body_2d.velocity.y = -jump_power  # Apply jump power to start jump
 	animation_player.play("Jump")
 	
 func exit():
