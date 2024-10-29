@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c37eeakjwa1ii"]
+[gd_scene load_steps=13 format=3 uid="uid://c37eeakjwa1ii"]
 
 [ext_resource type="Texture2D" uid="uid://bu1o2onpq2vw" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/BG3.png" id="1_ig675"]
 [ext_resource type="Texture2D" uid="uid://b0kn5805jti68" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/BG1.png" id="2_s7rpd"]
 [ext_resource type="Texture2D" uid="uid://blea3niex2y4b" path="res://Assets/Background/background_layer_3.png" id="3_8r7qy"]
-[ext_resource type="Texture2D" uid="uid://baec7nuvvq6hp" path="res://Assets/super_pixel_cave/style_C/PNG/midground_fill.png" id="4_w1d1l"]
+[ext_resource type="Texture2D" uid="uid://17d64odnoytd" path="res://Assets/Parallax Cave/1.png" id="4_bhl1t"]
+[ext_resource type="Texture2D" uid="uid://dgh3gq82timb4" path="res://Assets/Parallax Cave/2.png" id="5_h486s"]
+[ext_resource type="Texture2D" uid="uid://bp6yki8yc3gkm" path="res://Assets/Parallax Cave/3fx.png" id="6_5k58s"]
+[ext_resource type="Texture2D" uid="uid://dg615o7s2fb54" path="res://Assets/Parallax Cave/4.png" id="7_437jc"]
+[ext_resource type="Texture2D" uid="uid://bwumijyy7c87i" path="res://Assets/Parallax Cave/5.png" id="8_lpows"]
+[ext_resource type="Texture2D" uid="uid://cx1iebddppe4m" path="res://Assets/Parallax Cave/6fx.png" id="9_vy8b6"]
+[ext_resource type="Texture2D" uid="uid://0o6re0f6qofr" path="res://Assets/Parallax Cave/7.png" id="10_dgy3f"]
+[ext_resource type="Texture2D" uid="uid://c7hmcxibt8bv" path="res://Assets/Parallax Cave/8fx.png" id="11_4pu5q"]
+[ext_resource type="Texture2D" uid="uid://c6eh7fpgat86q" path="res://Assets/Parallax Cave/9.png" id="12_t2ap8"]
 
 [node name="ForestParallax" type="ParallaxBackground"]
 
@@ -32,7 +40,7 @@ texture = ExtResource("2_s7rpd")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sky"]
-z_index = -2
+z_index = -3
 position = Vector2(320, -140)
 texture = ExtResource("2_s7rpd")
 centered = false
@@ -41,32 +49,61 @@ centered = false
 motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeLine"]
-position = Vector2(0, -140)
+position = Vector2(0, -168)
+scale = Vector2(1, 1.22778)
 texture = ExtResource("3_8r7qy")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="TreeLine"]
-position = Vector2(320, -140)
+position = Vector2(320, -168)
+scale = Vector2(1, 1.22222)
 texture = ExtResource("3_8r7qy")
 centered = false
 
 [node name="Underground" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(384, 0)
 
-[node name="Fill" type="Sprite2D" parent="Underground"]
-position = Vector2(0, 40)
-scale = Vector2(16, 16)
-texture = ExtResource("4_w1d1l")
-centered = false
+[node name="Sprite2D" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_bhl1t")
 
-[node name="Fill2" type="Sprite2D" parent="Underground"]
-position = Vector2(128, 40)
-scale = Vector2(16, 16)
-texture = ExtResource("4_w1d1l")
-centered = false
+[node name="Sprite2D2" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_h486s")
 
-[node name="Fill3" type="Sprite2D" parent="Underground"]
-position = Vector2(256, 40)
-scale = Vector2(16, 16)
-texture = ExtResource("4_w1d1l")
-centered = false
+[node name="Sprite2D7" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_5k58s")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_437jc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_lpows")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_vy8b6")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_dgy3f")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("11_4pu5q")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Underground"]
+position = Vector2(192, 160)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_t2ap8")

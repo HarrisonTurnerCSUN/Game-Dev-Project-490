@@ -11,7 +11,9 @@ var _is_dead: bool = false
 @export var top: int = -10000000
 @export var bottom: int = 10000000
 @export var camera_zoom_x: float = 3.0
-@export var camera_zoom_y: float = 3.0 
+@export var camera_zoom_y: float = 3.0
+@export var camera_x_transform: float = 0
+@export var camera_y_transform: float = 0 
 
 
 func _ready() -> void:
@@ -21,6 +23,9 @@ func _ready() -> void:
 	camera.limit_right = right
 	camera.zoom.x = camera_zoom_x
 	camera.zoom.y = camera_zoom_y
+	camera.position.x = camera_x_transform
+	camera.position.y = camera_y_transform
+	
 	
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
