@@ -13,10 +13,10 @@ signal death
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var hitbox: Hitbox = $"../../Sprite2D/Hitbox"
 
+var can_dash: bool = true
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
-var _dash_timer: float = 0.0
-var _is_dashing: bool = false
+
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
@@ -26,9 +26,6 @@ func on_process(_delta :float):
 	pass
 	
 func on_physics_process(_delta :float):
-	if _dash_timer > 0:
-		_dash_timer -= _delta
-		_dash_timer = clamp(_dash_timer, 0, 6)  # Assuming 6 seconds is the maximum
 	var direction : float = GameInputEvents.movement_input()
 	
 	#This allows increasing speed with an upper and lower bound
@@ -66,7 +63,8 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.control_input() && character_body_2d.velocity.x >= 1:
 		transition.emit("Slide")
 		
-	if GameInputEvents.shift_input() and _dash_timer <= 0:
+	if GameInputEvents.shift_input() and can_dash:
+		can_dash = false
 		transition.emit("Dash")
 
 func _post_physics_process() -> void:
@@ -110,3 +108,7 @@ func enter():
 func exit():
 	#pass
 	animation_player.stop()
+
+
+func _on_dash_timer_timeout() -> void:
+	can_dash = true

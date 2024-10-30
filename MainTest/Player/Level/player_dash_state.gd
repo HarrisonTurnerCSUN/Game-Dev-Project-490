@@ -5,32 +5,28 @@ signal death
 @export_category("Dash State")
 
 @export var character_body_2d: CharacterBody2D
-@export var dash_distance: float = 200.0
-@export var dash_duration: float = 0.2  # Duration of the dash in seconds
+@export var dash_distance: float = 350.0
+@export var dash_duration: float = 0.27  # Duration of the dash in seconds
 @export var dash_cooldown: float = 6.0  # Time until you can dash again
+@onready var dash_timer: Timer = $"../../Dash_Timer"
 
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var health: Health = $"../../Health"
 
 var _is_dead: bool = false
 var _is_dashing: bool = false  # Flag to track if dashing
-var _dash_timer: float = 0.0  # Timer for dash cooldown
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
 
 func on_process(_delta: float):
-	# Handle dash cooldown
-	if _dash_timer > 0:
-		_dash_timer -= _delta
-
+	pass
 func on_physics_process(_delta: float):
 	# If dashing, apply dash logic
+	var direction: float = GameInputEvents.movement_input()
 	if _is_dashing:
-		# Determine dash direction based on character facing
-		var dash_direction: int = character_body_2d.scale.x  # Assuming scale.x determines facing direction
-		character_body_2d.velocity = Vector2(dash_distance * dash_direction, 0)
+		character_body_2d.velocity = Vector2(dash_distance * direction, 0)
 		character_body_2d.move_and_slide()
 		return  # Skip further processing while dashing
 
@@ -40,7 +36,7 @@ func on_physics_process(_delta: float):
 	else:
 		transition.emit("Fall")
 
-	var direction: float = GameInputEvents.movement_input()
+
 	if GameInputEvents.jump_input():
 		transition.emit("Jump")
 	elif abs(direction) > 0.1:
@@ -48,7 +44,7 @@ func on_physics_process(_delta: float):
 
 func enter():
 # Reset the dash timer when entering the dash state
-	_dash_timer = dash_cooldown  # Reset the dash cooldown
+	dash_timer.stop()
 	_is_dashing = true
 	animation_player.play("Dash")
 
@@ -58,8 +54,9 @@ func enter():
 	transition.emit("Idle")
 
 func exit():
-	print("Dashing ended!")  # Debug statement
+	#print("Dashing ended!")  # Debug statement
 	_is_dashing = false
+	dash_timer.start()
 	character_body_2d.velocity.x = 0  # Stop the dash velocity
 	animation_player.stop()
 
@@ -87,3 +84,7 @@ func die() -> void:
 		return
 	death.emit()
 	_is_dead = true
+
+
+func _on_dash_timer_timeout() -> void:
+	pass # Replace with function body.

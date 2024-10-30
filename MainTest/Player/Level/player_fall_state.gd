@@ -11,9 +11,8 @@ signal death
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var health: Health = $"../../Health"
-var _dash_timer: float = 0.0
-var _is_dashing: bool = false
 
+var can_dash: bool = true
 var _is_dead: bool = false
 
 func _ready() -> void:
@@ -24,9 +23,7 @@ func on_process(_delta: float):
 	pass
 
 func on_physics_process(_delta: float):
-	if _dash_timer > 0:
-		_dash_timer -= _delta
-		_dash_timer = clamp(_dash_timer, 0, 6)  # Assuming 6 seconds is the maximum
+
 	var direction: float = GameInputEvents.movement_input()
 
 	# Apply fall speed to the vertical velocity
@@ -49,7 +46,8 @@ func on_physics_process(_delta: float):
 		transition.emit("Idle")  # Transition to Idle when grounded
 		
 # In Jump and Fall states
-	if GameInputEvents.shift_input() and _dash_timer <= 0:
+	if GameInputEvents.shift_input() and can_dash:
+		can_dash = false
 		transition.emit("Dash")
 
 func _damaged(_amount: float, knockback: Vector2) -> void:
@@ -83,3 +81,7 @@ func enter():
 
 func exit():
 	pass
+
+
+func _on_dash_timer_timeout() -> void:
+	can_dash = true

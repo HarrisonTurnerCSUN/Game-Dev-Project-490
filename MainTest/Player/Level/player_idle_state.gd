@@ -16,20 +16,14 @@ signal death
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
 const MOVEMENT_THRESHOLD: float = 0.1
-var _dash_timer: float = 0.0
-var _is_dashing: bool = false
+var can_dash: bool = true
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
 
 func on_process(_delta :float):
-	# Handle dash cooldown
-	if _dash_timer > 0:
-		_dash_timer -= _delta
-	else:
-		_is_dashing = false  # Reset dashing if timer has expired
-
+	pass
 	
 func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
@@ -64,7 +58,8 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.control_input():
 		transition.emit("Crouch")
 		
-	if GameInputEvents.shift_input() and _dash_timer <= 0:
+	if GameInputEvents.shift_input() and can_dash:
+		can_dash = false
 		transition.emit("Dash")
 		
 func _post_physics_process() -> void:
@@ -111,3 +106,7 @@ func exit():
 	#await get_tree().create_timer(0.01).timeout
 	#animation_player.stop()
 	
+
+
+func _on_dash_timer_timeout() -> void:
+	can_dash = true

@@ -1525,6 +1525,7 @@ shape = SubResource("CapsuleShape2D_abjk8")
 debug_color = Color(0.961248, 0, 0.511433, 0.42)
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
+visible = false
 position = Vector2(-3, 40)
 collision_layer = 2
 collision_mask = 0
@@ -1543,6 +1544,7 @@ libraries = {
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_y2vll")
 
@@ -1626,5 +1628,12 @@ wait_time = 0.52
 script = ExtResource("32_5e2yj")
 max_health = 100.0
 
+[node name="Dash_Timer" type="Timer" parent="."]
+wait_time = 6.0
+
 [connection signal="timeout" from="Timer" to="StateMachine/Attack1" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="StateMachine/Dash" method="_on_timer_timeout"]
+[connection signal="timeout" from="Dash_Timer" to="StateMachine/Idle" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Dash_Timer" to="StateMachine/Fall" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Dash_Timer" to="StateMachine/Run" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Dash_Timer" to="StateMachine/Jump" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Dash_Timer" to="StateMachine/Dash" method="_on_dash_timer_timeout"]
