@@ -55,11 +55,12 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.attack1_input():
 		transition.emit("Attack1")
 		
-	if GameInputEvents.control_input():
-		transition.emit("Crouch")
+	#if GameInputEvents.control_input():
+		#transition.emit("Crouch")
 		
 	if GameInputEvents.shift_input() and can_dash:
 		can_dash = false
+		print(can_dash)
 		transition.emit("Dash")
 		
 func _post_physics_process() -> void:
@@ -110,3 +111,4 @@ func exit():
 
 func _on_dash_timer_timeout() -> void:
 	can_dash = true
+	print(can_dash)

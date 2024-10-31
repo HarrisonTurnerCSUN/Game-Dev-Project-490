@@ -57,14 +57,15 @@ func on_physics_process(_delta :float):
 	if !character_body_2d.is_on_floor():
 		transition.emit("Fall")
 		
-	if GameInputEvents.control_input() && character_body_2d.velocity.x < 1:
-		transition.emit("Crouch")
+	#if GameInputEvents.control_input() && character_body_2d.velocity.x < 1:
+		#transition.emit("Crouch")
 		
-	if GameInputEvents.control_input() && character_body_2d.velocity.x >= 1:
-		transition.emit("Slide")
+	#if GameInputEvents.control_input() && character_body_2d.velocity.x >= 1:
+		#transition.emit("Slide")
 		
 	if GameInputEvents.shift_input() and can_dash:
 		can_dash = false
+		print(can_dash)
 		transition.emit("Dash")
 
 func _post_physics_process() -> void:
@@ -112,3 +113,4 @@ func exit():
 
 func _on_dash_timer_timeout() -> void:
 	can_dash = true
+	print(can_dash)

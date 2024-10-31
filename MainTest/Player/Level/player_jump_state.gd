@@ -62,8 +62,8 @@ func on_physics_process(_delta: float):
 		can_dash = false
 		transition.emit("Dash")
 	
-	if GameInputEvents.jump_input() and _has_jumped:
-		transition.emit("DoubleJump")
+	#if GameInputEvents.jump_input() and _has_jumped:
+		#transition.emit("DoubleJump")
 		
 func _post_physics_process() -> void:
 	if not _moved_this_frame:

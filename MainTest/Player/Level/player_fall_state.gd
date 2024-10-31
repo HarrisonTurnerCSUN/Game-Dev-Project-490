@@ -48,6 +48,7 @@ func on_physics_process(_delta: float):
 # In Jump and Fall states
 	if GameInputEvents.shift_input() and can_dash:
 		can_dash = false
+		print(can_dash)
 		transition.emit("Dash")
 
 func _damaged(_amount: float, knockback: Vector2) -> void:
@@ -85,3 +86,4 @@ func exit():
 
 func _on_dash_timer_timeout() -> void:
 	can_dash = true
+	print(can_dash)

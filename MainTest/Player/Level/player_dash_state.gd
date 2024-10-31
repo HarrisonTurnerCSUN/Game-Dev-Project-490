@@ -8,10 +8,13 @@ signal death
 @export var dash_distance: float = 350.0
 @export var dash_duration: float = 0.27  # Duration of the dash in seconds
 @export var dash_cooldown: float = 6.0  # Time until you can dash again
-@onready var dash_timer: Timer = $"../../Dash_Timer"
+@export var ghost_node : PackedScene
 
+@onready var sprite_2d: Sprite2D = $"../../Sprite2D"
+@onready var dash_timer: Timer = $"../../Dash_Timer"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var health: Health = $"../../Health"
+@onready var ghost_timer: Timer = $"../../Sprite2D/GhostTimer"
 
 var _is_dead: bool = false
 var _is_dashing: bool = false  # Flag to track if dashing
@@ -44,6 +47,7 @@ func on_physics_process(_delta: float):
 
 func enter():
 # Reset the dash timer when entering the dash state
+	ghost_timer.start()
 	dash_timer.stop()
 	_is_dashing = true
 	animation_player.play("Dash")
@@ -51,13 +55,14 @@ func enter():
 		# Use a timer to exit the dash state after the duration
 	await get_tree().create_timer(dash_duration).timeout  # Use yield to wait for the timer
 	_is_dashing = false
+	ghost_timer.stop()
 	transition.emit("Idle")
 
 func exit():
 	#print("Dashing ended!")  # Debug statement
 	_is_dashing = false
 	dash_timer.start()
-	character_body_2d.velocity.x = 0  # Stop the dash velocity
+	#character_body_2d.velocity.x = 0  # Stop the dash velocity
 	animation_player.stop()
 
 func _damaged(_amount: float, knockback: Vector2) -> void:
@@ -86,5 +91,21 @@ func die() -> void:
 	_is_dead = true
 
 
+
+func add_ghost():
+	var ghost = ghost_node.instantiate()
+	# Adjust the ghost's position to be 40 pixels higher
+	ghost.position = character_body_2d.global_position + Vector2(0, -40)  # Adjust Y position
+	# Flip ghost based on the direction of the character
+	if character_body_2d.velocity.x < 0:  # Dashing left
+		ghost.scale.x = -abs(character_body_2d.scale.x)  # Flip the ghost horizontally
+	else:  # Dashing right or not moving
+		ghost.scale.x = abs(character_body_2d.scale.x)  # Ensure the ghost is facing right
+	get_tree().current_scene.add_child(ghost)
+	
 func _on_dash_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_ghost_timer_timeout() -> void:
+	add_ghost()

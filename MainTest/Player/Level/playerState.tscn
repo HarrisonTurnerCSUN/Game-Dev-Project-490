@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b6jpciqqr0frf"]
+[gd_scene load_steps=53 format=3 uid="uid://b6jpciqqr0frf"]
 
 [ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://Player/Level/player_airdash_state.gd" id="23_3o8wo"]
 [ext_resource type="Script" path="res://Player/Level/player_doublejump_state.gd" id="24_b6qn1"]
 [ext_resource type="Script" path="res://Player/Level/player_land_state.gd" id="25_e5wc7"]
+[ext_resource type="PackedScene" uid="uid://bqd5xakf1hqbj" path="res://Player/Level/Ghost.tscn" id="25_q765t"]
 [ext_resource type="Script" path="res://Player/Level/player_wallslide_state.gd" id="26_fuyu1"]
 [ext_resource type="Script" path="res://Player/Level/player_walljump_state.gd" id="27_5x4nw"]
 [ext_resource type="Script" path="res://Player/Level/player_hurt_state.gd" id="28_sbp36"]
@@ -1537,6 +1538,9 @@ position = Vector2(3, -19)
 shape = SubResource("CapsuleShape2D_lqulf")
 debug_color = Color(0, 0.645486, 0.25902, 0.42)
 
+[node name="GhostTimer" type="Timer" parent="Sprite2D"]
+wait_time = 0.09
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_lfsi8")
@@ -1592,6 +1596,7 @@ character_body_2d = NodePath("../..")
 [node name="Dash" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("21_3gj3a")
 character_body_2d = NodePath("../..")
+ghost_node = ExtResource("25_q765t")
 
 [node name="Roll" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("22_kqydj")
@@ -1631,6 +1636,7 @@ max_health = 100.0
 [node name="Dash_Timer" type="Timer" parent="."]
 wait_time = 6.0
 
+[connection signal="timeout" from="Sprite2D/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="Timer" to="StateMachine/Attack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Idle" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Fall" method="_on_dash_timer_timeout"]
