@@ -17,6 +17,3 @@ position = Vector2(2480, -94)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("4_fw6ur")]
 position = Vector2(622, -43)
-
-[node name="enemy_goblin2" parent="." instance=ExtResource("4_fw6ur")]
-position = Vector2(574, -47)

@@ -86,6 +86,7 @@ duration = 0.1
 [sub_resource type="BTSequence" id="BTSequence_qwcsr"]
 custom_name = "Attack1"
 children = [SubResource("BTPlayAnimation_j1sjc"), SubResource("BTTimeLimit_31r1f"), SubResource("BTAction_06lgr"), SubResource("BTWait_is626"), SubResource("BTPlayAnimation_3vf3n"), SubResource("BTWait_3tn5f")]
+metadata/_weight_ = 2.0
 
 [sub_resource type="BBNode" id="BBNode_m35v1"]
 saved_value = NodePath("AnimationPlayer")
@@ -182,7 +183,7 @@ duration = 0.1
 [sub_resource type="BTSequence" id="BTSequence_16wya"]
 custom_name = "Range Attack"
 children = [SubResource("BTAction_0egyt"), SubResource("BTPlayAnimation_arivi"), SubResource("BTTimeLimit_gqvb2"), SubResource("BTAction_apx3o"), SubResource("BTPlayAnimation_5bb5r"), SubResource("BTCallMethod_hnof0"), SubResource("BTWait_8bguf")]
-metadata/_weight_ = 2.0
+metadata/_weight_ = 10.0
 
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_tw6gl"]
 children = [SubResource("BTSequence_qwcsr"), SubResource("BTSequence_02n2h"), SubResource("BTSequence_16wya")]

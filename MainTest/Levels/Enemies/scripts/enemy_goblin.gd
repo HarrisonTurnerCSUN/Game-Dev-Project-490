@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal death
 
-const Projectile := preload("res://Levels/Enemies/Eyeball/eyeball_projectile.tscn")
+const Projectile := preload("res://Levels/Enemies/Goblin/goblin_projectile.tscn")
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
@@ -122,6 +122,9 @@ func throw_projectile() -> void:
 	var projectile := Projectile.instantiate()
 	projectile.dir = get_facing()
 	get_parent().add_child(projectile)
-# Adjust spawn position to the character's center
 	var offset_y = 20  # Change this value if the character's center isn't at `global_position.y`
 	projectile.global_position = global_position + Vector2.RIGHT * get_facing() * 1.0 + Vector2(0, offset_y)
+
+	# Optional debug output
+	print("Goblin Global Position: ", global_position)
+	print("Spawn Position: ", projectile.global_position)
