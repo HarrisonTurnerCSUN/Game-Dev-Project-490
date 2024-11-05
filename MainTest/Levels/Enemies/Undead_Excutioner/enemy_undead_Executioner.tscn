@@ -350,7 +350,7 @@ motion_mode = 1
 script = ExtResource("1_2u3ss")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -50)
+position = Vector2(0, -19.5)
 texture = ExtResource("1_1bvdo")
 hframes = 6
 vframes = 3
@@ -362,7 +362,7 @@ script = ExtResource("3_bywyy")
 knockback_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
-position = Vector2(4, 3)
+position = Vector2(-4, 3)
 shape = SubResource("CapsuleShape2D_ahrxk")
 debug_color = Color(0.862286, 0.0877487, 0.839839, 0.42)
 
@@ -383,7 +383,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, -45)
+position = Vector2(0, -19.5)
 shape = SubResource("CapsuleShape2D_vpipi")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]

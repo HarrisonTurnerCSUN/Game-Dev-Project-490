@@ -1,7 +1,8 @@
-[gd_resource type="BehaviorTree" load_steps=45 format=3 uid="uid://dny3kkwspuutb"]
+[gd_resource type="BehaviorTree" load_steps=48 format=3 uid="uid://dny3kkwspuutb"]
 
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_2jcn2"]
 [ext_resource type="Script" path="res://ai/tasks/pursue.gd" id="2_f3ufs"]
+[ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_xqy2d"]
 [ext_resource type="Script" path="res://ai/tasks/face_target.gd" id="3_4y10y"]
 [ext_resource type="Script" path="res://ai/tasks/select_random_nearby_pos.gd" id="4_vg7cb"]
 
@@ -30,9 +31,20 @@ blend = 0.1
 min_duration = 0.4
 max_duration = 0.6
 
+[sub_resource type="BTAction" id="BTAction_ceonx"]
+script = ExtResource("1_2jcn2")
+group = &"Player"
+output_var = &"target"
+
+[sub_resource type="BTCondition" id="BTCondition_uk7fr"]
+script = ExtResource("2_xqy2d")
+distance_min = 0.0
+distance_max = 500.0
+target_var = &"target"
+
 [sub_resource type="BTSequence" id="BTSequence_f5gsr"]
 custom_name = "Pause before action"
-children = [SubResource("BTPlayAnimation_akmjr"), SubResource("BTRandomWait_ujdgx")]
+children = [SubResource("BTPlayAnimation_akmjr"), SubResource("BTRandomWait_ujdgx"), SubResource("BTAction_ceonx"), SubResource("BTCondition_uk7fr")]
 
 [sub_resource type="BBNode" id="BBNode_thyg8"]
 saved_value = NodePath("AnimationPlayer")
@@ -123,9 +135,6 @@ custom_name = "Attack"
 children = [SubResource("BTPlayAnimation_lwygc"), SubResource("BTAction_2o3dp"), SubResource("BTTimeLimit_cesvt"), SubResource("BTAction_u70ku"), SubResource("BTWait_gxl2p"), SubResource("BTPlayAnimation_cacrh")]
 metadata/_weight_ = 1.0
 
-[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_jp6n5"]
-children = [SubResource("BTSequence_re3c1"), SubResource("BTSequence_pyg1t")]
-
 [sub_resource type="BTComment" id="BTComment_838pp"]
 custom_name = "Variable $summon_cooldown is updated by the Cooldown task below"
 
@@ -173,7 +182,7 @@ method = &"summon_minion"
 args = Array[BBVariant]([SubResource("BBVariant_wfjwy")])
 
 [sub_resource type="BTCooldown" id="BTCooldown_31ce3"]
-duration = 6.0
+duration = 5.0
 cooldown_state_var = &"summon_cooldown"
 children = [SubResource("BTCallMethod_nhkga")]
 
@@ -182,10 +191,14 @@ children = [SubResource("BTCallMethod_nhkga")]
 [sub_resource type="BTSequence" id="BTSequence_jicav"]
 custom_name = "Summon minion"
 children = [SubResource("BTCheckVar_4n58q"), SubResource("BTPlayAnimation_xt5up"), SubResource("BTWait_6xd5f"), SubResource("BTAction_dhyg2"), SubResource("BTCooldown_31ce3"), SubResource("BTWait_tjx1w")]
+metadata/_weight_ = 2.5
+
+[sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_jp6n5"]
+children = [SubResource("BTSequence_re3c1"), SubResource("BTSequence_pyg1t"), SubResource("BTSequence_jicav")]
 
 [sub_resource type="BTSequence" id="BTSequence_p67nk"]
 custom_name = "Main"
-children = [SubResource("BTSequence_f5gsr"), SubResource("BTProbabilitySelector_jp6n5"), SubResource("BTSequence_jicav")]
+children = [SubResource("BTSequence_f5gsr"), SubResource("BTProbabilitySelector_jp6n5")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_3d20o")

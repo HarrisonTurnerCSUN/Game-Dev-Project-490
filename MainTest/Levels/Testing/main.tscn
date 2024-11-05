@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=6 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="3_drimi"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="4_fw6ur"]
+[ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="5_j1qsc"]
 
 [node name="Main" type="Node2D"]
 
@@ -16,4 +17,7 @@ position = Vector2(152, -61)
 position = Vector2(2480, -94)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("4_fw6ur")]
-position = Vector2(622, -43)
+position = Vector2(2431, -187)
+
+[node name="enemy_undead_executioner" parent="." instance=ExtResource("5_j1qsc")]
+position = Vector2(442, -70)
