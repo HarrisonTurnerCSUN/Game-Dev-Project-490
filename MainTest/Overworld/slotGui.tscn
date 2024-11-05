@@ -1,18 +1,18 @@
 [gd_scene load_steps=3 format=3 uid="uid://cw7wn7old5nn0"]
 
-[ext_resource type="Script" path="res://Overworld/Inventory/slot_gui.gd" id="1_1jk5g"]
-[ext_resource type="Texture2D" uid="uid://dgoey8wkym2ra" path="res://Overworld/Potions/inventorySlot.png" id="2_iojx6"]
+[ext_resource type="Script" path="res://Overworld/Inventory/slot_gui.gd" id="1_u4el6"]
+[ext_resource type="Texture2D" uid="uid://dgoey8wkym2ra" path="res://Overworld/Potions/inventorySlot.png" id="2_uo4q3"]
 
-[node name="Slot" type="Panel"]
+[node name="Slot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(100, 100)
 offset_right = 100.0
 offset_bottom = 100.0
-script = ExtResource("1_1jk5g")
+script = ExtResource("1_u4el6")
 
 [node name="background" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
-texture = ExtResource("2_iojx6")
+texture = ExtResource("2_uo4q3")
 centered = false
 vframes = 2
 
@@ -21,8 +21,3 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 100.0
-
-[node name="Panel" type="Panel" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
