@@ -1,10 +1,13 @@
-[gd_resource type="BehaviorTree" load_steps=48 format=3 uid="uid://dny3kkwspuutb"]
+[gd_resource type="BehaviorTree" load_steps=70 format=3 uid="uid://dny3kkwspuutb"]
 
+[ext_resource type="Script" path="res://ai/tasks/fly_up.gd" id="1_0ib1s"]
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_2jcn2"]
 [ext_resource type="Script" path="res://ai/tasks/pursue.gd" id="2_f3ufs"]
 [ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_xqy2d"]
 [ext_resource type="Script" path="res://ai/tasks/face_target.gd" id="3_4y10y"]
+[ext_resource type="Script" path="res://ai/tasks/select_flanking_pos.gd" id="4_4mslh"]
 [ext_resource type="Script" path="res://ai/tasks/select_random_nearby_pos.gd" id="4_vg7cb"]
+[ext_resource type="Script" path="res://ai/tasks/arrive_pos.gd" id="5_ruxfb"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_3d20o"]
 var/speed/name = &"speed"
@@ -17,6 +20,16 @@ var/summon_cooldown/type = 1
 var/summon_cooldown/value = false
 var/summon_cooldown/hint = 0
 var/summon_cooldown/hint_string = ""
+var/charge_speed/name = &"charge_speed"
+var/charge_speed/type = 3
+var/charge_speed/value = 400.0
+var/charge_speed/hint = 1
+var/charge_speed/hint_string = "10,1000,10"
+var/upward_speed/name = &"upward_speed"
+var/upward_speed/type = 3
+var/upward_speed/value = 100.0
+var/upward_speed/hint = 1
+var/upward_speed/hint_string = "10,1000,10"
 
 [sub_resource type="BBNode" id="BBNode_bwg2i"]
 saved_value = NodePath("AnimationPlayer")
@@ -27,9 +40,21 @@ animation_player = SubResource("BBNode_bwg2i")
 animation_name = &"Idle"
 blend = 0.1
 
+[sub_resource type="BTAction" id="BTAction_qduyx"]
+script = ExtResource("1_0ib1s")
+speed_var = &"upward_speed"
+max_angle_deviation = 0.3
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_m6pvk"]
+time_limit = 0.2
+children = [SubResource("BTAction_qduyx")]
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_foysj"]
+children = [SubResource("BTTimeLimit_m6pvk")]
+
 [sub_resource type="BTRandomWait" id="BTRandomWait_ujdgx"]
-min_duration = 0.4
-max_duration = 0.6
+min_duration = 0.3
+max_duration = 0.4
 
 [sub_resource type="BTAction" id="BTAction_ceonx"]
 script = ExtResource("1_2jcn2")
@@ -44,7 +69,19 @@ target_var = &"target"
 
 [sub_resource type="BTSequence" id="BTSequence_f5gsr"]
 custom_name = "Pause before action"
-children = [SubResource("BTPlayAnimation_akmjr"), SubResource("BTRandomWait_ujdgx"), SubResource("BTAction_ceonx"), SubResource("BTCondition_uk7fr")]
+children = [SubResource("BTPlayAnimation_akmjr"), SubResource("BTAlwaysSucceed_foysj"), SubResource("BTRandomWait_ujdgx"), SubResource("BTAction_ceonx"), SubResource("BTCondition_uk7fr")]
+
+[sub_resource type="BTAction" id="BTAction_euwhl"]
+script = ExtResource("1_0ib1s")
+speed_var = &"upward_speed"
+max_angle_deviation = 0.3
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_v28bl"]
+time_limit = 0.1
+children = [SubResource("BTAction_euwhl")]
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_j5345"]
+children = [SubResource("BTTimeLimit_v28bl")]
 
 [sub_resource type="BBNode" id="BBNode_thyg8"]
 saved_value = NodePath("AnimationPlayer")
@@ -60,22 +97,37 @@ script = ExtResource("1_2jcn2")
 group = &"Player"
 output_var = &"target"
 
-[sub_resource type="BTAction" id="BTAction_yiuby"]
-script = ExtResource("2_f3ufs")
-target_var = &"target"
-speed_var = &"speed"
-approach_distance = -10.0
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_63ix0"]
-time_limit = 3.0
-children = [SubResource("BTAction_yiuby")]
-
 [sub_resource type="BTAction" id="BTAction_m4r5k"]
 script = ExtResource("3_4y10y")
 target_var = &"target"
 
-[sub_resource type="BTWait" id="BTWait_bnwmv"]
-duration = 0.1
+[sub_resource type="BBNode" id="BBNode_71dy3"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_l8ksx"]
+await_completion = 2.0
+animation_player = SubResource("BBNode_71dy3")
+animation_name = &"Charge"
+
+[sub_resource type="BTAction" id="BTAction_uklkp"]
+script = ExtResource("3_4y10y")
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_ac5qk"]
+script = ExtResource("4_4mslh")
+target_var = &"target"
+flank_side = 0
+range_min = -15
+range_max = 20
+position_var = &"pos"
+
+[sub_resource type="BTAction" id="BTAction_0a6d0"]
+script = ExtResource("5_ruxfb")
+target_position_var = &"pos"
+speed_var = &"charge_speed"
+tolerance = 50.0
+avoid_var = &""
 
 [sub_resource type="BBNode" id="BBNode_casrp"]
 saved_value = NodePath("AnimationPlayer")
@@ -86,9 +138,30 @@ await_completion = 1.0
 animation_player = SubResource("BBNode_casrp")
 animation_name = &"Skill1"
 
+[sub_resource type="BTRandomWait" id="BTRandomWait_mgm88"]
+min_duration = 0.1
+max_duration = 0.2
+
 [sub_resource type="BTSequence" id="BTSequence_re3c1"]
 custom_name = "Skill1"
-children = [SubResource("BTPlayAnimation_gnyjd"), SubResource("BTAction_3g8p6"), SubResource("BTTimeLimit_63ix0"), SubResource("BTAction_m4r5k"), SubResource("BTWait_bnwmv"), SubResource("BTPlayAnimation_erisl")]
+children = [SubResource("BTPlayAnimation_gnyjd"), SubResource("BTAction_3g8p6"), SubResource("BTAction_m4r5k"), SubResource("BTPlayAnimation_l8ksx"), SubResource("BTAction_uklkp"), SubResource("BTAction_ac5qk"), SubResource("BTAction_0a6d0"), SubResource("BTPlayAnimation_erisl"), SubResource("BTRandomWait_mgm88")]
+metadata/_weight_ = 2.0
+
+[sub_resource type="BTSequence" id="BTSequence_kggam"]
+children = [SubResource("BTAlwaysSucceed_j5345"), SubResource("BTSequence_re3c1")]
+metadata/_weight_ = 2.0
+
+[sub_resource type="BTAction" id="BTAction_thybg"]
+script = ExtResource("1_0ib1s")
+speed_var = &"upward_speed"
+max_angle_deviation = 0.3
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_isjv1"]
+time_limit = 0.1
+children = [SubResource("BTAction_thybg")]
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_rg7uf"]
+children = [SubResource("BTTimeLimit_isjv1")]
 
 [sub_resource type="BBNode" id="BBNode_tmywe"]
 saved_value = NodePath("AnimationPlayer")
@@ -134,6 +207,24 @@ animation_name = &"Attacking"
 custom_name = "Attack"
 children = [SubResource("BTPlayAnimation_lwygc"), SubResource("BTAction_2o3dp"), SubResource("BTTimeLimit_cesvt"), SubResource("BTAction_u70ku"), SubResource("BTWait_gxl2p"), SubResource("BTPlayAnimation_cacrh")]
 metadata/_weight_ = 1.0
+
+[sub_resource type="BTSequence" id="BTSequence_0piey"]
+children = [SubResource("BTAlwaysSucceed_rg7uf"), SubResource("BTSequence_pyg1t")]
+
+[sub_resource type="BTAction" id="BTAction_2fp0a"]
+script = ExtResource("1_0ib1s")
+speed_var = &"upward_speed"
+max_angle_deviation = 0.3
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_knwqd"]
+time_limit = 0.1
+children = [SubResource("BTAction_2fp0a")]
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_ykrlu"]
+children = [SubResource("BTTimeLimit_knwqd")]
+
+[sub_resource type="BTSequence" id="BTSequence_jy3s1"]
+children = [SubResource("BTAlwaysSucceed_ykrlu")]
 
 [sub_resource type="BTComment" id="BTComment_838pp"]
 custom_name = "Variable $summon_cooldown is updated by the Cooldown task below"
@@ -191,10 +282,13 @@ children = [SubResource("BTCallMethod_nhkga")]
 [sub_resource type="BTSequence" id="BTSequence_jicav"]
 custom_name = "Summon minion"
 children = [SubResource("BTCheckVar_4n58q"), SubResource("BTPlayAnimation_xt5up"), SubResource("BTWait_6xd5f"), SubResource("BTAction_dhyg2"), SubResource("BTCooldown_31ce3"), SubResource("BTWait_tjx1w")]
-metadata/_weight_ = 2.5
+metadata/_weight_ = 1.0
+
+[sub_resource type="BTSequence" id="BTSequence_ckdyc"]
+children = [SubResource("BTSequence_jy3s1"), SubResource("BTSequence_jicav")]
 
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_jp6n5"]
-children = [SubResource("BTSequence_re3c1"), SubResource("BTSequence_pyg1t"), SubResource("BTSequence_jicav")]
+children = [SubResource("BTSequence_kggam"), SubResource("BTSequence_0piey"), SubResource("BTSequence_ckdyc")]
 
 [sub_resource type="BTSequence" id="BTSequence_p67nk"]
 custom_name = "Main"
