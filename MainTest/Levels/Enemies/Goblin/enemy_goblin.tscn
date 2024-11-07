@@ -944,7 +944,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_ajebo")
 knockback_enabled = true
-knockback_strength = 50.0
+knockback_strength = 25.0
 
 [node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(2.66666, 3.33333)

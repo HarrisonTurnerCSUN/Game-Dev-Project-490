@@ -15,7 +15,7 @@ var _moved_this_frame: bool = false
 @onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
 
-const jump_power = -400
+const jump_power = -300
 const gravity = 50
 const speed = 100
 
@@ -26,6 +26,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_on_wall() and &"InRange":
 		velocity.y = jump_power
+		velocity.x = get_facing() * 10
 	else:
 		velocity.y += gravity
 	move_and_slide()
@@ -122,9 +123,10 @@ func throw_projectile() -> void:
 	var projectile := Projectile.instantiate()
 	projectile.dir = get_facing()
 	get_parent().add_child(projectile)
-	var offset_y = 20  # Change this value if the character's center isn't at `global_position.y`
-	projectile.global_position = global_position + Vector2.RIGHT * get_facing() * 1.0 + Vector2(0, offset_y)
+	
+	# Calculate the offset to place the projectile right in front of the goblin
+	var horizontal_offset = 15 * get_facing()  # Adjust this value as needed for horizontal placement
+	var vertical_offset = 7  # Adjust this for vertical alignment with the goblin's middle
 
-	# Optional debug output
-	print("Goblin Global Position: ", global_position)
-	print("Spawn Position: ", projectile.global_position)
+	# Set the projectile position relative to the goblin
+	projectile.global_position = global_position + Vector2(horizontal_offset, vertical_offset)

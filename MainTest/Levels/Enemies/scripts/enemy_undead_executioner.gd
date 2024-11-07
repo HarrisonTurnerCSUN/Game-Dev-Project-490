@@ -8,7 +8,7 @@ signal death
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 const MINION_RESOURCE := "res://Levels/Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
-const jump_power = -600
+const jump_power = -300
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
@@ -26,6 +26,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_on_wall() and &"InRange":
 		velocity.y = jump_power
+		velocity.x = get_facing() * 10
 	_post_physics_process.call_deferred()
 	
 
