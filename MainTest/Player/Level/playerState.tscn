@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b6jpciqqr0frf"]
+[gd_scene load_steps=55 format=3 uid="uid://b6jpciqqr0frf"]
 
 [ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Player/Level/player_idle_state.gd" id="13_6sckc"]
 [ext_resource type="Script" path="res://Player/Level/player_fall_state.gd" id="14_l401m"]
 [ext_resource type="Texture2D" uid="uid://cugoujjklio4i" path="res://Assets/Character Sprites/Player Sprites/_Hit.png" id="14_lc21g"]
+[ext_resource type="Texture2D" uid="uid://bp6ucd8ioeesw" path="res://Assets/Character Sprites/Player Sprites/_WallSlide.png" id="15_g44xm"]
 [ext_resource type="Script" path="res://Player/Level/player_run_state.gd" id="15_ryg3i"]
 [ext_resource type="Script" path="res://Player/Level/player_jump_state.gd" id="16_x5mm7"]
 [ext_resource type="Script" path="res://Player/Level/attack_1.gd" id="17_onbaw"]
@@ -1474,17 +1475,55 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_xmxe0"]
 resource_name = "WallSlide"
+length = 0.6
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": []
+"values": [ExtResource("15_g44xm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.266667, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lfsi8"]

@@ -86,7 +86,7 @@ func enter():
 	animation_player.play("Fall")  # Play fall animation
 
 func exit():
-	pass
+	animation_player.stop()
 
 
 func _on_dash_timer_timeout() -> void:

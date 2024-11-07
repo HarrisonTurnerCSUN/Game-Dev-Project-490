@@ -104,7 +104,7 @@ func die() -> void:
 	pass
 	
 func enter():
-	animation_player.play("Idle")
+	animation_player.play("WallSlide")
 	
 func exit():
 	#pass
