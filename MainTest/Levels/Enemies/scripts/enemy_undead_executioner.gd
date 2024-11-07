@@ -1,25 +1,33 @@
 extends CharacterBody2D
 
+signal death
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health: Health = $Health
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
-const MINION_RESOURCE := "res://Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
-
-signal death
+const MINION_RESOURCE := "res://Levels/Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
+const jump_power = -600
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
+var _summoned_at_75: bool = false
+var _summoned_at_50: bool = false
+var _summoned_at_25: bool = false
 
+		
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
 
 
 func _physics_process(_delta: float) -> void:
+	if is_on_wall() and &"InRange":
+		velocity.y = jump_power
 	_post_physics_process.call_deferred()
+	
 
 
 func _post_physics_process() -> void:
@@ -67,20 +75,117 @@ func is_good_position(p_position: Vector2) -> bool:
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
 	apply_knockback(knockback)
-	#animation_player.play(&"hurt")
-	var btplayer := get_node_or_null(^"BTPlayer") as BTPlayer
-	if btplayer:
-		btplayer.set_active(false)
-	var hsm := get_node_or_null(^"LimboHSM")
-	if hsm:
-		hsm.set_active(false)
-	#await animation_player.animation_finished
-	if btplayer and not _is_dead:
-		btplayer.restart()
-	if hsm and not _is_dead:
-		hsm.set_active(true)
-
-
+	if not _is_dead and health.get_current() <= health.max_health * 0.75 and not _summoned_at_75:
+		_summoned_at_75 = true
+		play_death_animation_and_summon75()
+		var btplayer := get_node_or_null(^"BTPlayer") as BTPlayer
+		if btplayer:
+			btplayer.set_active(false)
+		var hsm := get_node_or_null(^"LimboHSM")
+		if hsm:
+			hsm.set_active(false)
+		await animation_player.animation_finished
+		if btplayer and not _is_dead:
+			btplayer.restart()
+		if hsm and not _is_dead:
+			hsm.set_active(true)
+	elif not _is_dead and health.get_current() <= health.max_health * 0.50 and not _summoned_at_50:
+		_summoned_at_50 = true
+		play_death_animation_and_summon50()
+		var btplayer := get_node_or_null(^"BTPlayer") as BTPlayer
+		if btplayer:
+			btplayer.set_active(false)
+		var hsm := get_node_or_null(^"LimboHSM")
+		if hsm:
+			hsm.set_active(false)
+		await animation_player.animation_finished
+		if btplayer and not _is_dead:
+			btplayer.restart()
+		if hsm and not _is_dead:
+			hsm.set_active(true)
+	elif not _is_dead and health.get_current() <= health.max_health * 0.25 and not _summoned_at_25:
+		_summoned_at_25 = true
+		play_death_animation_and_summon25()
+		var btplayer := get_node_or_null(^"BTPlayer") as BTPlayer
+		if btplayer:
+			btplayer.set_active(false)
+		var hsm := get_node_or_null(^"LimboHSM")
+		if hsm:
+			hsm.set_active(false)
+		await animation_player.animation_finished
+		if btplayer and not _is_dead:
+			btplayer.restart()
+		if hsm and not _is_dead:
+			hsm.set_active(true)
+	else:
+		var btplayer := get_node_or_null(^"BTPlayer") as BTPlayer
+		if btplayer:
+			btplayer.set_active(false)
+		var hsm := get_node_or_null(^"LimboHSM")
+		if hsm:
+			hsm.set_active(false)
+		if btplayer and not _is_dead:
+			btplayer.restart()
+		if hsm and not _is_dead:
+			hsm.set_active(true)
+			
+## Play death animation and spawn minions
+func play_death_animation_and_summon75() -> void:
+	# Play the death animation
+	animation_player.play("Death")  # Make sure the death animation is named correctly
+	
+	# Spawn three minions in an arc above the boss
+	var positions: Array = [
+		position + Vector2(50, -50),   # Top-right
+		position + Vector2(0, -50),    # Directly above
+		position + Vector2(-50, -50)   # Top-left
+	]
+	
+	for pos in positions:
+		if is_good_position(pos):
+			# Using `call_deferred` ensures this happens safely after the current frame
+			call_deferred("summon_minion", pos)  # Safely summon minions after the animation finishes
+	await get_tree().create_timer(0.5)
+	
+func play_death_animation_and_summon50() -> void:
+	# Play the death animation
+	animation_player.play("Death")  # Make sure the death animation is named correctly
+	
+# Spawn five minions in an arc above the boss
+	var positions: Array = [
+		position + Vector2(100, -50),   # Top-right
+		position + Vector2(50, -50),    # Slightly to the right
+		position + Vector2(0, -50),     # Directly above
+		position + Vector2(-50, -50),   # Slightly to the left
+		position + Vector2(-100, -50)   # Top-left
+	]
+	
+	for pos in positions:
+		if is_good_position(pos):
+			# Using `call_deferred` ensures this happens safely after the current frame
+			call_deferred("summon_minion", pos)  # Safely summon minions after the animation finishes
+	await get_tree().create_timer(0.7)
+	
+func play_death_animation_and_summon25() -> void:
+	# Play the death animation
+	animation_player.play("Death")  # Make sure the death animation is named correctly
+	
+# Spawn seven minions in an arc above the boss
+	var positions: Array = [
+		position + Vector2(120, -50),   # Top-right
+		position + Vector2(85, -50),    # Slightly to the right
+		position + Vector2(50, -50),    # Right
+		position + Vector2(0, -50),     # Directly above
+		position + Vector2(-50, -50),   # Left
+		position + Vector2(-85, -50),   # Slightly to the left
+		position + Vector2(-120, -50)   # Top-left
+	]
+	
+	for pos in positions:
+		if is_good_position(pos):
+			# Using `call_deferred` ensures this happens safely after the current frame
+			call_deferred("summon_minion", pos)  # Safely summon minions after the animation finishes
+	await get_tree().create_timer(1)
 ## Push agent in the knockback direction for the specified number of physics frames.
 func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
 	if knockback.is_zero_approx():

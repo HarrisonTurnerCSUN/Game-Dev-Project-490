@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dw5jn73q5owhu"]
+[gd_scene load_steps=23 format=3 uid="uid://dw5jn73q5owhu"]
 
 [ext_resource type="Texture2D" uid="uid://c4pvo6f42x12a" path="res://Assets/Character Sprites/Undead Executioner/attacking.png" id="1_1bvdo"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_undead_executioner.gd" id="1_2u3ss"]
@@ -68,6 +68,57 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_ulf4v"]
+resource_name = "Charge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_1bvdo")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_wu126"]
@@ -330,6 +381,7 @@ tracks/3/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6pvp"]
 _data = {
 "Attacking": SubResource("Animation_1hnos"),
+"Charge": SubResource("Animation_ulf4v"),
 "Death": SubResource("Animation_wu126"),
 "Idle": SubResource("Animation_p6opk"),
 "RESET": SubResource("Animation_nfy6x"),
@@ -350,7 +402,6 @@ motion_mode = 1
 script = ExtResource("1_2u3ss")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -50)
 texture = ExtResource("1_1bvdo")
 hframes = 6
 vframes = 3
@@ -362,7 +413,7 @@ script = ExtResource("3_bywyy")
 knockback_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
-position = Vector2(4, 3)
+position = Vector2(-4, 3)
 shape = SubResource("CapsuleShape2D_ahrxk")
 debug_color = Color(0.862286, 0.0877487, 0.839839, 0.42)
 
@@ -383,7 +434,6 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, -45)
 shape = SubResource("CapsuleShape2D_vpipi")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
