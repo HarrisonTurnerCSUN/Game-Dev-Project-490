@@ -12,6 +12,8 @@ signal death
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var health: Health = $"../../Health"
 
+
+
 var can_dash: bool = true
 var _is_dead: bool = false
 
@@ -44,6 +46,9 @@ func on_physics_process(_delta: float):
 	# Transition states
 	if character_body_2d.is_on_floor():
 		transition.emit("Idle")  # Transition to Idle when grounded
+		
+	if character_body_2d.is_on_wall_only() and direction != 0:
+		transition.emit("WallSlide")
 		
 # In Jump and Fall states
 	if GameInputEvents.shift_input() and can_dash:

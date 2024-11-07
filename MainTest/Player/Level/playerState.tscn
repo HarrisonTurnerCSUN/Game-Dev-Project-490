@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b6jpciqqr0frf"]
+[gd_scene load_steps=54 format=3 uid="uid://b6jpciqqr0frf"]
 
 [ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
@@ -1472,6 +1472,21 @@ tracks/6/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_xmxe0"]
+resource_name = "WallSlide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lfsi8"]
 _data = {
 "Attack1": SubResource("Animation_dguap"),
@@ -1485,7 +1500,8 @@ _data = {
 "RESET": SubResource("Animation_5sk1v"),
 "Roll": SubResource("Animation_1ltvd"),
 "Run": SubResource("Animation_la2dn"),
-"Slide": SubResource("Animation_2hubo")
+"Slide": SubResource("Animation_2hubo"),
+"WallSlide": SubResource("Animation_xmxe0")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2vll"]
@@ -1613,8 +1629,9 @@ character_body_2d = NodePath("../..")
 [node name="Land" type="Node" parent="StateMachine"]
 script = ExtResource("25_e5wc7")
 
-[node name="WallSlide" type="Node" parent="StateMachine"]
+[node name="WallSlide" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("26_fuyu1")
+character_body_2d = NodePath("../..")
 
 [node name="WallJump" type="Node" parent="StateMachine"]
 script = ExtResource("27_5x4nw")
