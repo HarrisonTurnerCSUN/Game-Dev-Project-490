@@ -1,7 +1,7 @@
 extends Node2D
 
-const SPEED := 150.0  # Horizontal speed (distance per second)
-const ARC_HEIGHT := 75.0  # Adjust the height of the arc (lower value for a smoother arc)
+const SPEED := 180  # Horizontal speed (distance per second)
+const ARC_HEIGHT := 95.0  # Adjust the height of the arc (lower value for a smoother arc)
 const ARC_DURATION := 1.5  # Duration of the arc (slower descent and ascent)
 const GRAVITY := 500.0  # Gravity pulling the projectile downward
 
@@ -11,13 +11,16 @@ var _is_dead: bool = false
 var _elapsed_time: float = 0.0
 var velocity: Vector2 = Vector2.ZERO  # Velocity to store movement
 
+@onready var timer: Timer = $Timer
+@onready var root: Node2D = $Root
 @onready var projectile: Sprite2D = $Root/projectile
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	timer.start()
 	# Set the initial spawn position relative to the goblin
-	var character_position = get_parent().global_position
-	global_position = character_position + Vector2(15 * dir, -7)  # Adjust spawn position offset
+	#var character_position = get_parent().global_position
+	#global_position = character_position + Vector2(15 * dir, -7)  # Adjust spawn position offset
 
 	# Calculate initial velocity for the projectile based on desired arc
 	velocity.x = SPEED * dir  # Set the horizontal velocity based on direction
@@ -27,14 +30,6 @@ func _ready() -> void:
 
 	#print("Bomb spawned at position: ", global_position)
 	#print("Initial velocity: ", velocity)
-
-	# Start the arc duration timer
-	var timer = Timer.new()
-	timer.wait_time = ARC_DURATION
-	timer.one_shot = true
-	timer.connect("timeout", Callable(self, "_die"))
-	add_child(timer)
-	timer.start()
 
 func _physics_process(delta: float) -> void:
 	if not _is_dead:
@@ -60,7 +55,12 @@ func _die() -> void:
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "Death":
+		root.hide()
 		queue_free()
 
 func _on_hitbox_area_entered(_area: Area2D) -> void:
+	_die()
+
+
+func _on_timer_timeout() -> void:
 	_die()
