@@ -22,6 +22,8 @@ const speed = 100
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
+	self.collision_layer = 3
+	self.collision_layer = 1 | 2
 
 func _physics_process(_delta: float) -> void:
 	if is_on_wall() and &"InRange":
@@ -106,8 +108,9 @@ func die() -> void:
 	_is_dead = true
 	sprite_2d.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	collision_shape_2d.set_deferred("disabled", true)
-
+	#collision_shape_2d.set_deferred("disabled", true)
+	self.collision_layer = 0
+	self.collision_mask = 1
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
@@ -119,14 +122,21 @@ func die() -> void:
 func get_health() -> Health:
 	return health
 	
-func throw_projectile() -> void:
-	var projectile := Projectile.instantiate()
-	projectile.dir = get_facing()
-	get_parent().add_child(projectile)
-	
-	# Calculate the offset to place the projectile right in front of the goblin
-	var horizontal_offset = 15 * get_facing()  # Adjust this value as needed for horizontal placement
-	var vertical_offset = 7  # Adjust this for vertical alignment with the goblin's middle
+# Goblin Spawn Bomb Script
 
-	# Set the projectile position relative to the goblin
-	projectile.global_position = global_position + Vector2(horizontal_offset, vertical_offset)
+func throw_projectile() -> void:
+	# Create the projectile instance
+	var projectile = Projectile.instantiate()
+
+	# Set the facing direction of the projectile based on the goblin's direction
+	projectile.dir = get_facing()
+
+	# Get the parent of the goblin and add the projectile as a child
+	get_parent().add_child(projectile)
+
+	# Adjust the spawn position based on the goblin's current position
+	var offset_y = 7  # Adjust for the vertical offset to ensure proper spawn alignment
+	projectile.global_position = global_position + Vector2(15 * get_facing(), -offset_y)
+
+	# Optionally, adjust additional properties for the projectile if needed
+	#print("Throwing projectile at position: ", projectile.global_position)

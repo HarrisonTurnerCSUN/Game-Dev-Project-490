@@ -1,57 +1,66 @@
 extends Node2D
-## projectile
 
-const SPEED := 150.0  # Increase the horizontal speed for more distance
-const DEAD_SPEED := 50.0
-const HIGH_ARC_HEIGHT := 90.0  # Maximum height of the arc
-const ARC_DURATION := 1.1  # Total duration for the arc (up + down)
+const SPEED := 150.0  # Horizontal speed (distance per second)
+const ARC_HEIGHT := 75.0  # Adjust the height of the arc (lower value for a smoother arc)
+const ARC_DURATION := 1.5  # Duration of the arc (slower descent and ascent)
+const GRAVITY := 500.0  # Gravity pulling the projectile downward
 
-@export var dir: float = 1.0  # Direction of the projectile
+@export var dir: float = 1.0  # Direction (1 for right, -1 for left)
 
 var _is_dead: bool = false
 var _elapsed_time: float = 0.0
+var velocity: Vector2 = Vector2.ZERO  # Velocity to store movement
+
 @onready var projectile: Sprite2D = $Root/projectile
-@onready var root: Node2D = $Root
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
-	# Set initial position for the arc
-	position.y = global_position.y
-	_elapsed_time = 0.0
+	# Set the initial spawn position relative to the goblin
+	var character_position = get_parent().global_position
+	global_position = character_position + Vector2(15 * dir, -7)  # Adjust spawn position offset
+
+	# Calculate initial velocity for the projectile based on desired arc
+	velocity.x = SPEED * dir  # Set the horizontal velocity based on direction
+
+	# Adjust the vertical velocity to achieve the desired height
+	velocity.y = -sqrt(2 * GRAVITY * ARC_HEIGHT) * 0.7  # Reduced vertical velocity (scaled down)
+
+	#print("Bomb spawned at position: ", global_position)
+	#print("Initial velocity: ", velocity)
+
+	# Start the arc duration timer
+	var timer = Timer.new()
+	timer.wait_time = ARC_DURATION
+	timer.one_shot = true
+	timer.connect("timeout", Callable(self, "_die"))
+	add_child(timer)
+	timer.start()
 
 func _physics_process(delta: float) -> void:
 	if not _is_dead:
 		_elapsed_time += delta
 		
-		# Update horizontal position with increased speed
-		position.x += SPEED * dir * delta
+		# Apply gravity to vertical velocity
+		velocity.y += GRAVITY * delta  # Gravity pulls downward
+
+		# Apply velocity to position (horizontal and vertical movement)
+		position += velocity * delta
 		
-		# Calculate the vertical position using a sine wave for smoother arc
-		var t = _elapsed_time / ARC_DURATION  # Normalize time
-		if t <= 1.0:
-			position.y = -HIGH_ARC_HEIGHT * sin(t * PI)  # Arc up to the peak
-		else:
-			_die()  # End of arc, trigger death
+		# Log the position when it reaches the peak (near the midpoint of the arc)
+		#if velocity.y > 0 and position.y > global_position.y:
+			#print("Bomb reached top of arc at position: ", position)
 
 func _die() -> void:
 	if _is_dead:
 		return
 	_is_dead = true
+	#print("Bomb arc completed at position: ", position)  # Log final position
 	animation_player.play("Death")
 	animation_player.connect("animation_finished", Callable(self, "_on_animation_finished"))
-	create_timer_to_free()
 
-func create_timer_to_free() -> void:
-	var timer = Timer.new()
-	timer.wait_time = 0.5  # Time to wait after death animation before despawning
-	timer.one_shot = true
-	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
-	add_child(timer)
-	timer.start()
-
-func _on_timer_timeout() -> void:
-	root.hide()
-	queue_free()
+func _on_animation_finished(anim_name: String) -> void:
+	if anim_name == "Death":
+		queue_free()
 
 func _on_hitbox_area_entered(_area: Area2D) -> void:
 	_die()

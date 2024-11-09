@@ -100,7 +100,7 @@ position_var = &"pos"
 [sub_resource type="BTSequence" id="BTSequence_qwcsr"]
 custom_name = "Attack1"
 children = [SubResource("BTAction_ejk6u"), SubResource("BTPlayAnimation_j1sjc"), SubResource("BTTimeLimit_31r1f"), SubResource("BTAction_06lgr"), SubResource("BTPlayAnimation_3vf3n"), SubResource("BTWait_3tn5f"), SubResource("BTAction_v0dex")]
-metadata/_weight_ = 35.0
+metadata/_weight_ = 0.0
 
 [sub_resource type="BTAction" id="BTAction_bba5a"]
 script = ExtResource("3_27qqq")
@@ -161,7 +161,7 @@ duration = 0.1
 [sub_resource type="BTSequence" id="BTSequence_02n2h"]
 custom_name = "Attack2"
 children = [SubResource("BTAction_bba5a"), SubResource("BTPlayAnimation_fyuur"), SubResource("BTAlwaysSucceed_5uypf"), SubResource("BTAction_drbtt"), SubResource("BTAlwaysSucceed_ky1ke"), SubResource("BTWait_gf34t"), SubResource("BTPlayAnimation_qbi0f"), SubResource("BTWait_3noct")]
-metadata/_weight_ = 40.0
+metadata/_weight_ = 0.0
 
 [sub_resource type="BTAction" id="BTAction_1v5rl"]
 script = ExtResource("3_27qqq")
@@ -219,7 +219,7 @@ duration = 0.1
 [sub_resource type="BTSequence" id="BTSequence_16wya"]
 custom_name = "Range Attack"
 children = [SubResource("BTAction_1v5rl"), SubResource("BTPlayAnimation_arivi"), SubResource("BTAction_6qvkd"), SubResource("BTAlwaysSucceed_re25g"), SubResource("BTAction_apx3o"), SubResource("BTPlayAnimation_5bb5r"), SubResource("BTCallMethod_hnof0"), SubResource("BTWait_8bguf")]
-metadata/_weight_ = 25.0
+metadata/_weight_ = 10.0
 
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_tw6gl"]
 children = [SubResource("BTSequence_qwcsr"), SubResource("BTSequence_02n2h"), SubResource("BTSequence_16wya")]
