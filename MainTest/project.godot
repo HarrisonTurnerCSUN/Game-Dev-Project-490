@@ -20,13 +20,10 @@ SaveController="*res://Global Scripts/Utilities/SaveLoad/SaveController.cs"
 AudioManager="*res://Global Scripts/Audio_Manager.gd"
 KeyManager="*res://Global Scripts/key_manager.gd"
 
-[debug]
-
-settings/stdout/print_fps=true
-
 [display]
 
 window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [dotnet]
 

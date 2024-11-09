@@ -84,6 +84,7 @@ func die() -> void:
 
 func enter():
 	animation_player.play("Fall")  # Play fall animation
+	#print("Fall")
 
 func exit():
 	animation_player.stop()

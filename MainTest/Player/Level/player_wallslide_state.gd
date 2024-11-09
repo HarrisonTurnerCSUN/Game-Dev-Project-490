@@ -5,6 +5,9 @@ signal death
 @export_category("Player WallSlide")
 
 @export var character_body_2d : CharacterBody2D
+@export var fall_speed : int = 300  # Speed of falling
+@export var air_horizontal_speed: int = 200  # Horizontal speed in the air
+@export var max_air_horizontal_speed: int = 200
 #@export var speed : int = 200
 #@export var max_horizontal_speed : int = 200
 
@@ -30,7 +33,7 @@ func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
 	
 	character_body_2d.velocity.y = 0
-	
+	character_body_2d.velocity.y += fall_speed * _delta
 	#This allows increasing speed with an upper and lower bound
 	#ie: you can build momentum up to a cap, this could be fun(ny)
 	
@@ -54,7 +57,7 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.attack1_input():
 		transition.emit("Attack1")
 	
-	if !character_body_2d.is_on_floor() and !character_body_2d.is_on_wall():
+	if !character_body_2d.is_on_floor() and !character_body_2d.is_on_wall() and character_body_2d.velocity.y > 300:
 		transition.emit("Fall")
 		
 	#if GameInputEvents.control_input() && character_body_2d.velocity.x < 1:
