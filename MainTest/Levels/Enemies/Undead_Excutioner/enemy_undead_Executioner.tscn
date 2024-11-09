@@ -402,6 +402,7 @@ motion_mode = 1
 script = ExtResource("1_2u3ss")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -19.5)
 texture = ExtResource("1_1bvdo")
 hframes = 6
 vframes = 3
@@ -434,6 +435,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19.5)
 shape = SubResource("CapsuleShape2D_vpipi")
 
 [node name="BTPlayer" type="BTPlayer" parent="."]

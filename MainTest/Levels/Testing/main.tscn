@@ -14,10 +14,10 @@
 position = Vector2(152, -61)
 
 [node name="enemy_eyeball3" parent="." instance=ExtResource("3_drimi")]
-position = Vector2(2462, -99)
+position = Vector2(2609, -111)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("4_fw6ur")]
-position = Vector2(2663, -101)
+position = Vector2(2810, -290)
 
 [node name="enemy_undead_executioner" parent="." instance=ExtResource("5_j1qsc")]
-position = Vector2(753, -119)
+position = Vector2(354, -101)

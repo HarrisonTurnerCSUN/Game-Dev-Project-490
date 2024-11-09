@@ -53,8 +53,8 @@ children = [SubResource("BTAction_qduyx")]
 children = [SubResource("BTTimeLimit_m6pvk")]
 
 [sub_resource type="BTRandomWait" id="BTRandomWait_ujdgx"]
-min_duration = 0.3
-max_duration = 0.4
+min_duration = 0.2
+max_duration = 0.3
 
 [sub_resource type="BTAction" id="BTAction_ceonx"]
 script = ExtResource("1_2jcn2")
@@ -149,7 +149,7 @@ metadata/_weight_ = 2.0
 
 [sub_resource type="BTSequence" id="BTSequence_kggam"]
 children = [SubResource("BTAlwaysSucceed_j5345"), SubResource("BTSequence_re3c1")]
-metadata/_weight_ = 2.0
+metadata/_weight_ = 1.0
 
 [sub_resource type="BTAction" id="BTAction_thybg"]
 script = ExtResource("1_0ib1s")
@@ -184,7 +184,7 @@ speed_var = &"speed"
 approach_distance = 0.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_cesvt"]
-time_limit = 3.0
+time_limit = 2.0
 children = [SubResource("BTAction_tpebn")]
 
 [sub_resource type="BTAction" id="BTAction_u70ku"]
@@ -286,6 +286,7 @@ metadata/_weight_ = 1.0
 
 [sub_resource type="BTSequence" id="BTSequence_ckdyc"]
 children = [SubResource("BTSequence_jy3s1"), SubResource("BTSequence_jicav")]
+metadata/_weight_ = 2.0
 
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_jp6n5"]
 children = [SubResource("BTSequence_kggam"), SubResource("BTSequence_0piey"), SubResource("BTSequence_ckdyc")]
