@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://duo0drk110rtf"]
+[gd_scene load_steps=50 format=4 uid="uid://duo0drk110rtf"]
 
 [ext_resource type="Texture2D" uid="uid://j4mpuog823y8" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/Tileset.png" id="1_s8ngb"]
 [ext_resource type="Texture2D" uid="uid://iwote30bmvxi" path="res://Assets/PixelWoods/Waterfall/waterfalls.png" id="2_bgjcc"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="16_n0pts"]
 [ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="17_c236u"]
 [ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="18_jmqck"]
+[ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="19_y754a"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5pf0c"]
 tile_data = PackedInt32Array(0, 393216, 3, 65536, 131072, 805306371, 1, 393216, 3, 65537, 65536, 805306371, 2, 393216, 3, 65538, 65536, 805306371, 3, 393216, 3, 65539, 65536, 805306371, 4, 393216, 3, 65540, 0, 805306371)
@@ -1706,7 +1707,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAAAAQABAAEAAAABAAAAAQACAAEAAAABAAA
 tile_set = SubResource("TileSet_unwty")
 
 [node name="Player" parent="." instance=ExtResource("2_giia3")]
-position = Vector2(5294, -1025)
+position = Vector2(54, -36)
 bottom = 270
 camera_y_transform = -25.0
 
@@ -1807,6 +1808,12 @@ position = Vector2(758, 22)
 
 [node name="enemy_undead_executioner" parent="." instance=ExtResource("18_jmqck")]
 position = Vector2(5777, -1053)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("19_y754a")]
+visible = false
+top_level = true
 
 [connection signal="body_entered" from="DoorActivation" to="Tile_Platform4" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="TowerActivation" to="tower" method="_on_tower_activation_body_entered"]
