@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://djtq6x7u3m2t5"]
+[gd_scene load_steps=12 format=4 uid="uid://djtq6x7u3m2t5"]
 
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_gncfs"]
 [ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="2_7glwj"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="4_prmyh"]
 [ext_resource type="PackedScene" uid="uid://y7gl3sx67yxt" path="res://Levels/Objects/door_2.tscn" id="5_ec67b"]
+[ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="5_xgr3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klxtn"]
 texture = ExtResource("1_gncfs")
@@ -469,3 +470,8 @@ door_destination = "res://Levels/Maps/dungeon/dungeon_map_3.tscn"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
 position = Vector2(1, -1)
 shape = SubResource("CircleShape2D_j17q2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("5_xgr3l")]
+visible = false
