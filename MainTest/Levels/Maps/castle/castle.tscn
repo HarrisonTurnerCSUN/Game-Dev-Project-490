@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://da087tc0j47m"]
+[gd_scene load_steps=22 format=4 uid="uid://da087tc0j47m"]
 
 [ext_resource type="Texture2D" uid="uid://dyutso4v8sa51" path="res://Assets/Tiles/castle.png/ground.png" id="1_2xbwm"]
 [ext_resource type="Texture2D" uid="uid://dxfra6n0pqqes" path="res://Assets/Tiles/castle.png/walls_side_top.png" id="2_etda1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c4l82wkih6cej" path="res://Assets/Tiles/castle.png/terrain.png" id="5_eee6k"]
 [ext_resource type="Texture2D" uid="uid://skssk01cnk4f" path="res://Assets/Tiles/castle.png/background.png" id="6_c3hfw"]
 [ext_resource type="PackedScene" uid="uid://cyv44rslsvcug" path="res://Levels/Maps/castle/lights.tscn" id="8_8cymo"]
+[ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="9_8c7q2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ttvc"]
 texture = ExtResource("1_2xbwm")
@@ -1528,3 +1529,8 @@ position = Vector2(1767, -212)
 
 [node name="lights" parent="." instance=ExtResource("8_8cymo")]
 position = Vector2(433, -103)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("9_8c7q2")]
+visible = false
