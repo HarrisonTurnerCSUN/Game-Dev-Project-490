@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://btf6qys84efun"]
+[gd_scene load_steps=4 format=3 uid="uid://btf6qys84efun"]
 
 [ext_resource type="Script" path="res://main menu/Pause Menu/save_confirmation_popup.gd" id="1_mfici"]
+[ext_resource type="Texture2D" uid="uid://ctsi4jvpcsjmy" path="res://Assets/Border and Panels Menu Part 3/07 Border 03.png" id="2_kyk5e"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_t7jhn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahedj"]
+atlas = ExtResource("2_kyk5e")
+region = Rect2(128, 128, 64, 64)
 
 [node name="Save_Confirmation_Popup" type="Control"]
 top_level = true
@@ -13,6 +16,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mfici")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -281.0
+offset_top = -207.0
+offset_right = 289.0
+offset_bottom = 204.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ahedj")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -27,11 +45,6 @@ offset_right = 198.0
 offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-modulate = Color(0.176471, 0.176471, 0.176471, 1)
-layout_mode = 2
-texture = SubResource("CanvasTexture_t7jhn")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2

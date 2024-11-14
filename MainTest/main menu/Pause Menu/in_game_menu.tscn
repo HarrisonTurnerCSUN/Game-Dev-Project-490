@@ -1,10 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm87k1ebgcv12"]
+[gd_scene load_steps=7 format=3 uid="uid://dm87k1ebgcv12"]
 
 [ext_resource type="Script" path="res://main menu/Pause Menu/in_game_menu.gd" id="1_8srwh"]
 [ext_resource type="PackedScene" uid="uid://g16pkvo53ek1" path="res://main menu/options menu/volume_slider.tscn" id="1_274c1"]
 [ext_resource type="PackedScene" uid="uid://btf6qys84efun" path="res://main menu/Pause Menu/save_confirmation_popup.tscn" id="2_ugytm"]
+[ext_resource type="Texture2D" uid="uid://ctsi4jvpcsjmy" path="res://Assets/Border and Panels Menu Part 3/07 Border 03.png" id="3_530b7"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_wae6e"]
+[sub_resource type="Theme" id="Theme_wtefl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4slwu"]
+atlas = ExtResource("3_530b7")
+region = Rect2(128, 128, 64, 64)
 
 [node name="InGameMenu" type="Control"]
 process_mode = 3
@@ -21,6 +26,23 @@ visible = false
 z_index = 5
 layout_mode = 1
 
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -319.0
+offset_right = 295.0
+offset_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_wtefl")
+texture = SubResource("AtlasTexture_4slwu")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -29,17 +51,11 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -248.0
-offset_top = -269.5
+offset_top = -220.0
 offset_right = 248.0
-offset_bottom = 269.5
+offset_bottom = 237.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-modulate = Color(0.176471, 0.176471, 0.176471, 0.627451)
-z_index = -1
-layout_mode = 2
-texture = SubResource("CanvasTexture_wae6e")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
