@@ -1,5 +1,6 @@
 extends Control
 
+@onready var popup = $Save_Confirmation_Popup
 
 func resume():
 	get_tree().paused = false
@@ -15,7 +16,9 @@ func _on_resume_pressed() -> void:
 
 
 func _on_quit_pressed() -> void:
-	get_tree().quit()
+	popup.destination = "Quit"
+	popup.show()
+	#get_tree().quit()
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Escape") and get_tree().paused == true:
@@ -25,5 +28,8 @@ func _process(delta: float) -> void:
 
 
 func _on_main_menu_pressed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://main menu/menu.tscn")
+	#get_tree().paused = false
+	#get_tree().change_scene_to_file("res://main menu/menu.tscn")
+	popup.destination = "Main Menu"
+	popup.show()
+	
