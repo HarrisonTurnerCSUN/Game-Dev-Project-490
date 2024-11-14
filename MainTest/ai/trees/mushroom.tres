@@ -1,11 +1,10 @@
-[gd_resource type="BehaviorTree" load_steps=54 format=3 uid="uid://yi4sm8d65iw6"]
+[gd_resource type="BehaviorTree" load_steps=51 format=3 uid="uid://yi4sm8d65iw6"]
 
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_yui2p"]
 [ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_1nr4d"]
 [ext_resource type="Script" path="res://ai/tasks/face_target.gd" id="3_s7tm0"]
 [ext_resource type="Script" path="res://ai/tasks/pursue.gd" id="4_sq7vf"]
 [ext_resource type="Script" path="res://ai/tasks/select_flanking_pos.gd" id="5_fxd2f"]
-[ext_resource type="Script" path="res://ai/tasks/back_away.gd" id="6_kg2b3"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_bsldm"]
 var/speed/name = &"speed"
@@ -134,17 +133,7 @@ children = [SubResource("BTTimeLimit_2m1tx")]
 script = ExtResource("3_s7tm0")
 target_var = &"target"
 
-[sub_resource type="BTAction" id="BTAction_xx7no"]
-script = ExtResource("6_kg2b3")
-speed_var = &"speed"
-max_angle_deviation = 0.7
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_c52sp"]
-time_limit = 0.25
-children = [SubResource("BTAction_xx7no")]
-
 [sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_typof"]
-children = [SubResource("BTTimeLimit_c52sp")]
 
 [sub_resource type="BBNode" id="BBNode_6wu4a"]
 saved_value = NodePath("AnimationPlayer")
