@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=70 format=3 uid="uid://dny3kkwspuutb"]
+[gd_resource type="BehaviorTree" load_steps=67 format=3 uid="uid://dny3kkwspuutb"]
 
 [ext_resource type="Script" path="res://ai/tasks/fly_up.gd" id="1_0ib1s"]
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_2jcn2"]
@@ -40,18 +40,6 @@ animation_player = SubResource("BBNode_bwg2i")
 animation_name = &"Idle"
 blend = 0.1
 
-[sub_resource type="BTAction" id="BTAction_qduyx"]
-script = ExtResource("1_0ib1s")
-speed_var = &"upward_speed"
-max_angle_deviation = 0.3
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_m6pvk"]
-time_limit = 0.2
-children = [SubResource("BTAction_qduyx")]
-
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_foysj"]
-children = [SubResource("BTTimeLimit_m6pvk")]
-
 [sub_resource type="BTRandomWait" id="BTRandomWait_ujdgx"]
 min_duration = 0.2
 max_duration = 0.3
@@ -69,7 +57,7 @@ target_var = &"target"
 
 [sub_resource type="BTSequence" id="BTSequence_f5gsr"]
 custom_name = "Pause before action"
-children = [SubResource("BTPlayAnimation_akmjr"), SubResource("BTAlwaysSucceed_foysj"), SubResource("BTRandomWait_ujdgx"), SubResource("BTAction_ceonx"), SubResource("BTCondition_uk7fr")]
+children = [SubResource("BTPlayAnimation_akmjr"), SubResource("BTRandomWait_ujdgx"), SubResource("BTAction_ceonx"), SubResource("BTCondition_uk7fr")]
 
 [sub_resource type="BTAction" id="BTAction_euwhl"]
 script = ExtResource("1_0ib1s")

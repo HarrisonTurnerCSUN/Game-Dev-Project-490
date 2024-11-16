@@ -6,6 +6,8 @@ signal death
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health: Health = $Health
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var collision_shape_2d_2: CollisionShape2D = $CollisionShape2D2
+@onready var collision_shape_2d_3: CollisionShape2D = $CollisionShape2D3
 
 const MINION_RESOURCE := "res://Levels/Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
 const jump_power = -300

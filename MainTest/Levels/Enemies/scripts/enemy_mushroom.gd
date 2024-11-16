@@ -15,6 +15,7 @@ var _moved_this_frame: bool = false
 @onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
 
+
 const jump_power = -300
 const gravity = 50
 const speed = 100
@@ -143,3 +144,17 @@ func throw_projectile() -> void:
 
 	# Optionally, adjust additional properties for the projectile if needed
 	#print("Throwing projectile at position: ", projectile.global_position)
+	
+func increase_scale_smoothly():
+	# Create a tween
+	var tween = create_tween()
+	
+	# Calculate the target scale (20% increase)
+	var target_scale = scale * 1.2
+	
+	# Cap the scale at double the original size (Vector2(2, 2))
+	target_scale.x = min(target_scale.x, 2)
+	target_scale.y = min(target_scale.y, 2)
+	
+	# Tween the scale property over 0.5 seconds
+	tween.tween_property(self, "scale", target_scale, 0.5)

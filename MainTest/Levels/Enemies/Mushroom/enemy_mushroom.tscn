@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://qbonyhrk8qe2"]
+[gd_scene load_steps=41 format=3 uid="uid://qbonyhrk8qe2"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_mushroom.gd" id="1_3ln2t"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_avjdy"]
@@ -16,6 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://csyvnnrbh5uyq" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomAttack1.wav" id="13_d4ly6"]
 [ext_resource type="AudioStream" uid="uid://cvmkryayftyiq" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomDeath.wav" id="14_vclk7"]
 [ext_resource type="AudioStream" uid="uid://drdn535vpodv8" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomIdle.wav" id="16_2lnta"]
+[ext_resource type="AudioStream" uid="uid://dl25okb7sumcy" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomPowerUp.wav" id="17_aqjja"]
+[ext_resource type="AudioStream" uid="uid://b3p331wbn5b58" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomWalk.wav" id="18_5mkfn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_75ews"]
 radius = 5.0
@@ -4110,6 +4112,30 @@ tracks/77/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/78/type = "value"
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/path = NodePath("RangeAttack1Sound:playing")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/79/type = "value"
+tracks/79/imported = false
+tracks/79/enabled = true
+tracks/79/path = NodePath("WalkSound:playing")
+tracks/79/interp = 1
+tracks/79/loop_wrap = true
+tracks/79/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_8omjk"]
 resource_name = "RangeAttack1"
@@ -5001,6 +5027,18 @@ tracks/73/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("RangeAttack1Sound:playing")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_pn5o5"]
@@ -5896,6 +5934,18 @@ tracks/73/keys = {
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0, 0.490438, 0.367828, 0.245219, 0.122609, 0.0]
 }
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("WalkSound:playing")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8qfji"]
 _data = {
@@ -6029,5 +6079,10 @@ stream = ExtResource("16_2lnta")
 max_distance = 350.0
 
 [node name="RangeAttack1Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_aqjja")
+max_distance = 350.0
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_5mkfn")
+volume_db = 2.506
+max_distance = 350.0
