@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://qbonyhrk8qe2"]
+[gd_scene load_steps=39 format=3 uid="uid://qbonyhrk8qe2"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_mushroom.gd" id="1_3ln2t"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_avjdy"]
@@ -12,6 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://2b6sehseu4r" path="res://Assets/Character Sprites/Mushroom/Take Hit.png" id="10_8org6"]
 [ext_resource type="Texture2D" uid="uid://bpesqwnci4swb" path="res://Assets/Character Sprites/Mushroom/Attack3.png" id="11_gub41"]
 [ext_resource type="BehaviorTree" uid="uid://yi4sm8d65iw6" path="res://ai/trees/mushroom.tres" id="12_38543"]
+[ext_resource type="AudioStream" uid="uid://b3r11188w3uw2" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomAttack2.wav" id="13_8flpq"]
+[ext_resource type="AudioStream" uid="uid://csyvnnrbh5uyq" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomAttack1.wav" id="13_d4ly6"]
+[ext_resource type="AudioStream" uid="uid://cvmkryayftyiq" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomDeath.wav" id="14_vclk7"]
+[ext_resource type="AudioStream" uid="uid://drdn535vpodv8" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomIdle.wav" id="16_2lnta"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_75ews"]
 radius = 5.0
@@ -952,6 +956,18 @@ tracks/73/keys = {
 "update": 1,
 "values": [false, false]
 }
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("Attack1Sound:playing")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0.06, 0.85),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_e72gy"]
 resource_name = "Attack2"
@@ -1845,6 +1861,18 @@ tracks/73/keys = {
 "update": 1,
 "values": [false, false]
 }
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("Attack2Sound:playing")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0, 0.528),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_na1yt"]
 resource_name = "Death"
@@ -2028,6 +2056,18 @@ tracks/14/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("DeathSound:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ii4rd"]
@@ -2214,10 +2254,21 @@ tracks/14/keys = {
 "update": 1,
 "values": [true, true]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("DeathSound:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_xwjhl"]
 resource_name = "Idle"
-length = 0.8
 loop_mode = 1
 step = 0.2
 tracks/0/type = "value"
@@ -2275,7 +2326,7 @@ tracks/4/path = NodePath("Sprite2D/Hitbox/Hit1:shape")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.800434),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_fhava"), SubResource("CapsuleShape2D_fhava"), SubResource("CapsuleShape2D_fhava"), SubResource("CapsuleShape2D_fhava"), SubResource("CapsuleShape2D_fhava")]
@@ -2287,7 +2338,7 @@ tracks/5/path = NodePath("Sprite2D/Hitbox/Hit1:shape:radius")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.800434),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [4.0, 5.0, 4.66667, 4.33333, 4.0]
@@ -2299,7 +2350,7 @@ tracks/6/path = NodePath("Sprite2D/Hitbox/Hit1:shape:height")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.800434),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [22.0, 22.0, 22.0, 22.0, 22.0]
@@ -2311,7 +2362,7 @@ tracks/7/path = NodePath("Sprite2D/Hitbox/Hit1:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 0.800434),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, false]
@@ -2323,7 +2374,7 @@ tracks/8/path = NodePath("Sprite2D/Hitbox/Hit1:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.800434),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, -6), Vector2(1, -5), Vector2(1, -4), Vector2(1, -5), Vector2(1, -5)]
@@ -2335,7 +2386,7 @@ tracks/9/path = NodePath("Sprite2D/Hitbox/Hit1:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.800434),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [1.5708, 1.5708, 1.5708, 1.5708, 1.5708]
@@ -2347,7 +2398,7 @@ tracks/10/path = NodePath("Sprite2D/Hitbox/Hit2:shape")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.800434),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_40iwg"), SubResource("CapsuleShape2D_40iwg"), SubResource("CapsuleShape2D_40iwg"), SubResource("CapsuleShape2D_40iwg"), SubResource("CapsuleShape2D_40iwg")]
@@ -3107,6 +3158,18 @@ tracks/73/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("IdleSound:playing")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_6mov4"]
@@ -3994,6 +4057,54 @@ tracks/73/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
 tracks/73/interp = 1
 tracks/73/loop_wrap = true
 tracks/73/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/74/type = "value"
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/path = NodePath("Attack2Sound:playing")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/75/type = "value"
+tracks/75/imported = false
+tracks/75/enabled = true
+tracks/75/path = NodePath("DeathSound:playing")
+tracks/75/interp = 1
+tracks/75/loop_wrap = true
+tracks/75/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/76/type = "value"
+tracks/76/imported = false
+tracks/76/enabled = true
+tracks/76/path = NodePath("Attack1Sound:playing")
+tracks/76/interp = 1
+tracks/76/loop_wrap = true
+tracks/76/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/77/type = "value"
+tracks/77/imported = false
+tracks/77/enabled = true
+tracks/77/path = NodePath("IdleSound:playing")
+tracks/77/interp = 1
+tracks/77/loop_wrap = true
+tracks/77/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -5897,3 +6008,26 @@ libraries = {
 [node name="BTPlayer" type="BTPlayer" parent="."]
 behavior_tree = ExtResource("12_38543")
 blackboard_plan = SubResource("BlackboardPlan_systs")
+
+[node name="Attack1Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_d4ly6")
+max_distance = 350.0
+
+[node name="Attack2Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_8flpq")
+max_distance = 350.0
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_vclk7")
+max_distance = 350.0
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+max_distance = 350.0
+
+[node name="IdleSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_2lnta")
+max_distance = 350.0
+
+[node name="RangeAttack1Sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
