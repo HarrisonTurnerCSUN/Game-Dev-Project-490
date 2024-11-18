@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsfiddtulqx03"]
+
+[ext_resource type="PackedScene" uid="uid://b6hqlc42fpqhw" path="res://Overworld/Inventory/hotbarslot.tscn" id="1_t3med"]
+[ext_resource type="Script" path="res://Overworld/Inventory/hotbar.gd" id="1_uye76"]
+
+[node name="Hotbar" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_uye76")
+
+[node name="hotbarslot" parent="." instance=ExtResource("1_t3med")]
+layout_mode = 2
+
+[node name="hotbarslot2" parent="." instance=ExtResource("1_t3med")]
+layout_mode = 2
+
+[node name="hotbarslot3" parent="." instance=ExtResource("1_t3med")]
+layout_mode = 2
+
+[node name="hotbarslot4" parent="." instance=ExtResource("1_t3med")]
+layout_mode = 2
+
+[node name="hotbarslot5" parent="." instance=ExtResource("1_t3med")]
+layout_mode = 2
+
+[node name="hotbarslot6" parent="." instance=ExtResource("1_t3med")]
+layout_mode = 2
