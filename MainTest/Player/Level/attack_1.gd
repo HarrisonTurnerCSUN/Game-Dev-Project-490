@@ -21,12 +21,15 @@ func on_physics_process(_delta :float):
 
 	
 func enter():
-	timer.start()
+	#timer.start()
 	animation_player.play("Attack1")
+	await animation_player.animation_finished
+	transition.emit("Idle")
 	
 func exit():
 	pass
 
 
 func _on_timer_timeout() -> void:
-	transition.emit("Idle")
+	#transition.emit("Idle")
+	pass

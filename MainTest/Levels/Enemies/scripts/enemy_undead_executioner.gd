@@ -5,9 +5,12 @@ signal death
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health: Health = $Health
-@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
-@onready var collision_shape_2d_2: CollisionShape2D = $CollisionShape2D2
-@onready var collision_shape_2d_3: CollisionShape2D = $CollisionShape2D3
+@onready var left_top_box: CollisionShape2D = $LeftTopBox
+@onready var left_bottom_box: CollisionShape2D = $LeftBottomBox
+@onready var left_middle_box: CollisionShape2D = $LeftMiddleBox
+@onready var right_top_box: CollisionShape2D = $RightTopBox
+@onready var right_middle_box: CollisionShape2D = $RightMiddleBox
+@onready var right_bottom_box: CollisionShape2D = $RightBottomBox
 
 const MINION_RESOURCE := "res://Levels/Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
 const jump_power = -400
@@ -56,9 +59,21 @@ func update_facing() -> void:
 ## Face specified direction.
 func face_dir(dir: float) -> void:
 	if dir > 0.0 and sprite_2d.scale.x < 0.0:
+		left_top_box.disabled = false
+		left_bottom_box.disabled = false
+		left_middle_box.disabled = false
+		right_top_box.disabled = true
+		right_middle_box.disabled = true
+		right_bottom_box.disabled = true
 		sprite_2d.scale.x = 1.0;
 		_frames_since_facing_update = 0
 	if dir < 0.0 and sprite_2d.scale.x > 0.0:
+		left_top_box.disabled = true
+		left_bottom_box.disabled = true
+		left_middle_box.disabled = true
+		right_top_box.disabled = false
+		right_middle_box.disabled = false
+		right_bottom_box.disabled = false
 		sprite_2d.scale.x = -1.0;
 		_frames_since_facing_update = 0
 
@@ -137,7 +152,7 @@ func _damaged(_amount: float, knockback: Vector2) -> void:
 ## Play death animation and spawn minions
 func play_death_animation_and_summon75() -> void:
 	# Play the death animation
-	animation_player.play("Death")  # Make sure the death animation is named correctly
+	animation_player.play("Phase")  # Make sure the death animation is named correctly
 	
 	# Spawn three minions in an arc above the boss
 	var positions: Array = [
@@ -154,7 +169,7 @@ func play_death_animation_and_summon75() -> void:
 	
 func play_death_animation_and_summon50() -> void:
 	# Play the death animation
-	animation_player.play("Death")  # Make sure the death animation is named correctly
+	animation_player.play("Phase")  # Make sure the death animation is named correctly
 	
 # Spawn five minions in an arc above the boss
 	var positions: Array = [
@@ -173,7 +188,7 @@ func play_death_animation_and_summon50() -> void:
 	
 func play_death_animation_and_summon25() -> void:
 	# Play the death animation
-	animation_player.play("Death")  # Make sure the death animation is named correctly
+	animation_player.play("Phase")  # Make sure the death animation is named correctly
 	
 # Spawn seven minions in an arc above the boss
 	var positions: Array = [
@@ -198,6 +213,7 @@ func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
 	for i in range(frames):
 		move(knockback)
 		await get_tree().physics_frame
+	#pass
 
 
 func die() -> void:
@@ -207,8 +223,9 @@ func die() -> void:
 	_is_dead = true
 	sprite_2d.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	collision_shape_2d.set_deferred(&"disabled", true)
-
+	#collision_shape_2d.set_deferred("disabled", true)
+	self.collision_layer = 0
+	self.collision_mask = 1
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
