@@ -4,6 +4,10 @@ extends Control
 @onready var options = $MarginContainer/Options
 @onready var stats = $MarginContainer/Stats
 
+@onready var star1 = $MarginContainer/Stats/HBoxContainer/Star
+@onready var star2 = $MarginContainer/Stats/HBoxContainer/Star2
+@onready var star3 = $MarginContainer/Stats/HBoxContainer/Star3
+
 func resume():
 	get_tree().paused = false
 	$".".hide()
@@ -45,3 +49,15 @@ func _on_to_options_pressed() -> void:
 func _on_to_stats_pressed() -> void:
 	options.hide()
 	stats.show()
+	
+func flip_star1() -> void:
+	star1.complete = true
+	star1.check_complete()
+
+func flip_star2() -> void:
+	star2.complete = true
+	star2.check_complete()
+
+func flip_star3() -> void:
+	star3.complete = true
+	star3.check_complete()

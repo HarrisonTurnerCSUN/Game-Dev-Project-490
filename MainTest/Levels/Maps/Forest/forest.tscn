@@ -1,6 +1,7 @@
-[gd_scene load_steps=52 format=4 uid="uid://duo0drk110rtf"]
+[gd_scene load_steps=53 format=4 uid="uid://duo0drk110rtf"]
 
 [ext_resource type="Texture2D" uid="uid://j4mpuog823y8" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/Tileset.png" id="1_s8ngb"]
+[ext_resource type="Script" path="res://Levels/Maps/Forest/forest.gd" id="1_sckwm"]
 [ext_resource type="Texture2D" uid="uid://iwote30bmvxi" path="res://Assets/PixelWoods/Waterfall/waterfalls.png" id="2_bgjcc"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_giia3"]
 [ext_resource type="PackedScene" uid="uid://c37eeakjwa1ii" path="res://Levels/Maps/Forest/forest_parallax.tscn" id="3_0mcug"]
@@ -1696,6 +1697,7 @@ radius = 23.0
 size = Vector2(20, 218)
 
 [node name="Forest" type="Node2D"]
+script = ExtResource("1_sckwm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-16, 19)
@@ -1709,7 +1711,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAAABAAAAAQABAAEAAAABAAAAAQACAAEAAAABAAA
 tile_set = SubResource("TileSet_unwty")
 
 [node name="Player" parent="." instance=ExtResource("2_giia3")]
-position = Vector2(649, -35)
+position = Vector2(2929, -31)
 bottom = 270
 camera_y_transform = -25.0
 
@@ -1831,6 +1833,7 @@ position = Vector2(8108, 19)
 position = Vector2(8342, 19)
 
 [connection signal="body_entered" from="DoorActivation" to="Tile_Platform4" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="TowerActivation" to="." method="_on_tower_activation_body_entered"]
 [connection signal="body_entered" from="TowerActivation" to="tower" method="_on_tower_activation_body_entered"]
 [connection signal="body_entered" from="TowerActivation" to="tower2" method="_on_tower_activation_body_entered"]
 [connection signal="body_entered" from="TowerActivation" to="tower3" method="_on_tower_activation_body_entered"]
