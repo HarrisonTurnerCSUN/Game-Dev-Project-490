@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://yrbdeqhp6gl2"]
+
+[ext_resource type="Script" path="res://main menu/hud.gd" id="1_hctgy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0v0p"]
+font_size = 25
+
+[node name="Hud" type="Control" node_paths=PackedStringArray("stopwatch_label") groups=["Hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hctgy")
+stopwatch_label = NodePath("StopwatchLabel")
+
+[node name="StopwatchLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 23.0
+offset_right = 124.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 29
+text = "00:00"
+label_settings = SubResource("LabelSettings_r0v0p")

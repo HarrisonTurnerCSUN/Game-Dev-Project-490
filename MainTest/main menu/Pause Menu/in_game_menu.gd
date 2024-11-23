@@ -1,6 +1,8 @@
 extends Control
 
 @onready var popup = $Save_Confirmation_Popup
+@onready var options = $MarginContainer/Options
+@onready var stats = $MarginContainer/Stats
 
 func resume():
 	get_tree().paused = false
@@ -33,3 +35,13 @@ func _on_main_menu_pressed() -> void:
 	popup.destination = "Main Menu"
 	popup.show()
 	
+
+
+func _on_to_options_pressed() -> void:
+	stats.hide()
+	options.show()
+
+
+func _on_to_stats_pressed() -> void:
+	options.hide()
+	stats.show()

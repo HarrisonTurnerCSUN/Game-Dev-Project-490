@@ -29,6 +29,11 @@ window/vsync/vsync_mode=0
 
 project/assembly_name="senior game project"
 
+[global_group]
+
+Hud=""
+Stopwatch=""
+
 [input]
 
 move_left={
