@@ -29,8 +29,8 @@ func _physics_process(_delta: float) -> void:
 	if _is_dead:
 		velocity.y += 20  # Adjust this gravity value as needed
 		move_and_collide(velocity * _delta)
-	if is_on_wall() and &"InRange":
-		velocity.y = jump_power
+	#if is_on_wall() and &"InRange":
+		#velocity.y = jump_power
 	_post_physics_process.call_deferred()
 	
 

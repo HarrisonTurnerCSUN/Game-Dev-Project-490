@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://b5ylbxav4vpwr"]
+[gd_scene load_steps=12 format=4 uid="uid://b5ylbxav4vpwr"]
 
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_k5e6c"]
 [ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="2_n2kot"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="4_5jjse"]
 [ext_resource type="PackedScene" uid="uid://y7gl3sx67yxt" path="res://Levels/Objects/door_2.tscn" id="4_kop2t"]
 [ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="5_owoxo"]
+[ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="6_ofykc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwuj8"]
 texture = ExtResource("1_k5e6c")
@@ -412,6 +413,7 @@ tile_set = SubResource("TileSet_spk4t")
 
 [node name="Player2" parent="." instance=ExtResource("4_5jjse")]
 position = Vector2(90, -3)
+bottom = 0
 
 [node name="Door2" parent="." instance=ExtResource("4_kop2t")]
 position = Vector2(89, -17)
@@ -424,3 +426,6 @@ shape = SubResource("CircleShape2D_im5iw")
 
 [node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("5_owoxo")]
 visible = false
+
+[node name="enemy_undead_executioner" parent="." instance=ExtResource("6_ofykc")]
+position = Vector2(1128, -116)
