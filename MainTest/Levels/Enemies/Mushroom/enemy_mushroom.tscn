@@ -6014,7 +6014,7 @@ collision_mask = 2
 script = ExtResource("2_cjarp")
 damage = 2.0
 knockback_enabled = true
-knockback_strength = 75.0
+knockback_strength = 50.0
 
 [node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(1, -6)
