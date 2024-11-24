@@ -185,7 +185,7 @@ saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
 
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_sslnt"]
-await_completion = 1.0
+await_completion = 2.0
 animation_player = SubResource("BBNode_v1wwx")
 animation_name = &"Skill1"
 
@@ -239,7 +239,7 @@ saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
 
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_cacrh"]
-await_completion = 1.0
+await_completion = 2.0
 animation_player = SubResource("BBNode_3qc64")
 animation_name = &"Attacking"
 
