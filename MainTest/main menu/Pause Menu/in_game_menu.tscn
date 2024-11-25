@@ -12,7 +12,7 @@
 atlas = ExtResource("3_530b7")
 region = Rect2(128, 128, 64, 64)
 
-[node name="InGameMenu" type="Control"]
+[node name="InGameMenu" type="Control" node_paths=PackedStringArray("stopwatch_label")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -21,6 +21,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8srwh")
+stopwatch_label = NodePath("MarginContainer/Stats/VBoxContainer3/VBoxContainer2/HBoxContainer/Label2")
 
 [node name="Save_Confirmation_Popup" parent="." instance=ExtResource("2_ugytm")]
 visible = false
@@ -144,27 +145,68 @@ text = "Quit
 [node name="Stats" type="MarginContainer" parent="MarginContainer"]
 visible = false
 layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Stats"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/Stats"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Stats/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="Star" parent="MarginContainer/Stats/HBoxContainer" instance=ExtResource("5_7vut6")]
+[node name="Star" parent="MarginContainer/Stats/VBoxContainer3/HBoxContainer" instance=ExtResource("5_7vut6")]
 layout_mode = 2
 
-[node name="Star2" parent="MarginContainer/Stats/HBoxContainer" instance=ExtResource("5_7vut6")]
+[node name="Star2" parent="MarginContainer/Stats/VBoxContainer3/HBoxContainer" instance=ExtResource("5_7vut6")]
 layout_mode = 2
 
-[node name="Star3" parent="MarginContainer/Stats/HBoxContainer" instance=ExtResource("5_7vut6")]
+[node name="Star3" parent="MarginContainer/Stats/VBoxContainer3/HBoxContainer" instance=ExtResource("5_7vut6")]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Stats"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Stats/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+
+[node name="Goal1" type="Label" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "Objective 1: Finish in under 15 minutes
+"
+
+[node name="Goal2" type="Label" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "Objective 2: Finish in under 10 minutes"
+
+[node name="Goal3" type="Label" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "Objective 3: Finish in under 5 minutes
+"
+
+[node name="Label" type="Label" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+text = "
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "Current Time: "
+
+[node name="Label2" type="Label" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+text = "00:00
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Stats/VBoxContainer3"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 2
 
-[node name="ToOptions" type="Button" parent="MarginContainer/Stats/VBoxContainer"]
+[node name="ToOptions" type="Button" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Options
@@ -174,4 +216,4 @@ text = "Options
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="MarginContainer/Stats/VBoxContainer/ToOptions" to="." method="_on_to_options_pressed"]
+[connection signal="pressed" from="MarginContainer/Stats/VBoxContainer3/VBoxContainer/ToOptions" to="." method="_on_to_options_pressed"]

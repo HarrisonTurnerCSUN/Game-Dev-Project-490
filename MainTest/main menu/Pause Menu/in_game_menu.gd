@@ -8,6 +8,14 @@ extends Control
 @onready var star2 = $MarginContainer/Stats/HBoxContainer/Star2
 @onready var star3 = $MarginContainer/Stats/HBoxContainer/Star3
 
+@export var stopwatch_label : Label
+
+var stopwatch : Stopwatch
+
+func _ready() -> void:
+	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
+	
+
 func resume():
 	get_tree().paused = false
 	$".".hide()
@@ -27,6 +35,7 @@ func _on_quit_pressed() -> void:
 	#get_tree().quit()
 	
 func _process(delta: float) -> void:
+	update_stopwatch()
 	if Input.is_action_just_pressed("Escape") and get_tree().paused == true:
 		resume()
 	elif Input.is_action_just_pressed("Escape") and get_tree().paused == false:
@@ -61,3 +70,6 @@ func flip_star2() -> void:
 func flip_star3() -> void:
 	star3.complete = true
 	star3.check_complete()
+	
+func update_stopwatch():
+	stopwatch_label.text = stopwatch.time_to_string()

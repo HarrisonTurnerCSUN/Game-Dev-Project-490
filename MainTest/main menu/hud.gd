@@ -14,7 +14,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_stopwatch()
-	
+	if get_tree().paused == true:
+		$".".hide()
+	elif get_tree().paused == false:
+		$".".show()
 
 func update_stopwatch():
 	stopwatch_label.text = stopwatch.time_to_string()
