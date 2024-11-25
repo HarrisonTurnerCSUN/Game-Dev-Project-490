@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dw5jn73q5owhu"]
+[gd_scene load_steps=44 format=3 uid="uid://dw5jn73q5owhu"]
 
 [ext_resource type="Texture2D" uid="uid://c4pvo6f42x12a" path="res://Assets/Character Sprites/Undead Executioner/attacking.png" id="1_1bvdo"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_undead_executioner.gd" id="1_2u3ss"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dhv012wey5xsp" path="res://Assets/Character Sprites/Undead Executioner/summon.png" id="5_u31y7"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="9_6fvw5"]
 [ext_resource type="BehaviorTree" uid="uid://dny3kkwspuutb" path="res://ai/trees/undead_executioner.tres" id="9_t44f2"]
+[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="11_eocli"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahrxk"]
 radius = 4.0
@@ -8186,3 +8187,10 @@ shape = SubResource("CapsuleShape2D_cb5jk")
 [node name="RightBottomBox" type="CollisionShape2D" parent="."]
 position = Vector2(9, 18)
 shape = SubResource("CapsuleShape2D_tjwin")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("11_eocli")]
+offset_left = -30.0
+offset_top = -40.0
+offset_right = 30.0
+offset_bottom = -36.0
+health_node = NodePath("../Health")

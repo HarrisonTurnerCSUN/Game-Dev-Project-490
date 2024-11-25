@@ -4622,7 +4622,7 @@ value = 80.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="Camera2D/StatusUI/StaminaBar/Used_bar"]
-wait_time = 0.4
+wait_time = 0.3
 one_shot = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]

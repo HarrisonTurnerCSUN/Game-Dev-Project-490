@@ -24,6 +24,8 @@ func init_stamina(max_stamina_value: float):
 func _on_stamina_used(amount: float) -> void:
 	value = stamina_node.get_current_stamina()
 	timer.start()
+	#print("Used_bar Value:", used_bar.value)
+	#print("Used_bar Max Value:", used_bar.max_value)
 
 func _on_stamina_depleted() -> void:
 	value = 0
@@ -31,4 +33,8 @@ func _on_stamina_depleted() -> void:
 func _process(delta: float) -> void:
 	# Continuously update the ProgressBar
 	value = stamina_node.get_current_stamina()
+	#used_bar.value = stamina_node.get_current_stamina()
+
+
+func _on_timer_timeout() -> void:
 	used_bar.value = stamina_node.get_current_stamina()
