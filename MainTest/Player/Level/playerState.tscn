@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b6jpciqqr0frf"]
+[gd_scene load_steps=68 format=3 uid="uid://b6jpciqqr0frf"]
 
 [ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
@@ -18,14 +18,22 @@
 [ext_resource type="Texture2D" uid="uid://cugoujjklio4i" path="res://Assets/Character Sprites/Player Sprites/_Hit.png" id="14_lc21g"]
 [ext_resource type="Texture2D" uid="uid://bp6ucd8ioeesw" path="res://Assets/Character Sprites/Player Sprites/_WallSlide.png" id="15_g44xm"]
 [ext_resource type="Script" path="res://Player/Level/player_run_state.gd" id="15_ryg3i"]
+[ext_resource type="Script" path="res://Player/Level/status_ui.gd" id="16_6dujv"]
 [ext_resource type="Script" path="res://Player/Level/player_jump_state.gd" id="16_x5mm7"]
+[ext_resource type="Texture2D" uid="uid://7vwnjaa0n5o3" path="res://Assets/HUD/hud_heartFull.png" id="17_dngu7"]
 [ext_resource type="Script" path="res://Player/Level/attack_1.gd" id="17_onbaw"]
+[ext_resource type="Texture2D" uid="uid://cnu4ain8eufno" path="res://Assets/HUD/hud_heartEmpty.png" id="18_8kqli"]
+[ext_resource type="Texture2D" uid="uid://d0x034ybcybmx" path="res://Assets/HUD/hud_heartHalf.png" id="18_oi1t6"]
 [ext_resource type="Script" path="res://Player/Level/player_crouch_state.gd" id="18_vl5dx"]
 [ext_resource type="Script" path="res://Player/Level/player_slide_state.gd" id="19_s8xet"]
+[ext_resource type="Texture2D" uid="uid://4vtvwbl3hsi1" path="res://Assets/HUD/bar_shadow_round_small.png" id="20_jqpht"]
 [ext_resource type="Script" path="res://Player/Level/player_crouchwalk_state.gd" id="20_lrmes"]
 [ext_resource type="Script" path="res://Player/Level/player_dash_state.gd" id="21_3gj3a"]
 [ext_resource type="Script" path="res://Player/Level/player_roll_state.gd" id="22_kqydj"]
+[ext_resource type="Texture2D" uid="uid://bykwql7btusv8" path="res://Assets/HUD/bar_round_small_l.png" id="22_lg4sg"]
 [ext_resource type="Script" path="res://Player/Level/player_airdash_state.gd" id="23_3o8wo"]
+[ext_resource type="Texture2D" uid="uid://cf27pxi8lpp1s" path="res://Assets/HUD/bar_round_small_r.png" id="23_47v3u"]
+[ext_resource type="Texture2D" uid="uid://bjecvkk2g8wd2" path="res://Assets/HUD/bar_round_small_m.png" id="23_af0rq"]
 [ext_resource type="Script" path="res://Player/Level/player_doublejump_state.gd" id="24_b6qn1"]
 [ext_resource type="Script" path="res://Player/Level/player_land_state.gd" id="25_e5wc7"]
 [ext_resource type="PackedScene" uid="uid://bqd5xakf1hqbj" path="res://Player/Level/Ghost.tscn" id="25_q765t"]
@@ -2635,6 +2643,29 @@ position = Vector2(0, -50)
 zoom = Vector2(3, 3)
 limit_smoothed = true
 
+[node name="StatusUI" type="CanvasLayer" parent="Camera2D"]
+script = ExtResource("16_6dujv")
+full_heart_texture = ExtResource("17_dngu7")
+half_heart_texture = ExtResource("18_oi1t6")
+empty_heart_texture = ExtResource("18_8kqli")
+stamina_bar_bg_texture = ExtResource("20_jqpht")
+stamina_20_texture = ExtResource("22_lg4sg")
+stamina_40_texture = ExtResource("23_af0rq")
+stamina_60_texture = ExtResource("23_af0rq")
+stamina_80_texture = ExtResource("23_af0rq")
+stamina_100_texture = ExtResource("23_47v3u")
+max_stamina = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/StatusUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBar" type="HBoxContainer" parent="Camera2D/StatusUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="StaminaBar" type="Control" parent="Camera2D/StatusUI/VBoxContainer"]
+layout_mode = 2
+
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("45_cyayl")
 initial_node_state = NodePath("Idle")
@@ -2711,13 +2742,14 @@ wait_time = 0.52
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("32_5e2yj")
-max_health = 100.0
 
 [node name="Dash_Timer" type="Timer" parent="."]
 wait_time = 6.0
 
 [node name="Stamina" type="Node" parent="."]
 script = ExtResource("36_y76qi")
+max_stamina = 5.0
+stamina_per_second = 1.0
 
 [connection signal="timeout" from="Sprite2D/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="Timer" to="StateMachine/Attack1" method="_on_timer_timeout"]

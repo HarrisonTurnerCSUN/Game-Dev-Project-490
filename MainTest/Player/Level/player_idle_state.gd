@@ -62,7 +62,7 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.shift_input():
 		#can_dash = false
 		#print(can_dash)
-		if stamina.use_stamina(20.0):
+		if stamina.use_stamina(1):
 			print("Performed action!")
 			transition.emit("Dash")
 		else:
