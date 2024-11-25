@@ -12,6 +12,7 @@ signal death
 @onready var hitbox: Hitbox = $"../../Sprite2D/Hitbox"
 @onready var hurtbox: Hurtbox = $"../../Sprite2D/Hurtbox"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@onready var stamina: Stamina = $"../../Stamina"
 
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
@@ -58,10 +59,14 @@ func on_physics_process(_delta :float):
 	#if GameInputEvents.control_input():
 		#transition.emit("Crouch")
 		
-	if GameInputEvents.shift_input() and can_dash:
-		can_dash = false
-		print(can_dash)
-		transition.emit("Dash")
+	if GameInputEvents.shift_input():
+		#can_dash = false
+		#print(can_dash)
+		if stamina.use_stamina(20.0):
+			print("Performed action!")
+			transition.emit("Dash")
+		else:
+			print("Not enough stamina!")
 		
 func _post_physics_process() -> void:
 	if not _moved_this_frame:

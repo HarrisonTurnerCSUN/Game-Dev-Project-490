@@ -9,6 +9,7 @@ signal death
 @export var dash_duration: float = 0.27  # Duration of the dash in seconds
 @export var dash_cooldown: float = 6.0  # Time until you can dash again
 @export var ghost_node : PackedScene
+@export var player: CharacterBody2D
 
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var dash_timer: Timer = $"../../Dash_Timer"
@@ -46,6 +47,9 @@ func on_physics_process(_delta: float):
 		transition.emit("Run")
 
 func enter():
+	player.collision_layer = 0
+	#self.collision_mask = 1
+	player.collision_mask &= ~(1 << 2)  # Remove layer 3 (bit 2)
 # Reset the dash timer when entering the dash state
 	ghost_timer.start()
 	dash_timer.stop()
@@ -59,6 +63,9 @@ func enter():
 	transition.emit("Idle")
 
 func exit():
+	player.collision_layer = 2
+	#self.collision_mask = 1
+	player.collision_mask |= 1 << 2  # Add layer 3 (bit 2)
 	#print("Dashing ended!")  # Debug statement
 	_is_dashing = false
 	dash_timer.start()
