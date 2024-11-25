@@ -1,26 +1,26 @@
 extends CanvasLayer
 
-# Health textures
 @export var full_heart_texture: Texture2D
 @export var half_heart_texture: Texture2D
 @export var empty_heart_texture: Texture2D
 @export var max_health: int = 10  # Max health
 
-# Stamina textures
 @export var stamina_bar_bg_texture: Texture2D
-@export var stamina_20_texture: Texture2D
-@export var stamina_40_texture: Texture2D
-@export var stamina_60_texture: Texture2D
-@export var stamina_80_texture: Texture2D
-@export var stamina_100_texture: Texture2D
+@export var stamina_left_texture: Texture2D
+@export var stamina_middle_texture: Texture2D
+@export var stamina_right_texture: Texture2D
 @export var max_stamina: int = 100  # Max stamina
 
-# Variables for health and stamina
 var health_tiles: Array[TextureRect] = []
+var stamina_bar_bg: TextureRect
 var stamina_bar_left: TextureRect
-var stamina_bar_middle: TextureRect
+var stamina_bar_middle_1: TextureRect
+var stamina_bar_middle_2: TextureRect
+var stamina_bar_middle_3: TextureRect
+var stamina_bar_middle_4: TextureRect
+var stamina_bar_middle_5: TextureRect
 var stamina_bar_right: TextureRect
-var stamina_container: HBoxContainer
+var hbox: HBoxContainer
 
 @onready var health: Health = $"../../Health"
 @onready var stamina: Stamina = $"../../Stamina"
@@ -49,30 +49,60 @@ func _create_health_tiles(container: Node, tile_array: Array[TextureRect], full_
 		container.add_child(tile)
 		tile_array.append(tile)
 
-# Create stamina bar (using HBoxContainer for alignment)
+# Create stamina bar (background and foreground)
 func _create_stamina_bar(container: Node) -> void:
-	# Create HBoxContainer to hold the left, middle, and right parts of the stamina bar
-	stamina_container = HBoxContainer.new()
-	#stamina_container.rect_min_size = Vector2(max_stamina, 40)  # Set a fixed height for the stamina bar container
-	container.add_child(stamina_container)
+	# Background
+	stamina_bar_bg = TextureRect.new()
+	stamina_bar_bg.texture = stamina_bar_bg_texture
+	stamina_bar_bg.stretch_mode = TextureRect.STRETCH_SCALE
+	container.add_child(stamina_bar_bg)
 
-	# Left part (this will be fixed width)
+	# Create HBoxContainer to handle the horizontal layout
+	hbox = HBoxContainer.new()
+	#hbox.separation = 0  # Remove spacing between the foreground pieces
+	container.add_child(hbox)
+
+	# Left part of the foreground
 	stamina_bar_left = TextureRect.new()
-	stamina_bar_left.texture = stamina_20_texture
+	stamina_bar_left.texture = stamina_left_texture
 	stamina_bar_left.stretch_mode = TextureRect.STRETCH_SCALE
-	stamina_container.add_child(stamina_bar_left)
+	hbox.add_child(stamina_bar_left)
 
-	# Middle part (this will be stretched based on stamina)
-	stamina_bar_middle = TextureRect.new()
-	stamina_bar_middle.texture = stamina_40_texture
-	stamina_bar_middle.stretch_mode = TextureRect.STRETCH_SCALE
-	stamina_container.add_child(stamina_bar_middle)
+	# Middle parts of the foreground (now we have 5 middle pieces)
+	stamina_bar_middle_1 = TextureRect.new()
+	stamina_bar_middle_1.texture = stamina_middle_texture
+	stamina_bar_middle_1.stretch_mode = TextureRect.STRETCH_SCALE
+	hbox.add_child(stamina_bar_middle_1)
 
-	# Right part (this will be fixed width and will hide when not needed)
+	stamina_bar_middle_2 = TextureRect.new()
+	stamina_bar_middle_2.texture = stamina_middle_texture
+	stamina_bar_middle_2.stretch_mode = TextureRect.STRETCH_SCALE
+	hbox.add_child(stamina_bar_middle_2)
+
+	stamina_bar_middle_3 = TextureRect.new()
+	stamina_bar_middle_3.texture = stamina_middle_texture
+	stamina_bar_middle_3.stretch_mode = TextureRect.STRETCH_SCALE
+	hbox.add_child(stamina_bar_middle_3)
+
+	stamina_bar_middle_4 = TextureRect.new()
+	stamina_bar_middle_4.texture = stamina_middle_texture
+	stamina_bar_middle_4.stretch_mode = TextureRect.STRETCH_SCALE
+	hbox.add_child(stamina_bar_middle_4)
+
+	stamina_bar_middle_5 = TextureRect.new()
+	stamina_bar_middle_5.texture = stamina_middle_texture
+	stamina_bar_middle_5.stretch_mode = TextureRect.STRETCH_SCALE
+	hbox.add_child(stamina_bar_middle_5)
+
+	# Right part of the foreground
 	stamina_bar_right = TextureRect.new()
-	stamina_bar_right.texture = stamina_100_texture
+	stamina_bar_right.texture = stamina_right_texture
 	stamina_bar_right.stretch_mode = TextureRect.STRETCH_SCALE
-	stamina_container.add_child(stamina_bar_right)
+	hbox.add_child(stamina_bar_right)
+
+	# Make sure the foreground is above the background
+	stamina_bar_bg.z_index = 0
+	hbox.z_index = 1
 
 # Update health (using full, half, and empty hearts)
 func update_health(current_health: int) -> void:
@@ -89,25 +119,35 @@ func update_health(current_health: int) -> void:
 			health_tiles[i].texture = empty_heart_texture
 		health_tiles[i].modulate = Color(1, 1, 1, 1)
 
-# Update stamina bar (left, middle, right textures with dynamic width and visibility)
+# Update stamina bar (use different textures for different percentages)
 func update_stamina(current_stamina: float) -> void:
-	# Calculate the stamina percentage
 	var fill_percentage = current_stamina / max_stamina
 
-	# Set fixed width for the left texture
-	stamina_bar_left.rect_min_size.x = 20  # Set the width for the left part (fixed)
+	# Show left texture if there's any stamina
+	stamina_bar_left.visible = fill_percentage > 0
 
-	# Set the width of the middle texture based on stamina
-	var middle_width = int(fill_percentage * (max_stamina - 40))  # Subtract space for left and right parts
-	stamina_bar_middle.rect_min_size.x = middle_width
+	# Show right texture if stamina is more than 80%
+	stamina_bar_right.visible = fill_percentage > 0.8
 
-	# Set the visibility and width of the right texture
-	if fill_percentage >= 0.8:
-		stamina_bar_right.rect_min_size.x = int((fill_percentage - 0.8) * max_stamina)
-		stamina_bar_right.visible = true
-	else:
-		stamina_bar_right.rect_min_size.x = 0
-		stamina_bar_right.visible = false
+	# Determine the number of middle textures to show based on the stamina percentage
+	var middle_count = max(0, int((fill_percentage - 0.2) * 5))  # For the 5 middle textures
+
+	# Set visibility based on middle_count
+	stamina_bar_middle_1.visible = middle_count >= 1
+	stamina_bar_middle_2.visible = middle_count >= 2
+	stamina_bar_middle_3.visible = middle_count >= 3
+	stamina_bar_middle_4.visible = middle_count >= 4
+	stamina_bar_middle_5.visible = middle_count >= 5
+
+	# Make sure that the middle textures only show up when the percentage is > 0.2
+	# If it's 0, hide all the middle parts
+	if fill_percentage == 0:
+		stamina_bar_middle_1.visible = false
+		stamina_bar_middle_2.visible = false
+		stamina_bar_middle_3.visible = false
+		stamina_bar_middle_4.visible = false
+		stamina_bar_middle_5.visible = false
+		stamina_bar_left.visible = false  # Hide the left part as well when stamina is zero
 
 # Signal handlers for health and stamina changes
 func _on_health_changed(amount: float, knockback: Vector2) -> void:

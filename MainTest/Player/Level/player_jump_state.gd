@@ -52,12 +52,15 @@ func on_physics_process(_delta: float):
 	
 	# Transition states
 	# Transition to Fall if velocity.y > 0 (falling down) or Idle if grounded
-	if character_body_2d.velocity.y > 50:
+	if character_body_2d.velocity.y > 100:
 		transition.emit("Fall")
 	elif character_body_2d.is_on_floor():
 		_has_jumped = false  # Reset jump flag when on the ground
 		transition.emit("Idle")
 		
+	if GameInputEvents.attack1_input():
+		#if stamina.use_stamina(1):
+			transition.emit("JumpAttack")
 	if GameInputEvents.shift_input() and can_dash:
 		can_dash = false
 		transition.emit("Dash")
