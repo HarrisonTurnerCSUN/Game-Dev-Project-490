@@ -15,16 +15,16 @@
 position = Vector2(152, -61)
 
 [node name="enemy_eyeball3" parent="." instance=ExtResource("3_drimi")]
-position = Vector2(1674, -99)
+position = Vector2(564, -74)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("4_fw6ur")]
-position = Vector2(1893, -130)
+position = Vector2(406, -69)
 
 [node name="enemy_undead_executioner" parent="." instance=ExtResource("5_j1qsc")]
 position = Vector2(2447, -242)
 
 [node name="enemy_mushroom" parent="." instance=ExtResource("6_rafr8")]
-position = Vector2(1514, -101)
+position = Vector2(281, -80)
 
 [node name="enemy_undead_executioner2" parent="." instance=ExtResource("5_j1qsc")]
-position = Vector2(635, -187)
+position = Vector2(1641, -219)

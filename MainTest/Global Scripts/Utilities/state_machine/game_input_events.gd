@@ -21,6 +21,10 @@ static func attack1_input()->bool:
 	var attack1_inputs : bool = Input.is_action_just_pressed("left_click")
 	return attack1_inputs
 
+static func attack2_input()->bool:
+	var attack2_inputs : bool = Input.is_action_just_pressed("right_click")
+	return attack2_inputs
+	
 static func shift_input()->bool:
 	var shift_inputs : bool = Input.is_action_just_pressed("shift")
 	return shift_inputs

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://hmo60pommvs7"]
+[gd_scene load_steps=42 format=3 uid="uid://hmo60pommvs7"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_goblin.gd" id="1_3sy3u"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_ns0ml"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://cm1flmf8c2qg8" path="res://Assets/AudioAssets/Enemies/GoblinSounds/goblin-hurt.wav" id="16_8w6sn"]
 [ext_resource type="AudioStream" uid="uid://tnkra62r3lvu" path="res://Assets/AudioAssets/Enemies/GoblinSounds/gGoblinRangeAttack.wav" id="16_b7ydf"]
 [ext_resource type="AudioStream" uid="uid://3ntg0jpcj15i" path="res://Assets/AudioAssets/Enemies/GoblinSounds/GoblinWalk.wav" id="17_nr2fq"]
+[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="20_f15my"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oot8s"]
 radius = 5.33333
@@ -5354,3 +5355,10 @@ stream = ExtResource("17_nr2fq")
 volume_db = -5.0
 pitch_scale = 0.9
 max_distance = 350.0
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("20_f15my")]
+offset_left = -10.0
+offset_top = -35.0
+offset_right = 10.0
+offset_bottom = -33.0
+health_node = NodePath("../Health")

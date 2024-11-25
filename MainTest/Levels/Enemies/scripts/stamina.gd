@@ -6,7 +6,7 @@ extends Node
 signal stamina_depleted
 
 ## Emitted when stamina is used.
-signal stamina_used(amount: float)
+signal stamina_used(amount: float)  # This signal is emitted when stamina is used
 
 ## Maximum stamina value.
 @export var max_stamina: float = 100.0
@@ -32,7 +32,7 @@ func use_stamina(amount: float) -> bool:
 	## Returns true if the stamina was successfully reduced, false if insufficient.
 	if _current_stamina >= amount:
 		_current_stamina -= amount
-		stamina_used.emit(amount)
+		stamina_used.emit(amount)  # Emits stamina_used signal
 		if _current_stamina <= 0.0:
 			stamina_depleted.emit()
 		return true

@@ -49,7 +49,11 @@ func on_physics_process(_delta: float):
 		
 	if character_body_2d.is_on_wall_only() and direction != 0:
 		transition.emit("WallSlide")
-		
+	
+	if GameInputEvents.attack1_input():
+		#if stamina.use_stamina(1):
+		transition.emit("JumpAttack")
+	
 # In Jump and Fall states
 	if GameInputEvents.shift_input() and can_dash:
 		can_dash = false
