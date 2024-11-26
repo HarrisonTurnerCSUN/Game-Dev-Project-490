@@ -717,6 +717,42 @@ tracks/51/keys = {
 "update": 0,
 "values": [0.0, 0.816814, 0.816814, 1.14494, 1.14494]
 }
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
 
 [sub_resource type="Animation" id="Animation_jyd5k"]
 resource_name = "Attack2"
@@ -4576,9 +4612,9 @@ libraries = {
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_y2vll")
+debug_color = Color(0.667434, 0.510711, 1.92523e-07, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -50)
@@ -4653,10 +4689,6 @@ character_body_2d = NodePath("../..")
 script = ExtResource("18_vl5dx")
 character_body_2d = NodePath("../..")
 
-[node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("19_s8xet")
-character_body_2d = NodePath("../..")
-
 [node name="CrouchWalk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("20_lrmes")
 character_body_2d = NodePath("../..")
@@ -4666,6 +4698,27 @@ script = ExtResource("21_3gj3a")
 character_body_2d = NodePath("../..")
 ghost_node = ExtResource("25_q765t")
 player = NodePath("../..")
+
+[node name="WallSlide" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
+script = ExtResource("26_fuyu1")
+character_body_2d = NodePath("../..")
+
+[node name="Hurt" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
+script = ExtResource("28_sbp36")
+character_body_2d = NodePath("../..")
+
+[node name="Attack2" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
+script = ExtResource("44_2hjb8")
+character_body_2d = NodePath("../..")
+friction = 300
+
+[node name="JumpAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
+script = ExtResource("45_qhhu0")
+character_body_2d = NodePath("../..")
+
+[node name="Slide" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
+script = ExtResource("19_s8xet")
+character_body_2d = NodePath("../..")
 
 [node name="Roll" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
 script = ExtResource("22_kqydj")
@@ -4682,31 +4735,11 @@ character_body_2d = NodePath("../..")
 [node name="Land" type="Node" parent="StateMachine"]
 script = ExtResource("25_e5wc7")
 
-[node name="WallSlide" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("26_fuyu1")
-character_body_2d = NodePath("../..")
-
 [node name="WallJump" type="Node" parent="StateMachine"]
 script = ExtResource("27_5x4nw")
 
-[node name="Hurt" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("28_sbp36")
-character_body_2d = NodePath("../..")
-
 [node name="Climb" type="Node" parent="StateMachine"]
 script = ExtResource("29_uka0c")
-
-[node name="Attack2" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("44_2hjb8")
-character_body_2d = NodePath("../..")
-friction = 300
-
-[node name="JumpAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d")]
-script = ExtResource("45_qhhu0")
-character_body_2d = NodePath("../..")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.52
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("32_5e2yj")
@@ -4721,7 +4754,6 @@ stamina_per_second = 1.0
 
 [connection signal="timeout" from="Sprite2D/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="Camera2D/StatusUI/StaminaBar/Used_bar/Timer" to="Camera2D/StatusUI/StaminaBar" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="StateMachine/Attack1" method="_on_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Idle" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Fall" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Run" method="_on_dash_timer_timeout"]

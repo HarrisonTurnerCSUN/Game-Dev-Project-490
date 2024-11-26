@@ -7,12 +7,10 @@ signal death
 @export var character_body_2d: CharacterBody2D
 @export var dash_distance: float = 350.0
 @export var dash_duration: float = 0.27  # Duration of the dash in seconds
-@export var dash_cooldown: float = 6.0  # Time until you can dash again
 @export var ghost_node : PackedScene
 @export var player: CharacterBody2D
 
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
-@onready var dash_timer: Timer = $"../../Dash_Timer"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var health: Health = $"../../Health"
 @onready var ghost_timer: Timer = $"../../Sprite2D/GhostTimer"
@@ -26,9 +24,14 @@ func _ready() -> void:
 
 func on_process(_delta: float):
 	pass
+	
 func on_physics_process(_delta: float):
-	# If dashing, apply dash logic
-	var direction: float = GameInputEvents.movement_input()
+	var direction : float = GameInputEvents.movement_input()
+	if direction > 0.0 and sprite_2d.scale.x < 0.0:
+		sprite_2d.scale.x = 1.0;
+	if direction < 0.0 and sprite_2d.scale.x > 0.0:
+		sprite_2d.scale.x = -1.0;
+		
 	if _is_dashing:
 		character_body_2d.velocity = Vector2(dash_distance * direction, 0)
 		character_body_2d.move_and_slide()
@@ -52,7 +55,6 @@ func enter():
 	player.collision_mask &= ~(1 << 2)  # Remove layer 3 (bit 2)
 # Reset the dash timer when entering the dash state
 	ghost_timer.start()
-	dash_timer.stop()
 	_is_dashing = true
 	animation_player.play("Dash")
 
@@ -68,7 +70,6 @@ func exit():
 	player.collision_mask |= 1 << 2  # Add layer 3 (bit 2)
 	#print("Dashing ended!")  # Debug statement
 	_is_dashing = false
-	dash_timer.start()
 	#character_body_2d.velocity.x = 0  # Stop the dash velocity
 	animation_player.stop()
 
@@ -110,8 +111,6 @@ func add_ghost():
 		ghost.scale.x = abs(character_body_2d.scale.x)  # Ensure the ghost is facing right
 	get_tree().current_scene.add_child(ghost)
 	
-func _on_dash_timer_timeout() -> void:
-	pass # Replace with function body.
 
 
 func _on_ghost_timer_timeout() -> void:

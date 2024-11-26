@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dw5jn73q5owhu"]
+[gd_scene load_steps=50 format=3 uid="uid://dw5jn73q5owhu"]
 
 [ext_resource type="Texture2D" uid="uid://c4pvo6f42x12a" path="res://Assets/Character Sprites/Undead Executioner/attacking.png" id="1_1bvdo"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_undead_executioner.gd" id="1_2u3ss"]
@@ -7,10 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://cp2w7odmw5ind" path="res://Assets/Character Sprites/Undead Executioner/idle2.png" id="3_w2rsv"]
 [ext_resource type="Texture2D" uid="uid://cqlsujgl4el3x" path="res://Assets/Character Sprites/Undead Executioner/skill1.png" id="4_72kt0"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="4_hmkoa"]
+[ext_resource type="AudioStream" uid="uid://bgep24oaxwsnt" path="res://Assets/AudioAssets/Enemies/Executioner/643699__snowfightstudios__devil-demon_laughs.wav" id="5_aeftm"]
+[ext_resource type="AudioStream" uid="uid://1liu78i7g2jj" path="res://Assets/AudioAssets/Enemies/Executioner/charge.wav" id="5_ngje2"]
 [ext_resource type="Texture2D" uid="uid://dhv012wey5xsp" path="res://Assets/Character Sprites/Undead Executioner/summon.png" id="5_u31y7"]
+[ext_resource type="AudioStream" uid="uid://btied8s8ayq2o" path="res://Assets/AudioAssets/Enemies/Executioner/death.wav" id="7_0bj83"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="9_6fvw5"]
+[ext_resource type="AudioStream" uid="uid://bg1rqh74racpq" path="res://Assets/AudioAssets/Enemies/Executioner/Phase.wav" id="9_mga28"]
 [ext_resource type="BehaviorTree" uid="uid://dny3kkwspuutb" path="res://ai/trees/undead_executioner.tres" id="9_t44f2"]
 [ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="11_eocli"]
+[ext_resource type="AudioStream" uid="uid://c5om4gdseav8g" path="res://Assets/AudioAssets/Enemies/Executioner/643700__snowfightstudios__devil-demon_no.wav" id="11_eyg03"]
+[ext_resource type="AudioStream" uid="uid://cwcln4ht8scfr" path="res://Assets/AudioAssets/Enemies/Executioner/643727__snowfightstudios__devil-demon_you-fool.wav" id="12_fbyi2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahrxk"]
 radius = 4.0
@@ -1278,6 +1284,30 @@ tracks/99/keys = {
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.5708, 0.0, 0.0, 0.0, 0.0]
 }
+tracks/100/type = "value"
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/path = NodePath("AttackingAudio:stream")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_aeftm")]
+}
+tracks/101/type = "value"
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/path = NodePath("AttackingAudio:playing")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ulf4v"]
 resource_name = "Charge"
@@ -2482,6 +2512,30 @@ tracks/99/keys = {
 "update": 0,
 "values": [0.0, 0.0]
 }
+tracks/100/type = "value"
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/path = NodePath("ChargeAudio:stream")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_ngje2")]
+}
+tracks/101/type = "value"
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/path = NodePath("ChargeAudio:playing")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_wu126"]
 resource_name = "Death"
@@ -2774,6 +2828,30 @@ tracks/23/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("DeathAudio:stream")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_0bj83")]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("DeathAudio:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_p6opk"]
@@ -4286,6 +4364,30 @@ tracks/23/keys = {
 "update": 0,
 "values": [Vector2(9, 18), Vector2(9, 18), Vector2(9, 18), Vector2(9, 18), Vector2(9, 14), Vector2(9, 14), Vector2(9, 4), Vector2(7, 5.167), Vector2(5, -7), Vector2(5, -7), Vector2(5, -7), Vector2(5, -7), Vector2(5, -7), Vector2(5, -7), Vector2(9, 18)]
 }
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("PhaseAudio:stream")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_mga28")]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("PhaseAudio:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_nfy6x"]
 length = 0.001
@@ -5585,6 +5687,150 @@ tracks/107/keys = {
 "update": 0,
 "values": [Vector2(9, 18)]
 }
+tracks/108/type = "value"
+tracks/108/imported = false
+tracks/108/enabled = true
+tracks/108/path = NodePath("ChargeAudio:stream")
+tracks/108/interp = 1
+tracks/108/loop_wrap = true
+tracks/108/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_ngje2")]
+}
+tracks/109/type = "value"
+tracks/109/imported = false
+tracks/109/enabled = true
+tracks/109/path = NodePath("ChargeAudio:playing")
+tracks/109/interp = 1
+tracks/109/loop_wrap = true
+tracks/109/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/110/type = "value"
+tracks/110/imported = false
+tracks/110/enabled = true
+tracks/110/path = NodePath("PhaseAudio:stream")
+tracks/110/interp = 1
+tracks/110/loop_wrap = true
+tracks/110/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_mga28")]
+}
+tracks/111/type = "value"
+tracks/111/imported = false
+tracks/111/enabled = true
+tracks/111/path = NodePath("PhaseAudio:playing")
+tracks/111/interp = 1
+tracks/111/loop_wrap = true
+tracks/111/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/112/type = "value"
+tracks/112/imported = false
+tracks/112/enabled = true
+tracks/112/path = NodePath("DeathAudio:stream")
+tracks/112/interp = 1
+tracks/112/loop_wrap = true
+tracks/112/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_0bj83")]
+}
+tracks/113/type = "value"
+tracks/113/imported = false
+tracks/113/enabled = true
+tracks/113/path = NodePath("DeathAudio:playing")
+tracks/113/interp = 1
+tracks/113/loop_wrap = true
+tracks/113/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/114/type = "value"
+tracks/114/imported = false
+tracks/114/enabled = true
+tracks/114/path = NodePath("AttackingAudio:stream")
+tracks/114/interp = 1
+tracks/114/loop_wrap = true
+tracks/114/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_aeftm")]
+}
+tracks/115/type = "value"
+tracks/115/imported = false
+tracks/115/enabled = true
+tracks/115/path = NodePath("AttackingAudio:playing")
+tracks/115/interp = 1
+tracks/115/loop_wrap = true
+tracks/115/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/116/type = "value"
+tracks/116/imported = false
+tracks/116/enabled = true
+tracks/116/path = NodePath("SummonAudio:stream")
+tracks/116/interp = 1
+tracks/116/loop_wrap = true
+tracks/116/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_eyg03")]
+}
+tracks/117/type = "value"
+tracks/117/imported = false
+tracks/117/enabled = true
+tracks/117/path = NodePath("SummonAudio:playing")
+tracks/117/interp = 1
+tracks/117/loop_wrap = true
+tracks/117/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/118/type = "value"
+tracks/118/imported = false
+tracks/118/enabled = true
+tracks/118/path = NodePath("Skill1Audio:stream")
+tracks/118/interp = 1
+tracks/118/loop_wrap = true
+tracks/118/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_fbyi2")]
+}
+tracks/119/type = "value"
+tracks/119/imported = false
+tracks/119/enabled = true
+tracks/119/path = NodePath("Skill1Audio:playing")
+tracks/119/interp = 1
+tracks/119/loop_wrap = true
+tracks/119/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_rxw18"]
 resource_name = "Skill1"
@@ -6788,6 +7034,30 @@ tracks/99/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.0]
+}
+tracks/100/type = "value"
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/path = NodePath("Skill1Audio:stream")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_fbyi2")]
+}
+tracks/101/type = "value"
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/path = NodePath("Skill1Audio:playing")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/keys = {
+"times": PackedFloat32Array(0.05, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_dhfan"]
@@ -7994,6 +8264,30 @@ tracks/99/keys = {
 "update": 0,
 "values": [0.0, 0.0]
 }
+tracks/100/type = "value"
+tracks/100/imported = false
+tracks/100/enabled = true
+tracks/100/path = NodePath("SummonAudio:stream")
+tracks/100/interp = 1
+tracks/100/loop_wrap = true
+tracks/100/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_eyg03")]
+}
+tracks/101/type = "value"
+tracks/101/imported = false
+tracks/101/enabled = true
+tracks/101/path = NodePath("SummonAudio:playing")
+tracks/101/interp = 1
+tracks/101/loop_wrap = true
+tracks/101/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m6pvp"]
 _data = {
@@ -8101,7 +8395,6 @@ shape = SubResource("CapsuleShape2D_abg7o")
 debug_color = Color(0.95529, 0, 0.543985, 0.42)
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
-visible = false
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("4_hmkoa")
@@ -8175,6 +8468,7 @@ blackboard_plan = SubResource("BlackboardPlan_a6tqq")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("9_6fvw5")
+max_health = 15.0
 
 [node name="RightTopBox" type="CollisionShape2D" parent="."]
 position = Vector2(3, -9)
@@ -8194,3 +8488,24 @@ offset_top = -40.0
 offset_right = 30.0
 offset_bottom = -36.0
 health_node = NodePath("../Health")
+
+[node name="AttackingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_aeftm")
+max_distance = 350.0
+
+[node name="ChargeAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ngje2")
+
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_0bj83")
+
+[node name="IdleAudio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="PhaseAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_mga28")
+
+[node name="Skill1Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_fbyi2")
+
+[node name="SummonAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_eyg03")

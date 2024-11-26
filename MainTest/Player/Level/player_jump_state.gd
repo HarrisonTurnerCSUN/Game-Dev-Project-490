@@ -12,6 +12,7 @@ signal death
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var health: Health = $"../../Health"
+@onready var stamina: Stamina = $"../../Stamina"
 
 var can_dash: bool = true
 var _is_dead: bool = false
@@ -28,13 +29,16 @@ func on_process(_delta: float):
 	
 func on_physics_process(_delta: float):
 	var direction: float = GameInputEvents.movement_input()
-
+	if direction > 0.0 and sprite_2d.scale.x < 0.0:
+		sprite_2d.scale.x = 1.0;
+	if direction < 0.0 and sprite_2d.scale.x > 0.0:
+		sprite_2d.scale.x = -1.0;
 	# Apply gravity to the vertical velocity
 	character_body_2d.velocity.y += gravity * _delta
 	
 	# Allow air control regardless of direction input
-	if direction != 0:
-		sprite_2d.flip_h = false if direction > 0 else true 
+	#if direction != 0:
+		#sprite_2d.flip_h = false if direction > 0 else true 
 
 	# Apply horizontal movement while in the air
 	var target_velocity_x = direction * air_horizontal_speed
@@ -55,16 +59,15 @@ func on_physics_process(_delta: float):
 	if character_body_2d.velocity.y > 100:
 		transition.emit("Fall")
 	elif character_body_2d.is_on_floor():
-		_has_jumped = false  # Reset jump flag when on the ground
 		transition.emit("Idle")
 		
 	if GameInputEvents.attack1_input():
-		#if stamina.use_stamina(1):
+		if stamina.use_stamina(1):
 			transition.emit("JumpAttack")
 	
-	if GameInputEvents.shift_input() and can_dash:
-		can_dash = false
-		transition.emit("Dash")
+	if GameInputEvents.shift_input():
+		if stamina.use_stamina(2):
+			transition.emit("Dash")
 	
 	#if GameInputEvents.jump_input() and _has_jumped:
 		#transition.emit("DoubleJump")
@@ -107,7 +110,3 @@ func enter():
 	
 func exit():
 	pass
-
-
-func _on_dash_timer_timeout() -> void:
-	can_dash = true

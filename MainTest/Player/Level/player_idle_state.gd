@@ -3,7 +3,7 @@ extends NodeState
 signal death
 
 @export_category("Friction")
-
+@export_category("Idle state")
 @export var character_body_2d : CharacterBody2D
 @export var gravity : int = 700
 @export var friction : int = 700
@@ -13,11 +13,11 @@ signal death
 @onready var hurtbox: Hurtbox = $"../../Sprite2D/Hurtbox"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var stamina: Stamina = $"../../Stamina"
+@onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
 const MOVEMENT_THRESHOLD: float = 0.1
-var can_dash: bool = true
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
@@ -28,7 +28,10 @@ func on_process(_delta :float):
 	
 func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
-	
+	if direction > 0.0 and sprite_2d.scale.x < 0.0:
+		sprite_2d.scale.x = 1.0;
+	if direction < 0.0 and sprite_2d.scale.x > 0.0:
+		sprite_2d.scale.x = -1.0;
 	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x, 0, friction * _delta)
 	character_body_2d.move_and_slide()
 	
@@ -51,7 +54,8 @@ func on_physics_process(_delta :float):
 		transition.emit("Idle")
 		
 	if GameInputEvents.jump_input():
-		transition.emit("Jump")
+		if stamina.use_stamina(1):
+			transition.emit("Jump")
 		
 	if GameInputEvents.attack1_input():
 		if stamina.use_stamina(1):
@@ -61,17 +65,17 @@ func on_physics_process(_delta :float):
 		if stamina.use_stamina(1):
 			transition.emit("Attack2")
 		
-	#if GameInputEvents.control_input():
-		#transition.emit("Crouch")
+	if GameInputEvents.control_input():
+		transition.emit("Crouch")
 		
 	if GameInputEvents.shift_input():
 		#can_dash = false
 		#print(can_dash)
 		if stamina.use_stamina(2):
-			print("Performed action!")
+			#print("Performed action!")
 			transition.emit("Dash")
-		else:
-			print("Not enough stamina!")
+		#else:
+			#print("Not enough stamina!")
 		
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
@@ -116,9 +120,3 @@ func exit():
 	pass
 	#await get_tree().create_timer(0.01).timeout
 	#animation_player.stop()
-	
-
-
-func _on_dash_timer_timeout() -> void:
-	can_dash = true
-	print(can_dash)

@@ -11,6 +11,7 @@ signal death
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var health: Health = $"../../Health"
+@onready var stamina: Stamina = $"../../Stamina"
 
 
 
@@ -25,15 +26,17 @@ func on_process(_delta: float):
 	pass
 
 func on_physics_process(_delta: float):
-
 	var direction: float = GameInputEvents.movement_input()
-
+	if direction > 0.0 and sprite_2d.scale.x < 0.0:
+		sprite_2d.scale.x = 1.0;
+	if direction < 0.0 and sprite_2d.scale.x > 0.0:
+		sprite_2d.scale.x = -1.0;
 	# Apply fall speed to the vertical velocity
 	character_body_2d.velocity.y += fall_speed * _delta
 
 	# Allow horizontal movement in the air
 	if direction != 0:
-		sprite_2d.flip_h = false if direction > 0 else true 
+		##sprite_2d.flip_h = false if direction > 0 else true 
 		var target_velocity_x = direction * air_horizontal_speed
 		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, target_velocity_x, 0.1)  # Smooth transition
 
@@ -51,14 +54,13 @@ func on_physics_process(_delta: float):
 		transition.emit("WallSlide")
 	
 	if GameInputEvents.attack1_input():
-		#if stamina.use_stamina(1):
-		transition.emit("JumpAttack")
+		if stamina.use_stamina(1):
+			transition.emit("JumpAttack")
 	
 # In Jump and Fall states
-	if GameInputEvents.shift_input() and can_dash:
-		can_dash = false
-		print(can_dash)
-		transition.emit("Dash")
+	if GameInputEvents.shift_input():
+		if stamina.use_stamina(2):
+			transition.emit("Dash")
 
 func _damaged(_amount: float, knockback: Vector2) -> void:
 	# Handle damage and knockback
@@ -92,8 +94,3 @@ func enter():
 
 func exit():
 	animation_player.stop()
-
-
-func _on_dash_timer_timeout() -> void:
-	can_dash = true
-	print(can_dash)

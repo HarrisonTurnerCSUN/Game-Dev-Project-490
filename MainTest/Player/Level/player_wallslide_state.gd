@@ -31,6 +31,10 @@ func on_process(_delta :float):
 	
 func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
+	if direction > 0.0 and sprite_2d.scale.x > 0.0:
+		sprite_2d.scale.x = -1.0;
+	if direction < 0.0 and sprite_2d.scale.x < 0.0:
+		sprite_2d.scale.x = 1.0;
 	
 	character_body_2d.velocity.y = 0
 	character_body_2d.velocity.y += fall_speed * _delta
@@ -38,8 +42,6 @@ func on_physics_process(_delta :float):
 	#ie: you can build momentum up to a cap, this could be fun(ny)
 	
 	if direction != 0 and wall_cling_direction == Vector2.ZERO:
-		sprite_2d.flip_h = true if direction > 0 else false
-		hitbox.scale.x = 1 if sprite_2d.flip_h else -1  # Update hitbox scale based on sprite flip
 		wall_cling_direction = Vector2.RIGHT if direction > 0 else Vector2.LEFT
 		
 	

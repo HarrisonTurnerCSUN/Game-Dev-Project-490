@@ -26,8 +26,8 @@ const jump_power = -400
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
-	self.collision_layer = 3
-	self.collision_layer = 1 | 2
+	#self.collision_layer = 3
+	#self.collision_layer = 1 | 2
 
 
 func _physics_process(_delta: float) -> void:
@@ -60,13 +60,13 @@ func update_facing() -> void:
 func face_dir(dir: float) -> void:
 	if dir > 0.0:
 		sprite.flip_h = false  # Face right
-		hurtbox.scale.x = 1
-		hitbox.scale.x = 1
+		#hurtbox.scale.x = 1
+		#hitbox.scale.x = 1
 		#collision_shape_2d.scale.x = 1
 	elif dir < 0.0:
 		sprite.flip_h = true   # Face left
-		hurtbox.scale.x = -1
-		hitbox.scale.x = -1
+		#hurtbox.scale.x = -1
+		#hitbox.scale.x = -1
 		#collision_shape_2d.scale.x = -1
 	_frames_since_facing_update = 0
 
