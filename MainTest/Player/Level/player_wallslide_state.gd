@@ -55,7 +55,8 @@ func on_physics_process(_delta :float):
 		transition.emit("Idle")
 		
 	if GameInputEvents.jump_input():
-		transition.emit("Jump")
+		if stamina.use_stamina(1):
+			transition.emit("Jump")
 		
 	if GameInputEvents.attack1_input() || GameInputEvents.attack2_input():
 		if stamina.use_stamina(1):
@@ -70,10 +71,9 @@ func on_physics_process(_delta :float):
 	#if GameInputEvents.control_input() && character_body_2d.velocity.x >= 1:
 		#transition.emit("Slide")
 		
-	if GameInputEvents.shift_input() and can_dash:
-		can_dash = false
-		print(can_dash)
-		transition.emit("Dash")
+	if GameInputEvents.shift_input():
+		if stamina.use_stamina(2):
+			transition.emit("Dash")
 
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
