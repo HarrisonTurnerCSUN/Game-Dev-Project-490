@@ -4,9 +4,9 @@ extends Control
 @onready var options = $MarginContainer/Options
 @onready var stats = $MarginContainer/Stats
 
-@onready var star1 = $MarginContainer/Stats/HBoxContainer/Star
-@onready var star2 = $MarginContainer/Stats/HBoxContainer/Star2
-@onready var star3 = $MarginContainer/Stats/HBoxContainer/Star3
+@onready var star1 = $MarginContainer/Stats/VBoxContainer3/HBoxContainer/Star
+@onready var star2 = $MarginContainer/Stats/VBoxContainer3/HBoxContainer/Star2
+@onready var star3 = $MarginContainer/Stats/VBoxContainer3/HBoxContainer/Star3
 
 @export var stopwatch_label : Label
 

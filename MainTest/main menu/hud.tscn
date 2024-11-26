@@ -21,10 +21,10 @@ stopwatch_label = NodePath("StopwatchLabel")
 
 [node name="StopwatchLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 39.0
-offset_top = 23.0
-offset_right = 124.0
-offset_bottom = 63.0
+offset_left = 1043.0
+offset_top = 25.0
+offset_right = 1128.0
+offset_bottom = 65.0
 theme_override_font_sizes/font_size = 29
 text = "00:00"
 label_settings = SubResource("LabelSettings_r0v0p")
