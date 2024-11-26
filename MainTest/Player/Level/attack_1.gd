@@ -1,11 +1,16 @@
 extends NodeState
+
 signal death
+
+@export_category("Attack1 state")
+
 @export var character_body_2d : CharacterBody2D
+@export var friction : int = 500
+
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
-@export var friction : int = 500
-@export_category("Attack1 state")
 @onready var health: Health = $"../../Health"
+
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
 

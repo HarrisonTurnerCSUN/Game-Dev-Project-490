@@ -2,20 +2,18 @@ extends NodeState
 
 signal death
 
-@onready var timer: Timer = $"../../Timer"
-@export var character_body_2d: CharacterBody2D
-@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-@onready var sprite_2d: Sprite2D = $"../../Sprite2D"
-@export var friction: int = 500
-@onready var stamina: Stamina = $"../../Stamina"
-@onready var health: Health = $"../../Health"
-
 @export_category("JumpAttack state")
+
+@export var character_body_2d: CharacterBody2D
+@export var friction: int = 500
 @export var fall_speed: int = 700  # Speed of falling
 @export var air_horizontal_speed: int = 200  # Horizontal speed in the air
 @export var max_air_horizontal_speed: int = 200
 
-var is_attacking: bool = false
+@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@onready var sprite_2d: Sprite2D = $"../../Sprite2D"
+@onready var stamina: Stamina = $"../../Stamina"
+@onready var health: Health = $"../../Health"
 
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
@@ -50,12 +48,12 @@ func on_physics_process(_delta: float):
 	if character_body_2d.is_on_floor():
 		transition.emit("Idle")
 
-	if GameInputEvents.shift_input() and !is_attacking:
+	if GameInputEvents.shift_input() && direction != 0:
 		if stamina.use_stamina(2):
-			is_attacking = true
 			transition.emit("Dash")
 		else:
 			print("Not enough stamina!")
+
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
 		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.2)  # Adjust as needed
@@ -99,9 +97,7 @@ func enter():
 	if direction < 0.0 and sprite_2d.scale.x > 0.0:
 		sprite_2d.scale.x = -1.0;
 	# Initialize the state
-	is_attacking = false
 	animation_player.play("JumpAttack")
 
 func exit():
-	# Reset any state-specific variables if needed
-	is_attacking = false
+	pass

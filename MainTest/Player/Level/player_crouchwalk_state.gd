@@ -2,14 +2,16 @@ extends NodeState
 
 signal death
 
-@export var character_body_2d : CharacterBody2D
-@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-@onready var sprite_2d: Sprite2D = $"../../Sprite2D"
-
 @export_category("Player Crouch Walk state")
+
 @export var speed : int = 150
 @export var max_horizontal_speed : int = 150
+@export var character_body_2d : CharacterBody2D
+
 @onready var health: Health = $"../../Health"
+@onready var stamina: Stamina = $"../../Stamina"
+@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
@@ -41,10 +43,21 @@ func on_physics_process(_delta :float):
 	#Transitions
 	if character_body_2d.is_on_floor() && !GameInputEvents.control_input():
 		transition.emit("Idle")
+	
+	if character_body_2d.is_on_floor() && GameInputEvents.control_input() && direction == 0:
+		transition.emit("Crouch")
 		
-	if !character_body_2d.is_on_floor() and character_body_2d.velocity.y > 0:
+	if !character_body_2d.is_on_floor():
 		transition.emit("Fall")
-		
+	
+	if GameInputEvents.shift_input() && direction !=0:
+		if stamina.use_stamina(2):
+			transition.emit("Dash")
+			
+	if GameInputEvents.attack1_input() || GameInputEvents.attack2_input():
+		if stamina.use_stamina(1):
+			transition.emit("CrouchAttack")
+			
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
 		character_body_2d.velocity.x = lerp(character_body_2d.velocity.x, 0.0, 0.2)  # Adjust as needed

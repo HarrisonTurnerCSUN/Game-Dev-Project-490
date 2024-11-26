@@ -3,6 +3,7 @@ extends NodeState
 signal death
 
 @export_category("Fall state")
+
 @export var character_body_2d : CharacterBody2D
 @export var fall_speed : int = 700  # Speed of falling
 @export var air_horizontal_speed: int = 200  # Horizontal speed in the air
@@ -13,9 +14,6 @@ signal death
 @onready var health: Health = $"../../Health"
 @onready var stamina: Stamina = $"../../Stamina"
 
-
-
-var can_dash: bool = true
 var _is_dead: bool = false
 
 func _ready() -> void:
@@ -48,7 +46,7 @@ func on_physics_process(_delta: float):
 
 	# Transition states
 	if character_body_2d.is_on_floor():
-		transition.emit("Idle")  # Transition to Idle when grounded
+		transition.emit("Idle")  
 		
 	if character_body_2d.is_on_wall_only() and direction != 0:
 		transition.emit("WallSlide")
@@ -58,10 +56,14 @@ func on_physics_process(_delta: float):
 			transition.emit("JumpAttack")
 	
 # In Jump and Fall states
-	if GameInputEvents.shift_input():
+	if GameInputEvents.shift_input() && direction != 0:
 		if stamina.use_stamina(2):
 			transition.emit("Dash")
-
+			
+	if GameInputEvents.jump_input() && !character_body_2d.is_on_floor():
+		if stamina.use_stamina(3):
+			transition.emit("Jump")
+			
 func _damaged(_amount: float, knockback: Vector2) -> void:
 	# Handle damage and knockback
 	apply_knockback(knockback)

@@ -3,6 +3,7 @@ extends NodeState
 signal death
 
 @export_category("Jump state")
+
 @export var character_body_2d : CharacterBody2D
 @export var jump_power : int = 350
 @export var gravity : int = 700
@@ -14,10 +15,9 @@ signal death
 @onready var health: Health = $"../../Health"
 @onready var stamina: Stamina = $"../../Stamina"
 
-var can_dash: bool = true
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
-var _has_jumped: bool = false  # Flag to track if the jump has been initiated
+#var _has_jumped: bool = false  # Flag to track if the jump has been initiated
 
 
 func _ready() -> void:
@@ -58,6 +58,7 @@ func on_physics_process(_delta: float):
 	# Transition to Fall if velocity.y > 0 (falling down) or Idle if grounded
 	if character_body_2d.velocity.y > 100:
 		transition.emit("Fall")
+		
 	elif character_body_2d.is_on_floor():
 		transition.emit("Idle")
 		
@@ -65,7 +66,7 @@ func on_physics_process(_delta: float):
 		if stamina.use_stamina(1):
 			transition.emit("JumpAttack")
 	
-	if GameInputEvents.shift_input():
+	if GameInputEvents.shift_input() && direction != 0:
 		if stamina.use_stamina(2):
 			transition.emit("Dash")
 	

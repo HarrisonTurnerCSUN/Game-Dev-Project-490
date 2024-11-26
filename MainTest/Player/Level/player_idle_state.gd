@@ -4,6 +4,7 @@ signal death
 
 @export_category("Friction")
 @export_category("Idle state")
+
 @export var character_body_2d : CharacterBody2D
 @export var gravity : int = 700
 @export var friction : int = 700
@@ -32,6 +33,7 @@ func on_physics_process(_delta :float):
 		sprite_2d.scale.x = 1.0;
 	if direction < 0.0 and sprite_2d.scale.x > 0.0:
 		sprite_2d.scale.x = -1.0;
+		
 	character_body_2d.velocity.x = move_toward(character_body_2d.velocity.x, 0, friction * _delta)
 	character_body_2d.move_and_slide()
 	
@@ -68,14 +70,10 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.control_input():
 		transition.emit("Crouch")
 		
-	if GameInputEvents.shift_input():
-		#can_dash = false
-		#print(can_dash)
+	if GameInputEvents.shift_input() && direction !=0:
 		if stamina.use_stamina(2):
-			#print("Performed action!")
 			transition.emit("Dash")
-		#else:
-			#print("Not enough stamina!")
+
 		
 func _post_physics_process() -> void:
 	if not _moved_this_frame:

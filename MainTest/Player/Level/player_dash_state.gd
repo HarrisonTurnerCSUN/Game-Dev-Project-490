@@ -14,6 +14,7 @@ signal death
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var health: Health = $"../../Health"
 @onready var ghost_timer: Timer = $"../../Sprite2D/GhostTimer"
+@onready var stamina: Stamina = $"../../Stamina"
 
 var _is_dead: bool = false
 var _is_dashing: bool = false  # Flag to track if dashing
@@ -44,10 +45,14 @@ func on_physics_process(_delta: float):
 		transition.emit("Fall")
 
 
-	if GameInputEvents.jump_input():
-		transition.emit("Jump")
-	elif abs(direction) > 0.1:
-		transition.emit("Run")
+	if GameInputEvents.jump_input() && character_body_2d.is_on_floor():
+		if stamina.use_stamina(1):
+			transition.emit("Jump")
+	elif GameInputEvents.jump_input() && !character_body_2d.is_on_floor():
+		if stamina.use_stamina(3):
+			transition.emit("Jump")
+	#elif abs(direction) > 0.1:
+		#transition.emit("Run")
 
 func enter():
 	player.collision_layer = 0
