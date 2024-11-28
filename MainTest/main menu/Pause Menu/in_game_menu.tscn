@@ -146,10 +146,19 @@ text = "Quit
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/Stats"]
 layout_mode = 2
+
+[node name="LevelComplete" type="Label" parent="MarginContainer/Stats/VBoxContainer3"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Level Complete"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Stats/VBoxContainer3"]
 layout_mode = 2
@@ -212,8 +221,14 @@ layout_mode = 2
 text = "Options
 "
 
+[node name="ExitToOverworld" type="Button" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Exit to Overworld"
+
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer2/ToStats" to="." method="_on_to_stats_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/Stats/VBoxContainer3/VBoxContainer/ToOptions" to="." method="_on_to_options_pressed"]
+[connection signal="pressed" from="MarginContainer/Stats/VBoxContainer3/VBoxContainer/ExitToOverworld" to="." method="_on_exit_to_overworld_pressed"]
