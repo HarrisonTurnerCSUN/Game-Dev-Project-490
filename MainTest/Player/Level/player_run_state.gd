@@ -73,7 +73,8 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.control_input() && character_body_2d.velocity.x >= 1:
 		transition.emit("CrouchWalk")
 		
-	if GameInputEvents.shift_input() && direction != 0:
+	#if GameInputEvents.shift_input() && direction != 0:
+	if GameInputEvents.shift_input():
 		if stamina.use_stamina(2):
 			transition.emit("Dash")
 

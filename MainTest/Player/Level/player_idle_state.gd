@@ -70,7 +70,8 @@ func on_physics_process(_delta :float):
 	if GameInputEvents.control_input():
 		transition.emit("Crouch")
 		
-	if GameInputEvents.shift_input() && direction !=0:
+	#if GameInputEvents.shift_input() && direction !=0:
+	if GameInputEvents.shift_input():
 		if stamina.use_stamina(2):
 			transition.emit("Dash")
 
@@ -88,6 +89,7 @@ func move(p_velocity: Vector2) -> void:
 func _damaged(_amount: float, knockback: Vector2) -> void:
 	#print("Current Health: ", health.get_current())  # Print the current health
 	apply_knockback(knockback)
+	#transition.emit("Hurt")
 	animation_player.play("Hurt")
 	await animation_player.animation_finished
 

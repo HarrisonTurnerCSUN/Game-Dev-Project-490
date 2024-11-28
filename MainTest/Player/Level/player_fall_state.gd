@@ -56,7 +56,8 @@ func on_physics_process(_delta: float):
 			transition.emit("JumpAttack")
 	
 # In Jump and Fall states
-	if GameInputEvents.shift_input() && direction != 0:
+	#if GameInputEvents.shift_input() && direction != 0:
+	if GameInputEvents.shift_input():
 		if stamina.use_stamina(2):
 			transition.emit("Dash")
 			

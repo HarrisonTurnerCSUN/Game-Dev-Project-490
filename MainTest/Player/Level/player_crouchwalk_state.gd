@@ -50,7 +50,8 @@ func on_physics_process(_delta :float):
 	if !character_body_2d.is_on_floor():
 		transition.emit("Fall")
 	
-	if GameInputEvents.shift_input() && direction !=0:
+	#if GameInputEvents.shift_input() && direction !=0:
+	if GameInputEvents.shift_input():
 		if stamina.use_stamina(2):
 			transition.emit("Dash")
 			

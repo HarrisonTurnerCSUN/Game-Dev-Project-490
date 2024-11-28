@@ -57,7 +57,7 @@ output_var = &"target"
 script = ExtResource("3_bo4wy")
 target_var = &"target"
 speed_var = &"speed"
-approach_distance = 0.0
+approach_distance = -5.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_nxgj6"]
 time_limit = 4.0
