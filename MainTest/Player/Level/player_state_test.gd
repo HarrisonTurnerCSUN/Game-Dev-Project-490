@@ -15,7 +15,7 @@ var _is_dead: bool = false
 @export var camera_zoom_y: float = 3.0
 @export var camera_x_transform: float = 0
 @export var camera_y_transform: float = 0 
-
+@export var inventory: Inventory
 
 func _ready() -> void:
 	camera.limit_bottom = bottom
@@ -60,3 +60,7 @@ func move(p_velocity: Vector2) -> void:
 
 func get_facing() -> float:
 	return 1
+
+func _on_hurtbox_area_entered(area):
+	if area.has_method("collect"):
+		area.collect(inventory)

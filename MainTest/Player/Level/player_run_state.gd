@@ -13,6 +13,7 @@ signal death
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var hitbox: Hitbox = $"../../Sprite2D/Hitbox"
 @onready var stamina: Stamina = $"../../Stamina"
+@onready var run_sound: AudioStreamPlayer2D = $"../../RunSound"
 
 var can_dash: bool = true
 var _is_dead: bool = false
@@ -114,8 +115,10 @@ func die() -> void:
 	pass
 	
 func enter():
+	run_sound.play()
 	animation_player.play("Run")
 	
 func exit():
 	#pass
+	run_sound.stop()
 	animation_player.stop()

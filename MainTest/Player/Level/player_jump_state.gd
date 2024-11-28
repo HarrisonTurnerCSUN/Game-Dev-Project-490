@@ -62,7 +62,7 @@ func on_physics_process(_delta: float):
 	elif character_body_2d.is_on_floor():
 		transition.emit("Idle")
 		
-	if GameInputEvents.attack1_input():
+	if GameInputEvents.attack1_input() || GameInputEvents.attack2_input():
 		if stamina.use_stamina(1):
 			transition.emit("JumpAttack")
 	
