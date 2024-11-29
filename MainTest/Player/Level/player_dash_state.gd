@@ -15,6 +15,7 @@ signal death
 @onready var health: Health = $"../../Health"
 @onready var ghost_timer: Timer = $"../../Sprite2D/GhostTimer"
 @onready var stamina: Stamina = $"../../Stamina"
+@onready var dash: AudioStreamPlayer2D = $"../../Dash"
 
 var _is_dead: bool = false
 var _is_dashing: bool = false  # Flag to track if dashing
@@ -61,6 +62,7 @@ func enter():
 # Reset the dash timer when entering the dash state
 	ghost_timer.start()
 	_is_dashing = true
+	dash.play()
 	animation_player.play("Dash")
 
 		# Use a timer to exit the dash state after the duration
@@ -70,6 +72,7 @@ func enter():
 	transition.emit("Idle")
 
 func exit():
+	dash.stop()
 	player.collision_layer = 2
 	#self.collision_mask = 1
 	player.collision_mask |= 1 << 2  # Add layer 3 (bit 2)

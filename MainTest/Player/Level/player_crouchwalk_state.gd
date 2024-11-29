@@ -12,6 +12,7 @@ signal death
 @onready var stamina: Stamina = $"../../Stamina"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
+@onready var run_sound: AudioStreamPlayer2D = $"../../RunSound"
 
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
@@ -95,7 +96,10 @@ func die() -> void:
 	pass
 	
 func enter():
+	run_sound.volume_db = -10  # Lower the volume for running
+	run_sound.play()
 	animation_player.play("Crouch_Walk")
 	
 func exit():
-	pass
+	run_sound.volume_db = 0
+	run_sound.stop()

@@ -256,7 +256,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_bjvj3")
 knockback_enabled = true
-knockback_strength = 50.0
+knockback_strength = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 visible = false

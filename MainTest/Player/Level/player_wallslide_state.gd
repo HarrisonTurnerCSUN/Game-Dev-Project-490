@@ -16,6 +16,7 @@ signal death
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var hitbox: Hitbox = $"../../Sprite2D/Hitbox"
 @onready var stamina: Stamina = $"../../Stamina"
+@onready var slide_hang: AudioStreamPlayer2D = $"../../SlideHang"
 
 var can_dash: bool = true
 var _is_dead: bool = false
@@ -111,10 +112,11 @@ func die() -> void:
 	pass
 	
 func enter():
+	slide_hang.play()
 	animation_player.play("WallSlide")
 	
 func exit():
-	#pass
+	slide_hang.stop()
 	wall_cling_direction = Vector2.ZERO
 	animation_player.stop()
 
