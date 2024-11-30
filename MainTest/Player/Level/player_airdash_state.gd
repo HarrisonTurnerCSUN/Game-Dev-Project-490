@@ -7,6 +7,7 @@ extends NodeState
 @export_category("Player air dash state")
 @export var speed : int = 400
 @export var max_horizontal_speed : int = 400
+@onready var timer: Timer = $"../../Timer"
 
 func on_process(_delta :float):
 	pass
@@ -29,6 +30,7 @@ func on_physics_process(_delta :float):
 	#Transition
 	
 func enter():
+	timer.start()
 	animation_player.play("Dash")
 	
 func exit():

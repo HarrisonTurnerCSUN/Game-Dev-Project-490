@@ -12,7 +12,6 @@ signal death
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var sprite_2d: Sprite2D = $"../../Sprite2D"
 @onready var hitbox: Hitbox = $"../../Sprite2D/Hitbox"
-@onready var stamina: Stamina = $"../../Stamina"
 
 var can_dash: bool = true
 var _is_dead: bool = false
@@ -28,19 +27,16 @@ func on_process(_delta :float):
 	
 func on_physics_process(_delta :float):
 	var direction : float = GameInputEvents.movement_input()
-	if direction > 0.0 and sprite_2d.scale.x < 0.0:
-		sprite_2d.scale.x = 1.0;
-	if direction < 0.0 and sprite_2d.scale.x > 0.0:
-		sprite_2d.scale.x = -1.0;
+	
 	#This allows increasing speed with an upper and lower bound
 	#ie: you can build momentum up to a cap, this could be fun(ny)
 	if direction:
 		character_body_2d.velocity.x += direction * speed
 		character_body_2d.velocity.x = clamp(character_body_2d.velocity.x, -max_horizontal_speed, max_horizontal_speed)
 	
-	#if direction != 0:
-		#sprite_2d.flip_h = false if direction > 0 else true
-		#hitbox.scale.x = -1 if sprite_2d.flip_h else 1  # Update hitbox scale based on sprite flip
+	if direction != 0:
+		sprite_2d.flip_h = false if direction > 0 else true
+		hitbox.scale.x = -1 if sprite_2d.flip_h else 1  # Update hitbox scale based on sprite flip
 		
 	character_body_2d.move_and_slide()
 	
@@ -53,30 +49,24 @@ func on_physics_process(_delta :float):
 		transition.emit("Idle")
 		
 	if GameInputEvents.jump_input():
-		if stamina.use_stamina(1):
-			transition.emit("Jump")
+		transition.emit("Jump")
 		
 	if GameInputEvents.attack1_input():
-		if stamina.use_stamina(1):
-			transition.emit("Attack1")
-	
-	if GameInputEvents.attack2_input():
-		if stamina.use_stamina(1):
-			transition.emit("Attack2")
+		transition.emit("Attack1")
 	
 	if !character_body_2d.is_on_floor():
 		transition.emit("Fall")
 		
-	if GameInputEvents.control_input() && character_body_2d.velocity.x < 1:
-		transition.emit("Crouch")
+	#if GameInputEvents.control_input() && character_body_2d.velocity.x < 1:
+		#transition.emit("Crouch")
 		
-	if GameInputEvents.control_input() && character_body_2d.velocity.x >= 1:
-		transition.emit("CrouchWalk")
+	#if GameInputEvents.control_input() && character_body_2d.velocity.x >= 1:
+		#transition.emit("Slide")
 		
-	#if GameInputEvents.shift_input() && direction != 0:
-	if GameInputEvents.shift_input():
-		if stamina.use_stamina(2):
-			transition.emit("Dash")
+	if GameInputEvents.shift_input() and can_dash:
+		can_dash = false
+		print(can_dash)
+		transition.emit("Dash")
 
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
@@ -119,3 +109,8 @@ func enter():
 func exit():
 	#pass
 	animation_player.stop()
+
+
+func _on_dash_timer_timeout() -> void:
+	can_dash = true
+	print(can_dash)
