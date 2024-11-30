@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://by6ufaw5u232k"]
+[gd_scene load_steps=6 format=3 uid="uid://by6ufaw5u232k"]
 
 [ext_resource type="Script" path="res://main menu/scripts/OptionsMenu.cs" id="1_y3r3n"]
 [ext_resource type="PackedScene" uid="uid://5slp0c8ps1rm" path="res://main menu/options menu/settings_tab_container.tscn" id="2_1aimt"]
+[ext_resource type="Script" path="res://main menu/camera_2d.gd" id="2_q0nn8"]
+[ext_resource type="PackedScene" uid="uid://c37eeakjwa1ii" path="res://Levels/Maps/Forest/forest_parallax.tscn" id="3_slkst"]
 
 [sub_resource type="SystemFont" id="SystemFont_aenex"]
 font_names = PackedStringArray("Impact")
@@ -15,16 +17,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y3r3n")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 648.0
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 323)
+script = ExtResource("2_q0nn8")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D"]
+offset_left = -577.0
+offset_top = -323.0
+offset_right = 573.0
+offset_bottom = 325.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = -48
 
-[node name="Options" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Options" type="Label" parent="Camera2D/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 8
@@ -36,14 +43,19 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="settings_tab_container" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_1aimt")]
+[node name="settings_tab_container" parent="Camera2D/MarginContainer/VBoxContainer" instance=ExtResource("2_1aimt")]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="Camera2D/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(120, 60)
 layout_mode = 2
 size_flags_vertical = 8
 text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="Back"]
+[node name="ForestParallax" parent="." instance=ExtResource("3_slkst")]
+offset = Vector2(0, 600)
+scale = Vector2(1.75, 1.25)
+transform = Transform2D(1.75, 0, 0, 1.25, 0, 600)
+
+[connection signal="pressed" from="Camera2D/MarginContainer/VBoxContainer/Back" to="." method="Back"]
