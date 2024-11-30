@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var camera: Camera2D = $Camera2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 var _moved_this_frame: bool = false
 var _is_dead: bool = false
@@ -56,4 +57,6 @@ func move(p_velocity: Vector2) -> void:
 	velocity = lerp(velocity, p_velocity, 0.2)
 	move_and_slide()
 	_moved_this_frame = true
-	
+
+func get_facing() -> float:
+	return 1

@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://c37eeakjwa1ii"]
+[gd_scene load_steps=16 format=3 uid="uid://c37eeakjwa1ii"]
 
 [ext_resource type="Texture2D" uid="uid://bu1o2onpq2vw" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/BG3.png" id="1_ig675"]
 [ext_resource type="Texture2D" uid="uid://b0kn5805jti68" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/BG1.png" id="2_s7rpd"]
-[ext_resource type="Texture2D" uid="uid://blea3niex2y4b" path="res://Assets/Background/background_layer_3.png" id="3_8r7qy"]
+[ext_resource type="Texture2D" uid="uid://04ilrnxvmuuq" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0003_6.png" id="3_uy0k7"]
 [ext_resource type="Texture2D" uid="uid://17d64odnoytd" path="res://Assets/Parallax Cave/1.png" id="4_bhl1t"]
+[ext_resource type="Texture2D" uid="uid://dieqqc653gpof" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0002_7.png" id="4_h3t54"]
 [ext_resource type="Texture2D" uid="uid://dgh3gq82timb4" path="res://Assets/Parallax Cave/2.png" id="5_h486s"]
+[ext_resource type="Texture2D" uid="uid://d08po7nq6fy0y" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0005_5.png" id="5_ja3oi"]
 [ext_resource type="Texture2D" uid="uid://bp6yki8yc3gkm" path="res://Assets/Parallax Cave/3fx.png" id="6_5k58s"]
+[ext_resource type="Texture2D" uid="uid://ewbawl8y884f" path="res://Assets/Free Pixel Art Forest/Free Pixel Art Forest/PNG/Background layers/Layer_0006_4.png" id="6_6604t"]
 [ext_resource type="Texture2D" uid="uid://dg615o7s2fb54" path="res://Assets/Parallax Cave/4.png" id="7_437jc"]
 [ext_resource type="Texture2D" uid="uid://bwumijyy7c87i" path="res://Assets/Parallax Cave/5.png" id="8_lpows"]
 [ext_resource type="Texture2D" uid="uid://cx1iebddppe4m" path="res://Assets/Parallax Cave/6fx.png" id="9_vy8b6"]
@@ -19,13 +22,13 @@
 motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Hills"]
-z_index = -1
+z_index = -2
 position = Vector2(0, -140)
 texture = ExtResource("1_ig675")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Hills"]
-z_index = -1
+z_index = -9
 position = Vector2(320, -140)
 texture = ExtResource("1_ig675")
 centered = false
@@ -34,31 +37,69 @@ centered = false
 motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
-z_index = -2
-position = Vector2(0, -140)
+z_index = -3
+position = Vector2(0, -139)
 texture = ExtResource("2_s7rpd")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sky"]
-z_index = -3
+z_index = -10
 position = Vector2(320, -140)
 texture = ExtResource("2_s7rpd")
 centered = false
 
+[node name="Sky2" type="ParallaxLayer" parent="."]
+z_index = -5
+motion_mirroring = Vector2(1280, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Sky2"]
+z_index = -10
+offset_top = -2000.0
+offset_right = 640.0
+color = Color(0.321569, 0.505882, 0.827451, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="Sky2"]
+z_index = -10
+offset_left = 640.0
+offset_top = -2000.0
+offset_right = 1280.0
+color = Color(0.321569, 0.505882, 0.827451, 1)
+metadata/_edit_use_anchors_ = true
+
 [node name="TreeLine" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(640, 0)
+motion_mirroring = Vector2(1856, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="TreeLine"]
-position = Vector2(0, -168)
-scale = Vector2(1, 1.22778)
-texture = ExtResource("3_8r7qy")
-centered = false
+[node name="Layer00036" type="Sprite2D" parent="TreeLine"]
+position = Vector2(0, -280)
+texture = ExtResource("3_uy0k7")
 
-[node name="Sprite2D2" type="Sprite2D" parent="TreeLine"]
-position = Vector2(320, -168)
-scale = Vector2(1, 1.22222)
-texture = ExtResource("3_8r7qy")
-centered = false
+[node name="Layer00037" type="Sprite2D" parent="TreeLine"]
+position = Vector2(928, -280)
+texture = ExtResource("3_uy0k7")
+
+[node name="Layer00027" type="Sprite2D" parent="TreeLine"]
+position = Vector2(0, -280)
+texture = ExtResource("4_h3t54")
+
+[node name="Layer00028" type="Sprite2D" parent="TreeLine"]
+position = Vector2(928, -280)
+texture = ExtResource("4_h3t54")
+
+[node name="Layer00055" type="Sprite2D" parent="TreeLine"]
+z_index = -1
+position = Vector2(0, -280)
+texture = ExtResource("5_ja3oi")
+
+[node name="Layer00064" type="Sprite2D" parent="TreeLine"]
+z_index = -2
+position = Vector2(0, -280)
+texture = ExtResource("6_6604t")
+
+[node name="Layer00065" type="Sprite2D" parent="TreeLine"]
+z_index = -2
+position = Vector2(928, -280)
+texture = ExtResource("6_6604t")
 
 [node name="Underground" type="ParallaxLayer" parent="."]
 motion_mirroring = Vector2(384, 0)
