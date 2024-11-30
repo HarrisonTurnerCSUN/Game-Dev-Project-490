@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxfrvoy1up5ro"]
+
+[ext_resource type="Texture2D" uid="uid://dvs1q5y1d5hwp" path="res://Assets/Background/decorations/sign.png" id="1_olsh1"]
+[ext_resource type="Script" path="res://Levels/Maps/Forest/sign.gd" id="1_tmusk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8knae"]
+size = Vector2(20, 66)
+
+[node name="Sign" type="Node2D"]
+z_index = -1
+script = ExtResource("1_tmusk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.36364, 1)
+texture = ExtResource("1_olsh1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_8knae")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

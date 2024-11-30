@@ -1775,12 +1775,14 @@ position = Vector2(433, -103)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("9_8c7q2")]
-visible = false
-
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("10_o48wh")]
+z_index = -1
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("11_0dyv6")]
+
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("9_8c7q2")]
+visible = false
+z_index = 1
 
 [node name="lifepot" parent="." instance=ExtResource("15_cv4os")]
 position = Vector2(1215, -65)

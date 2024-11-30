@@ -1,7 +1,7 @@
-extends Control
+extends Node2D
 
-@export var text : String
-@onready var label : Label = $"MarginContainer/MarginContainer/Label"
+@export_multiline var text : String
+@onready var label : Label = $VBoxContainer/RichTextLabel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	label.text = text
