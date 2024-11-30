@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iwote30bmvxi"
-path="res://.godot/imported/waterfalls.png-0eb23a9520c8bc698fcfebe3229ebe71.ctex"
+path="res://.godot/imported/waterfalls.png-1115c2a110a3db9346e61fe1a0a2b0f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PixelWoods/Waterfall/waterfalls.png"
-dest_files=["res://.godot/imported/waterfalls.png-0eb23a9520c8bc698fcfebe3229ebe71.ctex"]
+source_file="res://Assets/Waterfall/waterfalls.png"
+dest_files=["res://.godot/imported/waterfalls.png-1115c2a110a3db9346e61fe1a0a2b0f2.ctex"]
 
 [params]
 
