@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://j4mpuog823y8" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/Tileset.png" id="1_s8ngb"]
 [ext_resource type="Script" path="res://Levels/Maps/Forest/forest.gd" id="1_sckwm"]
-[ext_resource type="Texture2D" uid="uid://iwote30bmvxi" path="res://Assets/PixelWoods/Waterfall/waterfalls.png" id="2_bgjcc"]
+[ext_resource type="Texture2D" uid="uid://iwote30bmvxi" path="res://Assets/Waterfall/waterfalls.png" id="2_bgjcc"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_giia3"]
 [ext_resource type="PackedScene" uid="uid://c37eeakjwa1ii" path="res://Levels/Maps/Forest/forest_parallax.tscn" id="3_0mcug"]
 [ext_resource type="Texture2D" uid="uid://d2t21sgi1voey" path="res://Assets/Tiles/oak_woods_tileset.png" id="3_kxae3"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6hqlc42fpqhw"]
+
+[ext_resource type="Script" path="res://Overworld/Inventory/hotbarslot.gd" id="1_tcxdx"]
+[ext_resource type="Texture2D" uid="uid://dgoey8wkym2ra" path="res://Overworld/Potions/inventorySlot.png" id="2_8dtg5"]
+[ext_resource type="PackedScene" uid="uid://bprmptf72rf28" path="res://Overworld/Inventory/itemStackGUI.tscn" id="3_1n113"]
+
+[node name="hotbarslot" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 100)
+offset_right = 100.0
+offset_bottom = 100.0
+script = ExtResource("1_tcxdx")
+
+[node name="background" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("2_8dtg5")
+centered = false
+vframes = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+
+[node name="Panel" parent="CenterContainer" instance=ExtResource("3_1n113")]
+layout_mode = 2
