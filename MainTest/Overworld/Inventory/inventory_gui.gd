@@ -130,6 +130,6 @@ func putItemBack():
 	
 	
 func _input(event):
-	if itemInHand && Input.is_action_just_pressed("rightClick"):
+	if itemInHand && Input.is_action_just_pressed("right_click"):
 		putItemBack()
 	updateItemInHand()
