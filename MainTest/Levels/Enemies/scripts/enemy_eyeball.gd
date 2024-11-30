@@ -27,9 +27,14 @@ const jump_power = -400
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
+	self.collision_layer = 3
+	self.collision_layer = 1 | 2
 
 
 func _physics_process(_delta: float) -> void:
+	if _is_dead:
+		velocity.y += 20  # Adjust this gravity value as needed
+		move_and_collide(velocity * _delta)
 	if is_on_wall() and &"InRange":
 		velocity.y = jump_power
 	_post_physics_process.call_deferred()
@@ -126,9 +131,10 @@ func die() -> void:
 	_is_dead = true
 	sprite.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	collision_shape_2d.set_deferred(&"disabled", true)
-	flipped_collision_shape_2d.set_deferred(&"disabled", true)
-
+	#collision_shape_2d.set_deferred(&"disabled", true)
+	#flipped_collision_shape_2d.set_deferred(&"disabled", true)
+	self.collision_layer = 0
+	self.collision_mask = 1
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)

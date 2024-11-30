@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=8 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="3_drimi"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="4_fw6ur"]
+[ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="5_j1qsc"]
+[ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="6_rafr8"]
+[ext_resource type="PackedScene" uid="uid://16cubl6ttua6" path="res://Levels/Enemies/Bat/enemy_bat.tscn" id="7_4y7pt"]
 
 [node name="Main" type="Node2D"]
 
@@ -13,7 +16,28 @@
 position = Vector2(152, -61)
 
 [node name="enemy_eyeball3" parent="." instance=ExtResource("3_drimi")]
-position = Vector2(2480, -94)
+position = Vector2(1074, -92)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("4_fw6ur")]
-position = Vector2(622, -43)
+position = Vector2(956, -108)
+
+[node name="enemy_undead_executioner" parent="." instance=ExtResource("5_j1qsc")]
+position = Vector2(2447, -242)
+
+[node name="enemy_mushroom" parent="." instance=ExtResource("6_rafr8")]
+position = Vector2(1014, -113)
+
+[node name="enemy_undead_executioner2" parent="." instance=ExtResource("5_j1qsc")]
+position = Vector2(839, -214)
+
+[node name="enemy_bat" parent="." instance=ExtResource("7_4y7pt")]
+position = Vector2(398, -103)
+
+[node name="enemy_bat2" parent="." instance=ExtResource("7_4y7pt")]
+position = Vector2(428, -113)
+
+[node name="enemy_bat3" parent="." instance=ExtResource("7_4y7pt")]
+position = Vector2(384, -131)
+
+[node name="enemy_bat4" parent="." instance=ExtResource("7_4y7pt")]
+position = Vector2(417, -141)

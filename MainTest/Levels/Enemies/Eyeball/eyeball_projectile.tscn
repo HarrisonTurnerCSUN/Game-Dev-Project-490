@@ -281,6 +281,7 @@ texture = ExtResource("2_qnb4j")
 
 [node name="projectile" type="Sprite2D" parent="Root"]
 position = Vector2(0, -92)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_lfvnd")
 hframes = 8
 
@@ -291,7 +292,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("4_b2q66")
 knockback_enabled = true
-knockback_strength = 100.0
+knockback_strength = 50.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/projectile/Hitbox"]
 position = Vector2(0, -46)
