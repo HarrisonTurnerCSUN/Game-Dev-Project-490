@@ -15,20 +15,17 @@ var _moved_this_frame: bool = false
 @onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
 
-const jump_power = -300
+const jump_power = -400
 const gravity = 50
 const speed = 100
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
-	self.collision_layer = 3
-	self.collision_layer = 1 | 2
 
 func _physics_process(_delta: float) -> void:
 	if is_on_wall() and &"InRange":
 		velocity.y = jump_power
-		velocity.x = get_facing() * 10
 	else:
 		velocity.y += gravity
 	move_and_slide()
@@ -108,9 +105,8 @@ func die() -> void:
 	_is_dead = true
 	sprite_2d.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	#collision_shape_2d.set_deferred("disabled", true)
-	self.collision_layer = 0
-	self.collision_mask = 1
+	collision_shape_2d.set_deferred("disabled", true)
+
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
@@ -122,24 +118,13 @@ func die() -> void:
 func get_health() -> Health:
 	return health
 	
-# Goblin Spawn Bomb Script
-
 func throw_projectile() -> void:
-	# Create the projectile instance
-	var projectile = Projectile.instantiate()
-
-	# Set the facing direction of the projectile based on the goblin's direction
+	var projectile := Projectile.instantiate()
 	projectile.dir = get_facing()
-
-	# Get the parent of the goblin and add the projectile as a child
 	get_parent().add_child(projectile)
+	var offset_y = 20  # Change this value if the character's center isn't at `global_position.y`
+	projectile.global_position = global_position + Vector2.RIGHT * get_facing() * 1.0 + Vector2(0, offset_y)
 
-	# Adjust the spawn position based on the goblin's current position
-	var offset_x = 20 * get_facing()  # Horizontal offset based on facing direction
-	var offset_y = 60  # Vertical offset to ensure proper spawn alignment
-
-	# Set the global position of the projectile
-	projectile.global_position = global_position + Vector2(offset_x, offset_y)
-
-	# Optionally, adjust additional properties for the projectile if needed
-	#print("Throwing projectile at position: ", projectile.global_position)
+	# Optional debug output
+	print("Goblin Global Position: ", global_position)
+	print("Spawn Position: ", projectile.global_position)

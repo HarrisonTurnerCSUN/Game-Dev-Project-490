@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=54 format=3 uid="uid://bgnasfo1mabyi"]
+[gd_resource type="BehaviorTree" load_steps=51 format=3 uid="uid://bgnasfo1mabyi"]
 
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_w0571"]
 [ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_bqn0t"]
@@ -61,11 +61,8 @@ speed_var = &"speed"
 approach_distance = -5.0
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_ehuoy"]
-time_limit = 2.0
+time_limit = 3.0
 children = [SubResource("BTAction_pv8sq")]
-
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_esrry"]
-children = [SubResource("BTTimeLimit_ehuoy")]
 
 [sub_resource type="BTAction" id="BTAction_y3vw1"]
 script = ExtResource("4_ju72e")
@@ -88,7 +85,7 @@ duration = 0.1
 
 [sub_resource type="BTSequence" id="BTSequence_7frct"]
 custom_name = "Flank player"
-children = [SubResource("BTPlayAnimation_a345s"), SubResource("BTAlwaysSucceed_esrry"), SubResource("BTAction_y3vw1"), SubResource("BTWait_dcvym"), SubResource("BTPlayAnimation_iyiax"), SubResource("BTWait_ytgup")]
+children = [SubResource("BTPlayAnimation_a345s"), SubResource("BTTimeLimit_ehuoy"), SubResource("BTAction_y3vw1"), SubResource("BTWait_dcvym"), SubResource("BTPlayAnimation_iyiax"), SubResource("BTWait_ytgup")]
 metadata/_weight_ = 1.0
 
 [sub_resource type="BBNode" id="BBNode_6u8j7"]
@@ -108,9 +105,6 @@ approach_distance = -5.0
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_4ro27"]
 time_limit = 2.0
 children = [SubResource("BTAction_4f0yr")]
-
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_c4tps"]
-children = [SubResource("BTTimeLimit_4ro27")]
 
 [sub_resource type="BTAction" id="BTAction_s5fqe"]
 script = ExtResource("4_ju72e")
@@ -145,7 +139,7 @@ duration = 0.1
 
 [sub_resource type="BTSequence" id="BTSequence_eyiuc"]
 custom_name = "Approach and melee attack"
-children = [SubResource("BTPlayAnimation_qgeqw"), SubResource("BTAlwaysSucceed_c4tps"), SubResource("BTAction_s5fqe"), SubResource("BTWait_k5hge"), SubResource("BTPlayAnimation_iqjo7"), SubResource("BTWait_gemid"), SubResource("BTPlayAnimation_wsxc2"), SubResource("BTWait_g2xwx")]
+children = [SubResource("BTPlayAnimation_qgeqw"), SubResource("BTTimeLimit_4ro27"), SubResource("BTAction_s5fqe"), SubResource("BTWait_k5hge"), SubResource("BTPlayAnimation_iqjo7"), SubResource("BTWait_gemid"), SubResource("BTPlayAnimation_wsxc2"), SubResource("BTWait_g2xwx")]
 metadata/_weight_ = 1.0
 
 [sub_resource type="BTAction" id="BTAction_d20iu"]
@@ -172,11 +166,8 @@ tolerance = 50.0
 avoid_var = &""
 
 [sub_resource type="BTTimeLimit" id="BTTimeLimit_re37y"]
-time_limit = 2.0
+time_limit = 3.0
 children = [SubResource("BTAction_jeqce")]
-
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_ugkkt"]
-children = [SubResource("BTTimeLimit_re37y")]
 
 [sub_resource type="BTAction" id="BTAction_tlqvp"]
 script = ExtResource("4_ju72e")
@@ -204,7 +195,7 @@ duration = 0.1
 
 [sub_resource type="BTSequence" id="BTSequence_kdq02"]
 custom_name = "Throw ninja star"
-children = [SubResource("BTAction_d20iu"), SubResource("BTPlayAnimation_1310k"), SubResource("BTAlwaysSucceed_ugkkt"), SubResource("BTAction_tlqvp"), SubResource("BTPlayAnimation_fb7lo"), SubResource("BTCallMethod_s68en"), SubResource("BTWait_uex6u")]
+children = [SubResource("BTAction_d20iu"), SubResource("BTPlayAnimation_1310k"), SubResource("BTTimeLimit_re37y"), SubResource("BTAction_tlqvp"), SubResource("BTPlayAnimation_fb7lo"), SubResource("BTCallMethod_s68en"), SubResource("BTWait_uex6u")]
 metadata/_weight_ = 2.0
 
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_7c2kf"]

@@ -96,30 +96,6 @@ tracks/6/keys = {
 "update": 1,
 "values": [9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Root/projectile:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.75, 0.75), Vector2(0.75, 0.75)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Root/Shadow:scale")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.25, 0.194), Vector2(0.25, 0.194)]
-}
 
 [sub_resource type="Animation" id="Animation_v0ofm"]
 resource_name = "Idle"
@@ -196,30 +172,6 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Root/projectile:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.75, 0.75), Vector2(0.75, 0.75)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Root/Shadow:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.25, 0.194), Vector2(0.25, 0.194)]
 }
 
 [sub_resource type="Animation" id="Animation_bqkfe"]
@@ -308,30 +260,6 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(0, -46)]
 }
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Root/projectile:scale")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.6, 0.6)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Root/Shadow:scale")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.25, 0.194)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umapm"]
 _data = {
@@ -344,16 +272,16 @@ _data = {
 script = ExtResource("1_pr0od")
 
 [node name="Root" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="Shadow" type="Sprite2D" parent="Root"]
 modulate = Color(1, 1, 1, 0.686275)
 position = Vector2(0, -1)
-scale = Vector2(0.25, 0.194)
+scale = Vector2(0.382, 0.297)
 texture = ExtResource("2_joajs")
 
 [node name="projectile" type="Sprite2D" parent="Root"]
 position = Vector2(0, -90)
-scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_eks81")
 hframes = 8
 
@@ -377,8 +305,4 @@ libraries = {
 }
 autoplay = "Idle"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.95
-
 [connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

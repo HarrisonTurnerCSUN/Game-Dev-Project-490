@@ -12,8 +12,7 @@ public partial class Menu : Control
 	private void Play()
 	{
 		_audioPopUp.Play();
-		//GetTree().ChangeSceneToFile("res://Levels/Testing/main.tscn");
-		GetTree().ChangeSceneToFile("res://Levels/Maps/Forest/forest.tscn");
+		GetTree().ChangeSceneToFile("res://Levels/Testing/main.tscn");
 	}
 
 	// Called when the Options button is pressed

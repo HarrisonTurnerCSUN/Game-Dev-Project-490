@@ -1,14 +1,11 @@
 extends CharacterBody2D
 
-signal death
-
-@onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var health: Health = $Health
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var health: Health = $Health
 
-const MINION_RESOURCE := "res://Levels/Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
-const jump_power = -400
+const MINION_RESOURCE := "res://Enemies/Undead_Excutioner/enemy_undead_summon.tscn"
+
+signal death
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
@@ -20,8 +17,6 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if is_on_wall() and &"InRange":
-		velocity.y = jump_power
 	_post_physics_process.call_deferred()
 
 
@@ -113,8 +108,3 @@ func die() -> void:
 
 func get_health() -> Health:
 	return health
-
-func summon_minion(p_position: Vector2) -> void:
-	var minion: CharacterBody2D = load(MINION_RESOURCE).instantiate()
-	get_parent().add_child(minion)
-	minion.position = p_position

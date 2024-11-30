@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://l02drjbslctq"]
+[gd_scene load_steps=10 format=3 uid="uid://l02drjbslctq"]
 
 [ext_resource type="Script" path="res://main menu/scripts/Menu.cs" id="1_kn3e4"]
-[ext_resource type="PackedScene" uid="uid://c37eeakjwa1ii" path="res://Levels/Maps/Forest/forest_parallax.tscn" id="2_eq1qa"]
 [ext_resource type="AudioStream" uid="uid://p4jxryyy8gmq" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Open - 1.wav" id="2_lg50x"]
 [ext_resource type="AudioStream" uid="uid://bsx0kjqu3oob5" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Select - 1.wav" id="3_qgst0"]
 [ext_resource type="AudioStream" uid="uid://4qd4kgdi8bl2" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav" id="4_ca3qg"]
 [ext_resource type="AudioStream" uid="uid://33covk1redgh" path="res://Assets/AudioAssets/JDSherbert - Ultimate UI SFX Pack/wav (HD)/JDSherbert - Ultimate UI SFX Pack - Popup Close - 1.wav" id="5_3wlha"]
-[ext_resource type="Script" path="res://main menu/camera_2d.gd" id="7_6vd7o"]
 
 [sub_resource type="SystemFont" id="SystemFont_a5fwv"]
 font_names = PackedStringArray("Impact")
@@ -51,35 +49,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kn3e4")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(579, 321)
-script = ExtResource("7_6vd7o")
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -570.0
-offset_top = -318.0
-offset_right = -570.0
-offset_bottom = -318.0
+offset_left = 9.0
+offset_top = 3.0
+offset_right = 4.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Camera2D"]
-offset_left = -579.0
-offset_top = -320.0
-offset_right = 578.0
-offset_bottom = 324.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1157.0
+offset_bottom = 645.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 120
 
-[node name="Separator" type="Control" parent="Camera2D/MarginContainer/VBoxContainer"]
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Camera2D/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -92,43 +87,38 @@ text = "GAME TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Camera2D/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 18
 alignment = 1
 
-[node name="Separator2" type="Control" parent="Camera2D/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="Camera2D/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_p126v")
 text = "Play"
 
-[node name="Options" type="Button" parent="Camera2D/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_s1atn")
 text = "Options"
 
-[node name="Quit" type="Button" parent="Camera2D/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_4oqfj")
 text = "Quit"
-
-[node name="ForestParallax" parent="." instance=ExtResource("2_eq1qa")]
-offset = Vector2(0, 600)
-scale = Vector2(1.75, 1.25)
-transform = Transform2D(1.75, 0, 0, 1.25, 0, 600)
 
 [node name="AudioPopUp" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_lg50x")
@@ -145,6 +135,6 @@ bus = &"SFX"
 [node name="AudioClose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_3wlha")
 
-[connection signal="pressed" from="Camera2D/MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="Play"]
-[connection signal="pressed" from="Camera2D/MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="Options"]
-[connection signal="pressed" from="Camera2D/MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="Quit"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="Play"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Options" to="." method="Options"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="Quit"]
