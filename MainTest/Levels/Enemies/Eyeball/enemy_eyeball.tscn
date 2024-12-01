@@ -4799,14 +4799,17 @@ libraries = {
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_77fmo")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="IdleSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_e75dp")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="RangeAttack1Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_28kou")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="Attack1Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_cv8gl")
@@ -4816,14 +4819,17 @@ bus = &"SFX"
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_58oo8")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="Attack2Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_a8f3o")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_gu1yc")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("19_xm5jp")]
 offset_left = -10.0

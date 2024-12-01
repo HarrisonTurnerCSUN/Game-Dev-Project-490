@@ -5327,34 +5327,41 @@ blackboard_plan = SubResource("BlackboardPlan_systs")
 [node name="Attack1Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_5yh7k")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="Attack2Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_i202e")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_ccour")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_8w6sn")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="IdleSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_x8y3y")
 volume_db = -10.0
 pitch_scale = 0.9
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="RangeAttack1Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_b7ydf")
 max_distance = 400.0
+bus = &"SFX"
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_nr2fq")
 volume_db = -5.0
 pitch_scale = 0.9
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("20_f15my")]
 offset_left = -10.0

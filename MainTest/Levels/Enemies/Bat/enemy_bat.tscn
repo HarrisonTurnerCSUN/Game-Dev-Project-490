@@ -576,8 +576,10 @@ blackboard_plan = SubResource("BlackboardPlan_systs")
 stream = ExtResource("6_nvk27")
 volume_db = -6.886
 max_distance = 300.0
+bus = &"SFX"
 
 [node name="AggroSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_xe1uy")
 volume_db = -5.622
 max_distance = 300.0
+bus = &"SFX"

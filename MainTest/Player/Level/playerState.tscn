@@ -8598,29 +8598,37 @@ stamina_per_second = 1.0
 
 [node name="RunSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_iyndn")
+bus = &"SFX"
 
 [node name="HeavyAttack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_xg4cs")
+bus = &"SFX"
 
 [node name="LightAttack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_7ckln")
+bus = &"SFX"
 
 [node name="SideAttack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("52_nl4ep")
+bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("53_a72dx")
 volume_db = -20.048
+bus = &"SFX"
 
 [node name="Dash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("54_7unbp")
 volume_db = -7.495
+bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("55_utl1y")
+bus = &"SFX"
 
 [node name="SlideHang" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("56_2k251")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Sprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="timeout" from="Sprite2D/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]

@@ -8492,20 +8492,27 @@ health_node = NodePath("../Health")
 [node name="AttackingAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_aeftm")
 max_distance = 350.0
+bus = &"SFX"
 
 [node name="ChargeAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_ngje2")
+bus = &"SFX"
 
 [node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_0bj83")
+bus = &"SFX"
 
 [node name="IdleAudio" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [node name="PhaseAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_mga28")
+bus = &"SFX"
 
 [node name="Skill1Audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_fbyi2")
+bus = &"SFX"
 
 [node name="SummonAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_eyg03")
+bus = &"SFX"
