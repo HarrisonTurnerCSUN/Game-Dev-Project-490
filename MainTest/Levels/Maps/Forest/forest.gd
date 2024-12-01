@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 			player.velocity.x = clamp(player.velocity.x, -100, 100)
 			player.velocity.y = clamp(player.velocity.y, -400, 100)
 		if player_tile_data.get_custom_data("Slow"):
-			print("yes")
 			player.velocity.x = clamp(player.velocity.x, -100, 100)
 	pass
 
