@@ -19,6 +19,13 @@ extends Control
 var stopwatch : Stopwatch
 
 func _ready() -> void:
+	var busIndex
+	#busIndex = AudioServer.get_bus_index("Master")
+	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.MasterVol));
+	#busIndex = AudioServer.get_bus_index("Music")
+	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.MusicVol));
+	#busIndex = AudioServer.get_bus_index("SFX")
+	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.SFXVol));
 	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
 	
 
@@ -82,15 +89,15 @@ func _on_to_stats_pressed() -> void:
 	stats.show()
 	
 func flip_star1() -> void:
-	star1.complete = true
+	star1.complete = false
 	star1.check_complete()
 
 func flip_star2() -> void:
-	star2.complete = true
+	star2.complete = false
 	star2.check_complete()
 
 func flip_star3() -> void:
-	star3.complete = true
+	star3.complete = false
 	star3.check_complete()
 	
 func update_stopwatch():
@@ -106,6 +113,7 @@ func _on_exit_to_overworld_pressed() -> void:
 	comp_label.hide()
 	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://Overworld/overworld.tscn")
+	SaveController.saveGame();
 
 
 func _on_level_end_body_entered(body: Node2D) -> void:

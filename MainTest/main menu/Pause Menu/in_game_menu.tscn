@@ -167,12 +167,15 @@ size_flags_vertical = 0
 
 [node name="Star" parent="MarginContainer/Stats/VBoxContainer3/HBoxContainer" instance=ExtResource("5_7vut6")]
 layout_mode = 2
+complete = true
 
 [node name="Star2" parent="MarginContainer/Stats/VBoxContainer3/HBoxContainer" instance=ExtResource("5_7vut6")]
 layout_mode = 2
+complete = true
 
 [node name="Star3" parent="MarginContainer/Stats/VBoxContainer3/HBoxContainer" instance=ExtResource("5_7vut6")]
 layout_mode = 2
+complete = true
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Stats/VBoxContainer3"]
 layout_mode = 2
