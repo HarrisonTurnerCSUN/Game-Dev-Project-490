@@ -15,6 +15,7 @@ extends Control
 
 @export var is_level_complete : bool = false
 
+@export var  is_stats_hidden : bool = false
 
 var stopwatch : Stopwatch
 
@@ -27,6 +28,8 @@ func _ready() -> void:
 	#busIndex = AudioServer.get_bus_index("SFX")
 	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.SFXVol));
 	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
+	if is_stats_hidden:
+		stats_button.hide()
 	
 
 func resume():
@@ -48,6 +51,8 @@ func _on_quit_pressed() -> void:
 	#get_tree().quit()
 	
 func _process(delta: float) -> void:
+	if is_stats_hidden:
+		stats_button.hide()
 	update_stopwatch()
 	if Input.is_action_just_pressed("Escape") and get_tree().paused == true:
 		resume()

@@ -802,7 +802,6 @@ tile_set = SubResource("TileSet_3eipb")
 y_sort_enabled = true
 
 [node name="PlayerOverworld" parent="YSORT" instance=ExtResource("2_ptdvr")]
-top_level = true
 position = Vector2(448, 666)
 collision_layer = 3
 collision_mask = 3
@@ -882,6 +881,7 @@ shape = SubResource("RectangleShape2D_nwetg")
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer2" instance=ExtResource("13_mv36o")]
+visible = false
 is_stopwatch_hidden = true
 
 [node name="Stopwatch" parent="CanvasLayer2" instance=ExtResource("14_1j6v6")]
@@ -891,7 +891,6 @@ process_mode = 1
 visible = false
 top_level = true
 tooltip_text = "Canvas layer ordering matters"
-is_stats_hidden = true
 
 [connection signal="body_entered" from="ToDungeon" to="." method="_on_to_dungeon_body_entered"]
 [connection signal="body_entered" from="ToCastle" to="." method="_on_area_2d_body_entered"]
