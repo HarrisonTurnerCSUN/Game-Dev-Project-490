@@ -4742,7 +4742,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("2_y07pc")
 knockback_enabled = true
-knockback_strength = 25.0
+knockback_strength = 15.0
 
 [node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(26.6667, -1.33333)
