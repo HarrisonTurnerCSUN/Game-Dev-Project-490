@@ -615,6 +615,7 @@ inventory = ExtResource("2_s2fsh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, 1)
+zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, 1)

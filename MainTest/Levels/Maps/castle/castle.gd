@@ -8,9 +8,12 @@ extends Node2D
 @onready var respawning_2: Area2D = $respawning2
 @onready var falling_3: Area2D = $falling3
 @onready var respawning_3: Area2D = $respawning3
+@onready var menu = $CanvasLayer/InGameMenu
 
+var stopwatch : Stopwatch
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
 	player = get_node("Player")
 	
 	respawn_area = get_node("respawning")
@@ -40,7 +43,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if stopwatch.time/60 >= 5:
+		menu.flip_star3()
+	
+	if stopwatch.time/60 >= 10:
+		menu.flip_star2()
+	
+	if stopwatch.time/60 >= 15:
+		menu.flip_star1()
 
 
 func _on_falling_body_entered(body):

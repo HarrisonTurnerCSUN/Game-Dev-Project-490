@@ -33,3 +33,11 @@ func _process(delta: float) -> void:
 func _on_tower_activation_body_entered(body: Node2D) -> void:
 	menu.flip_star1()
 	pass # Replace with function body.
+
+
+func _on_portal_body_entered(body: Node2D) -> void:
+	body.position = Vector2(6747,-897)
+
+
+func _on_portal_2_body_entered(body: Node2D) -> void:
+	body.position = Vector2(6472,-897)

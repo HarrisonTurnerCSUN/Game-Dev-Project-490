@@ -119,3 +119,6 @@ func _on_exit_to_overworld_pressed() -> void:
 func _on_level_end_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		is_level_complete = true
+		
+func _set_is_complete() -> void:
+		is_level_complete = true
