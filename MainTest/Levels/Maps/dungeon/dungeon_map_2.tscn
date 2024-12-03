@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://c0ehxun5hum71"]
+[gd_scene load_steps=24 format=4 uid="uid://c0ehxun5hum71"]
 
 [ext_resource type="Script" path="res://Levels/Maps/dungeon/dungeon_map_2.gd" id="1_gid76"]
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_vypvx"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="8_wdbq3"]
 [ext_resource type="PackedScene" uid="uid://yrbdeqhp6gl2" path="res://main menu/hud.tscn" id="9_ftt4m"]
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="10_gl525"]
+[ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="11_a7787"]
+[ext_resource type="PackedScene" uid="uid://16cubl6ttua6" path="res://Levels/Enemies/Bat/enemy_bat.tscn" id="12_lodep"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dh4c"]
 texture = ExtResource("1_vypvx")
@@ -690,6 +692,21 @@ position = Vector2(805, -64)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="respawning2"]
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_eiuaw")
+
+[node name="enemy_goblin" parent="." instance=ExtResource("11_a7787")]
+position = Vector2(553, -20)
+
+[node name="enemy_bat" parent="." instance=ExtResource("12_lodep")]
+position = Vector2(2380, 67)
+
+[node name="enemy_bat2" parent="." instance=ExtResource("12_lodep")]
+position = Vector2(2462, 57)
+
+[node name="enemy_bat3" parent="." instance=ExtResource("12_lodep")]
+position = Vector2(2528, 64)
+
+[node name="enemy_bat4" parent="." instance=ExtResource("12_lodep")]
+position = Vector2(2318, 49)
 
 [connection signal="body_entered" from="falling1" to="." method="_on_falling_1_body_entered"]
 [connection signal="body_entered" from="falling2" to="." method="_on_falling_2_body_entered"]
