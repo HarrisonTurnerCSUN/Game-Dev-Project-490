@@ -8,6 +8,7 @@ atlas = ExtResource("1_v5l44")
 region = Rect2(128, 128, 64, 64)
 
 [node name="TextPopUp" type="Node2D"]
+visible = false
 top_level = true
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_lh6pf")

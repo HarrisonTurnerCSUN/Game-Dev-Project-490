@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b5ylbxav4vpwr"]
+[gd_scene load_steps=17 format=4 uid="uid://b5ylbxav4vpwr"]
 
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_k5e6c"]
 [ext_resource type="Texture2D" uid="uid://bnipoyk827bbf" path="res://Assets/Tiles/dungeon.png" id="2_n2kot"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://yrbdeqhp6gl2" path="res://main menu/hud.tscn" id="6_ijrog"]
 [ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="6_ofykc"]
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="7_4e71v"]
+[ext_resource type="Script" path="res://Levels/Maps/dungeon/BossDeathWatcher.gd" id="9_oq2s0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xwuj8"]
 texture = ExtResource("1_k5e6c")
@@ -633,12 +634,17 @@ shape = SubResource("CircleShape2D_im5iw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("5_owoxo")]
-visible = false
-
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("6_ijrog")]
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("7_4e71v")]
 
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("5_owoxo")]
+visible = false
+
 [node name="enemy_undead_executioner" parent="." instance=ExtResource("6_ofykc")]
 position = Vector2(1128, -116)
+
+[node name="BossDeath" type="Node" parent="." node_paths=PackedStringArray("watchedEnemy", "menu")]
+script = ExtResource("9_oq2s0")
+watchedEnemy = NodePath("../enemy_undead_executioner")
+menu = NodePath("../CanvasLayer/InGameMenu")

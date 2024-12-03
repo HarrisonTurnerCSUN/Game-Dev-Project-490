@@ -8348,7 +8348,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource("3_bywyy")
 knockback_enabled = true
-knockback_strength = 40.0
+knockback_strength = 30.0
 
 [node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(-3, -14)
@@ -8468,7 +8468,7 @@ blackboard_plan = SubResource("BlackboardPlan_a6tqq")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("9_6fvw5")
-max_health = 15.0
+max_health = 6.0
 
 [node name="RightTopBox" type="CollisionShape2D" parent="."]
 position = Vector2(3, -9)

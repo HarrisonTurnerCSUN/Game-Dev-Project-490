@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="2_y2j0j"]
 [ext_resource type="PackedScene" uid="uid://dadyw5mfd33qs" path="res://Overworld/Inventory/antidote.tscn" id="3_26rxv"]
 [ext_resource type="Script" path="res://Overworld/canvas_layer.gd" id="4_d4ucr"]
-[ext_resource type="TileSet" uid="uid://bdw17moa6sdkh" path="res://Assets/PixelWoods/Terrain(main)/decorations.tres" id="4_fdh6g"]
+[ext_resource type="TileSet" uid="uid://damwbtihr0w8j" path="res://Assets/PixelWoods/Terrain(main)/decorations.tres" id="4_fdh6g"]
 [ext_resource type="PackedScene" uid="uid://cccut3d2kje15" path="res://Overworld/Inventory/inventoryGUI.tscn" id="4_xwcl6"]
-[ext_resource type="PackedScene" uid="uid://bsfiddtulqx03" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
+[ext_resource type="PackedScene" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0broh"]
 texture = ExtResource("1_r1s8q")

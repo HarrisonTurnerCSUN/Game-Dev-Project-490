@@ -18,7 +18,9 @@ func _on_yes_pressed() -> void:
 	if destination == "Main Menu":
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://main menu/menu.tscn")
+		SaveController.saveGame();
 	elif destination == "Quit":
+		SaveController.saveGame();
 		get_tree().quit()
 
 
