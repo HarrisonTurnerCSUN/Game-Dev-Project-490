@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://b6jpciqqr0frf"]
+[gd_scene load_steps=91 format=3 uid="uid://b6jpciqqr0frf"]
 
 [ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
@@ -792,7 +792,7 @@ tracks/56/keys = {
 tracks/57/type = "value"
 tracks/57/imported = false
 tracks/57/enabled = true
-tracks/57/path = NodePath("HeavyAttack:stream")
+tracks/57/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:stream")
 tracks/57/interp = 1
 tracks/57/loop_wrap = true
 tracks/57/keys = {
@@ -804,7 +804,7 @@ tracks/57/keys = {
 tracks/58/type = "value"
 tracks/58/imported = false
 tracks/58/enabled = true
-tracks/58/path = NodePath("HeavyAttack:playing")
+tracks/58/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:playing")
 tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = {
@@ -6063,7 +6063,7 @@ tracks/57/keys = {
 tracks/58/type = "value"
 tracks/58/imported = false
 tracks/58/enabled = true
-tracks/58/path = NodePath("HeavyAttack:stream")
+tracks/58/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:stream")
 tracks/58/interp = 1
 tracks/58/loop_wrap = true
 tracks/58/keys = {
@@ -6075,7 +6075,7 @@ tracks/58/keys = {
 tracks/59/type = "value"
 tracks/59/imported = false
 tracks/59/enabled = true
-tracks/59/path = NodePath("HeavyAttack:playing")
+tracks/59/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:playing")
 tracks/59/interp = 1
 tracks/59/loop_wrap = true
 tracks/59/keys = {
@@ -6966,7 +6966,7 @@ tracks/72/keys = {
 tracks/73/type = "value"
 tracks/73/imported = false
 tracks/73/enabled = true
-tracks/73/path = NodePath("HeavyAttack:stream")
+tracks/73/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:stream")
 tracks/73/interp = 1
 tracks/73/loop_wrap = true
 tracks/73/keys = {
@@ -6978,7 +6978,7 @@ tracks/73/keys = {
 tracks/74/type = "value"
 tracks/74/imported = false
 tracks/74/enabled = true
-tracks/74/path = NodePath("HeavyAttack:playing")
+tracks/74/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:playing")
 tracks/74/interp = 1
 tracks/74/loop_wrap = true
 tracks/74/keys = {
@@ -8340,6 +8340,9 @@ shadow_offset = Vector2(0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_botwk"]
 bg_color = Color(0.80836, 0.861046, 0.85524, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwdog"]
+size = Vector2(18, 28.5)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
@@ -8437,6 +8440,11 @@ position = Vector2(3, -21)
 shape = SubResource("CapsuleShape2D_nujbq")
 debug_color = Color(0, 0.62242, 0.546233, 0.42)
 
+[node name="HeavyAttack" type="AudioStreamPlayer2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(3, 0)
+stream = ExtResource("7_xg4cs")
+bus = &"SFX"
+
 [node name="GhostTimer" type="Timer" parent="Sprite2D"]
 wait_time = 0.09
 
@@ -8462,6 +8470,7 @@ script = ExtResource("16_6dujv")
 full_heart_texture = ExtResource("17_dngu7")
 half_heart_texture = ExtResource("18_oi1t6")
 empty_heart_texture = ExtResource("18_8kqli")
+max_health = null
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/StatusUI"]
 offset_right = 4.0
@@ -8600,10 +8609,6 @@ stamina_per_second = 1.0
 stream = ExtResource("14_iyndn")
 bus = &"SFX"
 
-[node name="HeavyAttack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_xg4cs")
-bus = &"SFX"
-
 [node name="LightAttack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_7ckln")
 bus = &"SFX"
@@ -8630,7 +8635,14 @@ bus = &"SFX"
 stream = ExtResource("56_2k251")
 bus = &"SFX"
 
-[connection signal="area_entered" from="Sprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-5, -15)
+shape = SubResource("RectangleShape2D_qwdog")
+
 [connection signal="timeout" from="Sprite2D/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="Camera2D/StatusUI/StaminaBar/Used_bar/Timer" to="Camera2D/StatusUI/StaminaBar" method="_on_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Idle" method="_on_dash_timer_timeout"]
@@ -8638,3 +8650,4 @@ bus = &"SFX"
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Run" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Jump" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Dash" method="_on_dash_timer_timeout"]
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

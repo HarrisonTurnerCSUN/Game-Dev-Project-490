@@ -604,20 +604,20 @@ states/Walk_BlendSpace2D/position = Vector2(617, 100)
 transitions = ["Idle_BlendSpace2D", "Walk_BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_c6lm4"), "Walk_BlendSpace2D", "Idle_BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_8t4re"), "Start", "Idle_BlendSpace2D", SubResource("AnimationNodeStateMachineTransition_m1w3n")]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vw3hd"]
-size = Vector2(10.5, 2)
+size = Vector2(10.5, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iu47"]
-size = Vector2(18, 29)
+size = Vector2(18, 28.5)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_1yvpy")
 inventory = ExtResource("2_s2fsh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(2, 1)
+zoom = Vector2(1.505, 1.505)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 1)
 sprite_frames = SubResource("SpriteFrames_o034w")
 animation = &"IdleSouth"
 
@@ -636,7 +636,7 @@ parameters/Idle_BlendSpace2D/blend_position = Vector2(0.324324, 0.769912)
 parameters/Walk_BlendSpace2D/blend_position = Vector2(0, 0.00884962)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(2, 16)
+position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_vw3hd")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
@@ -661,8 +661,7 @@ Animation_Tree = NodePath("../../AnimatedSprite2D/AnimationTree")
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-visible = false
-position = Vector2(2, 2.5)
+position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_3iu47")
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
