@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2grewbwmu5rs"]
+
+[ext_resource type="Texture2D" uid="uid://1kjxg77nve6t" path="res://Assets/Character Sprites/Fire Worm/Sprites/Worm/Idle.png" id="1_4diss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yxkfs"]
+
+[node name="enemy_worm_fire" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -13)
+texture = ExtResource("1_4diss")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_yxkfs")

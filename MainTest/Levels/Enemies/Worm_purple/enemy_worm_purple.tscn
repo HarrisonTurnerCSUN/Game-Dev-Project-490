@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://byq4553wadp8r"]
+
+[ext_resource type="Texture2D" uid="uid://buj1cdpwwtcqo" path="res://Assets/Character Sprites/PurpleWorm/Idle.png" id="1_5hpw0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_83b1e"]
+
+[node name="enemy_worm_purple" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -13)
+texture = ExtResource("1_5hpw0")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_83b1e")

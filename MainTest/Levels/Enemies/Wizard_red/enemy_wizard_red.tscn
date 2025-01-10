@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxu4deqkkfl4y"]
+
+[ext_resource type="Texture2D" uid="uid://dewmih5de3k7t" path="res://Assets/Character Sprites/Evil_Wizard/Idle.png" id="1_kavlr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_810a1"]
+
+[node name="enemy_wizard_red" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, -27)
+texture = ExtResource("1_kavlr")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_810a1")

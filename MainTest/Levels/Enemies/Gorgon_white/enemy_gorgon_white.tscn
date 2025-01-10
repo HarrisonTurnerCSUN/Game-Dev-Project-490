@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpronagpe5vqu"]
+
+[ext_resource type="Texture2D" uid="uid://bu0n7hkgpl43t" path="res://Assets/Character Sprites/Gorgon_3/Idle.png" id="1_arict"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dyc14"]
+
+[node name="enemy_gorgon_white" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -64)
+texture = ExtResource("1_arict")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_dyc14")

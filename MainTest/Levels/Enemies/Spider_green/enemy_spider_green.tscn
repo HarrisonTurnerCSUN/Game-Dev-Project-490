@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://byrrr8lmnh2q0"]
+
+[ext_resource type="Texture2D" uid="uid://q0rh05klulf6" path="res://Assets/Character Sprites/TheForest_GiantSpider/AquaSpider_sleep.png" id="1_ilp0y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c0r0n"]
+
+[node name="enemy_spider_green" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -17)
+texture = ExtResource("1_ilp0y")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_c0r0n")

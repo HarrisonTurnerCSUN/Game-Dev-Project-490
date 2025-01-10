@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhj1ggapclpy5"]
+
+[ext_resource type="Texture2D" uid="uid://dt6rjsi03f1pu" path="res://Assets/Character Sprites/Red_Werewolf/Idle.png" id="1_2eqn8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exee4"]
+
+[node name="enemy_werewolf_red" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -64)
+texture = ExtResource("1_2eqn8")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_exee4")

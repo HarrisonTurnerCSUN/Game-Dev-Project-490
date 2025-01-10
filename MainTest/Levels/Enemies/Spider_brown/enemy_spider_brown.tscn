@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dosa8tyikujhj"]
+
+[ext_resource type="Texture2D" uid="uid://dv4sp7lbklyxk" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_sleep.png" id="1_ler0x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_prvyy"]
+
+[node name="enemy_spider_brown" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -17)
+texture = ExtResource("1_ler0x")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_prvyy")

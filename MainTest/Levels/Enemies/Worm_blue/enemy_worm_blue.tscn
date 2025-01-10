@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://27ggvr2x2hpu"]
+
+[ext_resource type="Texture2D" uid="uid://kte7jndvknnq" path="res://Assets/Character Sprites/BlueWorm/Idle.png" id="1_meoaq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4siwc"]
+
+[node name="enemy_worm_blue" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, -13)
+texture = ExtResource("1_meoaq")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_4siwc")
