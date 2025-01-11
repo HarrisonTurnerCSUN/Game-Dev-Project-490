@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=6 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
 [ext_resource type="PackedScene" uid="uid://u5une7lxksej" path="res://Levels/Enemies/Gorgon_green/enemy_gorgon_green.tscn" id="4_u8aby"]
+[ext_resource type="PackedScene" uid="uid://dunf7ray0eu8s" path="res://Levels/Enemies/Gorgon_black/enemy_gorgon_black.tscn" id="5_8ynjh"]
 [ext_resource type="PackedScene" uid="uid://d35cmyvdibyaa" path="res://Levels/Enemies/Witch/enemy_witch.tscn" id="6_040yv"]
 
 [node name="Main" type="Node2D"]
@@ -16,4 +17,7 @@ position = Vector2(89, -66)
 position = Vector2(761, -110)
 
 [node name="enemy_gorgon_green" parent="." instance=ExtResource("4_u8aby")]
-position = Vector2(253, -52)
+position = Vector2(624, -84)
+
+[node name="enemy_gorgon_black" parent="." instance=ExtResource("5_8ynjh")]
+position = Vector2(360, -54)
