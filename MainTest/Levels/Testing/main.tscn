@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=5 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
-[ext_resource type="PackedScene" uid="uid://u5une7lxksej" path="res://Levels/Enemies/Gorgon_green/enemy_gorgon_green.tscn" id="4_u8aby"]
-[ext_resource type="PackedScene" uid="uid://dunf7ray0eu8s" path="res://Levels/Enemies/Gorgon_black/enemy_gorgon_black.tscn" id="5_8ynjh"]
-[ext_resource type="PackedScene" uid="uid://d35cmyvdibyaa" path="res://Levels/Enemies/Witch/enemy_witch.tscn" id="6_040yv"]
+[ext_resource type="PackedScene" uid="uid://de1xxdg3tyvj7" path="res://Levels/Objects/Breakable Box/object_breakable_box.tscn" id="3_d30qt"]
+[ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="4_7pbjf"]
 
 [node name="Main" type="Node2D"]
 
@@ -13,11 +12,17 @@
 [node name="Player" parent="." instance=ExtResource("2_2uqdp")]
 position = Vector2(89, -66)
 
-[node name="enemy_witch" parent="." instance=ExtResource("6_040yv")]
-position = Vector2(761, -110)
+[node name="object_breakable_box" parent="." instance=ExtResource("3_d30qt")]
+position = Vector2(200, -31)
 
-[node name="enemy_gorgon_green" parent="." instance=ExtResource("4_u8aby")]
-position = Vector2(624, -84)
+[node name="object_breakable_box2" parent="." instance=ExtResource("3_d30qt")]
+position = Vector2(200, -53)
 
-[node name="enemy_gorgon_black" parent="." instance=ExtResource("5_8ynjh")]
-position = Vector2(360, -54)
+[node name="object_breakable_box3" parent="." instance=ExtResource("3_d30qt")]
+position = Vector2(200, -75)
+
+[node name="object_breakable_box4" parent="." instance=ExtResource("3_d30qt")]
+position = Vector2(200, -96)
+
+[node name="enemy_goblin" parent="." instance=ExtResource("4_7pbjf")]
+position = Vector2(269, -39)
