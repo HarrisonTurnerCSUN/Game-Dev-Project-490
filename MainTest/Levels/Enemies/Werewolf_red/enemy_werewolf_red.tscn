@@ -1,16 +1,124 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhj1ggapclpy5"]
+[gd_scene load_steps=21 format=3 uid="uid://dhj1ggapclpy5"]
 
-[ext_resource type="Texture2D" uid="uid://dt6rjsi03f1pu" path="res://Assets/Character Sprites/Red_Werewolf/Idle.png" id="1_2eqn8"]
+[ext_resource type="Texture2D" uid="uid://dwaqhlb3qfgq1" path="res://Assets/Character Sprites/Red_Werewolf/Attack_1.png" id="1_4llgp"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="2_g7eo0"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_8jmbm"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="4_jpdcl"]
+[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="5_ldjwm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vikfc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4utuj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exee4"]
 
+[sub_resource type="Animation" id="Animation_apdh6"]
+resource_name = "Attack1"
+length = 0.6
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_d7l0f"]
+resource_name = "Attack2"
+length = 0.4
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_044xt"]
+resource_name = "Attack3"
+length = 0.5
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_dllsg"]
+resource_name = "Attack4"
+length = 0.7
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_m4wpv"]
+resource_name = "Death"
+step = 0.26
+
+[sub_resource type="Animation" id="Animation_xd6ow"]
+resource_name = "Hurt"
+length = 0.53
+step = 0.26
+
+[sub_resource type="Animation" id="Animation_upun8"]
+resource_name = "Idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_5ve2l"]
+resource_name = "Jump"
+length = 0.55
+step = 0.05
+
+[sub_resource type="Animation" id="Animation_fdbca"]
+resource_name = "Run"
+length = 0.45
+loop_mode = 1
+step = 0.05
+
+[sub_resource type="Animation" id="Animation_0hx6a"]
+resource_name = "Walk"
+length = 1.1
+loop_mode = 1
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uxmoa"]
+_data = {
+"Attack1": SubResource("Animation_apdh6"),
+"Attack2": SubResource("Animation_d7l0f"),
+"Attack3": SubResource("Animation_044xt"),
+"Attack4": SubResource("Animation_dllsg"),
+"Death": SubResource("Animation_m4wpv"),
+"Hurt": SubResource("Animation_xd6ow"),
+"Idle": SubResource("Animation_upun8"),
+"Jump": SubResource("Animation_5ve2l"),
+"Run": SubResource("Animation_fdbca"),
+"Walk": SubResource("Animation_0hx6a")
+}
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_103wr"]
+
 [node name="enemy_werewolf_red" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, -64)
-texture = ExtResource("1_2eqn8")
-hframes = 8
+texture = ExtResource("1_4llgp")
+
+[node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_g7eo0")
+health = NodePath("../../Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CircleShape2D_vikfc")
+
+[node name="Hitbox" type="Area2D" parent="Sprite2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_8jmbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CircleShape2D_4utuj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_exee4")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("4_jpdcl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uxmoa")
+}
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+blackboard_plan = SubResource("BlackboardPlan_103wr")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("5_ldjwm")]
+health_node = NodePath("../Health")

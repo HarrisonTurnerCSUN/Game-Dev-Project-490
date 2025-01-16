@@ -1,16 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxu4deqkkfl4y"]
+[gd_scene load_steps=10 format=3 uid="uid://dxu4deqkkfl4y"]
 
 [ext_resource type="Texture2D" uid="uid://dewmih5de3k7t" path="res://Assets/Character Sprites/Evil_Wizard/Idle.png" id="1_kavlr"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="2_x5ah2"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_omrsp"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="4_r2bg5"]
+[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="5_7voeq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6fxa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3hnn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_810a1"]
 
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_7s1mf"]
+
 [node name="enemy_wizard_red" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-2, -27)
 texture = ExtResource("1_kavlr")
 hframes = 8
 
+[node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("2_x5ah2")
+health = NodePath("../../Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CircleShape2D_t6fxa")
+
+[node name="Hitbox" type="Area2D" parent="Sprite2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_omrsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CircleShape2D_t3hnn")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_810a1")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("4_r2bg5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="BTPlayer" type="BTPlayer" parent="."]
+blackboard_plan = SubResource("BlackboardPlan_7s1mf")
+
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("5_7voeq")]
+health_node = NodePath("../Health")
