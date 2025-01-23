@@ -18,6 +18,37 @@
 [ext_resource type="AudioStream" uid="uid://c5om4gdseav8g" path="res://Assets/AudioAssets/Enemies/Executioner/643700__snowfightstudios__devil-demon_no.wav" id="11_eyg03"]
 [ext_resource type="AudioStream" uid="uid://cwcln4ht8scfr" path="res://Assets/AudioAssets/Enemies/Executioner/643727__snowfightstudios__devil-demon_you-fool.wav" id="12_fbyi2"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0ebh"]
+radius = 4.0
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qkbj"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76lh0"]
+radius = 1.0
+height = 11.2982
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_720ck"]
+radius = 1.38962
+height = 14.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwy07"]
+radius = 3.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifo1x"]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o2bh6"]
+radius = 1.0
+height = 28.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ec71c"]
+radius = 5.0
+height = 26.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahrxk"]
 radius = 4.0
 height = 12.0
@@ -49,37 +80,6 @@ height = 20.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_abg7o"]
 radius = 2.0
 height = 18.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w0ebh"]
-radius = 4.0
-height = 14.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qkbj"]
-radius = 5.0
-height = 16.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76lh0"]
-radius = 1.0
-height = 11.2982
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_720ck"]
-radius = 1.38962
-height = 14.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jwy07"]
-radius = 3.0
-height = 16.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifo1x"]
-radius = 4.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o2bh6"]
-radius = 1.0
-height = 28.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ec71c"]
-radius = 5.0
-height = 26.0
 
 [sub_resource type="Animation" id="Animation_1hnos"]
 resource_name = "Attacking"
@@ -8342,10 +8342,58 @@ texture = ExtResource("1_1bvdo")
 hframes = 6
 vframes = 3
 
+[node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("4_hmkoa")
+health = NodePath("../../Health")
+
+[node name="Hurt1" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-3, -14)
+shape = SubResource("CapsuleShape2D_w0ebh")
+debug_color = Color(1.82897e-06, 0.621749, 0.551776, 0.42)
+
+[node name="Hurt2" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-1, -5)
+shape = SubResource("CapsuleShape2D_1qkbj")
+debug_color = Color(1.34766e-06, 0.624245, 0.530706, 0.42)
+
+[node name="Hurt3" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(10, -3)
+rotation = 0.837758
+shape = SubResource("CapsuleShape2D_76lh0")
+debug_color = Color(0, 0.623843, 0.534181, 0.42)
+
+[node name="Hurt4" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(3, -5)
+rotation = -0.598648
+shape = SubResource("CapsuleShape2D_720ck")
+debug_color = Color(3.08037e-06, 0.621935, 0.550251, 0.42)
+
+[node name="Hurt5" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-3, 2)
+shape = SubResource("CapsuleShape2D_jwy07")
+debug_color = Color(0, 0.621783, 0.551505, 0.42)
+
+[node name="Hurt6" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-9, 12)
+shape = SubResource("CapsuleShape2D_ifo1x")
+debug_color = Color(0, 0.62242, 0.546233, 0.42)
+
+[node name="Hurt7" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-9, 19)
+shape = SubResource("CapsuleShape2D_o2bh6")
+debug_color = Color(1.78084e-06, 0.621182, 0.556419, 0.42)
+
+[node name="Hurt8" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-10, 3)
+shape = SubResource("CapsuleShape2D_ec71c")
+debug_color = Color(0, 0.622607, 0.544667, 0.42)
+
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
 visible = false
 collision_layer = 0
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("3_bywyy")
 knockback_enabled = true
 knockback_strength = 30.0
@@ -8393,54 +8441,6 @@ debug_color = Color(0.955768, 0, 0.541478, 0.42)
 position = Vector2(-9, 16)
 shape = SubResource("CapsuleShape2D_abg7o")
 debug_color = Color(0.95529, 0, 0.543985, 0.42)
-
-[node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("4_hmkoa")
-health = NodePath("../../Health")
-
-[node name="Hurt1" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(-3, -14)
-shape = SubResource("CapsuleShape2D_w0ebh")
-debug_color = Color(1.82897e-06, 0.621749, 0.551776, 0.42)
-
-[node name="Hurt2" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(-1, -5)
-shape = SubResource("CapsuleShape2D_1qkbj")
-debug_color = Color(1.34766e-06, 0.624245, 0.530706, 0.42)
-
-[node name="Hurt3" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(10, -3)
-rotation = 0.837758
-shape = SubResource("CapsuleShape2D_76lh0")
-debug_color = Color(0, 0.623843, 0.534181, 0.42)
-
-[node name="Hurt4" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(3, -5)
-rotation = -0.598648
-shape = SubResource("CapsuleShape2D_720ck")
-debug_color = Color(3.08037e-06, 0.621935, 0.550251, 0.42)
-
-[node name="Hurt5" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(-3, 2)
-shape = SubResource("CapsuleShape2D_jwy07")
-debug_color = Color(0, 0.621783, 0.551505, 0.42)
-
-[node name="Hurt6" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(-9, 12)
-shape = SubResource("CapsuleShape2D_ifo1x")
-debug_color = Color(0, 0.62242, 0.546233, 0.42)
-
-[node name="Hurt7" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(-9, 19)
-shape = SubResource("CapsuleShape2D_o2bh6")
-debug_color = Color(1.78084e-06, 0.621182, 0.556419, 0.42)
-
-[node name="Hurt8" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(-10, 3)
-shape = SubResource("CapsuleShape2D_ec71c")
-debug_color = Color(0, 0.622607, 0.544667, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

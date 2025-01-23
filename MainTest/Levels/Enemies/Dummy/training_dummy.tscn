@@ -276,7 +276,7 @@ script = ExtResource("1_i4jts")
 texture = ExtResource("2_w2orv")
 
 [node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
-collision_layer = 4
+collision_layer = 16
 collision_mask = 0
 script = ExtResource("3_4orf6")
 health = NodePath("../Health")

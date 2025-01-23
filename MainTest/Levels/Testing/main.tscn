@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
 [ext_resource type="PackedScene" uid="uid://de1xxdg3tyvj7" path="res://Levels/Objects/Breakable Box/object_breakable_box.tscn" id="3_d30qt"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="4_7pbjf"]
-[ext_resource type="PackedScene" uid="uid://dahfvxb6tyohx" path="res://Levels/Enemies/Wizard_black/enemy_wizard_black.tscn" id="5_abjt4"]
-[ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="6_38e3q"]
+[ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="7_p4rdj"]
+[ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="8_f0pbf"]
 
 [node name="Main" type="Node2D"]
 
@@ -27,10 +27,10 @@ position = Vector2(200, -75)
 position = Vector2(200, -96)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("4_7pbjf")]
-position = Vector2(1293, -114)
+position = Vector2(280, -55)
 
-[node name="enemy_wizard_black" parent="." instance=ExtResource("5_abjt4")]
-position = Vector2(409, -32)
+[node name="enemy_mushroom" parent="." instance=ExtResource("7_p4rdj")]
+position = Vector2(951, -94)
 
-[node name="enemy_stone_golem" parent="." instance=ExtResource("6_38e3q")]
-position = Vector2(333, -83)
+[node name="lifepot" parent="." instance=ExtResource("8_f0pbf")]
+position = Vector2(159, -41)

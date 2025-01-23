@@ -8346,6 +8346,7 @@ size = Vector2(18, 28.5)
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 collision_mask = 5
+platform_floor_layers = 4294967041
 script = ExtResource("1_5mcup")
 inventory = ExtResource("2_ctpe4")
 
@@ -8356,7 +8357,7 @@ hframes = 10
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 16
 script = ExtResource("3_5byb4")
 damage = 2.0
 knockback_enabled = true
@@ -8383,7 +8384,7 @@ debug_color = Color(0.961248, 0, 0.511433, 0.42)
 [node name="LightHitbox" type="Area2D" parent="Sprite2D"]
 position = Vector2(0, 40)
 collision_layer = 0
-collision_mask = 4
+collision_mask = 16
 script = ExtResource("3_5byb4")
 knockback_enabled = true
 knockback_strength = 10.0
@@ -8408,7 +8409,7 @@ debug_color = Color(0.967122, 2.88785e-07, 0.476246, 0.42)
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
 position = Vector2(-3, 40)
-collision_layer = 2
+collision_layer = 8
 collision_mask = 0
 script = ExtResource("4_an74e")
 health = NodePath("../../Health")
@@ -8635,11 +8636,11 @@ bus = &"SFX"
 stream = ExtResource("56_2k251")
 bus = &"SFX"
 
-[node name="hurtbox" type="Area2D" parent="."]
-collision_layer = 3
-collision_mask = 3
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-5, -15)
 shape = SubResource("RectangleShape2D_qwdog")
 
@@ -8650,4 +8651,4 @@ shape = SubResource("RectangleShape2D_qwdog")
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Run" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Jump" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash_Timer" to="StateMachine/Dash" method="_on_dash_timer_timeout"]
-[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

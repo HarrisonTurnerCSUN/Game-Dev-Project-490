@@ -135,7 +135,7 @@ texture = ExtResource("1_qq76h")
 hframes = 8
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
-collision_layer = 4
+collision_layer = 16
 collision_mask = 0
 script = ExtResource("2_y6mc1")
 health = NodePath("../../Health")
@@ -145,7 +145,7 @@ shape = SubResource("CircleShape2D_1ykuh")
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 8
 script = ExtResource("3_0ytls")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
