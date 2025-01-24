@@ -2537,7 +2537,7 @@ autoplay = "Move"
 position = Vector2(5365, -244)
 
 [node name="SpikeHitbox" type="Area2D" parent="Objects/Spikes"]
-collision_mask = 6
+collision_mask = 24
 script = ExtResource("25_kmo3p")
 knockback_enabled = true
 knockback_strength = 60.0
@@ -2556,7 +2556,7 @@ shape = SubResource("RectangleShape2D_66sc7")
 position = Vector2(5833, -343)
 
 [node name="Area2D" type="Area2D" parent="Objects/Spikes2"]
-collision_mask = 6
+collision_mask = 24
 script = ExtResource("25_kmo3p")
 knockback_enabled = true
 
@@ -2572,7 +2572,7 @@ shape = SubResource("RectangleShape2D_khf33")
 
 [node name="Acid" type="Area2D" parent="Objects"]
 position = Vector2(6413, -165)
-collision_mask = 6
+collision_mask = 24
 script = ExtResource("27_xpicm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Acid"]
@@ -2581,7 +2581,7 @@ shape = SubResource("RectangleShape2D_l6t1e")
 
 [node name="Acid2" type="Area2D" parent="Objects"]
 position = Vector2(6910.51, -400.199)
-collision_mask = 6
+collision_mask = 24
 script = ExtResource("25_kmo3p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Acid2"]
@@ -2592,7 +2592,7 @@ shape = SubResource("RectangleShape2D_olrhi")
 position = Vector2(5833.35, -718.49)
 
 [node name="Area2D" type="Area2D" parent="Objects/Spikes3"]
-collision_mask = 6
+collision_mask = 24
 script = ExtResource("25_kmo3p")
 knockback_enabled = true
 
@@ -2610,7 +2610,7 @@ shape = SubResource("RectangleShape2D_de535")
 position = Vector2(5493.07, -670.107)
 
 [node name="Area2D" type="Area2D" parent="Objects/Spikes4"]
-collision_mask = 6
+collision_mask = 24
 script = ExtResource("25_kmo3p")
 knockback_enabled = true
 
@@ -2726,7 +2726,7 @@ position = Vector2(2.4541, 7.33673)
 shape = SubResource("RectangleShape2D_arucp")
 
 [node name="Player" parent="." instance=ExtResource("2_giia3")]
-position = Vector2(148, 3)
+position = Vector2(5758, -415)
 bottom = 270
 camera_y_transform = -25.0
 
