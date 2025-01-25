@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://cw3pmx4kmcs3j"]
+[gd_scene load_steps=6 format=4 uid="uid://cw3pmx4kmcs3j"]
+
+[ext_resource type="TileSet" uid="uid://cmq4eu4qhi1x2" path="res://Assets/mk_16_16_nature_tileset_godot/mk_16_16_nature_tileset_godot/tileset_mk_16_16_nature_tileset_godot.tres" id="1_hn47r"]
+[ext_resource type="Script" path="res://Levels/Maps/Mountain/mountain.gd" id="1_mwab1"]
+[ext_resource type="PackedScene" uid="uid://yrbdeqhp6gl2" path="res://main menu/hud.tscn" id="3_ctfjp"]
+[ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="4_1b0n5"]
+[ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="5_rkuu1"]
 
 [node name="Mountain" type="Node2D"]
+script = ExtResource("1_mwab1")
+
+[node name="TileMapLayers" type="Node" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayers"]
+tile_map_data = PackedByteArray("AAAAAAYAAAAaAAAAAAABAAYAAAAaAAAAAAACAAYAAAAaAAAAAAADAAYAAAAaAAAAAAAEAAYAAAAaAAAAAAAFAAYAAAAaAAAAAAAGAAYAAAAaAAAAAAAHAAYAAAAaAAAAAAAIAAYAAAAaAAAAAAAJAAYAAAAaAAAAAAAKAAYAAAAaAAAAAAAKAAUAAAAaAAAAAAAKAAQAAAAaAAAAAAAKAAMAAAAaAAAAAAAKAAIAAAAaAAAAAAAKAAEAAAAaAAAAAAATAAYAAAAaAAAAAAATAAUAAAAaAAAAAAATAAQAAAAaAAAAAAAUAAQAAAAaAAAAAAAUAAMAAAAaAAAAAAAUAAIAAAAaAAAAAAAUAAEAAAAaAAAAAAATAAEAAAAaAAAAAAATAAAAAAAaAAAAAAATAP//AAAaAAAAAAATAP7/AAAaAAAAAAATAP3/AAAaAAAAAAATAPz/AAAaAAAAAAATAPv/AAAaAAAAAAATAPr/AAAaAAAAAAASAPr/AAAaAAAAAAASAPn/AAAaAAAAAAASAPj/AAAaAAAAAAASAPf/AAAaAAAAAAASAPb/AAAaAAAAAAASAPX/AAAaAAAAAAASAPT/AAAaAAAAAAASAPP/AAAaAAAAAAASAPL/AAAaAAAAAAASAPH/AAAaAAAAAAATAPH/AAAaAAAAAAATAPD/AAAaAAAAAAAUAPD/AAAaAAAAAAAUAO//AAAaAAAAAAALAAEAAAAaAAAAAAAMAAEAAAAaAAAAAAARAPn/AAAaAAAAAAAQAPn/AAAaAAAAAAAQAPr/AAAaAAAAAAAKAPv/AAAaAAAAAAAKAPr/AAAaAAAAAAAKAPn/AAAaAAAAAAAKAPj/AAAaAAAAAAAJAPj/AAAaAAAAAAAJAPf/AAAaAAAAAAAJAPb/AAAaAAAAAAAJAPX/AAAaAAAAAAAJAPT/AAAaAAAAAAAJAPP/AAAaAAAAAAAIAPL/AAAaAAAAAAAIAPH/AAAaAAAAAAAIAPD/AAAaAAAAAAAHAPD/AAAaAAAAAAAHAO//AAAaAAAAAAAHAO7/AAAaAAAAAAAIAO7/AAAaAAAAAAAIAO3/AAAaAAAAAAAIAOz/AAAaAAAAAAAIAOv/AAAaAAAAAAAIAOr/AAAaAAAAAAAJAOr/AAAaAAAAAAAJAOn/AAAaAAAAAAAJAOj/AAAaAAAAAAAJAOf/AAAaAAAAAAAJAOb/AAAaAAAAAAAKAOX/AAAaAAAAAAAKAOT/AAAaAAAAAAAKAOP/AAAaAAAAAAAKAOL/AAAaAAAAAAAJAOL/AAAaAAAAAAAJAOH/AAAaAAAAAAAJAOD/AAAaAAAAAAAIAOD/AAAaAAAAAAAIAN//AAAaAAAAAAAHAN//AAAaAAAAAAAHAN7/AAAaAAAAAAAHAN3/AAAaAAAAAAAHANz/AAAaAAAAAAAGANz/AAAaAAAAAAAGANv/AAAaAAAAAAAGANr/AAAaAAAAAAAGANn/AAAaAAAAAAAHANj/AAAaAAAAAAAHANf/AAAaAAAAAAAIANb/AAAaAAAAAAAIANX/AAAaAAAAAAAIANT/AAAaAAAAAAAIANP/AAAaAAAAAAA=")
+tile_set = ExtResource("1_hn47r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("3_ctfjp")]
+
+[node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("4_1b0n5")]
+process_mode = 1
+
+[node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("5_rkuu1")]
+visible = false
+top_level = true
+tooltip_text = "Canvas layer ordering matters"
