@@ -20,7 +20,7 @@ extends Control
 var stopwatch : Stopwatch
 
 func _ready() -> void:
-	var busIndex
+	#var busIndex
 	#busIndex = AudioServer.get_bus_index("Master")
 	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.MasterVol));
 	#busIndex = AudioServer.get_bus_index("Music")
@@ -50,7 +50,7 @@ func _on_quit_pressed() -> void:
 	popup.show()
 	#get_tree().quit()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if is_stats_hidden:
 		stats_button.hide()
 	update_stopwatch()

@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var player_tile_data = tilemaplayer.get_cell_tile_data(tilemaplayer.local_to_map(player.position))
 	if player_tile_data:
 		if player_tile_data.get_custom_data("Fluid"): 
@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 	if stopwatch.time/60 >= 15:
 		menu.flip_star1()
 
-func _on_tower_activation_body_entered(body: Node2D) -> void:
+func _on_tower_activation_body_entered(_body: Node2D) -> void:
 	menu.flip_star1()
 	pass # Replace with function body.
 
