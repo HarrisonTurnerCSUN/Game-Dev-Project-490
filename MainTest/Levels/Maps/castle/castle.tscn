@@ -1799,7 +1799,7 @@ position = Vector2(433, -103)
 
 [node name="Player" parent="." instance=ExtResource("3_m6ydi")]
 z_index = 3
-position = Vector2(9979, -811)
+position = Vector2(202, -42)
 camera_y_transform = -25.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
