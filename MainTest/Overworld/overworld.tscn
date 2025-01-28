@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://Overworld/canvas_layer.gd" id="4_d4ucr"]
 [ext_resource type="TileSet" uid="uid://bdw17moa6sdkh" path="res://Assets/PixelWoods/Terrain(main)/decorations.tres" id="4_fdh6g"]
 [ext_resource type="PackedScene" uid="uid://cccut3d2kje15" path="res://Overworld/Inventory/inventoryGUI.tscn" id="4_xwcl6"]
-[ext_resource type="PackedScene" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
+[ext_resource type="PackedScene" uid="uid://bsfiddtulqx03" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
 [ext_resource type="PackedScene" uid="uid://bxfrvoy1up5ro" path="res://Levels/Maps/Forest/sign.tscn" id="10_w18nq"]
 [ext_resource type="PackedScene" uid="uid://dkqjnddjsgi7c" path="res://main menu/Pause Menu/text_pop_up.tscn" id="11_hi12u"]
 [ext_resource type="PackedScene" uid="uid://yrbdeqhp6gl2" path="res://main menu/hud.tscn" id="13_mv36o"]
