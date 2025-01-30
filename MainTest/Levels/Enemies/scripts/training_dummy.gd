@@ -34,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 func _post_physics_process() -> void:
 	pass
 
-func move(p_velocity: Vector2) -> void:
+func move(_p_velocity: Vector2) -> void:
 	pass
 
 func is_good_position(p_position: Vector2) -> bool:
