@@ -151,7 +151,17 @@ func throw_projectile() -> void:
 	# Optionally, adjust additional properties for the projectile if needed
 	#print("Throwing projectile at position: ", projectile.global_position)
 func spawn_new_enemy() -> void:
-	# Use call_deferred to instantiate and add the new enemy
-	var new_enemy = ENEMY_WORM_PURPLE.instantiate()
-	new_enemy.position = position
-	get_parent().call_deferred("add_child", new_enemy)
+	# Instantiate two new enemies
+	var new_enemy_left = ENEMY_WORM_PURPLE.instantiate()
+	var new_enemy_right = ENEMY_WORM_PURPLE.instantiate()
+
+	# Set their positions slightly offset from the current position
+	var offset = 20  # Adjust this value as needed for spacing
+	new_enemy_left.position = position + Vector2(-offset, 0)
+	new_enemy_right.position = position + Vector2(offset, 0)
+
+	# Add them to the parent node
+	var parent = get_parent()
+	if parent:
+		parent.call_deferred("add_child", new_enemy_left)
+		parent.call_deferred("add_child", new_enemy_right)

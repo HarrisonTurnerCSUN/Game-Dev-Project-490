@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-const SPEED := 250.0  # Horizontal speed
-const GRAVITY := 100.0  # Gravity for gradual vertical drop
+const SPEED := 275.0  # Horizontal speed
+const GRAVITY := 95.0  # Gravity for gradual vertical drop
 
 @export var dir: float = 1.0  # Direction (1 for right, -1 for left)
 

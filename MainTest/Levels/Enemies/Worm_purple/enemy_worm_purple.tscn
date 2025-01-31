@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://byq4553wadp8r"]
+[gd_scene load_steps=25 format=3 uid="uid://byq4553wadp8r"]
 
 [ext_resource type="Texture2D" uid="uid://buj1cdpwwtcqo" path="res://Assets/Character Sprites/PurpleWorm/Idle.png" id="1_5hpw0"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_worm_purple.gd" id="1_c4ugt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="5_2n6hl"]
 [ext_resource type="Texture2D" uid="uid://ba8j7w3ymrus5" path="res://Assets/Character Sprites/Egg/crack.png" id="6_efxoi"]
 [ext_resource type="Texture2D" uid="uid://dj1ilhc0jr5m0" path="res://Assets/Character Sprites/PurpleWorm/Walk.png" id="8_mvtid"]
+[ext_resource type="BehaviorTree" uid="uid://br1dnno11plr0" path="res://ai/trees/littleWormAI.tres" id="10_qyydx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khojc"]
 
@@ -366,10 +367,35 @@ tracks/5/keys = {
 "values": [Vector2(0.85, 0.85), Vector2(0.85, 0.85)]
 }
 
+[sub_resource type="Animation" id="Animation_4kydi"]
+resource_name = "Death"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_tq3ck"]
+resource_name = "Hurt"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_at0xp"]
+resource_name = "Idle"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_ed3i1"]
+resource_name = "Attack1"
+step = 0.1
+
+[sub_resource type="Animation" id="Animation_igowg"]
+resource_name = "Run"
+step = 0.1
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4vk07"]
 _data = {
+"Attack1": SubResource("Animation_ed3i1"),
+"Death": SubResource("Animation_4kydi"),
 "Hatch": SubResource("Animation_mrkcj"),
+"Hurt": SubResource("Animation_tq3ck"),
+"Idle": SubResource("Animation_at0xp"),
 "RESET": SubResource("Animation_ib5qt"),
+"Run": SubResource("Animation_igowg"),
 "Walk": SubResource("Animation_0wblo")
 }
 
@@ -401,7 +427,7 @@ script = ExtResource("2_tf1cp")
 health = NodePath("../../Health")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-position = Vector2(32.9412, -2.35294)
+position = Vector2(1.17647, -1.17647)
 shape = SubResource("CircleShape2D_khojc")
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
@@ -410,11 +436,11 @@ collision_mask = 8
 script = ExtResource("3_3e0na")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
-position = Vector2(-35.2941, 0)
+position = Vector2(0, 2.35294)
 shape = SubResource("CircleShape2D_ye7vx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(30, -19)
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_83b1e")
 
 [node name="Health" type="Node" parent="."]
@@ -426,6 +452,7 @@ libraries = {
 }
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
+behavior_tree = ExtResource("10_qyydx")
 blackboard_plan = SubResource("BlackboardPlan_ai216")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("5_2n6hl")]
