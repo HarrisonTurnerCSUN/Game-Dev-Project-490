@@ -10,17 +10,17 @@
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_iyio2"]
 var/speed/name = &"speed"
 var/speed/type = 3
-var/speed/value = 60.0
+var/speed/value = 50.0
 var/speed/hint = 1
 var/speed/hint_string = "10, 1000, 10"
 var/flank_speed/name = &"flank_speed"
 var/flank_speed/type = 3
-var/flank_speed/value = 120.0
+var/flank_speed/value = 100.0
 var/flank_speed/hint = 1
 var/flank_speed/hint_string = "10, 1000, 10"
 var/charge_speed/name = &"charge_speed"
 var/charge_speed/type = 3
-var/charge_speed/value = 120.0
+var/charge_speed/value = 100.0
 var/charge_speed/hint = 1
 var/charge_speed/hint_string = "10, 1000, 10"
 
@@ -48,7 +48,7 @@ children = [SubResource("BTPlayAnimation_cou8b"), SubResource("BTRandomWait_opex
 [sub_resource type="BTCondition" id="BTCondition_hytds"]
 script = ExtResource("2_r73pr")
 distance_min = 0.0
-distance_max = 140.0
+distance_max = 125.0
 target_var = &"target"
 
 [sub_resource type="BTAction" id="BTAction_212di"]
@@ -64,7 +64,6 @@ saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
 
 [sub_resource type="BTPlayAnimation" id="BTPlayAnimation_ehnpl"]
-await_completion = 2.0
 animation_player = SubResource("BBNode_f4oms")
 animation_name = &"Attack1"
 
@@ -136,7 +135,7 @@ children = [SubResource("BTCondition_hytds"), SubResource("BTAction_212di"), Sub
 [sub_resource type="BTAction" id="BTAction_hbq8t"]
 script = ExtResource("6_u2s1m")
 patrol_range = 300.0
-retreat_range = null
+patrol_time = 3.0
 speed_var = &"speed"
 
 [sub_resource type="BTSequence" id="BTSequence_oittp"]

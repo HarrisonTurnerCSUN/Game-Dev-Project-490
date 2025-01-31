@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://twh45w77wvf6" path="res://Assets/Character Sprites/Fire Worm/Sprites/Fire Ball/Explosion.png" id="3_pweud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlqpd"]
+radius = 8.06226
 
 [sub_resource type="Animation" id="Animation_8biox"]
 resource_name = "Death"
@@ -173,10 +174,12 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4g03a"]
+radius = 7.0
 
 [node name="RedWormProjectile" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 3
+gravity_scale = 0.2
 script = ExtResource("1_o5wej")
 
 [node name="Root" type="Node2D" parent="."]
@@ -204,3 +207,5 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4g03a")
+
+[connection signal="body_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_body_entered"]

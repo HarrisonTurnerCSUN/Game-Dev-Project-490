@@ -102,6 +102,7 @@ func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
 		move(knockback)
 		await get_tree().physics_frame
 
+
 func die() -> void:
 	if _is_dead:
 		return
@@ -109,14 +110,18 @@ func die() -> void:
 	_is_dead = true
 	sprite_2d.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	#collision_shape_2d.set_deferred("disabled", true)
-	spawn_new_enemy()
 	self.collision_layer = 0
 	self.collision_mask = 1
+
+	# Disable relevant children and prepare for destruction
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
 
+	# Schedule spawning a new enemy after death animation
+	call_deferred("spawn_new_enemy")
+
+	# Remove the current instance after 10 seconds
 	if get_tree():
 		await get_tree().create_timer(10.0).timeout
 		queue_free()
@@ -137,8 +142,8 @@ func throw_projectile() -> void:
 	get_parent().add_child(projectile)
 
 	# Adjust the spawn position based on the goblin's current position
-	var offset_x = 20 * get_facing()  # Horizontal offset based on facing direction
-	var offset_y = 60  # Vertical offset to ensure proper spawn alignment
+	var offset_x = 24 * get_facing()  # Horizontal offset based on facing direction
+	var offset_y = -24  # Vertical offset to ensure proper spawn alignment
 
 	# Set the global position of the projectile
 	projectile.global_position = global_position + Vector2(offset_x, offset_y)
@@ -146,6 +151,7 @@ func throw_projectile() -> void:
 	# Optionally, adjust additional properties for the projectile if needed
 	#print("Throwing projectile at position: ", projectile.global_position)
 func spawn_new_enemy() -> void:
+	# Use call_deferred to instantiate and add the new enemy
 	var new_enemy = ENEMY_WORM_PURPLE.instantiate()
 	new_enemy.position = position
-	get_parent().add_child(new_enemy)
+	get_parent().call_deferred("add_child", new_enemy)
