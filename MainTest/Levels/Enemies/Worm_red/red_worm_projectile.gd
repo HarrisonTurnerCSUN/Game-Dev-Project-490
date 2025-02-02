@@ -38,10 +38,8 @@ func _die() -> void:
 	await animation_player.animation_finished
 	queue_free()
 
-# Destroy projectile on any collision
-func _on_body_entered(_body: Node) -> void:
+func _on_hitbox_area_entered(area: Area2D) -> void:
 	_die()
 
-
-func _on_hitbox_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	_die()

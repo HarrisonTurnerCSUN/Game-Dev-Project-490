@@ -31,6 +31,7 @@ var/hatched/hint_string = ""
 [sub_resource type="BBVariant" id="BBVariant_b64f8"]
 type = 1
 saved_value = false
+resource_name = "false"
 
 [sub_resource type="BTCheckVar" id="BTCheckVar_l64br"]
 variable = &"hatched"

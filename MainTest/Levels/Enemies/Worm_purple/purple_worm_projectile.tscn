@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bp1jjuiemlr1p"]
+[gd_scene load_steps=12 format=3 uid="uid://cyxvjss7e3twy"]
 
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="1_gp1kk"]
-[ext_resource type="Script" path="res://Levels/Enemies/Worm_red/red_worm_projectile.gd" id="1_o5wej"]
-[ext_resource type="Texture2D" uid="uid://juisgry4pa1g" path="res://Assets/Character Sprites/Fire Worm/Sprites/Fire Ball/Move.png" id="1_os0wg"]
-[ext_resource type="Texture2D" uid="uid://twh45w77wvf6" path="res://Assets/Character Sprites/Fire Worm/Sprites/Fire Ball/Explosion.png" id="3_pweud"]
+[ext_resource type="Script" path="res://Levels/Enemies/Worm_red/red_worm_projectile.gd" id="1_2244r"]
+[ext_resource type="Texture2D" uid="uid://dwqwggfqusbee" path="res://Assets/Character Sprites/PurpleWorm/Move.png" id="2_u3c7v"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_yre4s"]
+[ext_resource type="Texture2D" uid="uid://bpsc5jdbceqm8" path="res://Assets/Character Sprites/PurpleWorm/Explosion.png" id="4_r107k"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mlqpd"]
-radius = 9.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_q53gw"]
+radius = 6.0
 
-[sub_resource type="Animation" id="Animation_8biox"]
+[sub_resource type="Animation" id="Animation_0jxrh"]
 resource_name = "Death"
 length = 0.35
 step = 0.05
@@ -22,31 +22,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_pweud")]
+"values": [ExtResource("4_r107k")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Root/projectile:hframes")
+tracks/1/path = NodePath("Root/projectile:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [7]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Root/projectile:vframes")
+tracks/2/path = NodePath("Root/projectile:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [7]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -61,7 +61,7 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6]
 }
 
-[sub_resource type="Animation" id="Animation_l63a0"]
+[sub_resource type="Animation" id="Animation_gk80w"]
 resource_name = "Projectile"
 length = 0.3
 loop_mode = 1
@@ -76,7 +76,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_os0wg")]
+"values": [ExtResource("2_u3c7v")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -115,7 +115,7 @@ tracks/3/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_brad4"]
+[sub_resource type="Animation" id="Animation_18uhw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -127,7 +127,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_os0wg")]
+"values": [ExtResource("2_u3c7v")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -166,45 +166,47 @@ tracks/3/keys = {
 "values": [0]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_18j5v"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k3hqj"]
 _data = {
-"Death": SubResource("Animation_8biox"),
-"Projectile": SubResource("Animation_l63a0"),
-"RESET": SubResource("Animation_brad4")
+"Death": SubResource("Animation_0jxrh"),
+"Projectile": SubResource("Animation_gk80w"),
+"RESET": SubResource("Animation_18uhw")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4g03a"]
-radius = 8.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcobx"]
+radius = 4.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_n7wm1"]
-radius = 7.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_turfg"]
+radius = 5.0
 
-[node name="RedWormProjectile" type="RigidBody2D"]
+[node name="PurpleWormProjectile" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 3
-mass = 0.75
-gravity_scale = 0.18
-script = ExtResource("1_o5wej")
+mass = 0.7
+gravity_scale = 0.16
+script = ExtResource("1_2244r")
 
 [node name="Root" type="Node2D" parent="."]
 
 [node name="projectile" type="Sprite2D" parent="Root"]
-texture = ExtResource("1_os0wg")
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("2_u3c7v")
 hframes = 6
 
 [node name="Hitbox" type="Area2D" parent="Root/projectile"]
+scale = Vector2(1.17647, 1.17647)
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("1_gp1kk")
+script = ExtResource("3_yre4s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/projectile/Hitbox"]
-shape = SubResource("CircleShape2D_mlqpd")
+shape = SubResource("CircleShape2D_q53gw")
 
-[node name="Shadow" type="Sprite2D" parent="Root"]
+[node name="shadow" type="Sprite2D" parent="Root"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_18j5v")
+"": SubResource("AnimationLibrary_k3hqj")
 }
 
 [node name="Timer" type="Timer" parent="."]
@@ -213,10 +215,10 @@ libraries = {
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_4g03a")
+shape = SubResource("CircleShape2D_rcobx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_n7wm1")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_turfg")
 
 [connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_body_entered"]

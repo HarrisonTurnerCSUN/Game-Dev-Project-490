@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal death
 
-const Projectile := preload("res://Levels/Enemies/Worm_red/RedWorm_Projectile.tscn")
+const Projectile := preload("res://Levels/Enemies/Worm_purple/purple_worm_projectile.tscn")
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
@@ -138,8 +138,8 @@ func throw_projectile() -> void:
 	get_parent().add_child(projectile)
 
 	# Adjust the spawn position based on the goblin's current position
-	var offset_x = 24 * get_facing()  # Horizontal offset based on facing direction
-	var offset_y = -24  # Vertical offset to ensure proper spawn alignment
+	var offset_x = 16 * get_facing()  # Horizontal offset based on facing direction
+	var offset_y = -17  # Vertical offset to ensure proper spawn alignment
 
 	# Set the global position of the projectile
 	projectile.global_position = global_position + Vector2(offset_x, offset_y)
