@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=7 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
 [ext_resource type="PackedScene" uid="uid://de1xxdg3tyvj7" path="res://Levels/Objects/Breakable Box/object_breakable_box.tscn" id="3_d30qt"]
+[ext_resource type="PackedScene" uid="uid://d35cmyvdibyaa" path="res://Levels/Enemies/Witch/enemy_witch.tscn" id="6_odqg8"]
 [ext_resource type="PackedScene" uid="uid://c2grewbwmu5rs" path="res://Levels/Enemies/Worm_red/enemy_worm_fire.tscn" id="7_qxqhc"]
 [ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="8_f0pbf"]
 
@@ -11,7 +12,7 @@
 [node name="Level1" parent="." instance=ExtResource("1_kqx5x")]
 
 [node name="Player" parent="." instance=ExtResource("2_2uqdp")]
-position = Vector2(1986, -70)
+position = Vector2(1346, -81)
 
 [node name="object_breakable_box" parent="." instance=ExtResource("3_d30qt")]
 position = Vector2(200, -31)
@@ -30,3 +31,6 @@ position = Vector2(159, -41)
 
 [node name="enemy_worm_red" parent="." instance=ExtResource("7_qxqhc")]
 position = Vector2(2137, -58)
+
+[node name="enemy_witch" parent="." instance=ExtResource("6_odqg8")]
+position = Vector2(1470, -76)

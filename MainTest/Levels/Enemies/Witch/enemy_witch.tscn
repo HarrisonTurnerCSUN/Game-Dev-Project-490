@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://d35cmyvdibyaa"]
+[gd_scene load_steps=30 format=3 uid="uid://d35cmyvdibyaa"]
 
 [ext_resource type="Texture2D" uid="uid://dhby8yn7wjfss" path="res://Assets/Character Sprites/Evil_Witch/Idle.png" id="1_f8o1b"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_witch.gd" id="1_gfwi0"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d1t4kknmtjir7" path="res://Assets/Character Sprites/Evil_Witch/Get hit.png" id="11_npdu1"]
 [ext_resource type="Texture2D" uid="uid://bglhqy50d8477" path="res://Assets/Character Sprites/Evil_Witch/Death.png" id="12_ctv2c"]
 [ext_resource type="BehaviorTree" uid="uid://6fqyiiyewoyy" path="res://ai/trees/witch.tres" id="13_7jf5h"]
+[ext_resource type="PackedScene" uid="uid://c0053uubn6w7n" path="res://Levels/Enemies/Witch/witch_projectile.tscn" id="15_o6cmu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8peq"]
 
@@ -562,3 +563,6 @@ offset_top = -64.0
 offset_right = 20.0
 offset_bottom = -60.0
 health_node = NodePath("../Health")
+
+[node name="WitchProjectile" parent="." instance=ExtResource("15_o6cmu")]
+position = Vector2(30, 3)

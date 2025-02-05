@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c0053uubn6w7n"]
+[gd_scene load_steps=13 format=3 uid="uid://c0053uubn6w7n"]
 
 [ext_resource type="Texture2D" uid="uid://cv8exdx6y88u6" path="res://Assets/Character Sprites/Evil_Witch/Projectile/Moving.png" id="1_27ci0"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/witch_projectile.gd" id="1_t0xhw"]
@@ -10,8 +10,8 @@
 
 [sub_resource type="Animation" id="Animation_74s2o"]
 resource_name = "Death"
-length = 0.7
-step = 0.1
+length = 0.35
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,10 +55,22 @@ tracks/3/path = NodePath("Root/projectile:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Root/Shadow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_n4iro"]
@@ -114,6 +126,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Root/Shadow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_hhc1d"]
 length = 0.001
@@ -165,6 +189,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Root/Shadow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1pynj"]
 _data = {
@@ -173,7 +209,15 @@ _data = {
 "RESET": SubResource("Animation_hhc1d")
 }
 
-[node name="WitchProjectile" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_0wr2o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jrl4"]
+
+[node name="WitchProjectile" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+mass = 0.1
+gravity_scale = 0.1
 script = ExtResource("1_t0xhw")
 
 [node name="Root" type="Node2D" parent="."]
@@ -206,5 +250,17 @@ libraries = {
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.95
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -43)
+shape = SubResource("CircleShape2D_0wr2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -43)
+shape = SubResource("CircleShape2D_4jrl4")
+
 [connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

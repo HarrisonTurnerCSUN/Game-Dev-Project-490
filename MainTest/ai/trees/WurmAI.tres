@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=35 format=3 uid="uid://c45vdxipqhcxh"]
+[gd_resource type="BehaviorTree" load_steps=37 format=3 uid="uid://c45vdxipqhcxh"]
 
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_waq5v"]
 [ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_r73pr"]
@@ -124,6 +124,14 @@ children = [SubResource("BTSequence_ws7gg"), SubResource("BTSequence_06u2d")]
 custom_name = "Aggro Sequence"
 children = [SubResource("BTCondition_hytds"), SubResource("BTAction_212di"), SubResource("BTProbabilitySelector_tg2lf")]
 
+[sub_resource type="BBNode" id="BBNode_20pfj"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_4m6tu"]
+animation_player = SubResource("BBNode_20pfj")
+animation_name = &"Walk"
+
 [sub_resource type="BTAction" id="BTAction_hbq8t"]
 script = ExtResource("6_u2s1m")
 patrol_range = 300.0
@@ -132,7 +140,7 @@ speed_var = &"speed"
 
 [sub_resource type="BTSequence" id="BTSequence_oittp"]
 custom_name = "Patrol Sequence"
-children = [SubResource("BTAction_hbq8t")]
+children = [SubResource("BTPlayAnimation_4m6tu"), SubResource("BTAction_hbq8t")]
 
 [sub_resource type="BTSelector" id="BTSelector_r14w4"]
 children = [SubResource("BTSequence_oruw8"), SubResource("BTSequence_oittp")]
