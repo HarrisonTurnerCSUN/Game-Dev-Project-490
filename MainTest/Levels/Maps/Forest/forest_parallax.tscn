@@ -75,8 +75,7 @@ color = Color(0.321569, 0.505882, 0.827451, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TreeLine" type="ParallaxLayer" parent="."]
-visible = false
-motion_scale = Vector2(0.3, 1)
+motion_scale = Vector2(0.4, 1)
 motion_mirroring = Vector2(1856, 0)
 
 [node name="Layer00036" type="Sprite2D" parent="TreeLine"]
@@ -96,7 +95,7 @@ position = Vector2(928, -280)
 texture = ExtResource("4_h3t54")
 
 [node name="Treeline2" type="ParallaxLayer" parent="."]
-visible = false
+motion_scale = Vector2(0.3, 1)
 
 [node name="Layer00064" type="Sprite2D" parent="Treeline2"]
 z_index = -2
@@ -109,7 +108,7 @@ position = Vector2(928, -280)
 texture = ExtResource("6_6604t")
 
 [node name="Treeline3" type="ParallaxLayer" parent="."]
-visible = false
+motion_scale = Vector2(0.2, 1)
 
 [node name="Layer00055" type="Sprite2D" parent="Treeline3"]
 z_index = -1
