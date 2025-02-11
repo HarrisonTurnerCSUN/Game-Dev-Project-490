@@ -6,6 +6,9 @@ signal select_reward
 @onready var audio_hover: AudioStreamPlayer2D = $AudioHover
 @onready var audio_select: AudioStreamPlayer2D = $AudioSelect
 
+var item
+var title = "Title" : set = set_title
+var description = "Description" : set = set_description
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	set_process_input(true)  # Enable input processing
@@ -16,15 +19,23 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func set_description(new_description):
+	description = new_description
+	$Description.text = new_description
+	
+func set_title(new_title):
+	title = new_title
+	$Title.text = new_title
+	
 func _on_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if Input.is_action_pressed("left_click"):
-			emit_signal("select_reward", self)
 			audio_select.play()
-			var canvas_layer = find_parent_canvas_layer()
-			get_tree().paused = false
-			if canvas_layer:
-				canvas_layer.hide()
+			emit_signal("select_reward", self)
+			#var canvas_layer = find_parent_canvas_layer()
+			#get_tree().paused = false
+			#if canvas_layer:
+				#canvas_layer.hide()
 
 # 🔍 Helper function to find the CanvasLayer
 func find_parent_canvas_layer() -> CanvasLayer:

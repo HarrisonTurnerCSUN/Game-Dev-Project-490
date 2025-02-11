@@ -16,7 +16,9 @@ var _is_dead: bool = false
 @export var camera_x_transform: float = 0
 @export var camera_y_transform: float = 0 
 @export var inventory: Inventory
+@export var base_damage: int = 0
 
+var reward_node = get_node
 func _ready() -> void:
 	camera.limit_bottom = bottom
 	camera.limit_top = top
@@ -26,7 +28,7 @@ func _ready() -> void:
 	camera.zoom.y = camera_zoom_y
 	camera.position.x = camera_x_transform
 	camera.position.y = camera_y_transform
-	
+	SaveController.connect("PotionAdded", Callable(self, "_on_potion_added"))
 	
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
@@ -43,7 +45,7 @@ func _damaged(_amount: float, knockback: Vector2) -> void:
 		btplayer.restart()
 	if hsm and not _is_dead:
 		hsm.set_active(true)
-		
+
 #func receives_knockback(damage_source_pos: Vector2, received_damage: int):
 	#pass
 func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
@@ -64,3 +66,18 @@ func get_facing() -> float:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
 		area.collect(inventory)
+		
+func _on_potion_added() -> void:
+	update_damage()
+	update_health()
+
+func update_damage() -> void:
+	var strPotions = SaveController.getPotionCount("Elixir of Strength")
+	$Sprite2D/Hitbox.damage = $Sprite2D/Hitbox.damage + strPotions
+	$Sprite2D/LightHitbox.damage = $Sprite2D/LightHitbox.damage + strPotions
+
+
+func update_health() -> void:
+	var healthPotions = SaveController.getPotionCount("Elixir of Fortitude")
+	$Health.max_health = $Health.max_health + healthPotions
+	print($Health.max_health)

@@ -1,11 +1,15 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Text.Json;
 
 
 public partial class SaveController : Node
 {
-	public static PlayerData playerData = new PlayerData();
+    [Signal]
+    public delegate void PotionAddedEventHandler();
+
+    public static PlayerData playerData = new PlayerData();
 	
 	public static GameData gameData = new GameData();
 	
@@ -98,5 +102,28 @@ public partial class SaveController : Node
 	public static void setVolume(String bus_name,float vol) { 
 		gameData.setVolume(bus_name,vol); 
 	}
-	
+
+    public static List<string> Inventory { get; set; } = new List<string>();
+
+    public void addPotion(string item)
+    {
+        Inventory.Add(item);
+        EmitSignal("PotionAdded");
+    }
+    public static int getPotionCount(string item)
+    {
+        int count = 0;
+
+        // Iterate through the list and count occurrences of the item
+        foreach (var potion in Inventory)
+        {
+            if (potion == item)
+            {
+                count++;
+            }
+        }
+
+        return count;  // Return the number of times the potion appears
+    }
+
 }
