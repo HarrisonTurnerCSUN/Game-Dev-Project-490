@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bp1jjuiemlr1p"]
+[gd_scene load_steps=12 format=3 uid="uid://bp1jjuiemlr1p"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="1_gp1kk"]
 [ext_resource type="Script" path="res://Levels/Enemies/Worm_red/red_worm_projectile.gd" id="1_o5wej"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://twh45w77wvf6" path="res://Assets/Character Sprites/Fire Worm/Sprites/Fire Ball/Explosion.png" id="3_pweud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlqpd"]
+radius = 9.0
 
 [sub_resource type="Animation" id="Animation_8biox"]
 resource_name = "Death"
@@ -173,10 +174,16 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4g03a"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n7wm1"]
+radius = 7.0
 
 [node name="RedWormProjectile" type="RigidBody2D"]
 collision_layer = 4
 collision_mask = 3
+mass = 0.75
+gravity_scale = 0.18
 script = ExtResource("1_o5wej")
 
 [node name="Root" type="Node2D" parent="."]
@@ -187,7 +194,7 @@ hframes = 6
 
 [node name="Hitbox" type="Area2D" parent="Root/projectile"]
 collision_layer = 0
-collision_mask = 9
+collision_mask = 8
 script = ExtResource("1_gp1kk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Root/projectile/Hitbox"]
@@ -202,5 +209,15 @@ libraries = {
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_4g03a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n7wm1")
+
+[connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -135,8 +135,8 @@ func throw_projectile() -> void:
 	get_parent().add_child(projectile)
 
 	# Adjust the spawn position based on the goblin's current position
-	var offset_x = 20 * get_facing()  # Horizontal offset based on facing direction
-	var offset_y = 60  # Vertical offset to ensure proper spawn alignment
+	var offset_x = 30 * get_facing()  # Horizontal offset based on facing direction
+	var offset_y = -3  # Vertical offset to ensure proper spawn alignment
 
 	# Set the global position of the projectile
 	projectile.global_position = global_position + Vector2(offset_x, offset_y)
