@@ -19,6 +19,8 @@
 [node name="ForestParallax" type="ParallaxBackground"]
 
 [node name="Hills" type="ParallaxLayer" parent="."]
+z_index = -1
+motion_scale = Vector2(0.1, 1)
 motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Hills"]
@@ -28,12 +30,15 @@ texture = ExtResource("1_ig675")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="Hills"]
-z_index = -9
+z_index = -2
 position = Vector2(320, -140)
 texture = ExtResource("1_ig675")
 centered = false
 
 [node name="Sky" type="ParallaxLayer" parent="."]
+z_index = -1
+scale = Vector2(3, 2)
+motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(640, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sky"]
@@ -47,9 +52,11 @@ z_index = -10
 position = Vector2(320, -140)
 texture = ExtResource("2_s7rpd")
 centered = false
+flip_h = true
 
 [node name="Sky2" type="ParallaxLayer" parent="."]
 z_index = -5
+motion_scale = Vector2(0, 1)
 motion_mirroring = Vector2(1280, 0)
 
 [node name="ColorRect" type="ColorRect" parent="Sky2"]
@@ -68,6 +75,8 @@ color = Color(0.321569, 0.505882, 0.827451, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="TreeLine" type="ParallaxLayer" parent="."]
+visible = false
+motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(1856, 0)
 
 [node name="Layer00036" type="Sprite2D" parent="TreeLine"]
@@ -86,22 +95,34 @@ texture = ExtResource("4_h3t54")
 position = Vector2(928, -280)
 texture = ExtResource("4_h3t54")
 
-[node name="Layer00055" type="Sprite2D" parent="TreeLine"]
-z_index = -1
-position = Vector2(0, -280)
-texture = ExtResource("5_ja3oi")
+[node name="Treeline2" type="ParallaxLayer" parent="."]
+visible = false
 
-[node name="Layer00064" type="Sprite2D" parent="TreeLine"]
+[node name="Layer00064" type="Sprite2D" parent="Treeline2"]
 z_index = -2
 position = Vector2(0, -280)
 texture = ExtResource("6_6604t")
 
-[node name="Layer00065" type="Sprite2D" parent="TreeLine"]
+[node name="Layer00065" type="Sprite2D" parent="Treeline2"]
 z_index = -2
 position = Vector2(928, -280)
 texture = ExtResource("6_6604t")
 
+[node name="Treeline3" type="ParallaxLayer" parent="."]
+visible = false
+
+[node name="Layer00055" type="Sprite2D" parent="Treeline3"]
+z_index = -1
+position = Vector2(0, -280)
+texture = ExtResource("5_ja3oi")
+
+[node name="Layer00056" type="Sprite2D" parent="Treeline3"]
+z_index = -1
+position = Vector2(928, -280)
+texture = ExtResource("5_ja3oi")
+
 [node name="Underground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 1)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Underground"]
