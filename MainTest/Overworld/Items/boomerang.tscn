@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c54f1joo5eth"]
+
+[ext_resource type="Script" path="res://Overworld/Items/boomerang.gd" id="1_4ql2r"]
+[ext_resource type="Texture2D" uid="uid://33gpm5tqmpna" path="res://Overworld/Items/boomerang.png" id="2_45v47"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k1kxa"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_acef6"]
+radius = 8.0
+
+[node name="Boomerang" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 4
+script = ExtResource("1_4ql2r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_45v47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_k1kxa")
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource("CircleShape2D_acef6")
+
+[connection signal="area_entered" from="PickupArea" to="." method="_on_pickup_area_entered"]

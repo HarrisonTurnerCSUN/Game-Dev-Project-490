@@ -12,6 +12,18 @@ func _physics_process(delta: float) -> void:
 
 @export var inventory: Inventory
 
-func _on_hurtbox_area_entered(area):
+func _on_hitbox_area_entered(area):
 	if area.has_method("collect"):
 		area.collect(inventory)
+
+@export var boomerang_scene: PackedScene
+@export var boomerang_exists: bool = false
+
+func _input(event):
+	if event.is_action_pressed("throw_boomerang") and boomerang_scene and not boomerang_exists:
+		boomerang_exists = true
+		var boomerang = boomerang_scene.instantiate()
+		get_parent().add_child(boomerang)
+		boomerang.global_position = global_position  # Ensure it spawns at the player
+		var throw_dir = (get_global_mouse_position() - global_position).normalized()
+		boomerang.throw(throw_dir, self)
