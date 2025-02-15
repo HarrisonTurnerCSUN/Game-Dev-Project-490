@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://5slp0c8ps1rm"]
+[gd_scene load_steps=7 format=3 uid="uid://5slp0c8ps1rm"]
 
 [ext_resource type="PackedScene" uid="uid://ojb5f2q6u7nt" path="res://main menu/options menu/hotkey_rebind_button.tscn" id="1_cw1gw"]
 [ext_resource type="PackedScene" uid="uid://cbppsi4qcjr2l" path="res://main menu/options menu/windows_mode_button.tscn" id="1_vomyb"]
 [ext_resource type="PackedScene" uid="uid://g16pkvo53ek1" path="res://main menu/options menu/volume_slider.tscn" id="2_kxvsl"]
+[ext_resource type="PackedScene" uid="uid://dk25aj6hwpvj6" path="res://main menu/options menu/resolution_mode_button.tscn" id="2_nw6kn"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fn1xa"]
 
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 1
@@ -28,10 +30,9 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -52,13 +53,20 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graphics/MarginContainer/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 64
 alignment = 1
 
 [node name="Windows_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_vomyb")]
 layout_mode = 2
 
+[node name="Node" type="Node" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer"]
+
+[node name="Resolution_Mode_Button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_nw6kn")]
+layout_mode = 2
+
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

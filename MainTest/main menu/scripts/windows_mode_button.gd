@@ -35,6 +35,7 @@ func on_window_mode_selected(index: int)-> void:
 		1: #Window Mode
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS,false)
+			DisplayServer.window_set_size(DisplayServer.window_get_size())
 			
 	SaveController.setWindowMode(index)
 	SaveController.saveGame()

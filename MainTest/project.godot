@@ -22,6 +22,8 @@ KeyManager="*res://Global Scripts/key_manager.gd"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
