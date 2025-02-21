@@ -70,14 +70,34 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_potion_added() -> void:
 	update_damage()
 	update_health()
-
+	update_stamina()
+	update_speed()
+	update_jump()
+	
 func update_damage() -> void:
 	var strPotions = SaveController.getPotionCount("Elixir of Strength")
 	$Sprite2D/Hitbox.damage = $Sprite2D/Hitbox.damage + strPotions
 	$Sprite2D/LightHitbox.damage = $Sprite2D/LightHitbox.damage + strPotions
 
-
 func update_health() -> void:
 	var healthPotions = SaveController.getPotionCount("Elixir of Fortitude")
-	$Health.max_health = $Health.max_health + healthPotions
-	print($Health.max_health)
+	$Health.max_health = $Health.max_health + 2*(healthPotions)
+	var current_health = $Health.get_current()+2
+	$Camera2D/StatusUI.set_max_health($Health.max_health)
+	$Camera2D/StatusUI.update_health(current_health)
+	
+func update_stamina() -> void:
+	var staminaPotions = SaveController.getPotionCount("Elixir of Stamina")
+	$Stamina.max_stamina = $Stamina.max_stamina + staminaPotions
+	
+	
+func update_speed() -> void:
+	var speedPotions = SaveController.getPotionCount("Elixir of Swiftness")
+	if speedPotions > 0:
+		$StateMachine/Run.speed *= (1.1 ** speedPotions)
+		$StateMachine/Run.max_horizontal_speed *= (1.1 ** speedPotions)
+	
+func update_jump() -> void:
+	var jumpPotions = SaveController.getPotionCount("Elixir of Jumping")
+	if jumpPotions > 0:
+		$StateMachine/Jump.jump_power *= (1.1 ** jumpPotions)
