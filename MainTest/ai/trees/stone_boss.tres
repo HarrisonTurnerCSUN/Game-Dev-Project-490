@@ -1,0 +1,49 @@
+[gd_resource type="BehaviorTree" load_steps=9 format=3 uid="uid://byemtih7d1esm"]
+
+[ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_hmpre"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_vkii6"]
+var/speed/name = &"speed"
+var/speed/type = 3
+var/speed/value = 50.0
+var/speed/hint = 1
+var/speed/hint_string = "10,1000,10"
+var/flank_speed/name = &"flank_speed"
+var/flank_speed/type = 3
+var/flank_speed/value = 70.0
+var/flank_speed/hint = 1
+var/flank_speed/hint_string = "10,1000,10"
+var/charge_speed/name = &"charge_speed"
+var/charge_speed/type = 3
+var/charge_speed/value = 80.0
+var/charge_speed/hint = 1
+var/charge_speed/hint_string = "10,1000,10"
+
+[sub_resource type="BBNode" id="BBNode_hwx8p"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_4w6wj"]
+animation_player = SubResource("BBNode_hwx8p")
+animation_name = &"Idle"
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_j8tgx"]
+min_duration = 0.3
+max_duration = 0.6
+
+[sub_resource type="BTAction" id="BTAction_8j1fh"]
+script = ExtResource("1_hmpre")
+group = &"Player"
+output_var = &"target"
+
+[sub_resource type="BTSequence" id="BTSequence_5jqbq"]
+custom_name = "Pause before action"
+children = [SubResource("BTPlayAnimation_4w6wj"), SubResource("BTRandomWait_j8tgx"), SubResource("BTAction_8j1fh")]
+
+[sub_resource type="BTSelector" id="BTSelector_pwh1i"]
+custom_name = "main"
+children = [SubResource("BTSequence_5jqbq")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_vkii6")
+root_task = SubResource("BTSelector_pwh1i")

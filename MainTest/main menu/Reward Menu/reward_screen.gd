@@ -13,7 +13,7 @@ func _ready():
 	
 func generate_rewards():
 	var item_pool = []
-	item_pool = ["antidote_potion","curse_potion", "wind_potion", "fire_potion"]
+	item_pool = ["antidote_potion","curse_potion", "wind_potion", "fire_potion", "thunder_potion"]
 	for card in [$RewardBase, $RewardBase2, $RewardBase3]:
 		item_pool.shuffle()
 		var item_id = item_pool[0]
@@ -61,13 +61,16 @@ func generate_item_data(item_id):
 			item_data.description = "Stamina +2"
 		"curse_potion":
 			item_data.title = "Elixir of Fortitude"
-			item_data.description = "Health +1"
+			item_data.description = "+1 Heart"
 		"wind_potion":
 			item_data.title = "Elixir of Swiftness"
 			item_data.description = "Speed +10%"
 		"fire_potion":
 			item_data.title = "Elixir of Strength"
 			item_data.description = "Damage +1"
+		"thunder_potion":
+			item_data.title = "Elixir of Jumping"
+			item_data.description = "Jump +10%"
 		_:
 			item_data.title = str(item_id).capitalize()
 			print("Unmatched item_id: ", item_id)
