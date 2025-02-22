@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6lptasx8mss3"]
+
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/faling_rocks.gd" id="1_qrsur"]
+[ext_resource type="Texture2D" uid="uid://bw4jdiad1vryc" path="res://Assets/Items/Breakable/BunchOfRocks_Pack/RockPack128x128.png" id="2_ncotp"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="3_bhfts"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_i5kh5"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="5_x528v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xs7q"]
+radius = 5.09902
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sa7og"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tgeou"]
+radius = 6.08276
+
+[node name="FalingRocks" type="RigidBody2D"]
+collision_layer = 6
+collision_mask = 7
+mass = 0.25
+gravity_scale = 0.01
+script = ExtResource("1_qrsur")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ncotp")
+hframes = 4
+vframes = 4
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3xs7q")
+
+[node name="Hurtbox" type="Area2D" parent="." node_paths=PackedStringArray("health")]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_bhfts")
+health = NodePath("../Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CircleShape2D_sa7og")
+debug_color = Color(2.64719e-06, 0.624325, 0.530004, 0.42)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("4_i5kh5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_tgeou")
+debug_color = Color(0.960382, 1.92523e-07, 0.516343, 0.42)
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("5_x528v")
+max_health = 3.0

@@ -5,7 +5,7 @@ signal rock_drop
 
 const Projectile := preload("res://Levels/Enemies/Goblin/goblin_projectile.tscn")
 const RockScene := preload("res://Levels/Enemies/Stone Golem/RumblingRock.tscn")
-
+const FallingRocks := preload("res://Levels/Enemies/Stone Golem/falingRocks.tscn")
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
@@ -213,7 +213,7 @@ func spawn_rocks_in_area() -> void:
 
 				# Start spawning rocks
 				for i in range(randi_range(6, 10)):
-					var rock = RockScene.instantiate()
+					var rock = FallingRocks.instantiate()
 					if rock:
 						get_parent().add_child(rock)
 
@@ -224,5 +224,5 @@ func spawn_rocks_in_area() -> void:
 						rock.global_position = Vector2(random_x, random_y)
 
 						# Ensure the rock velocity and scale are set properly
-						rock.velocity = Vector2(0, 1500)  # Falls quickly if not on ground
+						#rock.velocity = Vector2(0, 1500)  # Falls quickly if not on ground
 						rock.scale.x = 1 if randf() > 0.5 else -1  # Randomly face left or right
