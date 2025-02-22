@@ -19,7 +19,7 @@ var _moved_this_frame: bool = false
 
 const jump_power = -300
 const gravity = 50
-const speed = 100
+const speed = 50
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
@@ -28,11 +28,11 @@ func _ready() -> void:
 	self.collision_layer = 1 | 2
 
 func _physics_process(_delta: float) -> void:
-	if is_on_wall() and &"InRange":
-		velocity.y = jump_power
-		velocity.x = get_facing() * 10
-	else:
-		velocity.y += gravity
+	#if is_on_wall() and &"InRange":
+		#velocity.y = jump_power
+		#velocity.x = get_facing() * 10
+	#else:
+	velocity.y += gravity
 	move_and_slide()
 	_post_physics_process.call_deferred()
 
@@ -49,8 +49,7 @@ func move(p_velocity: Vector2) -> void:
 @warning_ignore("shadowed_variable")
 func walk(dir: float, speed: float) -> void:
 	velocity.x = dir * speed
-
-## Update agent's facing in the velocity direction.
+	
 func update_facing() -> void:
 	_frames_since_facing_update += 1
 	if _frames_since_facing_update > 3:
@@ -58,11 +57,16 @@ func update_facing() -> void:
 
 ## Face specified direction.
 func face_dir(dir: float) -> void:
+	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
 	if dir > 0.0 and sprite_2d.scale.x < 0.0:
 		sprite_2d.scale.x = 1.0
+		if btplayer:
+			btplayer.blackboard.set_var("facing", 1)
 		_frames_since_facing_update = 0
 	if dir < 0.0 and sprite_2d.scale.x > 0.0:
 		sprite_2d.scale.x = -1.0
+		if btplayer:
+			btplayer.blackboard.set_var("facing", -1)
 		_frames_since_facing_update = 0
 
 ## Returns 1.0 when agent is facing right.
@@ -86,7 +90,7 @@ func _damaged(_amount: float, knockback: Vector2) -> void:
 
 	apply_knockback(knockback)
 	animation_player.play("Defense")
-	
+	increase_scale_smoothly()
 	# Disable AI while playing defense animation
 	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
 	if btplayer:
@@ -185,3 +189,40 @@ func spawn_rumbling_rocks():
 
 		# Start animation
 		rock.play_animation_first()
+	
+func spawn_rocks_in_area() -> void:
+	# Declare area_rect early to avoid scope issues
+	var area_rect : Rect2
+
+	# Get the rock area from the parent
+	var rock_area = get_parent().get_node_or_null("rockArea")
+	if rock_area:
+		# Get the CollisionShape2D node to use its size for bounding
+		var collision_shape = rock_area.get_node_or_null("CollisionShape2D")
+		if collision_shape:
+			# Ensure the CollisionShape2D has a RectangleShape2D
+			var shape = collision_shape.shape
+			if shape is RectangleShape2D:
+				area_rect = shape.get_rect()
+
+				# Get the global position of the rock area
+				var rock_area_global_position = rock_area.global_position
+
+				# Adjust the area_rect to be in global space
+				var global_area_rect = Rect2(rock_area_global_position, area_rect.size)
+
+				# Start spawning rocks
+				for i in range(randi_range(6, 10)):
+					var rock = RockScene.instantiate()
+					if rock:
+						get_parent().add_child(rock)
+
+						# Calculate the spawn position relative to the global area’s position
+						var random_x = randf_range(global_area_rect.position.x, global_area_rect.position.x + global_area_rect.size.x)
+						var random_y = randf_range(global_area_rect.position.y, global_area_rect.position.y + global_area_rect.size.y)
+
+						rock.global_position = Vector2(random_x, random_y)
+
+						# Ensure the rock velocity and scale are set properly
+						rock.velocity = Vector2(0, 1500)  # Falls quickly if not on ground
+						rock.scale.x = 1 if randf() > 0.5 else -1  # Randomly face left or right

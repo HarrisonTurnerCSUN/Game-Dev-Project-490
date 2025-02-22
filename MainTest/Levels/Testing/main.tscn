@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=11 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
@@ -10,12 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://c37hekxgia0d2" path="res://main menu/Reward Menu/RewardScreen.tscn" id="8_gnhxm"]
 [ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="9_ecqun"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7an"]
+size = Vector2(326, 36)
+
 [node name="Main" type="Node2D"]
 
 [node name="Level1" parent="." instance=ExtResource("1_kqx5x")]
 
 [node name="Player" parent="." instance=ExtResource("2_2uqdp")]
-position = Vector2(75, -87)
+position = Vector2(2387, -43)
 
 [node name="object_breakable_box" parent="." instance=ExtResource("3_d30qt")]
 position = Vector2(200, -31)
@@ -33,15 +36,24 @@ position = Vector2(200, -96)
 position = Vector2(159, -41)
 
 [node name="enemy_worm_red" parent="." instance=ExtResource("7_qxqhc")]
-position = Vector2(2137, -58)
+position = Vector2(1239, -96)
 
 [node name="enemy_witch" parent="." instance=ExtResource("6_odqg8")]
-position = Vector2(1470, -76)
+position = Vector2(1209, -95)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("7_er8qt")]
-position = Vector2(1558, -150)
+position = Vector2(1327, -109)
 
 [node name="RewardScreen" parent="." instance=ExtResource("8_gnhxm")]
 
 [node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
-position = Vector2(442, -78)
+position = Vector2(2548, -58)
+
+[node name="rockArea" type="Area2D" parent="."]
+position = Vector2(2374, -117)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rockArea"]
+position = Vector2(-31, 5)
+shape = SubResource("RectangleShape2D_0j7an")
