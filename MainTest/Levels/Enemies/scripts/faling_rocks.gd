@@ -12,6 +12,14 @@ var _is_dead: bool = false
 func _ready() -> void:
 	health.damaged.connect(_on_damaged)
 	health.death.connect(die)
+	
+	# Set up a timer to auto-delete after 3 seconds
+	var timer = Timer.new()
+	timer.wait_time = 4.0
+	timer.one_shot = true
+	add_child(timer)
+	timer.start()
+	timer.timeout.connect(queue_free)
 
 func _on_damaged(amount: float, knockback: Vector2) -> void:
 	if _is_dead:

@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://t3dx245me3mq" path="res://Assets/Character Sprites/Stone Golem/Earth Wall.png" id="3_o25p0"]
 [ext_resource type="BehaviorTree" uid="uid://bpral5ownfc83" path="res://ai/trees/stone_boss_spikes.tres" id="4_joani"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ytaug"]
-radius = 2.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbpfe"]
+size = Vector2(20, 2.5)
 
 [sub_resource type="Animation" id="Animation_g4hf0"]
 resource_name = "Fist"
@@ -58,6 +58,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
 }
 
 [sub_resource type="Animation" id="Animation_hba2y"]
@@ -112,6 +124,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
+}
 
 [sub_resource type="Animation" id="Animation_h6sgi"]
 length = 0.001
@@ -162,6 +186,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -10)]
 }
 
 [sub_resource type="Animation" id="Animation_y0tod"]
@@ -227,6 +263,8 @@ _data = {
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_rjqpi"]
 
 [node name="RumblingRock" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 0
 script = ExtResource("1_p1wp0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -237,8 +275,8 @@ vframes = 4
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-shape = SubResource("CircleShape2D_ytaug")
+position = Vector2(0, -1.25)
+shape = SubResource("RectangleShape2D_kbpfe")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

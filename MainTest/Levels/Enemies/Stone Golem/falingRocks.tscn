@@ -19,11 +19,11 @@ radius = 6.08276
 collision_layer = 6
 collision_mask = 7
 mass = 0.25
-gravity_scale = 0.01
+gravity_scale = 0.1
 script = ExtResource("1_qrsur")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_ncotp")
 hframes = 4
 vframes = 4
@@ -55,4 +55,4 @@ debug_color = Color(0.960382, 1.92523e-07, 0.516343, 0.42)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("5_x528v")
-max_health = 3.0
+max_health = 1.0

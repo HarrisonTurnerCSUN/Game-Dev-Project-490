@@ -3,6 +3,7 @@ extends CharacterBody2D
 signal death
 signal rock_drop
 
+const RewardScreen = preload("res://main menu/Reward Menu/RewardScreen.tscn")
 const Projectile := preload("res://Levels/Enemies/Goblin/goblin_projectile.tscn")
 const RockScene := preload("res://Levels/Enemies/Stone Golem/RumblingRock.tscn")
 const FallingRocks := preload("res://Levels/Enemies/Stone Golem/falingRocks.tscn")
@@ -88,25 +89,43 @@ func _damaged(_amount: float, knockback: Vector2) -> void:
 	if _is_dead:
 		return  # Don't do anything if the Golem is dead
 
-	apply_knockback(knockback)
-	animation_player.play("Defense")
 	increase_scale_smoothly()
-	# Disable AI while playing defense animation
+	call_deferred("spawn_rumbling_rocks")
+
+	# If health is 50% or lower, trigger the special sequence
+	if health.get_current() <= health.max_health * 0.5:
+		disable_ai()
+		animation_player.play("ArmOff")
+		await get_tree().create_timer(2.0).timeout  # Wait for 2 seconds
+
+		# Ensure animation finishes
+		await animation_player.animation_finished
+		
+		# Spawn two new Stone Golems
+		for i in range(2):
+			spawn_stone_golem()
+
+		# Kill the current Golem instantly
+		die()
+	else: call_deferred("spawn_rumbling_rocks")
+	
+func disable_ai() -> void:
 	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
 	if btplayer:
 		btplayer.set_active(false)
+
 	var hsm = get_node_or_null("LimboHSM")
 	if hsm:
 		hsm.set_active(false)
-		
-	call_deferred("spawn_rumbling_rocks")
-	
-	# Reactivate AI after the animation
-	await animation_player.animation_finished
-	if btplayer and not _is_dead:
-		btplayer.restart()
-	if hsm and not _is_dead:
-		hsm.set_active(true)
+
+func spawn_stone_golem():
+	var golem_scene = preload("res://Levels/Enemies/Worm_purple/enemy_worm_purple.tscn")
+	var new_golem = golem_scene.instantiate()
+	get_parent().add_child(new_golem)
+
+	# Position the new Golem near the current one
+	var offset = Vector2(randi_range(-100, 100), 0)  # Adjust spread distance if needed
+	new_golem.global_position = global_position + offset
 
 ## Push agent in the knockback direction for the specified number of physics frames.
 func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
@@ -129,7 +148,10 @@ func die() -> void:
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
-
+	
+	var reward_screen = RewardScreen.instantiate()
+	get_tree().current_scene.add_child(reward_screen)  # Add to the main scene
+	
 	if get_tree():
 		await get_tree().create_timer(10.0).timeout
 		queue_free()
@@ -177,14 +199,14 @@ func spawn_rumbling_rocks():
 		var rock = RockScene.instantiate()
 		get_parent().add_child(rock)
 
-		# Randomly position near the Golem (wider spread)
-		var offset = Vector2(randi_range(-100, 100), 0)  # Doubled spread distance
+		# Increase the random spread distance
+		var offset = Vector2(randi_range(-200, 200), 0)  # Doubled spread distance
 		rock.global_position = global_position + offset
 
 		# Randomly face left or right
 		rock.scale.x = -1 if randi() % 2 == 0 else 1
 
-		# Make sure the rock lands on the ground
+		# Ensure the rock lands on the ground
 		rock.ensure_on_ground()
 
 		# Start animation
