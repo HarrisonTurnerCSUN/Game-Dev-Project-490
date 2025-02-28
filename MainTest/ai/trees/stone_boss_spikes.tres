@@ -1,18 +1,15 @@
-[gd_resource type="BehaviorTree" load_steps=16 format=3 uid="uid://bpral5ownfc83"]
+[gd_resource type="BehaviorTree" load_steps=15 format=3 uid="uid://bpral5ownfc83"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_o0iwt"]
 
-[sub_resource type="BBNode" id="BBNode_nwxdl"]
+[sub_resource type="BBNode" id="BBNode_sdy3d"]
 saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
 
-[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_y0hri"]
-animation_player = SubResource("BBNode_nwxdl")
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_5togc"]
+await_completion = 1.5
+animation_player = SubResource("BBNode_sdy3d")
 animation_name = &"Idle"
-
-[sub_resource type="BTRandomWait" id="BTRandomWait_ih0fx"]
-min_duration = 0.6
-max_duration = 1.0
 
 [sub_resource type="BBNode" id="BBNode_wvq0s"]
 saved_value = NodePath("AnimationPlayer")
@@ -51,7 +48,7 @@ method = &"die"
 
 [sub_resource type="BTSequence" id="BTSequence_frrcr"]
 custom_name = "Pause before action"
-children = [SubResource("BTPlayAnimation_y0hri"), SubResource("BTRandomWait_ih0fx"), SubResource("BTProbabilitySelector_ueu1i"), SubResource("BTCallMethod_xtrkp")]
+children = [SubResource("BTPlayAnimation_5togc"), SubResource("BTProbabilitySelector_ueu1i"), SubResource("BTCallMethod_xtrkp")]
 
 [sub_resource type="BTSelector" id="BTSelector_21p8g"]
 custom_name = "main"

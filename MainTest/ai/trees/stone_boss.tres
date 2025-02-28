@@ -1,26 +1,25 @@
-[gd_resource type="BehaviorTree" load_steps=49 format=3 uid="uid://byemtih7d1esm"]
+[gd_resource type="BehaviorTree" load_steps=51 format=3 uid="uid://byemtih7d1esm"]
 
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_hmpre"]
 [ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_1jr2i"]
 [ext_resource type="Script" path="res://ai/tasks/face_target.gd" id="3_hv7f2"]
 [ext_resource type="Script" path="res://ai/tasks/pursue.gd" id="4_3dbva"]
-[ext_resource type="Script" path="res://ai/tasks/select_flanking_pos.gd" id="5_wvcbw"]
 [ext_resource type="Script" path="res://ai/tasks/back_away.gd" id="6_cx2wf"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_vkii6"]
 var/speed/name = &"speed"
 var/speed/type = 3
-var/speed/value = 50.0
+var/speed/value = 30.0
 var/speed/hint = 1
 var/speed/hint_string = "10,1000,10"
 var/flank_speed/name = &"flank_speed"
 var/flank_speed/type = 3
-var/flank_speed/value = 70.0
+var/flank_speed/value = 40.0
 var/flank_speed/hint = 1
 var/flank_speed/hint_string = "10,1000,10"
 var/charge_speed/name = &"charge_speed"
 var/charge_speed/type = 3
-var/charge_speed/value = 80.0
+var/charge_speed/value = 50.0
 var/charge_speed/hint = 1
 var/charge_speed/hint_string = "10,1000,10"
 var/facing/name = &"facing"
@@ -28,6 +27,21 @@ var/facing/type = 3
 var/facing/value = 0.0
 var/facing/hint = 0
 var/facing/hint_string = ""
+var/summon_cooldown/name = &"summon_cooldown"
+var/summon_cooldown/type = 1
+var/summon_cooldown/value = false
+var/summon_cooldown/hint = 0
+var/summon_cooldown/hint_string = ""
+var/upward_speed/name = &"upward_speed"
+var/upward_speed/type = 3
+var/upward_speed/value = 50.0
+var/upward_speed/hint = 1
+var/upward_speed/hint_string = "10,1000,10"
+var/lazer_cooldown/name = &"lazer_cooldown"
+var/lazer_cooldown/type = 3
+var/lazer_cooldown/value = 0.0
+var/lazer_cooldown/hint = 0
+var/lazer_cooldown/hint_string = ""
 
 [sub_resource type="BBNode" id="BBNode_hwx8p"]
 saved_value = NodePath("AnimationPlayer")
@@ -95,6 +109,22 @@ variable = &"facing"
 check_type = 1
 value = SubResource("BBVariant_6pihi")
 
+[sub_resource type="BTWait" id="BTWait_iimxs"]
+duration = 0.2
+
+[sub_resource type="BTAction" id="BTAction_2ai47"]
+script = ExtResource("4_3dbva")
+target_var = &"target"
+speed_var = &"charge_speed"
+approach_distance = -5.0
+
+[sub_resource type="BTTimeLimit" id="BTTimeLimit_7irf1"]
+time_limit = 1.0
+children = [SubResource("BTAction_2ai47")]
+
+[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_tojhk"]
+children = [SubResource("BTTimeLimit_7irf1")]
+
 [sub_resource type="BBNode" id="BBNode_djoxp"]
 saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
@@ -105,19 +135,11 @@ animation_player = SubResource("BBNode_djoxp")
 animation_name = &"FaceEnergize"
 
 [sub_resource type="BTWait" id="BTWait_5mv4k"]
-duration = 0.1
-
-[sub_resource type="BTAction" id="BTAction_a5vmw"]
-script = ExtResource("5_wvcbw")
-target_var = &"target"
-flank_side = 0
-range_min = 0
-range_max = 0
-position_var = &"pos"
+duration = 0.2
 
 [sub_resource type="BTSequence" id="BTSequence_ghc6u"]
 custom_name = "Attack1"
-children = [SubResource("BTPlayAnimation_wdast"), SubResource("BTWait_5mv4k"), SubResource("BTAction_a5vmw")]
+children = [SubResource("BTWait_iimxs"), SubResource("BTAlwaysSucceed_tojhk"), SubResource("BTPlayAnimation_wdast"), SubResource("BTWait_5mv4k")]
 metadata/_weight_ = 33.0
 
 [sub_resource type="BTDynamicSelector" id="BTDynamicSelector_34rs8"]
@@ -132,6 +154,15 @@ resource_name = "0"
 variable = &"facing"
 check_type = 3
 value = SubResource("BBVariant_pusxv")
+
+[sub_resource type="BBVariant" id="BBVariant_vc0qk"]
+type = 1
+saved_value = false
+resource_name = "false"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_wftja"]
+variable = &"summon_cooldown"
+value = SubResource("BBVariant_vc0qk")
 
 [sub_resource type="BTAction" id="BTAction_vrcob"]
 script = ExtResource("3_hv7f2")
@@ -153,18 +184,10 @@ resource_name = "."
 node = SubResource("BBNode_5xlbp")
 method = &"spawn_rocks_in_area"
 
-[sub_resource type="BTAction" id="BTAction_3ld65"]
-script = ExtResource("4_3dbva")
-target_var = &"target"
-speed_var = &"speed"
-approach_distance = -5.0
-
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_wh5ny"]
-time_limit = 0.75
-children = [SubResource("BTAction_3ld65")]
-
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_b5vgq"]
-children = [SubResource("BTTimeLimit_wh5ny")]
+[sub_resource type="BTCooldown" id="BTCooldown_7prhh"]
+duration = 4.0
+cooldown_state_var = &"summon_cooldown"
+children = [SubResource("BTCallMethod_tehis")]
 
 [sub_resource type="BTAction" id="BTAction_s5ple"]
 script = ExtResource("3_hv7f2")
@@ -196,7 +219,7 @@ duration = 0.1
 
 [sub_resource type="BTSequence" id="BTSequence_f4b14"]
 custom_name = "Attack2"
-children = [SubResource("BTAction_vrcob"), SubResource("BTPlayAnimation_2oef0"), SubResource("BTCallMethod_tehis"), SubResource("BTAlwaysSucceed_b5vgq"), SubResource("BTAction_s5ple"), SubResource("BTAlwaysSucceed_ybq72"), SubResource("BTPlayAnimation_rs148"), SubResource("BTWait_q5nte")]
+children = [SubResource("BTCheckVar_wftja"), SubResource("BTAction_vrcob"), SubResource("BTPlayAnimation_2oef0"), SubResource("BTCooldown_7prhh"), SubResource("BTAction_s5ple"), SubResource("BTAlwaysSucceed_ybq72"), SubResource("BTPlayAnimation_rs148"), SubResource("BTWait_q5nte")]
 metadata/_weight_ = 33.0
 
 [sub_resource type="BTDynamicSelector" id="BTDynamicSelector_x5jyi"]
