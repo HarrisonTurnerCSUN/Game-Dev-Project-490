@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b1kgbovmf7biy"]
+[gd_scene load_steps=69 format=3 uid="uid://b1kgbovmf7biy"]
 
 [ext_resource type="Script" path="res://Player/Overworld/player_overworld.gd" id="1_1yvpy"]
 [ext_resource type="Texture2D" uid="uid://djpxu3rmgwb0v" path="res://Assets/32x32-pixelKnight/32x32-pixelKnight/sheets/idle.png" id="2_4rcfw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c54f1joo5eth" path="res://Overworld/Items/boomerang.tscn" id="3_mn6pp"]
 [ext_resource type="Texture2D" uid="uid://dbtbs40q2hl7g" path="res://Assets/32x32-pixelKnight/32x32-pixelKnight/sheets/run.png" id="3_t42g0"]
 [ext_resource type="Script" path="res://Overworld/playerOverworld/walk_overworld.gd" id="4_ilk8g"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="9_s51cn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20wdx"]
 atlas = ExtResource("2_4rcfw")
@@ -666,5 +667,8 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 2.25)
 shape = SubResource("RectangleShape2D_3iu47")
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("9_s51cn")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

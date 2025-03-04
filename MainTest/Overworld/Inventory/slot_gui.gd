@@ -20,14 +20,18 @@ func insert(isg: ItemStackGui):
 
 func takeItem():
 	var item = itemStackGui
-	
 	inventory.removeSlot(itemStackGui.inventorySlot)
-	
 	container.remove_child(itemStackGui)
 	itemStackGui = null
 	backgroundSprite.frame = 0
-	
 	return item
 
 func isEmpty():
 	return !itemStackGui
+
+# ✅ Highlight selected hotbar slot
+func set_highlight(is_selected: bool):
+	if is_selected:
+		backgroundSprite.modulate = Color(1.0, 0.84, 0.0, 1.0) 
+	else:
+		backgroundSprite.modulate = Color(1, 1, 1, 1)  # ✅ Default color

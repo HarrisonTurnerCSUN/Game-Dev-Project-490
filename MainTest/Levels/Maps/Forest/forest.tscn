@@ -2726,7 +2726,7 @@ script = ExtResource("24_mvscq")
 watchedEnemy = NodePath("../../Enemies/enemy_eyeball9")
 
 [node name="Player" parent="." instance=ExtResource("2_giia3")]
-position = Vector2(5758, -415)
+position = Vector2(7479, -41)
 bottom = 270
 camera_y_transform = -25.0
 
