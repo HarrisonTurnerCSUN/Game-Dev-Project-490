@@ -517,6 +517,7 @@ _data = {
 [node name="enemy_witch" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
+platform_floor_layers = 4294901761
 script = ExtResource("1_gfwi0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

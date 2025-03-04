@@ -3,7 +3,7 @@ extends CanvasLayer
 @export var full_heart_texture: Texture2D
 @export var half_heart_texture: Texture2D
 @export var empty_heart_texture: Texture2D
-@export var max_health: int = 10  # Max health
+@onready var max_health: int = $"../../Health".max_health
 
 var health_tiles: Array[TextureRect] = []
 var hbox: HBoxContainer
@@ -51,3 +51,12 @@ func update_health(current_health: int) -> void:
 # Signal handlers for health and stamina changes
 func _on_health_changed(amount: float, knockback: Vector2) -> void:
 	update_health(health.get_current())
+
+func set_max_health(new_max: int):
+	max_health = new_max
+	# Clear old hearts
+	for tile in health_tiles:
+		tile.queue_free()
+	health_tiles.clear()
+	
+	_create_health_tiles($VBoxContainer/HealthBar, health_tiles, full_heart_texture, half_heart_texture, empty_heart_texture)

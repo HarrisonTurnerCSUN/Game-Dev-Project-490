@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://c40jnwji01pwt"]
+[gd_scene load_steps=10 format=4 uid="uid://c40jnwji01pwt"]
 
 [ext_resource type="Script" path="res://main menu/Reward Menu/reward.gd" id="1_vfdji"]
 [ext_resource type="TileSet" uid="uid://lpxbxcnqa0re" path="res://main menu/Reward Menu/new_tile_set.tres" id="2_15evi"]
+[ext_resource type="PackedScene" uid="uid://bxew7bkr6s7wi" path="res://main menu/Reward Menu/Item.tscn" id="3_1a2t1"]
 [ext_resource type="AudioStream" uid="uid://2u1i5jmfnl2m" path="res://Assets/AudioAssets/10_UI_Menu_SFX/001_Hover_01.wav" id="3_gjb4k"]
 [ext_resource type="AudioStream" uid="uid://58g4ecpevtif" path="res://Assets/AudioAssets/10_UI_Menu_SFX/013_Confirm_03.wav" id="4_iggfg"]
 
@@ -41,12 +42,19 @@ visible = false
 tile_map_data = PackedByteArray("AAAAAAAACAAAAAAAAAAHAAkACAABAAEAAAAAAAkACAAAAAEAAAAHAAAACAABAAAAAAA=")
 tile_set = ExtResource("2_15evi")
 
-[node name="ItemImage" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 43.0
-offset_top = 28.0
-offset_right = 83.0
-offset_bottom = 68.0
+[node name="Item" parent="." instance=ExtResource("3_1a2t1")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.25
+offset_top = -63.0
+offset_right = -31.25
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0

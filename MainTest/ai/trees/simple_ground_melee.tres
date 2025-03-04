@@ -23,6 +23,11 @@ var/charge_speed/type = 3
 var/charge_speed/value = 150.0
 var/charge_speed/hint = 1
 var/charge_speed/hint_string = "10,1000,10"
+var/facing/name = &"facing"
+var/facing/type = 3
+var/facing/value = 0.0
+var/facing/hint = 0
+var/facing/hint_string = ""
 
 [sub_resource type="BBNode" id="BBNode_ngsil"]
 saved_value = NodePath("AnimationPlayer")

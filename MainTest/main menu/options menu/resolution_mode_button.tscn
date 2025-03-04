@@ -1,5 +1,35 @@
 [gd_scene load_steps=2 format=3 uid="uid://dk25aj6hwpvj6"]
 
-[ext_resource type="PackedScene" uid="uid://djnr11o8y2n64" path="res://main menu/options menu/options_display_button.tscn" id="1_oj2cf"]
+[ext_resource type="Script" path="res://main menu/options menu/resolution_mode_button.gd" id="2_bj87l"]
 
-[node name="Resolution_Mode_Button" instance=ExtResource("1_oj2cf")]
+[node name="Resolution_Mode_Button" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("2_bj87l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_constants/separation = 160
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(264, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Resolution"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(264, 64)
+layout_mode = 2
+
+[connection signal="item_selected" from="HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
