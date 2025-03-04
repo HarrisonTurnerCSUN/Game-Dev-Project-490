@@ -3,12 +3,15 @@ extends CharacterBody2D
 signal death
 signal rock_drop
 
+const RewardScreen = preload("res://main menu/Reward Menu/RewardScreen.tscn")
 const Projectile := preload("res://Levels/Enemies/Goblin/goblin_projectile.tscn")
 const RockScene := preload("res://Levels/Enemies/Stone Golem/RumblingRock.tscn")
+const FallingRocks := preload("res://Levels/Enemies/Stone Golem/falingRocks.tscn")
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
+var target_position: Vector2  # Position the Golem will move toward
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -17,9 +20,9 @@ var _moved_this_frame: bool = false
 @onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
 
-const jump_power = -300
-const gravity = 50
-const speed = 50
+const speed = 80  # Adjust speed as needed
+const hover_strength = 50  # Strength of vertical floating movement
+const hover_frequency = 2.0  # Speed of the hover oscillation
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
@@ -27,35 +30,50 @@ func _ready() -> void:
 	self.collision_layer = 3
 	self.collision_layer = 1 | 2
 
-func _physics_process(_delta: float) -> void:
-	#if is_on_wall() and &"InRange":
-		#velocity.y = jump_power
-		#velocity.x = get_facing() * 10
-	#else:
-	velocity.y += gravity
+func _physics_process(delta: float) -> void:
+	if _is_dead:
+		velocity.y += 20  # Keep falling when dead
+		move_and_collide(velocity * delta)
+		return
+	
+	# Hovering effect (oscillates up and down)
+	velocity.y = sin(Time.get_ticks_msec() / 1000.0 * hover_frequency) * hover_strength
+	
+	# Adjust gravity based on facing direction
+	if get_facing() > 0:  # If facing right, go down
+		velocity.y += 100  # Increase gravity to make it move downward faster
+	else:  # If facing left, use default gravity
+		velocity.y += 0
+
+	# Move toward target if assigned
+	if target_position:
+		move_toward_target(delta)
+
 	move_and_slide()
 	_post_physics_process.call_deferred()
+
+func move_toward_target(delta: float) -> void:
+	var direction = (target_position - global_position).normalized()
+	velocity = direction * speed
 
 func _post_physics_process() -> void:
 	if not _moved_this_frame:
 		velocity = lerp(velocity, Vector2.ZERO, 0.5)
 	_moved_this_frame = false
-	
+
 func move(p_velocity: Vector2) -> void:
 	velocity = lerp(velocity, p_velocity, 0.2)
 	move_and_slide()
 	_moved_this_frame = true
 
-@warning_ignore("shadowed_variable")
-func walk(dir: float, speed: float) -> void:
-	velocity.x = dir * speed
-	
+func set_target(pos: Vector2) -> void:
+	target_position = pos
+
 func update_facing() -> void:
 	_frames_since_facing_update += 1
 	if _frames_since_facing_update > 3:
 		face_dir(velocity.x)
 
-## Face specified direction.
 func face_dir(dir: float) -> void:
 	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
 	if dir > 0.0 and sprite_2d.scale.x < 0.0:
@@ -69,52 +87,15 @@ func face_dir(dir: float) -> void:
 			btplayer.blackboard.set_var("facing", -1)
 		_frames_since_facing_update = 0
 
-## Returns 1.0 when agent is facing right.
-## Returns -1.0 when agent is facing left.
 func get_facing() -> float:
 	return sign(sprite_2d.scale.x)
 
-## Is specified position inside the arena (not inside an obstacle)?
-func is_good_position(p_position: Vector2) -> bool:
-	var space_state := get_world_2d().direct_space_state
-	var params := PhysicsPointQueryParameters2D.new()
-	params.position = p_position
-	params.collision_mask = 1 # Obstacle layer has value 1
-	var collision = space_state.intersect_point(params)
-	return collision.is_empty()
-
-## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
 	if _is_dead:
-		return  # Don't do anything if the Golem is dead
-
-	apply_knockback(knockback)
-	animation_player.play("Defense")
-	increase_scale_smoothly()
-	# Disable AI while playing defense animation
-	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
-	if btplayer:
-		btplayer.set_active(false)
-	var hsm = get_node_or_null("LimboHSM")
-	if hsm:
-		hsm.set_active(false)
-		
-	call_deferred("spawn_rumbling_rocks")
-	
-	# Reactivate AI after the animation
-	await animation_player.animation_finished
-	if btplayer and not _is_dead:
-		btplayer.restart()
-	if hsm and not _is_dead:
-		hsm.set_active(true)
-
-## Push agent in the knockback direction for the specified number of physics frames.
-func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
-	if knockback.is_zero_approx():
-		return
-	for i in range(frames):
-		move(knockback)
-		await get_tree().physics_frame
+		return  
+	else: 
+		increase_scale_smoothly()
+		call_deferred("spawn_rumbling_rocks")
 
 func die() -> void:
 	if _is_dead:
@@ -123,73 +104,44 @@ func die() -> void:
 	_is_dead = true
 	sprite_2d.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	#collision_shape_2d.set_deferred("disabled", true)
 	self.collision_layer = 0
 	self.collision_mask = 1
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
-
+	
+	var reward_screen = RewardScreen.instantiate()
+	get_tree().current_scene.add_child(reward_screen)
+	
 	if get_tree():
 		await get_tree().create_timer(10.0).timeout
 		queue_free()
 
-func get_health() -> Health:
-	return health
-	
-# Goblin Spawn Bomb Script
-
 func throw_projectile() -> void:
-	# Create the projectile instance
 	var projectile = Projectile.instantiate()
-
-	# Set the facing direction of the projectile based on the goblin's direction
 	projectile.dir = get_facing()
-
-	# Get the parent of the goblin and add the projectile as a child
 	get_parent().add_child(projectile)
-
-	# Adjust the spawn position based on the goblin's current position
-	var offset_x = 20 * get_facing()  # Horizontal offset based on facing direction
-	var offset_y = 60  # Vertical offset to ensure proper spawn alignment
-
-	# Set the global position of the projectile
+	var offset_x = 20 * get_facing()
+	var offset_y = 60
 	projectile.global_position = global_position + Vector2(offset_x, offset_y)
 
-	# Optionally, adjust additional properties for the projectile if needed
-	#print("Throwing projectile at position: ", projectile.global_position)
 func increase_scale_smoothly():
-	# Create a tween
 	var tween = create_tween()
-	
-	# Calculate the target scale (20% increase)
 	var target_scale = scale * 1.1
-	
-	# Cap the scale at double the original size (Vector2(2, 2))
 	target_scale.x = min(target_scale.x, 2)
 	target_scale.y = min(target_scale.y, 2)
-	
-	# Tween the scale property over 0.5 seconds
 	tween.tween_property(self, "scale", target_scale, 0.5)
-	
+
 func spawn_rumbling_rocks():
-	for i in range(randi_range(6, 10)):  # More spikes
+	for i in range(randi_range(6, 10)):  
 		var rock = RockScene.instantiate()
 		get_parent().add_child(rock)
-
-		# Randomly position near the Golem (wider spread)
-		var offset = Vector2(randi_range(-100, 100), 0)  # Doubled spread distance
+		var offset = Vector2(randi_range(-200, 200), 0)
 		rock.global_position = global_position + offset
-
-		# Randomly face left or right
 		rock.scale.x = -1 if randi() % 2 == 0 else 1
-
-		# Make sure the rock lands on the ground
 		rock.ensure_on_ground()
-
-		# Start animation
 		rock.play_animation_first()
-	
+		
 func spawn_rocks_in_area() -> void:
 	# Declare area_rect early to avoid scope issues
 	var area_rect : Rect2
@@ -213,7 +165,7 @@ func spawn_rocks_in_area() -> void:
 
 				# Start spawning rocks
 				for i in range(randi_range(6, 10)):
-					var rock = RockScene.instantiate()
+					var rock = FallingRocks.instantiate()
 					if rock:
 						get_parent().add_child(rock)
 
@@ -224,5 +176,5 @@ func spawn_rocks_in_area() -> void:
 						rock.global_position = Vector2(random_x, random_y)
 
 						# Ensure the rock velocity and scale are set properly
-						rock.velocity = Vector2(0, 1500)  # Falls quickly if not on ground
+						#rock.velocity = Vector2(0, 1500)  # Falls quickly if not on ground
 						rock.scale.x = 1 if randf() > 0.5 else -1  # Randomly face left or right

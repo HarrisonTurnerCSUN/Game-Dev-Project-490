@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="9_ecqun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7an"]
-size = Vector2(326, 36)
+size = Vector2(740, 36)
 
 [node name="Main" type="Node2D"]
 
@@ -50,10 +50,10 @@ position = Vector2(1327, -109)
 position = Vector2(2548, -58)
 
 [node name="rockArea" type="Area2D" parent="."]
-position = Vector2(2374, -117)
+position = Vector2(2225, -379)
 collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rockArea"]
-position = Vector2(-31, 5)
+position = Vector2(4, -1)
 shape = SubResource("RectangleShape2D_0j7an")
