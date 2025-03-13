@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://byq4553wadp8r"]
+[gd_scene load_steps=36 format=3 uid="uid://byq4553wadp8r"]
 
 [ext_resource type="Texture2D" uid="uid://buj1cdpwwtcqo" path="res://Assets/Character Sprites/PurpleWorm/Idle.png" id="1_5hpw0"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_worm_purple.gd" id="1_c4ugt"]
@@ -17,9 +17,27 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_khojc"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e23yy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4qcr1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4dg4g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kr246"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_00sq4"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ye7vx"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_btlj0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ptkwa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_df3sn"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_83b1e"]
+radius = 9.0
+height = 18.0
 
 [sub_resource type="Animation" id="Animation_ed3i1"]
 resource_name = "Attack1"
@@ -265,7 +283,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Sprite2D/Hurtbox/CollisionShape2D:disabled")
+tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -531,7 +549,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Sprite2D/Hurtbox/CollisionShape2D:disabled")
+tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -724,21 +742,47 @@ collision_mask = 0
 script = ExtResource("2_tf1cp")
 health = NodePath("../../Health")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+[node name="Hurt1" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
 position = Vector2(1.17647, -1.17647)
 shape = SubResource("CircleShape2D_khojc")
 
+[node name="Hurt2" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_e23yy")
+
+[node name="Hurt3" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_4qcr1")
+
+[node name="Hurt4" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_4dg4g")
+
+[node name="Hurt5" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_kr246")
+
+[node name="Hurt6" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_00sq4")
+
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
+visible = false
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("3_3e0na")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+[node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(0, 2.35294)
 shape = SubResource("CircleShape2D_ye7vx")
 
+[node name="Hit2" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CapsuleShape2D_btlj0")
+
+[node name="Hit3" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CapsuleShape2D_ptkwa")
+
+[node name="Hit4" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CapsuleShape2D_df3sn")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+visible = false
+position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_83b1e")
 
 [node name="Health" type="Node" parent="."]

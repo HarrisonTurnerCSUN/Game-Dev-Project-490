@@ -18,7 +18,7 @@ size = Vector2(740, 36)
 [node name="Level1" parent="." instance=ExtResource("1_kqx5x")]
 
 [node name="Player" parent="." instance=ExtResource("2_2uqdp")]
-position = Vector2(2387, -43)
+position = Vector2(2075, -60)
 
 [node name="object_breakable_box" parent="." instance=ExtResource("3_d30qt")]
 position = Vector2(200, -31)
@@ -39,7 +39,7 @@ position = Vector2(159, -41)
 position = Vector2(1239, -96)
 
 [node name="enemy_witch" parent="." instance=ExtResource("6_odqg8")]
-position = Vector2(1209, -95)
+position = Vector2(1837, -74)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("7_er8qt")]
 position = Vector2(1327, -109)
@@ -47,7 +47,7 @@ position = Vector2(1327, -109)
 [node name="RewardScreen" parent="." instance=ExtResource("8_gnhxm")]
 
 [node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
-position = Vector2(2548, -58)
+position = Vector2(641, -410)
 
 [node name="rockArea" type="Area2D" parent="."]
 position = Vector2(2225, -379)

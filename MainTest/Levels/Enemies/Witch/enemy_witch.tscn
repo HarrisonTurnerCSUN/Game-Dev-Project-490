@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d35cmyvdibyaa"]
+[gd_scene load_steps=38 format=3 uid="uid://d35cmyvdibyaa"]
 
 [ext_resource type="Texture2D" uid="uid://dhby8yn7wjfss" path="res://Assets/Character Sprites/Evil_Witch/Idle.png" id="1_f8o1b"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_witch.gd" id="1_gfwi0"]
@@ -16,11 +16,29 @@
 [ext_resource type="BehaviorTree" uid="uid://6fqyiiyewoyy" path="res://ai/trees/witch.tres" id="13_7jf5h"]
 [ext_resource type="PackedScene" uid="uid://c0053uubn6w7n" path="res://Levels/Enemies/Witch/witch_projectile.tscn" id="15_o6cmu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8peq"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_53mqq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j320h"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07k7p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yfhus"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t3sbx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o31ek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8y2wf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ebf6t"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_empar"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3meie"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b5d82"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8oa3"]
+radius = 7.0
+height = 48.0
 
 [sub_resource type="Animation" id="Animation_4m8nd"]
 resource_name = "Death"
@@ -531,20 +549,46 @@ collision_mask = 0
 script = ExtResource("2_atwx7")
 health = NodePath("../../Health")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
-shape = SubResource("RectangleShape2D_g8peq")
+[node name="Hurt1" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-46, -6)
+shape = SubResource("CapsuleShape2D_53mqq")
+
+[node name="Hurt2" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_j320h")
+
+[node name="Hurt3" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_07k7p")
+
+[node name="Hurt4" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_yfhus")
+
+[node name="Hurt5" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_t3sbx")
+
+[node name="Hurt6" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+shape = SubResource("CapsuleShape2D_o31ek")
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("3_shu8e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+[node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+position = Vector2(60, 4)
 shape = SubResource("RectangleShape2D_8y2wf")
 
+[node name="Hit2" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CapsuleShape2D_empar")
+
+[node name="Hit3" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CapsuleShape2D_3meie")
+
+[node name="Hit4" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
+shape = SubResource("CapsuleShape2D_b5d82")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_ebf6t")
+position = Vector2(-1, -24)
+shape = SubResource("CapsuleShape2D_p8oa3")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("4_qhhpf")
