@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://c5kdh643robcg"]
+[gd_scene load_steps=48 format=4 uid="uid://c5kdh643robcg"]
 
 [ext_resource type="Script" path="res://Overworld/overworld.gd" id="1_epn73"]
 [ext_resource type="Texture2D" uid="uid://lnov142mpo5q" path="res://Assets/PixelWoods/Terrain(main)/terrain tiles.png" id="1_r1s8q"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c7l57u8cshrx8" path="res://Assets/PixelWoods/Seasons/spring/waterfalls1.png" id="5_2bre0"]
 [ext_resource type="Texture2D" uid="uid://dw0pmx75a7tk4" path="res://Assets/PixelWoods/Seasons/autumn/terrain1.png" id="5_yd5i7"]
 [ext_resource type="Texture2D" uid="uid://dmvcf83dq2f8w" path="res://Assets/PixelWoods/Bridge/Bridge.png" id="6_1h0oj"]
-[ext_resource type="PackedScene" uid="uid://bsfiddtulqx03" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
+[ext_resource type="PackedScene" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
 [ext_resource type="Texture2D" uid="uid://cc2obmfawrduq" path="res://Assets/PixelWoods/Seasons/winter/terrain.png" id="7_ugua7"]
 [ext_resource type="PackedScene" uid="uid://bxfrvoy1up5ro" path="res://Levels/Maps/Forest/sign.tscn" id="10_w18nq"]
 [ext_resource type="PackedScene" uid="uid://dkqjnddjsgi7c" path="res://main menu/Pause Menu/text_pop_up.tscn" id="11_hi12u"]
@@ -2396,6 +2396,12 @@ size = Vector2(20, 223)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwetg"]
 size = Vector2(20, 236)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6drp"]
+size = Vector2(126, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kddj1"]
+size = Vector2(20, 33)
+
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_epn73")
 
@@ -2438,7 +2444,6 @@ tile_map_data = PackedByteArray("AAATAD8AAAAEAAsAAAAPAD0AAAAEAAsAAAAQADUAAAAEAAs
 tile_set = ExtResource("4_fdh6g")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("4_d4ucr")
 
 [node name="InventoryGUI" parent="CanvasLayer" instance=ExtResource("4_xwcl6")]
@@ -2519,5 +2524,43 @@ top_level = true
 tooltip_text = "Canvas layer ordering matters"
 is_stats_hidden = true
 
+[node name="ToGoblin" type="Area2D" parent="."]
+position = Vector2(336, -37)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToGoblin"]
+shape = SubResource("RectangleShape2D_i6drp")
+
+[node name="ToMountain" type="Area2D" parent="."]
+position = Vector2(489, 242)
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToMountain"]
+position = Vector2(0, -0.5)
+scale = Vector2(0.847979, 3.6358)
+shape = SubResource("RectangleShape2D_kddj1")
+
+[node name="Sign3" parent="." node_paths=PackedStringArray("popup") instance=ExtResource("10_w18nq")]
+z_index = 1
+position = Vector2(297, 8)
+popup = NodePath("TextPopUp2")
+
+[node name="TextPopUp2" parent="Sign3" instance=ExtResource("11_hi12u")]
+z_index = 5
+position = Vector2(289, -35)
+text = "To Goblin Camp"
+
+[node name="Sign4" parent="." node_paths=PackedStringArray("popup") instance=ExtResource("10_w18nq")]
+z_index = 1
+position = Vector2(462, 265)
+popup = NodePath("TextPopUp2")
+
+[node name="TextPopUp2" parent="Sign4" instance=ExtResource("11_hi12u")]
+z_index = 5
+position = Vector2(452, 220)
+text = "To Mountain"
+
 [connection signal="body_entered" from="ToDungeon" to="." method="_on_to_dungeon_body_entered"]
 [connection signal="body_entered" from="ToCastle" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ToGoblin" to="." method="_on_to_goblin_body_entered"]
+[connection signal="body_entered" from="ToMountain" to="." method="_on_to_mountain_body_entered"]
