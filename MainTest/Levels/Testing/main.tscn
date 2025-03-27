@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c2grewbwmu5rs" path="res://Levels/Enemies/Worm_red/enemy_worm_fire.tscn" id="7_qxqhc"]
 [ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="8_f0pbf"]
 [ext_resource type="PackedScene" uid="uid://c37hekxgia0d2" path="res://main menu/Reward Menu/RewardScreen.tscn" id="8_gnhxm"]
+[ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="9_6c54m"]
 [ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="9_ecqun"]
-[ext_resource type="PackedScene" uid="uid://c7u1830qjp3wk" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black.tscn" id="10_jfat2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7an"]
 size = Vector2(740, 36)
@@ -37,18 +37,18 @@ position = Vector2(200, -96)
 position = Vector2(159, -41)
 
 [node name="enemy_worm_red" parent="." instance=ExtResource("7_qxqhc")]
-position = Vector2(1239, -96)
+position = Vector2(366, -123)
 
 [node name="enemy_witch" parent="." instance=ExtResource("6_odqg8")]
-position = Vector2(1837, -74)
+position = Vector2(539, -114)
+
+[node name="enemy_goblin" parent="enemy_witch" instance=ExtResource("7_er8qt")]
+position = Vector2(-58, -189)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("7_er8qt")]
-position = Vector2(1327, -109)
+position = Vector2(454, -136)
 
 [node name="RewardScreen" parent="." instance=ExtResource("8_gnhxm")]
-
-[node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
-position = Vector2(2163, -91)
 
 [node name="rockArea" type="Area2D" parent="."]
 position = Vector2(2225, -379)
@@ -59,5 +59,8 @@ collision_mask = 0
 position = Vector2(4, -1)
 shape = SubResource("RectangleShape2D_0j7an")
 
-[node name="enemy_werewolf_black" parent="." instance=ExtResource("10_jfat2")]
-position = Vector2(2219, -59)
+[node name="enemy_eyeball" parent="." instance=ExtResource("9_6c54m")]
+position = Vector2(560, -218)
+
+[node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
+position = Vector2(2221, -99)

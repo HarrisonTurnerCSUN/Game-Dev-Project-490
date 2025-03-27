@@ -6,6 +6,7 @@ signal death
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health: Health = $Health
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var _is_dead: bool = false
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 	health.damaged.connect(_on_damaged)
 	health.death.connect(die)
 	
+	audio_stream_player_2d.play()
 	# Set up a timer to auto-delete after 3 seconds
 	var timer = Timer.new()
 	timer.wait_time = 4.0
@@ -53,4 +55,5 @@ func die() -> void:
 	# Wait for the death animation to finish, then disable collision and remove the object
 	#await animation_player.animation_finished
 	collision_shape_2d.set_deferred("disabled", true)
+	audio_stream_player_2d.stop()
 	queue_free()
