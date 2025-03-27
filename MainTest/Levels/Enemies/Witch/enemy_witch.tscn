@@ -6078,3 +6078,19 @@ health_node = NodePath("../Health")
 
 [node name="WitchProjectile" parent="." instance=ExtResource("15_o6cmu")]
 position = Vector2(47, -7)
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Fall" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Idle" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Ranged" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Run" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]

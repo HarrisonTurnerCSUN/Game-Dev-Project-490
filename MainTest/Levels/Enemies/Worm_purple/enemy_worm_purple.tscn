@@ -5058,3 +5058,17 @@ offset_top = -42.0
 offset_right = 15.0
 offset_bottom = -38.0
 health_node = NodePath("../Health")
+
+[node name="Ranged" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Run" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Idle" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Hatch" type="AudioStreamPlayer2D" parent="."]
