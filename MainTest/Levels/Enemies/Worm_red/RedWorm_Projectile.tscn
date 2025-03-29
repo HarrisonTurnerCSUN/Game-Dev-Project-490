@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bp1jjuiemlr1p"]
+[gd_scene load_steps=13 format=3 uid="uid://bp1jjuiemlr1p"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="1_gp1kk"]
 [ext_resource type="Script" path="res://Levels/Enemies/Worm_red/red_worm_projectile.gd" id="1_o5wej"]
 [ext_resource type="Texture2D" uid="uid://juisgry4pa1g" path="res://Assets/Character Sprites/Fire Worm/Sprites/Fire Ball/Move.png" id="1_os0wg"]
 [ext_resource type="Texture2D" uid="uid://twh45w77wvf6" path="res://Assets/Character Sprites/Fire Worm/Sprites/Fire Ball/Explosion.png" id="3_pweud"]
+[ext_resource type="AudioStream" uid="uid://cpnc1auwc8bn0" path="res://Assets/AudioAssets/Enemies/GoblinSounds/620229__sieuamthanh__no-4.wav" id="5_jwtnl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlqpd"]
 radius = 9.0
@@ -59,6 +60,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("death:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("death:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-25.06]
 }
 
 [sub_resource type="Animation" id="Animation_l63a0"]
@@ -165,6 +190,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("death:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("death:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-25.06]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_18j5v"]
 _data = {
@@ -219,6 +268,9 @@ shape = SubResource("CircleShape2D_4g03a")
 shape = SubResource("CircleShape2D_n7wm1")
 
 [node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_jwtnl")
+volume_db = -25.06
+bus = &"SFX"
 
 [connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_body_entered"]

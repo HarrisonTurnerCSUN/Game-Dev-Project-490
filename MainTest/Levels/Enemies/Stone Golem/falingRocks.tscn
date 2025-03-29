@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="3_bhfts"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_i5kh5"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="5_x528v"]
-[ext_resource type="AudioStream" uid="uid://d332x5bvpnd6o" path="res://Assets/AudioAssets/Enemies/Golem/fallingrocks.wav" id="6_uckfy"]
+[ext_resource type="AudioStream" uid="uid://bcu83ejrumpjg" path="res://Assets/AudioAssets/Enemies/Golem/falling-rocks.wav" id="6_8w56n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3xs7q"]
 radius = 5.09902
@@ -59,4 +59,6 @@ script = ExtResource("5_x528v")
 max_health = 1.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_uckfy")
+stream = ExtResource("6_8w56n")
+volume_db = -2.811
+max_distance = 500.0
