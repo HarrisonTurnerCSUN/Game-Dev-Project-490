@@ -7,6 +7,8 @@ extends Node2D
 var stopwatch : Stopwatch
 func _ready() -> void:
 	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
+	menu.flip_star1()
+	menu.flip_star2()
 	
 
 func _process(delta: float) -> void:
@@ -21,8 +23,17 @@ func _process(delta: float) -> void:
 	if stopwatch.time/60 >= 5:
 		menu.flip_star3()
 	
-	if stopwatch.time/60 >= 10:
-		menu.flip_star2()
 	
-	if stopwatch.time/60 >= 15:
+	
+
+
+func _on_star_area_2d_body_entered(body: Node2D, starId: int) -> void:
+	if starId == 1:
 		menu.flip_star1()
+	elif starId == 2:
+		print("?")
+		menu.flip_star2()
+
+
+func _on_stone_door_trigger_1_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
