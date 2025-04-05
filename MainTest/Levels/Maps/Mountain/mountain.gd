@@ -33,7 +33,3 @@ func _on_star_area_2d_body_entered(body: Node2D, starId: int) -> void:
 	elif starId == 2:
 		print("?")
 		menu.flip_star2()
-
-
-func _on_stone_door_trigger_1_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.

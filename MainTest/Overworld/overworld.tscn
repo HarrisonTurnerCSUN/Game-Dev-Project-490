@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c7l57u8cshrx8" path="res://Assets/PixelWoods/Seasons/spring/waterfalls1.png" id="5_2bre0"]
 [ext_resource type="Texture2D" uid="uid://dw0pmx75a7tk4" path="res://Assets/PixelWoods/Seasons/autumn/terrain1.png" id="5_yd5i7"]
 [ext_resource type="Texture2D" uid="uid://dmvcf83dq2f8w" path="res://Assets/PixelWoods/Bridge/Bridge.png" id="6_1h0oj"]
-[ext_resource type="PackedScene" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
+[ext_resource type="PackedScene" uid="uid://bsfiddtulqx03" path="res://Overworld/Inventory/hotbar.tscn" id="7_m1ncw"]
 [ext_resource type="Texture2D" uid="uid://cc2obmfawrduq" path="res://Assets/PixelWoods/Seasons/winter/terrain.png" id="7_ugua7"]
 [ext_resource type="PackedScene" uid="uid://bxfrvoy1up5ro" path="res://Levels/Maps/Forest/sign.tscn" id="10_w18nq"]
 [ext_resource type="PackedScene" uid="uid://dkqjnddjsgi7c" path="res://main menu/Pause Menu/text_pop_up.tscn" id="11_hi12u"]

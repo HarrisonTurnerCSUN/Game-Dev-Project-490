@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://bbxls6egs0lly"]
+[gd_scene load_steps=37 format=4 uid="uid://bbxls6egs0lly"]
 
 [ext_resource type="Texture2D" uid="uid://j4mpuog823y8" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/Tileset.png" id="1_fb0er"]
 [ext_resource type="Texture2D" uid="uid://d2t21sgi1voey" path="res://Assets/Tiles/oak_woods_tileset.png" id="2_o2xmx"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="15_s4c4r"]
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="16_x6ru8"]
 [ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="17_njpiq"]
+[ext_resource type="Texture2D" uid="uid://di7518lwkg212" path="res://Assets/Items/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="18_ecs4n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lj3ji"]
 texture = ExtResource("1_fb0er")
@@ -3947,6 +3948,13 @@ texture = ExtResource("9_0iiaf")
 [sub_resource type="TileSet" id="TileSet_av002"]
 sources/0 = SubResource("TileSetAtlasSource_bkdn3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdmw6"]
+size = Vector2(26.5, 300)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vtrk"]
+atlas = ExtResource("18_ecs4n")
+region = Rect2(1605.58, 7.94011, 48.4001, 56.87)
+
 [node name="Goblin_camp" type="Node2D"]
 metadata/_edit_vertical_guides_ = [11858.0]
 
@@ -3973,7 +3981,7 @@ tile_map_data = PackedByteArray("AAAcAPH/AAAAABcAAABWAPH/AAAAABcAAACFAPH/AAAAABc
 tile_set = SubResource("TileSet_av002")
 
 [node name="Player" parent="." instance=ExtResource("8_8wstx")]
-position = Vector2(708, -51)
+position = Vector2(22576, -1232)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("11_r5id7")]
 position = Vector2(2138, -34)
@@ -4082,3 +4090,16 @@ position = Vector2(20059, -69)
 
 [node name="lifepot4" parent="." instance=ExtResource("17_njpiq")]
 position = Vector2(15811, -212)
+
+[node name="LevelEnd" type="Area2D" parent="."]
+position = Vector2(22701, -1222)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
+shape = SubResource("RectangleShape2D_xdmw6")
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelEnd"]
+position = Vector2(1, 122)
+texture = SubResource("AtlasTexture_2vtrk")
+
+[connection signal="body_entered" from="LevelEnd" to="CanvasLayer/InGameMenu" method="_on_level_end_body_entered"]
