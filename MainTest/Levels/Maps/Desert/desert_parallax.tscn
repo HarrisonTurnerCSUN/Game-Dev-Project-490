@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2gebmhuwosrk"]
+
+[ext_resource type="Texture2D" uid="uid://cyxo72pa7wuvh" path="res://Assets/Scrolling-Desert-Backgrounds/3/1.png" id="1_qgu3k"]
+[ext_resource type="Texture2D" uid="uid://cqoqcdclh0xmb" path="res://Assets/Scrolling-Desert-Backgrounds/3/2.png" id="2_hc72q"]
+[ext_resource type="Texture2D" uid="uid://vklol2siy62y" path="res://Assets/Scrolling-Desert-Backgrounds/3/3.png" id="3_jvrb7"]
+[ext_resource type="Texture2D" uid="uid://cy85h1vyi2flj" path="res://Assets/Scrolling-Desert-Backgrounds/3/4.png" id="4_2fgnf"]
+[ext_resource type="Texture2D" uid="uid://i4soq1dwlcce" path="res://Assets/Scrolling-Desert-Backgrounds/3/5.png" id="5_4onxx"]
+
+[node name="desert_parallax" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.1, 0.6)
+repeat_size = Vector2(1920, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+modulate = Color(1, 0.623529, 0.396078, 1)
+texture = ExtResource("1_qgu3k")
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.15, 0.75)
+repeat_size = Vector2(1920, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+modulate = Color(0.870038, 0.708572, 0.468644, 1)
+texture = ExtResource("2_hc72q")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.2, 1)
+repeat_size = Vector2(1920, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+texture = ExtResource("3_jvrb7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D3"]
+texture = ExtResource("4_2fgnf")
+
+[node name="Parallax2D5" type="Parallax2D" parent="."]
+scale = Vector2(0.2, 0.2)
+scroll_scale = Vector2(0.3, 1)
+repeat_size = Vector2(1917, 0)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D5"]
+texture = ExtResource("5_4onxx")
