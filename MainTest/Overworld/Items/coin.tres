@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bkc5ngxb43h1q"]
+
+[ext_resource type="Script" path="res://Overworld/Inventory/inventoryItem.gd" id="1_isjn0"]
+[ext_resource type="Texture2D" uid="uid://cihvqri0gtncj" path="res://Overworld/Items/coin.png" id="2_feiq7"]
+
+[resource]
+script = ExtResource("1_isjn0")
+name = ""
+texture = ExtResource("2_feiq7")
+maxAmountPrStack = 99
