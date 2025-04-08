@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dit3jor6dusk7"]
+[gd_scene load_steps=11 format=3 uid="uid://dit3jor6dusk7"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/eyeball_projectile.gd" id="1_txc2o"]
 [ext_resource type="Texture2D" uid="uid://dwhhxj5557qrb" path="res://ai/demo/assets/shadow.png" id="2_qnb4j"]
 [ext_resource type="Texture2D" uid="uid://b480bf0phgahk" path="res://Assets/Character Sprites/Flying eye/projectile_sprite.png" id="3_lfvnd"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_b2q66"]
+[ext_resource type="AudioStream" uid="uid://d05cow2dp6xfl" path="res://Assets/AudioAssets/Enemies/EyeballSounds/129994__thompsonman__pop.wav" id="5_py7ef"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17fgh"]
 radius = 4.0
@@ -94,6 +95,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("projectileDeath:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.266667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_v0ofm"]
@@ -259,6 +272,18 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector2(0, -46)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("projectileDeath:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umapm"]
 _data = {
@@ -304,5 +329,8 @@ libraries = {
 "": SubResource("AnimationLibrary_umapm")
 }
 autoplay = "Idle"
+
+[node name="projectileDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_py7ef")
 
 [connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]

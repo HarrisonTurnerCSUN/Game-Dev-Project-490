@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyxvjss7e3twy"]
+[gd_scene load_steps=13 format=3 uid="uid://cyxvjss7e3twy"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/Worm_red/red_worm_projectile.gd" id="1_2244r"]
 [ext_resource type="Texture2D" uid="uid://dwqwggfqusbee" path="res://Assets/Character Sprites/PurpleWorm/Move.png" id="2_u3c7v"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_yre4s"]
 [ext_resource type="Texture2D" uid="uid://bpsc5jdbceqm8" path="res://Assets/Character Sprites/PurpleWorm/Explosion.png" id="4_r107k"]
+[ext_resource type="AudioStream" uid="uid://cpnc1auwc8bn0" path="res://Assets/AudioAssets/Enemies/GoblinSounds/620229__sieuamthanh__no-4.wav" id="5_l85sr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q53gw"]
 radius = 6.0
@@ -59,6 +60,42 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("death:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_l85sr")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("death:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("death:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-26.313]
 }
 
 [sub_resource type="Animation" id="Animation_gk80w"]
@@ -165,6 +202,42 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("death:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_l85sr")]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("death:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("death:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-26.313]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k3hqj"]
 _data = {
@@ -219,6 +292,11 @@ shape = SubResource("CircleShape2D_rcobx")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_turfg")
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_l85sr")
+volume_db = -26.313
+bus = &"SFX"
 
 [connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_body_entered"]

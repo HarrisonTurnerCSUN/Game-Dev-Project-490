@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://d1g604mr0yjcx"]
+[gd_scene load_steps=37 format=3 uid="uid://d1g604mr0yjcx"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_40mg5"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_stone_golem.gd" id="1_brhg7"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="4_on4f6"]
 [ext_resource type="BehaviorTree" uid="uid://byemtih7d1esm" path="res://ai/trees/stone_boss.tres" id="5_c5epw"]
 [ext_resource type="Texture2D" uid="uid://bygjc25xa5m13" path="res://Assets/Character Sprites/Stone Golem/Mecha-stone Golem 0.1/weapon PNG/Laser_sheet.png" id="6_f73qw"]
+[ext_resource type="AudioStream" uid="uid://kc1n1tbe6qnl" path="res://Assets/AudioAssets/Enemies/Golem/rockwalk.wav" id="10_jv3w6"]
+[ext_resource type="AudioStream" uid="uid://brbbggdm0e1po" path="res://Assets/AudioAssets/Enemies/Golem/energize.wav" id="11_uxs12"]
+[ext_resource type="AudioStream" uid="uid://1eurinl6bbh0" path="res://Assets/AudioAssets/Enemies/Golem/lazer-2.wav" id="12_ig4ga"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2pjs7"]
 radius = 5.0
@@ -2440,6 +2443,30 @@ tracks/87/keys = {
 "update": 0,
 "values": [1.5708, 1.5708, 1.5708, 1.5708, 1.5708]
 }
+tracks/88/type = "value"
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/path = NodePath("rockenergize:playing")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/keys = {
+"times": PackedFloat32Array(0.3, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/89/type = "value"
+tracks/89/imported = false
+tracks/89/enabled = true
+tracks/89/path = NodePath("lazer:playing")
+tracks/89/interp = 1
+tracks/89/loop_wrap = true
+tracks/89/keys = {
+"times": PackedFloat32Array(1.1, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_pbxrq"]
 resource_name = "Idle"
@@ -4441,6 +4468,30 @@ tracks/87/keys = {
 "update": 0,
 "values": [1.5708]
 }
+tracks/88/type = "value"
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/path = NodePath("rockenergize:playing")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/89/type = "value"
+tracks/89/imported = false
+tracks/89/enabled = true
+tracks/89/path = NodePath("lazer:playing")
+tracks/89/interp = 1
+tracks/89/loop_wrap = true
+tracks/89/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_lqvyy"]
 resource_name = "RangeAttack1"
@@ -5575,3 +5626,15 @@ health_node = NodePath("../Health")
 position = Vector2(108, 0)
 texture = ExtResource("6_f73qw")
 vframes = 15
+
+[node name="rockwalk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_jv3w6")
+bus = &"SFX"
+
+[node name="rockenergize" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_uxs12")
+bus = &"SFX"
+
+[node name="lazer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_ig4ga")
+bus = &"SFX"

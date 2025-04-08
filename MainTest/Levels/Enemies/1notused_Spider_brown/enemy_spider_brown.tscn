@@ -1,14 +1,14 @@
 [gd_scene load_steps=21 format=3 uid="uid://dosa8tyikujhj"]
 
-[ext_resource type="Texture2D" uid="uid://dv4sp7lbklyxk" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_sleep.png" id="1_ler0x"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="2_xfvwg"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_nxioc"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="4_l5tqk"]
-[ext_resource type="Texture2D" uid="uid://rue2w6mam5su" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_walk.png" id="5_pwo34"]
-[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="5_s1008"]
-[ext_resource type="Texture2D" uid="uid://2ptl578odwtx" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_attack.png" id="6_rm7c5"]
-[ext_resource type="Texture2D" uid="uid://bkgawiasw75q6" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_hurt.png" id="6_t36ew"]
-[ext_resource type="Texture2D" uid="uid://do3njmqt1sl8r" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_death.png" id="7_u744r"]
+[ext_resource type="Texture2D" uid="uid://dv4sp7lbklyxk" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_sleep.png" id="1_4agos"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="2_racs3"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_e4ng8"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="4_mmixq"]
+[ext_resource type="Texture2D" uid="uid://2ptl578odwtx" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_attack.png" id="5_vitxr"]
+[ext_resource type="Texture2D" uid="uid://do3njmqt1sl8r" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_death.png" id="6_ymiwi"]
+[ext_resource type="Texture2D" uid="uid://bkgawiasw75q6" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_hurt.png" id="7_5nybs"]
+[ext_resource type="Texture2D" uid="uid://rue2w6mam5su" path="res://Assets/Character Sprites/TheForest_GiantSpider/BrownSpider_walk.png" id="8_whd0r"]
+[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="9_u3lc6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ktp7"]
 
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_rm7c5")]
+"values": [ExtResource("5_vitxr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -83,7 +83,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("7_u744r")]
+"values": [ExtResource("6_ymiwi")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -136,7 +136,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_t36ew")]
+"values": [ExtResource("7_5nybs")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -190,7 +190,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_ler0x")]
+"values": [ExtResource("1_4agos")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -241,7 +241,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_ler0x")]
+"values": [ExtResource("1_4agos")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -295,7 +295,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_pwo34")]
+"values": [ExtResource("8_whd0r")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -352,13 +352,13 @@ collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1, -17)
-texture = ExtResource("1_ler0x")
+texture = ExtResource("1_4agos")
 hframes = 7
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("2_xfvwg")
+script = ExtResource("2_racs3")
 health = NodePath("../../Health")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
@@ -367,7 +367,7 @@ shape = SubResource("CircleShape2D_0ktp7")
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("3_nxioc")
+script = ExtResource("3_e4ng8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 shape = SubResource("CircleShape2D_vbm44")
@@ -377,7 +377,7 @@ position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_prvyy")
 
 [node name="Health" type="Node" parent="."]
-script = ExtResource("4_l5tqk")
+script = ExtResource("4_mmixq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -387,7 +387,7 @@ libraries = {
 [node name="BTPlayer" type="BTPlayer" parent="."]
 blackboard_plan = SubResource("BlackboardPlan_k3ix2")
 
-[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("5_s1008")]
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("9_u3lc6")]
 offset_left = -20.0
 offset_top = -43.0
 offset_right = 20.0

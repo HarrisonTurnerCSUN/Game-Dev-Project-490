@@ -17,6 +17,13 @@ extends Control
 
 @export var  is_stats_hidden : bool = false
 
+@export_multiline var goal1_text : String
+@onready var goal1 : Label = $MarginContainer/Stats/VBoxContainer3/VBoxContainer2/Goal1
+@export_multiline var goal2_text : String
+@onready var goal2 : Label = $MarginContainer/Stats/VBoxContainer3/VBoxContainer2/Goal2
+@export_multiline var goal3_text : String
+@onready var goal3 : Label = $MarginContainer/Stats/VBoxContainer3/VBoxContainer2/Goal3
+
 var stopwatch : Stopwatch
 
 func _ready() -> void:
@@ -27,6 +34,9 @@ func _ready() -> void:
 	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.MusicVol));
 	#busIndex = AudioServer.get_bus_index("SFX")
 	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.SFXVol));
+	goal1.text = goal1_text
+	goal2.text = goal2_text
+	goal3.text = goal3_text
 	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
 	if is_stats_hidden:
 		stats_button.hide()
@@ -94,15 +104,15 @@ func _on_to_stats_pressed() -> void:
 	stats.show()
 	
 func flip_star1() -> void:
-	star1.complete = false
+	star1.complete = !star1.complete
 	star1.check_complete()
 
 func flip_star2() -> void:
-	star2.complete = false
+	star2.complete = !star2.complete
 	star2.check_complete()
 
 func flip_star3() -> void:
-	star3.complete = false
+	star3.complete = !star3.complete
 	star3.check_complete()
 	
 func update_stopwatch():

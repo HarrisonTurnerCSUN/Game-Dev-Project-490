@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://ba5rsev1ur3gc"]
+[gd_scene load_steps=12 format=3 uid="uid://ba5rsev1ur3gc"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/goblin_projectile.gd" id="1_pr0od"]
 [ext_resource type="Texture2D" uid="uid://dwhhxj5557qrb" path="res://ai/demo/assets/shadow.png" id="2_joajs"]
 [ext_resource type="Texture2D" uid="uid://b480bf0phgahk" path="res://Assets/Character Sprites/Flying eye/projectile_sprite.png" id="3_eks81"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_eumvj"]
 [ext_resource type="Texture2D" uid="uid://0hus3ubdihyd" path="res://Assets/Character Sprites/Goblin/Bomb_sprite.png" id="5_5gqry"]
+[ext_resource type="AudioStream" uid="uid://cpnc1auwc8bn0" path="res://Assets/AudioAssets/Enemies/GoblinSounds/620229__sieuamthanh__no-4.wav" id="6_dbysx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_17fgh"]
 radius = 3.0
@@ -119,6 +120,54 @@ tracks/8/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.25, 0.194), Vector2(0.25, 0.194)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("bombpop:stream")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_dbysx")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("bombpop:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-15.169, -15.169]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("bombpop:pitch_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.51]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("bombpop:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_v0ofm"]
@@ -332,6 +381,54 @@ tracks/8/keys = {
 "update": 0,
 "values": [Vector2(0.25, 0.194)]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("bombpop:stream")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_dbysx")]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("bombpop:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-44.883]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("bombpop:pitch_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.51]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("bombpop:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_umapm"]
 _data = {
@@ -379,6 +476,12 @@ autoplay = "Idle"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.95
+
+[node name="bombpop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dbysx")
+volume_db = -44.883
+pitch_scale = 1.51
+bus = &"SFX"
 
 [connection signal="area_entered" from="Root/projectile/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -30,6 +30,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8srwh")
 stopwatch_label = NodePath("MarginContainer/Stats/VBoxContainer3/VBoxContainer2/HBoxContainer/Label2")
+goal1_text = "Goal 1:"
+goal2_text = "Goal 2:"
+goal3_text = "Goal 3:"
 
 [node name="Save_Confirmation_Popup" parent="." instance=ExtResource("2_ugytm")]
 visible = false

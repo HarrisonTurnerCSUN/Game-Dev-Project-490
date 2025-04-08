@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://7l4hua6x02sj"]
+
+[ext_resource type="Texture2D" uid="uid://bc23kyeklr5vj" path="res://Assets/Lucid V1.2/PNG/Flat/16/Star.png" id="1_keegl"]
+
+[sub_resource type="GDScript" id="GDScript_kgirj"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	self.queue_free()
+	pass # Replace with function body.
+"
+
+[node name="star_pickup" type="Node2D"]
+script = SubResource("GDScript_kgirj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+texture = ExtResource("1_keegl")

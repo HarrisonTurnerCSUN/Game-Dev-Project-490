@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5pebb61jhh6f"]
+
+[ext_resource type="TileSet" uid="uid://cmq4eu4qhi1x2" path="res://Assets/mk_16_16_nature_tileset_godot/mk_16_16_nature_tileset_godot/tileset_mk_16_16_nature_tileset_godot.tres" id="1_gp755"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfpi1"]
+size = Vector2(79, 16)
+
+[node name="Tile_Platform" type="AnimatableBody2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 254, 255, 255, 255, 0, 0, 3, 0, 14, 0, 0, 96, 255, 255, 255, 255, 0, 0, 3, 0, 15, 0, 0, 96, 0, 0, 255, 255, 0, 0, 3, 0, 15, 0, 0, 96, 1, 0, 255, 255, 0, 0, 3, 0, 15, 0, 0, 96, 2, 0, 255, 255, 0, 0, 3, 0, 14, 0, 0, 80)
+tile_set = ExtResource("1_gp755")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(8, -8)
+shape = SubResource("RectangleShape2D_xfpi1")

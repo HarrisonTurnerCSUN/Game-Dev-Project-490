@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready():
 	# Set high gravity so the rock falls fast if in air
+	audio_stream_player_2d.play()
 	if not is_on_ground():
 		velocity.y = 1500  # Apply a strong downward velocity
 

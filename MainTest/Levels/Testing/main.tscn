@@ -1,24 +1,50 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=18 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
+[ext_resource type="AudioStream" uid="uid://c2a6axwr84jye" path="res://Assets/AudioAssets/Infinity Crystal_ Awakening wavs/22 romance LOOP.wav" id="2_3qda3"]
+[ext_resource type="AudioStream" uid="uid://dcv2ycpbwi4kl" path="res://Assets/AudioAssets/Infinity Crystal_ Awakening wavs/3 critical INITIAL.wav" id="2_onhbt"]
 [ext_resource type="PackedScene" uid="uid://de1xxdg3tyvj7" path="res://Levels/Objects/Breakable Box/object_breakable_box.tscn" id="3_d30qt"]
+[ext_resource type="PackedScene" uid="uid://c7u1830qjp3wk" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black.tscn" id="4_rmc6o"]
+[ext_resource type="PackedScene" uid="uid://bm4lf207odb05" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black_red.tscn" id="5_fx2tr"]
 [ext_resource type="PackedScene" uid="uid://d35cmyvdibyaa" path="res://Levels/Enemies/Witch/enemy_witch.tscn" id="6_odqg8"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="7_er8qt"]
 [ext_resource type="PackedScene" uid="uid://c2grewbwmu5rs" path="res://Levels/Enemies/Worm_red/enemy_worm_fire.tscn" id="7_qxqhc"]
 [ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="8_f0pbf"]
 [ext_resource type="PackedScene" uid="uid://c37hekxgia0d2" path="res://main menu/Reward Menu/RewardScreen.tscn" id="8_gnhxm"]
+[ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="9_6c54m"]
 [ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="9_ecqun"]
+[ext_resource type="PackedScene" uid="uid://chwt0atu1i75y" path="res://Levels/Testing/audioareas.tscn" id="11_7rjqt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vjl8b"]
+radius = 501.761
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j7an"]
 size = Vector2(740, 36)
 
 [node name="Main" type="Node2D"]
 
+[node name="Audioareas2" parent="." instance=ExtResource("11_7rjqt")]
+position = Vector2(1742, -152)
+music = ExtResource("2_3qda3")
+
+[node name="Audioareas" parent="." instance=ExtResource("11_7rjqt")]
+position = Vector2(2609, -133)
+music = ExtResource("2_onhbt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Audioareas"]
+shape = SubResource("CircleShape2D_vjl8b")
+
+[node name="enemy_werewolf_black" parent="Audioareas/CollisionShape2D2" instance=ExtResource("4_rmc6o")]
+position = Vector2(-378.123, 6.79599)
+
+[node name="enemy_werewolf_black" parent="Audioareas/CollisionShape2D2/enemy_werewolf_black" instance=ExtResource("5_fx2tr")]
+position = Vector2(-310.286, 9.90424)
+
 [node name="Level1" parent="." instance=ExtResource("1_kqx5x")]
 
 [node name="Player" parent="." instance=ExtResource("2_2uqdp")]
-position = Vector2(2387, -43)
+position = Vector2(2075, -60)
 
 [node name="object_breakable_box" parent="." instance=ExtResource("3_d30qt")]
 position = Vector2(200, -31)
@@ -36,18 +62,18 @@ position = Vector2(200, -96)
 position = Vector2(159, -41)
 
 [node name="enemy_worm_red" parent="." instance=ExtResource("7_qxqhc")]
-position = Vector2(1239, -96)
+position = Vector2(704, -281)
 
 [node name="enemy_witch" parent="." instance=ExtResource("6_odqg8")]
-position = Vector2(1209, -95)
+position = Vector2(631, -281)
+
+[node name="enemy_goblin" parent="enemy_witch" instance=ExtResource("7_er8qt")]
+position = Vector2(-1677, -58)
 
 [node name="enemy_goblin" parent="." instance=ExtResource("7_er8qt")]
-position = Vector2(1327, -109)
+position = Vector2(454, -136)
 
 [node name="RewardScreen" parent="." instance=ExtResource("8_gnhxm")]
-
-[node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
-position = Vector2(2548, -58)
 
 [node name="rockArea" type="Area2D" parent="."]
 position = Vector2(2225, -379)
@@ -57,3 +83,9 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rockArea"]
 position = Vector2(4, -1)
 shape = SubResource("RectangleShape2D_0j7an")
+
+[node name="enemy_eyeball" parent="." instance=ExtResource("9_6c54m")]
+position = Vector2(560, -218)
+
+[node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
+position = Vector2(349, -373)
