@@ -1,0 +1,67 @@
+[gd_resource type="BehaviorTree" load_steps=14 format=3 uid="uid://b4nivqy1ktggs"]
+
+[ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_2a3t3"]
+[ext_resource type="Script" path="res://ai/tasks/Patrol.gd" id="4_6jyex"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_t7qbe"]
+var/speed/name = &"speed"
+var/speed/type = 3
+var/speed/value = 60.0
+var/speed/hint = 1
+var/speed/hint_string = "10, 1000, 10"
+var/charge_speed/name = &"charge_speed"
+var/charge_speed/type = 3
+var/charge_speed/value = 100.0
+var/charge_speed/hint = 1
+var/charge_speed/hint_string = "10, 1000, 10"
+var/flank_speed/name = &"flank_speed"
+var/flank_speed/type = 3
+var/flank_speed/value = 100.0
+var/flank_speed/hint = 1
+var/flank_speed/hint_string = "10, 1000, 10"
+
+[sub_resource type="BBNode" id="BBNode_3mg75"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_w3n8k"]
+animation_player = SubResource("BBNode_3mg75")
+animation_name = &"Idle"
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_isc1k"]
+min_duration = 0.3
+max_duration = 0.6
+
+[sub_resource type="BTAction" id="BTAction_ijlgg"]
+script = ExtResource("1_2a3t3")
+group = &"Player"
+output_var = &"target"
+
+[sub_resource type="BBNode" id="BBNode_6gmvs"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_hhsnu"]
+animation_player = SubResource("BBNode_6gmvs")
+animation_name = &"Walk"
+
+[sub_resource type="BTAction" id="BTAction_xio76"]
+script = ExtResource("4_6jyex")
+patrol_range = 300.0
+patrol_time = 30000.0
+speed_var = &"speed"
+
+[sub_resource type="BTSequence" id="BTSequence_eanb2"]
+custom_name = "Patrol"
+children = [SubResource("BTPlayAnimation_hhsnu"), SubResource("BTAction_xio76")]
+
+[sub_resource type="BTSequence" id="BTSequence_y5a30"]
+custom_name = "Start"
+children = [SubResource("BTPlayAnimation_w3n8k"), SubResource("BTRandomWait_isc1k"), SubResource("BTAction_ijlgg"), SubResource("BTSequence_eanb2")]
+
+[sub_resource type="BTSequence" id="BTSequence_dn2yq"]
+children = [SubResource("BTSequence_y5a30")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_t7qbe")
+root_task = SubResource("BTSequence_dn2yq")

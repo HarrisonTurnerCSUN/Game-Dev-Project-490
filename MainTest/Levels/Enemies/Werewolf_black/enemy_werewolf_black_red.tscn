@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bm4lf207odb05"]
+[gd_scene load_steps=52 format=3 uid="uid://bm4lf207odb05"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_werewolf_black.gd" id="1_38h3a"]
 [ext_resource type="Texture2D" uid="uid://48mt5yuhk1v0" path="res://Assets/Character Sprites/Black_Werewolf/Idle.png" id="2_fadj2"]
@@ -8,14 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://dwaqhlb3qfgq1" path="res://Assets/Character Sprites/Red_Werewolf/Attack_1.png" id="6_588px"]
 [ext_resource type="Texture2D" uid="uid://b1b8ighwskwy0" path="res://Assets/Character Sprites/Red_Werewolf/Attack_2.png" id="7_hergt"]
 [ext_resource type="Texture2D" uid="uid://cw2w3dkmjfjv7" path="res://Assets/Character Sprites/Red_Werewolf/Attack_3.png" id="8_efcm5"]
-[ext_resource type="Texture2D" uid="uid://btlkfsx757g4y" path="res://Assets/Character Sprites/Black_Werewolf/Run+Attack.png" id="9_1blkb"]
-[ext_resource type="Texture2D" uid="uid://7v0s0oo0kxxc" path="res://Assets/Character Sprites/Black_Werewolf/Dead.png" id="10_qhgb3"]
-[ext_resource type="Texture2D" uid="uid://c2naodccskrc7" path="res://Assets/Character Sprites/Black_Werewolf/Hurt.png" id="11_wt041"]
-[ext_resource type="Texture2D" uid="uid://d0lmqoxqo5efn" path="res://Assets/Character Sprites/Black_Werewolf/Jump.png" id="12_ttgl5"]
-[ext_resource type="Texture2D" uid="uid://d074shqq86ow8" path="res://Assets/Character Sprites/Black_Werewolf/Run.png" id="13_h74k1"]
-[ext_resource type="Texture2D" uid="uid://ydh6uecjsui7" path="res://Assets/Character Sprites/Black_Werewolf/walk.png" id="14_gnoc3"]
-[ext_resource type="BehaviorTree" uid="uid://dp678rt0nn2gn" path="res://ai/trees/werewolf_black.tres" id="15_bt4nl"]
+[ext_resource type="Texture2D" uid="uid://53sj3yslbpva" path="res://Assets/Character Sprites/Red_Werewolf/Run+Attack.png" id="9_6emtr"]
+[ext_resource type="Texture2D" uid="uid://btxhwdr4hxdbj" path="res://Assets/Character Sprites/Red_Werewolf/Dead.png" id="10_k5bev"]
+[ext_resource type="Texture2D" uid="uid://iodmbtac6htg" path="res://Assets/Character Sprites/Red_Werewolf/Hurt.png" id="11_b8r1r"]
+[ext_resource type="Texture2D" uid="uid://dt6rjsi03f1pu" path="res://Assets/Character Sprites/Red_Werewolf/Idle.png" id="12_62val"]
+[ext_resource type="Texture2D" uid="uid://djro3elimpx0a" path="res://Assets/Character Sprites/Red_Werewolf/Jump.png" id="13_sdhmu"]
+[ext_resource type="Texture2D" uid="uid://43rgknau0ahy" path="res://Assets/Character Sprites/Red_Werewolf/Run.png" id="14_0l2a5"]
+[ext_resource type="Texture2D" uid="uid://cy2mebj7si586" path="res://Assets/Character Sprites/Red_Werewolf/Walk.png" id="15_4a2vl"]
 [ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="16_doj13"]
+[ext_resource type="BehaviorTree" uid="uid://d1xblaxfof76h" path="res://ai/trees/ww_red.tres" id="16_nhkmq"]
 [ext_resource type="AudioStream" uid="uid://yymiex0l1ix5" path="res://Assets/AudioAssets/Enemies/Werewolf/wswipe.wav" id="17_kof41"]
 [ext_resource type="AudioStream" uid="uid://b0pmwpublfb07" path="res://Assets/AudioAssets/Enemies/Werewolf/wsmacks.wav" id="18_s81w5"]
 [ext_resource type="AudioStream" uid="uid://bhuevitb5s7n" path="res://Assets/AudioAssets/Enemies/Werewolf/upper.wav" id="19_kym5b"]
@@ -2578,10 +2579,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("9_1blkb")]
+"values": [ExtResource("9_6emtr"), ExtResource("9_6emtr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3438,7 +3439,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("10_qhgb3")]
+"values": [ExtResource("10_k5bev")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3623,7 +3624,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("11_wt041")]
+"values": [ExtResource("11_b8r1r")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -4121,7 +4122,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_fadj2")]
+"values": [ExtResource("12_62val")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -4978,7 +4979,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("12_ttgl5")]
+"values": [ExtResource("13_sdhmu")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -6799,7 +6800,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("13_h74k1")]
+"values": [ExtResource("14_0l2a5")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -7657,7 +7658,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("14_gnoc3")]
+"values": [ExtResource("15_4a2vl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -8607,7 +8608,7 @@ libraries = {
 }
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("15_bt4nl")
+behavior_tree = ExtResource("16_nhkmq")
 blackboard_plan = SubResource("BlackboardPlan_0xqn1")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("16_doj13")]

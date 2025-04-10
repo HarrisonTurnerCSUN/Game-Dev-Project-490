@@ -1,0 +1,88 @@
+[gd_resource type="BehaviorTree" load_steps=21 format=3 uid="uid://cd5ef8iitxjn4"]
+
+[ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_dkeqw"]
+[ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_o1lyx"]
+[ext_resource type="Script" path="res://ai/tasks/face_target.gd" id="3_c3npp"]
+[ext_resource type="Script" path="res://ai/tasks/Patrol.gd" id="4_erayh"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_pwnf1"]
+var/speed/name = &"speed"
+var/speed/type = 3
+var/speed/value = 0.0
+var/speed/hint = 1
+var/speed/hint_string = "10, 1000, 10"
+var/flank_speed/name = &"flank_speed"
+var/flank_speed/type = 3
+var/flank_speed/value = 0.0
+var/flank_speed/hint = 1
+var/flank_speed/hint_string = "10, 1000, 10"
+var/charge_speed/name = &"charge_speed"
+var/charge_speed/type = 3
+var/charge_speed/value = 0.0
+var/charge_speed/hint = 1
+var/charge_speed/hint_string = "10, 1000, 10"
+
+[sub_resource type="BBNode" id="BBNode_8n76x"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_ptx8f"]
+animation_player = SubResource("BBNode_8n76x")
+animation_name = &"Idle"
+
+[sub_resource type="BTRandomWait" id="BTRandomWait_qujes"]
+min_duration = 0.3
+max_duration = 0.6
+
+[sub_resource type="BTAction" id="BTAction_1yc8y"]
+script = ExtResource("1_dkeqw")
+group = &"Player"
+output_var = &"target"
+
+[sub_resource type="BTSequence" id="BTSequence_o5sy8"]
+custom_name = "Start"
+children = [SubResource("BTPlayAnimation_ptx8f"), SubResource("BTRandomWait_qujes"), SubResource("BTAction_1yc8y")]
+
+[sub_resource type="BTCondition" id="BTCondition_mgpxt"]
+script = ExtResource("2_o1lyx")
+distance_min = 0.0
+distance_max = 125.0
+target_var = &"target"
+
+[sub_resource type="BTAction" id="BTAction_ri8px"]
+script = ExtResource("3_c3npp")
+target_var = &"target"
+
+[sub_resource type="BTSequence" id="BTSequence_qfeh3"]
+custom_name = "Aggro"
+children = [SubResource("BTCondition_mgpxt"), SubResource("BTAction_ri8px")]
+
+[sub_resource type="BTSequence" id="BTSequence_wy818"]
+
+[sub_resource type="BBNode" id="BBNode_ib4kc"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
+
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_qkbbv"]
+animation_player = SubResource("BBNode_ib4kc")
+animation_name = &"Walk"
+
+[sub_resource type="BTAction" id="BTAction_frvqb"]
+script = ExtResource("4_erayh")
+patrol_range = 300.0
+patrol_time = 3.0
+speed_var = &"speed"
+
+[sub_resource type="BTSequence" id="BTSequence_uo0f2"]
+custom_name = "Patrol"
+children = [SubResource("BTPlayAnimation_qkbbv"), SubResource("BTAction_frvqb")]
+
+[sub_resource type="BTSelector" id="BTSelector_chgaj"]
+children = [SubResource("BTSequence_qfeh3"), SubResource("BTSequence_wy818"), SubResource("BTSequence_uo0f2")]
+
+[sub_resource type="BTSequence" id="BTSequence_qd3gi"]
+children = [SubResource("BTSequence_o5sy8"), SubResource("BTSelector_chgaj")]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_pwnf1")
+root_task = SubResource("BTSequence_qd3gi")

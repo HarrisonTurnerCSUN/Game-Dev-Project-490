@@ -1,31 +1,32 @@
-[gd_scene load_steps=51 format=3 uid="uid://c7u1830qjp3wk"]
+[gd_scene load_steps=52 format=3 uid="uid://bniujx7ueqgwn"]
 
-[ext_resource type="Texture2D" uid="uid://48mt5yuhk1v0" path="res://Assets/Character Sprites/Black_Werewolf/Idle.png" id="1_8ajk7"]
-[ext_resource type="Texture2D" uid="uid://dgxccwmi2deo2" path="res://Assets/Character Sprites/Black_Werewolf/Attack_1.png" id="1_713nx"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_werewolf_black.gd" id="1_qnejk"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="2_34cr2"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_875yo"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="4_ti3fl"]
-[ext_resource type="Texture2D" uid="uid://ydh6uecjsui7" path="res://Assets/Character Sprites/Black_Werewolf/walk.png" id="5_mmgnk"]
-[ext_resource type="Texture2D" uid="uid://d074shqq86ow8" path="res://Assets/Character Sprites/Black_Werewolf/Run.png" id="6_h6pn1"]
-[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="7_62rte"]
-[ext_resource type="Texture2D" uid="uid://bwspnrn5jfykv" path="res://Assets/Character Sprites/Black_Werewolf/Attack_2.png" id="8_1mrdj"]
-[ext_resource type="Texture2D" uid="uid://ctp4mjdt1e8ry" path="res://Assets/Character Sprites/Black_Werewolf/Attack_3.png" id="9_y1o1m"]
-[ext_resource type="Texture2D" uid="uid://btlkfsx757g4y" path="res://Assets/Character Sprites/Black_Werewolf/Run+Attack.png" id="10_3axwy"]
-[ext_resource type="Texture2D" uid="uid://c2naodccskrc7" path="res://Assets/Character Sprites/Black_Werewolf/Hurt.png" id="11_4x6bj"]
-[ext_resource type="Texture2D" uid="uid://7v0s0oo0kxxc" path="res://Assets/Character Sprites/Black_Werewolf/Dead.png" id="12_v4083"]
-[ext_resource type="Texture2D" uid="uid://d0lmqoxqo5efn" path="res://Assets/Character Sprites/Black_Werewolf/Jump.png" id="13_108i1"]
-[ext_resource type="BehaviorTree" uid="uid://b4nivqy1ktggs" path="res://ai/trees/ww_black.tres" id="15_1n2uo"]
-[ext_resource type="AudioStream" uid="uid://yymiex0l1ix5" path="res://Assets/AudioAssets/Enemies/Werewolf/wswipe.wav" id="15_qb7ta"]
-[ext_resource type="AudioStream" uid="uid://b0pmwpublfb07" path="res://Assets/AudioAssets/Enemies/Werewolf/wsmacks.wav" id="16_bcoh6"]
-[ext_resource type="AudioStream" uid="uid://bhuevitb5s7n" path="res://Assets/AudioAssets/Enemies/Werewolf/upper.wav" id="17_spf78"]
-[ext_resource type="AudioStream" uid="uid://b3c3syq4kgtvc" path="res://Assets/AudioAssets/Enemies/Werewolf/wcharge.wav" id="18_6vm08"]
-[ext_resource type="AudioStream" uid="uid://bbx14f3pm6gt3" path="res://Assets/AudioAssets/Enemies/Werewolf/death.wav" id="19_ccgh7"]
-[ext_resource type="AudioStream" uid="uid://c7oq5smq5c1vi" path="res://Assets/AudioAssets/Enemies/Werewolf/whurt.wav" id="20_x06u4"]
-[ext_resource type="AudioStream" uid="uid://bix86cv4fol2g" path="res://Assets/AudioAssets/Enemies/Werewolf/wIdle.wav" id="21_k5521"]
-[ext_resource type="AudioStream" uid="uid://day0ew2vci4dw" path="res://Assets/AudioAssets/Enemies/Werewolf/jumps.wav" id="22_48uxa"]
-[ext_resource type="AudioStream" uid="uid://c36ywrhaemf73" path="res://Assets/AudioAssets/Enemies/Werewolf/run.wav" id="23_4itra"]
-[ext_resource type="AudioStream" uid="uid://dami7cq7c5jpb" path="res://Assets/AudioAssets/Enemies/Werewolf/wwalk.wav" id="24_r0827"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_werewolf_black.gd" id="1_gjva3"]
+[ext_resource type="Texture2D" uid="uid://48mt5yuhk1v0" path="res://Assets/Character Sprites/Black_Werewolf/Idle.png" id="2_wvtie"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="3_aneqc"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_c512j"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="5_lhq2b"]
+[ext_resource type="Texture2D" uid="uid://0dm4s4um0bxv" path="res://Assets/Character Sprites/White_Werewolf/Attack_1.png" id="6_f5t82"]
+[ext_resource type="Texture2D" uid="uid://bh00jpx3fbosd" path="res://Assets/Character Sprites/White_Werewolf/Attack_2.png" id="7_8i80i"]
+[ext_resource type="Texture2D" uid="uid://vjilfb1futnu" path="res://Assets/Character Sprites/White_Werewolf/Attack_3.png" id="8_472aj"]
+[ext_resource type="Texture2D" uid="uid://diuwah3g37axb" path="res://Assets/Character Sprites/White_Werewolf/Run+Attack.png" id="9_mldpx"]
+[ext_resource type="Texture2D" uid="uid://bgtkxptfv1vbj" path="res://Assets/Character Sprites/White_Werewolf/Dead.png" id="10_4jdc0"]
+[ext_resource type="Texture2D" uid="uid://dwnkm3dycp4dp" path="res://Assets/Character Sprites/White_Werewolf/Hurt.png" id="11_tgj0f"]
+[ext_resource type="Texture2D" uid="uid://0r4k18os0w3w" path="res://Assets/Character Sprites/White_Werewolf/Idle.png" id="12_8qbcu"]
+[ext_resource type="Texture2D" uid="uid://ddpfbnhwcbx0n" path="res://Assets/Character Sprites/White_Werewolf/Jump.png" id="13_283yn"]
+[ext_resource type="Texture2D" uid="uid://demg1rfhova5" path="res://Assets/Character Sprites/White_Werewolf/Run.png" id="14_ir3ua"]
+[ext_resource type="BehaviorTree" uid="uid://dp678rt0nn2gn" path="res://ai/trees/werewolf_black.tres" id="15_d1csf"]
+[ext_resource type="Texture2D" uid="uid://dot0f4vtd7hvh" path="res://Assets/Character Sprites/White_Werewolf/Walk.png" id="15_mxgcb"]
+[ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="16_7bqan"]
+[ext_resource type="AudioStream" uid="uid://yymiex0l1ix5" path="res://Assets/AudioAssets/Enemies/Werewolf/wswipe.wav" id="17_f7ute"]
+[ext_resource type="AudioStream" uid="uid://b0pmwpublfb07" path="res://Assets/AudioAssets/Enemies/Werewolf/wsmacks.wav" id="18_wp0bp"]
+[ext_resource type="AudioStream" uid="uid://bhuevitb5s7n" path="res://Assets/AudioAssets/Enemies/Werewolf/upper.wav" id="19_0udvs"]
+[ext_resource type="AudioStream" uid="uid://b3c3syq4kgtvc" path="res://Assets/AudioAssets/Enemies/Werewolf/wcharge.wav" id="20_8ladr"]
+[ext_resource type="AudioStream" uid="uid://bbx14f3pm6gt3" path="res://Assets/AudioAssets/Enemies/Werewolf/death.wav" id="21_vpvuc"]
+[ext_resource type="AudioStream" uid="uid://c7oq5smq5c1vi" path="res://Assets/AudioAssets/Enemies/Werewolf/whurt.wav" id="22_k8245"]
+[ext_resource type="AudioStream" uid="uid://bix86cv4fol2g" path="res://Assets/AudioAssets/Enemies/Werewolf/wIdle.wav" id="23_e1exx"]
+[ext_resource type="AudioStream" uid="uid://day0ew2vci4dw" path="res://Assets/AudioAssets/Enemies/Werewolf/jumps.wav" id="24_u2vb1"]
+[ext_resource type="AudioStream" uid="uid://c36ywrhaemf73" path="res://Assets/AudioAssets/Enemies/Werewolf/run.wav" id="25_o1sr3"]
+[ext_resource type="AudioStream" uid="uid://dami7cq7c5jpb" path="res://Assets/AudioAssets/Enemies/Werewolf/wwalk.wav" id="26_pg6ux"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7mme"]
 radius = 7.5724
@@ -82,7 +83,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_713nx")]
+"values": [ExtResource("6_f5t82")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -867,7 +868,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("8_1mrdj")]
+"values": [ExtResource("7_8i80i")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1724,7 +1725,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_y1o1m")]
+"values": [ExtResource("8_472aj")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2581,7 +2582,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("10_3axwy")]
+"values": [ExtResource("9_mldpx")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3438,7 +3439,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("12_v4083")]
+"values": [ExtResource("10_4jdc0")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3623,7 +3624,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("11_4x6bj")]
+"values": [ExtResource("11_tgj0f")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -4121,7 +4122,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_8ajk7")]
+"values": [ExtResource("12_8qbcu")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -4978,7 +4979,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("13_108i1")]
+"values": [ExtResource("13_283yn")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -5833,7 +5834,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_8ajk7")]
+"values": [ExtResource("2_wvtie")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -6799,7 +6800,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("6_h6pn1")]
+"values": [ExtResource("14_ir3ua")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -7657,7 +7658,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_mmgnk")]
+"values": [ExtResource("15_mxgcb")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -8518,21 +8519,21 @@ _data = {
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_0xqn1"]
 
 [node name="enemy_werewolf_black" type="CharacterBody2D"]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(1.5, 1.5)
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_qnejk")
+script = ExtResource("1_gjva3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -36)
 scale = Vector2(0.56, 0.56)
-texture = ExtResource("1_8ajk7")
+texture = ExtResource("2_wvtie")
 hframes = 8
 
 [node name="Hurtbox" type="Area2D" parent="Sprite2D" node_paths=PackedStringArray("health")]
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("2_34cr2")
+script = ExtResource("3_aneqc")
 health = NodePath("../../Health")
 
 [node name="Hurt1" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
@@ -8571,7 +8572,7 @@ debug_color = Color(3.36915e-07, 0.62137, 0.554885, 0.42)
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("3_875yo")
+script = ExtResource("4_c512j")
 
 [node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(28.5714, 1.78571)
@@ -8600,7 +8601,7 @@ position = Vector2(0, -23)
 shape = SubResource("CapsuleShape2D_run55")
 
 [node name="Health" type="Node" parent="."]
-script = ExtResource("4_ti3fl")
+script = ExtResource("5_lhq2b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -8608,10 +8609,10 @@ libraries = {
 }
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("15_1n2uo")
+behavior_tree = ExtResource("15_d1csf")
 blackboard_plan = SubResource("BlackboardPlan_0xqn1")
 
-[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("7_62rte")]
+[node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("16_7bqan")]
 offset_left = -31.0
 offset_top = -65.0
 offset_right = 31.0
@@ -8619,41 +8620,41 @@ offset_bottom = -61.0
 health_node = NodePath("../Health")
 
 [node name="Swipe" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("15_qb7ta")
+stream = ExtResource("17_f7ute")
 bus = &"SFX"
 
 [node name="Smack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("16_bcoh6")
+stream = ExtResource("18_wp0bp")
 bus = &"SFX"
 
 [node name="Upper" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("17_spf78")
+stream = ExtResource("19_0udvs")
 bus = &"SFX"
 
 [node name="Charge" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("18_6vm08")
+stream = ExtResource("20_8ladr")
 bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("19_ccgh7")
+stream = ExtResource("21_vpvuc")
 bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("20_x06u4")
+stream = ExtResource("22_k8245")
 bus = &"SFX"
 
 [node name="Idle" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("21_k5521")
+stream = ExtResource("23_e1exx")
 bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("22_48uxa")
+stream = ExtResource("24_u2vb1")
 bus = &"SFX"
 
 [node name="Run" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("23_4itra")
+stream = ExtResource("25_o1sr3")
 bus = &"SFX"
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("24_r0827")
+stream = ExtResource("26_pg6ux")
 bus = &"SFX"
