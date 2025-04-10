@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c0ehxun5hum71"]
+[gd_scene load_steps=27 format=4 uid="uid://c0ehxun5hum71"]
 
 [ext_resource type="Script" path="res://Levels/Maps/dungeon/dungeon_map_2.gd" id="1_gid76"]
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_vypvx"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="10_gl525"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="11_a7787"]
 [ext_resource type="PackedScene" uid="uid://16cubl6ttua6" path="res://Levels/Enemies/Bat/enemy_bat.tscn" id="12_lodep"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="13_dxfev"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dh4c"]
 texture = ExtResource("1_vypvx")
@@ -619,6 +620,12 @@ size = Vector2(262, 11.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eiuaw"]
 size = Vector2(20, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d741"]
+size = Vector2(207, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0s2e"]
+size = Vector2(400, 20)
+
 [node name="dungeon_map2" type="Node2D"]
 position = Vector2(11, -16)
 script = ExtResource("1_gid76")
@@ -707,6 +714,26 @@ position = Vector2(2528, 64)
 
 [node name="enemy_bat4" parent="." instance=ExtResource("12_lodep")]
 position = Vector2(2318, 49)
+
+[node name="acid2" type="Node2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="acid2"]
+position = Vector2(951, 54)
+script = ExtResource("13_dxfev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="acid2/Hurtbox"]
+position = Vector2(3.5, -27.5)
+shape = SubResource("RectangleShape2D_5d741")
+
+[node name="fallDamage" type="Node2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="fallDamage"]
+position = Vector2(1445, 189)
+script = ExtResource("13_dxfev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallDamage/Hurtbox"]
+position = Vector2(5, 0)
+shape = SubResource("RectangleShape2D_y0s2e")
 
 [connection signal="body_entered" from="falling1" to="." method="_on_falling_1_body_entered"]
 [connection signal="body_entered" from="falling2" to="." method="_on_falling_2_body_entered"]
