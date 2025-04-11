@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://br2u8xjh373ph"]
+
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/stun_bar.gd" id="1_al6yw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hg2w"]
+bg_color = Color(0.129412, 0.129412, 0.129412, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.129412, 0.129412, 0.129412, 1)
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3woi3"]
+bg_color = Color(0.470076, 0.470076, 0.470076, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l38bj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2mxp"]
+bg_color = Color(0.795547, 0.302891, 0.201769, 1)
+
+[node name="stunBar" type="ProgressBar"]
+offset_right = 240.0
+offset_bottom = 2.0
+theme_override_styles/background = SubResource("StyleBoxFlat_7hg2w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_3woi3")
+show_percentage = false
+script = ExtResource("1_al6yw")
+
+[node name="stunDrainBar" type="ProgressBar" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_l38bj")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d2mxp")
+value = 100.0
+show_percentage = false

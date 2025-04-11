@@ -6,6 +6,7 @@ signal death
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
+var _can_be_hit: bool = true  # New variable to track hit cooldown
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -13,14 +14,17 @@ var _moved_this_frame: bool = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
+@onready var stun_bar: ProgressBar = $stunBar
 
 #const jump_power = -300
 const gravity = 50
 const speed = 100
+signal damaged_by_player
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
+	stun_bar.stunned.connect(_on_stunned)
 	self.collision_layer = 3
 	self.collision_layer = 1 | 2
 
@@ -78,13 +82,23 @@ func is_good_position(p_position: Vector2) -> bool:
 
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
+	emit_signal("damaged_by_player")
 	apply_knockback(knockback)
+
+
+		# Optional: show UI indicator
+func _on_stunned() -> void:
+	animation_player.play("Hurt")
+
 	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
+	var hsm = get_node_or_null("LimboHSM")
 	if btplayer:
 		btplayer.set_active(false)
-	var hsm = get_node_or_null("LimboHSM")
 	if hsm:
 		hsm.set_active(false)
+
+	await animation_player.animation_finished
+
 	if btplayer and not _is_dead:
 		btplayer.restart()
 	if hsm and not _is_dead:
@@ -120,7 +134,10 @@ func die() -> void:
 	if get_tree():
 		await get_tree().create_timer(10.0).timeout
 		queue_free()
-
+		
+func show_hurt_ui():
+	pass
+	
 func get_health() -> Health:
 	return health
 	
