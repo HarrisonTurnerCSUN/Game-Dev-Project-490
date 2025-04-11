@@ -8621,40 +8621,50 @@ health_node = NodePath("../Health")
 
 [node name="Swipe" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_f7ute")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Smack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_wp0bp")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Upper" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("19_0udvs")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Charge" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_8ladr")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_vpvuc")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_k8245")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Idle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_e1exx")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_u2vb1")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Run" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("25_o1sr3")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_pg6ux")
+max_distance = 500.0
 bus = &"SFX"

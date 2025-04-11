@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://48mt5yuhk1v0" path="res://Assets/Character Sprites/Black_Werewolf/Idle.png" id="1_8ajk7"]
 [ext_resource type="Texture2D" uid="uid://dgxccwmi2deo2" path="res://Assets/Character Sprites/Black_Werewolf/Attack_1.png" id="1_713nx"]
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_werewolf_black.gd" id="1_qnejk"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_ww_black.gd" id="1_wdqd0"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="2_34cr2"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="3_875yo"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/health.gd" id="4_ti3fl"]
@@ -8521,7 +8521,8 @@ _data = {
 scale = Vector2(0.75, 0.75)
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_qnejk")
+platform_wall_layers = 1
+script = ExtResource("1_wdqd0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -36)
@@ -8620,40 +8621,50 @@ health_node = NodePath("../Health")
 
 [node name="Swipe" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_qb7ta")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Smack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_bcoh6")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Upper" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_spf78")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Charge" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_6vm08")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("19_ccgh7")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_x06u4")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Idle" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_k5521")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("22_48uxa")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Run" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_4itra")
+max_distance = 500.0
 bus = &"SFX"
 
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_r0827")
+max_distance = 500.0
 bus = &"SFX"
