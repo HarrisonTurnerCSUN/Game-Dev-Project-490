@@ -3,15 +3,25 @@ extends Node2D
 var entered_door = ""  # Variable to track which door the player is near
 var left_door_locked = true
 var can_process_input = true  # Control input processing
-
+@onready var player: CharacterBody2D = $Player
+var dungeon_spawn = preload("res://Levels/Maps/dungeon/dungeon_spawn.gd")
 
 func _ready():
 	entered_door = ""  # Initialize variable
 	left_door_locked = true
 	can_process_input = true  # Allow input initially
 	print("Door Manager Ready - All doors initialized")
-
-# Function to handle when the player enters the right door
+	if dungeon_spawn.last_exit_door == "right":
+		var spawn_area = get_tree().current_scene.get_node("spawn1")  # Find the spawn point
+		if spawn_area:
+			global_position = spawn_area.global_position
+			print("Player spawned at RightDoorSpawn: ", global_position)
+		else:
+			print("spawn1 not found! Spawning at default position.")
+	elif dungeon_spawn.last_position != Vector2.ZERO:
+		global_position = dungeon_spawn.last_position
+		print("Player restored to previous position: ", global_position)
+	
 func _on_RightDoor_body_entered(_body):
 	if _body.name == "Player":  # Ensure it's the player entering
 		if entered_door == "":
@@ -73,7 +83,15 @@ func _process(_delta):
 
 
 func change_scene_and_cleanup(new_scene):
-	print("Changing scene to: ", new_scene)
-	entered_door = ""  # Clear the entered_door variable to prevent unintended triggers
+	print("Changing scene to:", new_scene)
+
+	# Store player's last position before switching
+	var player = get_tree().get_nodes_in_group("player")[0]  # Assuming player is in 'player' group
+	if player:
+		DungeonSpawn.last_position = player.global_position
+
+	# Store last door used
+	DungeonSpawn.last_exit_door = entered_door
+
+	entered_door = ""  # Reset
 	get_tree().change_scene_to_file(new_scene)
-	can_process_input = true  # Re-enable input after scene change
