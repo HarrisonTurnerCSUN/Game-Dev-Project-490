@@ -82,9 +82,14 @@ func is_good_position(p_position: Vector2) -> bool:
 
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
+	if not _can_be_hit or _is_dead:
+		return  
+		
+	_can_be_hit = false
 	emit_signal("damaged_by_player")
 	apply_knockback(knockback)
-
+	await get_tree().create_timer(0.3).timeout
+	_can_be_hit = true
 
 		# Optional: show UI indicator
 func _on_stunned() -> void:
@@ -109,7 +114,7 @@ func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
 	if knockback.is_zero_approx():
 		return
 	for i in range(frames):
-		move(knockback * 2)
+		move(knockback)
 		await get_tree().physics_frame
 
 

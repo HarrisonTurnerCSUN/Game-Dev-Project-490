@@ -3,7 +3,7 @@ extends BTAction
 ## Wall-based patrol (walk): Move left or right until hitting a wall, then turn around after a delay.
 
 @export var speed_var: StringName = &"speed"  # Patrol speed (used with `walk()`)
-@export var turn_delay: float = 0.5  # Delay before turning around after wall hit
+@export var turn_delay: float = 0.1  # Delay before turning around after wall hit
 
 var _last_direction_right: bool = true
 var _turning: bool = false

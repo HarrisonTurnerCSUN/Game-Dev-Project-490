@@ -4,7 +4,7 @@ extends BTAction
 ## Only runs while the player is in range.
 
 @export var charge_speed_var: StringName = &"charge_speed"  # Run speed
-@export var turn_delay: float = 0.5  # Delay before turning around after wall hit
+@export var turn_delay: float = 0.01  # Delay before turning around after wall hit
 
 var _last_direction_right: bool = true
 var _turning: bool = false

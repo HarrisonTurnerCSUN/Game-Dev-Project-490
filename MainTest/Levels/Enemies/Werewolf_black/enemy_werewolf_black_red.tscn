@@ -1,6 +1,6 @@
-[gd_scene load_steps=52 format=3 uid="uid://bm4lf207odb05"]
+[gd_scene load_steps=53 format=3 uid="uid://bm4lf207odb05"]
 
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_werewolf_black.gd" id="1_38h3a"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_ww_black.gd" id="1_8ufnt"]
 [ext_resource type="Texture2D" uid="uid://48mt5yuhk1v0" path="res://Assets/Character Sprites/Black_Werewolf/Idle.png" id="2_fadj2"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="3_ycap5"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_7jelf"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://43rgknau0ahy" path="res://Assets/Character Sprites/Red_Werewolf/Run.png" id="14_0l2a5"]
 [ext_resource type="Texture2D" uid="uid://cy2mebj7si586" path="res://Assets/Character Sprites/Red_Werewolf/Walk.png" id="15_4a2vl"]
 [ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="16_doj13"]
-[ext_resource type="BehaviorTree" uid="uid://d1xblaxfof76h" path="res://ai/trees/ww_red.tres" id="16_nhkmq"]
+[ext_resource type="BehaviorTree" uid="uid://b4nivqy1ktggs" path="res://ai/trees/ww_black.tres" id="16_g2o8r"]
 [ext_resource type="AudioStream" uid="uid://yymiex0l1ix5" path="res://Assets/AudioAssets/Enemies/Werewolf/wswipe.wav" id="17_kof41"]
 [ext_resource type="AudioStream" uid="uid://b0pmwpublfb07" path="res://Assets/AudioAssets/Enemies/Werewolf/wsmacks.wav" id="18_s81w5"]
 [ext_resource type="AudioStream" uid="uid://bhuevitb5s7n" path="res://Assets/AudioAssets/Enemies/Werewolf/upper.wav" id="19_kym5b"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://day0ew2vci4dw" path="res://Assets/AudioAssets/Enemies/Werewolf/jumps.wav" id="24_iwqp1"]
 [ext_resource type="AudioStream" uid="uid://c36ywrhaemf73" path="res://Assets/AudioAssets/Enemies/Werewolf/run.wav" id="25_4i816"]
 [ext_resource type="AudioStream" uid="uid://dami7cq7c5jpb" path="res://Assets/AudioAssets/Enemies/Werewolf/wwalk.wav" id="26_8o65b"]
+[ext_resource type="PackedScene" uid="uid://br2u8xjh373ph" path="res://Levels/Enemies/scripts/stun_bar.tscn" id="28_nj1dq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7mme"]
 radius = 7.5724
@@ -8518,10 +8519,10 @@ _data = {
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_0xqn1"]
 
-[node name="enemy_werewolf_black" type="CharacterBody2D"]
+[node name="enemy_werewolf_black_red" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_38h3a")
+script = ExtResource("1_8ufnt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -36)
@@ -8608,7 +8609,7 @@ libraries = {
 }
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("16_nhkmq")
+behavior_tree = ExtResource("16_g2o8r")
 blackboard_plan = SubResource("BlackboardPlan_0xqn1")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("16_doj13")]
@@ -8667,3 +8668,13 @@ bus = &"SFX"
 stream = ExtResource("26_8o65b")
 max_distance = 500.0
 bus = &"SFX"
+
+[node name="stunBar" parent="." node_paths=PackedStringArray("health_node", "character_node") instance=ExtResource("28_nj1dq")]
+offset_left = -32.0
+offset_top = -60.0
+offset_right = 32.0
+offset_bottom = -58.0
+max_hits = 3
+drain_speed = 50.0
+health_node = NodePath("../Health")
+character_node = NodePath("..")

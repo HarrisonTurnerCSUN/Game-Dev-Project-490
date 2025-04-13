@@ -1,9 +1,8 @@
-[gd_resource type="BehaviorTree" load_steps=22 format=3 uid="uid://d1xblaxfof76h"]
+[gd_resource type="BehaviorTree" load_steps=21 format=3 uid="uid://d1xblaxfof76h"]
 
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_6tekc"]
 [ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_3ofiw"]
-[ext_resource type="Script" path="res://ai/tasks/face_target.gd" id="3_7xowq"]
-[ext_resource type="Script" path="res://ai/tasks/pursue.gd" id="4_xsfwv"]
+[ext_resource type="Script" path="res://ai/tasks/in_range_and_above.gd" id="2_pkmjg"]
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_76jv0"]
 var/speed/name = &"speed"
@@ -22,72 +21,73 @@ var/charge_speed/value = 126.101
 var/charge_speed/hint = 1
 var/charge_speed/hint_string = "10, 1000, 10"
 
-[sub_resource type="BBNode" id="BBNode_7efck"]
-saved_value = NodePath("AnimationPlayer")
-resource_name = "AnimationPlayer"
-
-[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_n8fsm"]
-animation_player = SubResource("BBNode_7efck")
-animation_name = &"Idle"
-
-[sub_resource type="BTRandomWait" id="BTRandomWait_7kp83"]
-min_duration = 0.3
-max_duration = 0.6
-
-[sub_resource type="BTAction" id="BTAction_d2nqc"]
+[sub_resource type="BTAction" id="BTAction_j5jl7"]
 script = ExtResource("1_6tekc")
 group = &"Player"
 output_var = &"target"
 
-[sub_resource type="BTSequence" id="BTSequence_7eifs"]
-custom_name = "Start"
-children = [SubResource("BTPlayAnimation_n8fsm"), SubResource("BTRandomWait_7kp83"), SubResource("BTAction_d2nqc")]
+[sub_resource type="BTCondition" id="BTCondition_mqt2a"]
+script = ExtResource("2_pkmjg")
+distance_min = 0.0
+distance_max = 150.0
+y_threshold = 32.0
+target_var = &"target"
 
-[sub_resource type="BTCondition" id="BTCondition_oxuwv"]
+[sub_resource type="BTSequence" id="BTSequence_lc4mn"]
+children = [SubResource("BTCondition_mqt2a")]
+
+[sub_resource type="BTCondition" id="BTCondition_aukg6"]
 script = ExtResource("2_3ofiw")
 distance_min = 0.0
-distance_max = 125.0
+distance_max = 50.0
 target_var = &"target"
 
-[sub_resource type="BTAction" id="BTAction_8foif"]
-script = ExtResource("3_7xowq")
+[sub_resource type="BTSequence" id="BTSequence_nu8hx"]
+children = [SubResource("BTCondition_aukg6")]
+
+[sub_resource type="BTCondition" id="BTCondition_ll08a"]
+script = ExtResource("2_3ofiw")
+distance_min = 0.0
+distance_max = 50.0
 target_var = &"target"
 
-[sub_resource type="BBNode" id="BBNode_jwqm7"]
+[sub_resource type="BTSequence" id="BTSequence_m2m6k"]
+children = [SubResource("BTCondition_ll08a")]
+
+[sub_resource type="BTCondition" id="BTCondition_ql2gk"]
+script = ExtResource("2_3ofiw")
+distance_min = 0.0
+distance_max = 50.0
+target_var = &"target"
+
+[sub_resource type="BBNode" id="BBNode_djcgv"]
 saved_value = NodePath("AnimationPlayer")
 resource_name = "AnimationPlayer"
 
-[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_ftdra"]
-animation_player = SubResource("BBNode_jwqm7")
-animation_name = &"Run"
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_w7350"]
+animation_player = SubResource("BBNode_djcgv")
+animation_name = &"Idle"
 
-[sub_resource type="BTAction" id="BTAction_ano46"]
-script = ExtResource("4_xsfwv")
-target_var = &"target"
-speed_var = &"charge_speed"
-approach_distance = -5.0
+[sub_resource type="BTSequence" id="BTSequence_yprty"]
+children = [SubResource("BTCondition_ql2gk"), SubResource("BTPlayAnimation_w7350")]
 
-[sub_resource type="BTTimeLimit" id="BTTimeLimit_3kiid"]
-time_limit = 1.0
-children = [SubResource("BTAction_ano46")]
+[sub_resource type="BTSelector" id="BTSelector_g6b22"]
+children = [SubResource("BTSequence_lc4mn"), SubResource("BTSequence_nu8hx"), SubResource("BTSequence_m2m6k"), SubResource("BTSequence_yprty")]
 
-[sub_resource type="BTAlwaysSucceed" id="BTAlwaysSucceed_yfpu1"]
-children = [SubResource("BTTimeLimit_3kiid")]
+[sub_resource type="BTSequence" id="BTSequence_ia5uh"]
+children = [SubResource("BTAction_j5jl7"), SubResource("BTSelector_g6b22")]
 
-[sub_resource type="BTAction" id="BTAction_j7syc"]
-script = ExtResource("3_7xowq")
-target_var = &"target"
+[sub_resource type="BBNode" id="BBNode_0jmoo"]
+saved_value = NodePath("AnimationPlayer")
+resource_name = "AnimationPlayer"
 
-[sub_resource type="BTSequence" id="BTSequence_uapdo"]
-custom_name = "Aggro"
-children = [SubResource("BTCondition_oxuwv"), SubResource("BTAction_8foif"), SubResource("BTPlayAnimation_ftdra"), SubResource("BTAlwaysSucceed_yfpu1"), SubResource("BTAction_j7syc")]
+[sub_resource type="BTPlayAnimation" id="BTPlayAnimation_s8kcb"]
+animation_player = SubResource("BBNode_0jmoo")
+animation_name = &"Idle"
 
-[sub_resource type="BTSelector" id="BTSelector_aibx1"]
-children = [SubResource("BTSequence_uapdo")]
-
-[sub_resource type="BTSequence" id="BTSequence_f8f1y"]
-children = [SubResource("BTSequence_7eifs"), SubResource("BTSelector_aibx1")]
+[sub_resource type="BTSelector" id="BTSelector_86bgk"]
+children = [SubResource("BTSequence_ia5uh"), SubResource("BTPlayAnimation_s8kcb")]
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_76jv0")
-root_task = SubResource("BTSequence_f8f1y")
+root_task = SubResource("BTSelector_86bgk")
