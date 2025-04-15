@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dm87k1ebgcv12"]
+[gd_scene load_steps=15 format=3 uid="uid://dm87k1ebgcv12"]
 
 [ext_resource type="Script" path="res://main menu/Pause Menu/in_game_menu.gd" id="1_8srwh"]
 [ext_resource type="PackedScene" uid="uid://g16pkvo53ek1" path="res://main menu/options menu/volume_slider.tscn" id="1_274c1"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dgw7p5funaua" path="res://Assets/Lucid V1.2/PNG/Flat/16/Magnifying-Glass-Add.png" id="6_nbrq4"]
 [ext_resource type="Texture2D" uid="uid://clfgp5ovg7otu" path="res://Assets/Lucid V1.2/PNG/Flat/16/Play.png" id="7_oqpwq"]
 [ext_resource type="Texture2D" uid="uid://dlsi77mbrbu2p" path="res://Assets/Lucid V1.2/PNG/Flat/16/Up-Arrow.png" id="8_lndfq"]
+[ext_resource type="Texture2D" uid="uid://b74utsq7ea4p4" path="res://Assets/Lucid V1.2/PNG/Flat/16/Location.png" id="9_46ytm"]
 [ext_resource type="Texture2D" uid="uid://bys0i3njvlxpw" path="res://Assets/Lucid V1.2/PNG/Flat/16/Game-Controller.png" id="10_7gdb3"]
 
 [sub_resource type="Theme" id="Theme_wtefl"]
@@ -159,6 +160,12 @@ size_flags_horizontal = 4
 text = "Main Menu"
 icon = ExtResource("8_lndfq")
 
+[node name="ExitToOverworld" type="Button" parent="MarginContainer/Options/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit to Overworld"
+icon = ExtResource("9_46ytm")
+
 [node name="Quit" type="Button" parent="MarginContainer/Options/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -251,14 +258,9 @@ text = "Options
 "
 icon = ExtResource("10_7gdb3")
 
-[node name="ExitToOverworld" type="Button" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer"]
-visible = false
-layout_mode = 2
-text = "Exit to Overworld"
-
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer2/ToStats" to="." method="_on_to_stats_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/ExitToOverworld" to="." method="_on_exit_to_overworld_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/Stats/VBoxContainer3/VBoxContainer/ToOptions" to="." method="_on_to_options_pressed"]
-[connection signal="pressed" from="MarginContainer/Stats/VBoxContainer3/VBoxContainer/ExitToOverworld" to="." method="_on_exit_to_overworld_pressed"]

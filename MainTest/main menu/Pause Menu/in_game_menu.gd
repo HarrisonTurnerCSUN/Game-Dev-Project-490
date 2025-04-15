@@ -3,7 +3,7 @@ extends Control
 @onready var popup = $Save_Confirmation_Popup
 @onready var options = $MarginContainer/Options
 @onready var stats = $MarginContainer/Stats
-@onready var comp_button = $MarginContainer/Stats/VBoxContainer3/VBoxContainer/ExitToOverworld
+@onready var comp_button = $MarginContainer/Options/VBoxContainer/VBoxContainer/ExitToOverworld
 @onready var comp_label = $MarginContainer/Stats/VBoxContainer3/LevelComplete
 @onready var stats_button = $"MarginContainer/Options/VBoxContainer/VBoxContainer2/ToStats"
 
@@ -120,8 +120,8 @@ func update_stopwatch():
 
 
 func _on_exit_to_overworld_pressed() -> void:
-	stats.hide()
-	options.show()
+	#stats.hide()
+	#options.show()
 	resume()
 	stats_button.text = "Stats"
 	comp_button.hide()

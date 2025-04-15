@@ -7,7 +7,7 @@
 size = Vector2(20, 66)
 
 [node name="Sign" type="Node2D"]
-z_index = -1
+z_index = 1
 script = ExtResource("1_tmusk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

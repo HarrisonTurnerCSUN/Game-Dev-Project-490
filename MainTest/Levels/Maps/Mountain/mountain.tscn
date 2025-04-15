@@ -6052,6 +6052,21 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_atkjf"]
 
+[sub_resource type="Animation" id="Animation_81x76"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(11607, -3021)]
+}
+
 [sub_resource type="Animation" id="Animation_h5jkl"]
 resource_name = "stoneDoor1"
 length = 3.0
@@ -6068,7 +6083,13 @@ tracks/0/keys = {
 "values": [Vector2(11607, -3021), Vector2(11607, -2860)]
 }
 
-[sub_resource type="Animation" id="Animation_81x76"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gswax"]
+_data = {
+"RESET": SubResource("Animation_81x76"),
+"stoneDoor1": SubResource("Animation_h5jkl")
+}
+
+[sub_resource type="Animation" id="Animation_hh7hq"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -6080,13 +6101,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(11607, -3021)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gswax"]
-_data = {
-"RESET": SubResource("Animation_81x76"),
-"stoneDoor1": SubResource("Animation_h5jkl")
+"values": [Vector2(11607, -3219)]
 }
 
 [sub_resource type="Animation" id="Animation_rao3w"]
@@ -6105,7 +6120,13 @@ tracks/0/keys = {
 "values": [Vector2(11607, -3219), Vector2(11607, -3386)]
 }
 
-[sub_resource type="Animation" id="Animation_hh7hq"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v423q"]
+_data = {
+"RESET": SubResource("Animation_hh7hq"),
+"stoneDoor2": SubResource("Animation_rao3w")
+}
+
+[sub_resource type="Animation" id="Animation_cttri"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -6117,13 +6138,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(11607, -3219)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_v423q"]
-_data = {
-"RESET": SubResource("Animation_hh7hq"),
-"stoneDoor2": SubResource("Animation_rao3w")
+"values": [Vector2(13746, -3161)]
 }
 
 [sub_resource type="Animation" id="Animation_qj26v"]
@@ -6142,7 +6157,13 @@ tracks/0/keys = {
 "values": [Vector2(13746, -3161), Vector2(13746, -3281)]
 }
 
-[sub_resource type="Animation" id="Animation_cttri"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_puors"]
+_data = {
+"RESET": SubResource("Animation_cttri"),
+"open": SubResource("Animation_qj26v")
+}
+
+[sub_resource type="Animation" id="Animation_g85el"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -6154,13 +6175,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(13746, -3161)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_puors"]
-_data = {
-"RESET": SubResource("Animation_cttri"),
-"open": SubResource("Animation_qj26v")
+"values": [Vector2(13746, -3003)]
 }
 
 [sub_resource type="Animation" id="Animation_252c5"]
@@ -6177,21 +6192,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(13746, -3003), Vector2(13746, -2879)]
-}
-
-[sub_resource type="Animation" id="Animation_g85el"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(13746, -3003)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h7ojp"]
@@ -6216,7 +6216,7 @@ tilemaplayer = NodePath("TileMapLayers/Liquidlayer")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_au3vn")]
-position = Vector2(15688, -2572)
+position = Vector2(4604, -2306)
 camera_y_transform = -25.0
 
 [node name="1" type="Sprite2D" parent="Player"]
@@ -6638,6 +6638,7 @@ libraries = {
 }
 
 [node name="stone_exit_upper" parent="Props" node_paths=PackedStringArray("watchedEnemy") instance=ExtResource("15_ryukk")]
+z_index = -1
 position = Vector2(13746, -3161)
 rotation = 1.5708
 scale = Vector2(2, 1)
@@ -6650,6 +6651,7 @@ libraries = {
 }
 
 [node name="stone_exit_lower" parent="Props" node_paths=PackedStringArray("watchedEnemy") instance=ExtResource("15_ryukk")]
+z_index = -1
 position = Vector2(13746, -3003)
 rotation = 1.5708
 scale = Vector2(2, 1)
