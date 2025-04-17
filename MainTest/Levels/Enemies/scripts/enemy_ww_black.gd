@@ -88,22 +88,22 @@ func _damaged(_amount: float, knockback: Vector2) -> void:
 	_can_be_hit = false
 	emit_signal("damaged_by_player")
 	apply_knockback(knockback)
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.5).timeout
 	_can_be_hit = true
 
 		# Optional: show UI indicator
 func _on_stunned() -> void:
 	animation_player.play("Hurt")
-
+	
 	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
 	var hsm = get_node_or_null("LimboHSM")
 	if btplayer:
 		btplayer.set_active(false)
 	if hsm:
 		hsm.set_active(false)
-
-	await animation_player.animation_finished
-
+	
+	await get_tree().create_timer(1.5).timeout
+	
 	if btplayer and not _is_dead:
 		btplayer.restart()
 	if hsm and not _is_dead:

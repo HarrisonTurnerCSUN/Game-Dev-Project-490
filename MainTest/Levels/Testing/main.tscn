@@ -93,7 +93,7 @@ scale = Vector2(1.25, 1.25)
 position = Vector2(1182, -116)
 
 [node name="enemy_werewolf_black2" parent="." instance=ExtResource("4_rmc6o")]
-position = Vector2(1894, -46)
+position = Vector2(1886, -45)
 
 [node name="enemy_werewolf_black4" parent="." instance=ExtResource("5_fx2tr")]
-position = Vector2(2304.29, -115.931)
+position = Vector2(2294, -49)

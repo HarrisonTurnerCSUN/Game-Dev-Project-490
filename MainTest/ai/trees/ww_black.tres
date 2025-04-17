@@ -188,7 +188,7 @@ animation_name = &"Walk"
 [sub_resource type="BTAction" id="BTAction_k6nvd"]
 script = ExtResource("4_pisg1")
 speed_var = &"speed"
-turn_delay = null
+turn_delay = 0.1
 
 [sub_resource type="BTSequence" id="BTSequence_6hdem"]
 custom_name = "Walk Patrol"
