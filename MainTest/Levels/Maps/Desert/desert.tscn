@@ -2696,7 +2696,7 @@ worm_scene = ExtResource("6_w2f4u")
 eyeball_scene = ExtResource("7_7jx2t")
 
 [node name="Player" parent="." instance=ExtResource("5_xdon6")]
-position = Vector2(72, -54)
+position = Vector2(1966, -122)
 camera_y_transform = -25.0
 
 [node name="desert_parallax" parent="." instance=ExtResource("1_mpmu3")]
@@ -2749,11 +2749,23 @@ position = Vector2(1636, -96)
 [node name="Spawnloc2" type="Marker2D" parent="Enemies"]
 position = Vector2(2306, -96)
 
-[node name="Spawnloc3" type="Marker2D" parent="Enemies"]
-position = Vector2(2064, -322)
+[node name="EyeballSpawn1" type="Marker2D" parent="Enemies"]
+position = Vector2(2027, -314)
 
-[node name="Spawnloc4" type="Marker2D" parent="Enemies"]
-position = Vector2(1853, -321)
+[node name="EyeballSpawn2" type="Marker2D" parent="Enemies"]
+position = Vector2(1894, -315)
+
+[node name="BatSpawn1" type="Marker2D" parent="Enemies"]
+position = Vector2(1625, -184)
+
+[node name="BatSpawn2" type="Marker2D" parent="Enemies"]
+position = Vector2(1782, -314)
+
+[node name="BatSpawn3" type="Marker2D" parent="Enemies"]
+position = Vector2(2138, -316)
+
+[node name="BatSpawn4" type="Marker2D" parent="Enemies"]
+position = Vector2(2290, -184)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
