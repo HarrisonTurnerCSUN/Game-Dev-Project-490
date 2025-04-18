@@ -16,6 +16,7 @@ var _can_be_hit: bool = true  # New variable to track hit cooldown
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
 @onready var stun_bar: ProgressBar = $stunBar
 
+
 #const jump_power = -300
 const gravity = 50
 const speed = 100
@@ -88,13 +89,12 @@ func _damaged(_amount: float, knockback: Vector2) -> void:
 	_can_be_hit = false
 	emit_signal("damaged_by_player")
 	apply_knockback(knockback)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.3).timeout
 	_can_be_hit = true
 
 		# Optional: show UI indicator
 func _on_stunned() -> void:
 	animation_player.play("Hurt")
-	
 	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
 	var hsm = get_node_or_null("LimboHSM")
 	if btplayer:
@@ -137,7 +137,7 @@ func die() -> void:
 
 	# Remove the current instance after 10 seconds
 	if get_tree():
-		await get_tree().create_timer(10.0).timeout
+		await get_tree().create_timer(5.0).timeout
 		queue_free()
 		
 func show_hurt_ui():

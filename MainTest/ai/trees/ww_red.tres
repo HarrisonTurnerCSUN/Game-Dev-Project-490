@@ -12,17 +12,17 @@
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_76jv0"]
 var/speed/name = &"speed"
 var/speed/type = 3
-var/speed/value = 134.865
+var/speed/value = 110.0
 var/speed/hint = 1
 var/speed/hint_string = "10, 1000, 10"
 var/flank_speed/name = &"flank_speed"
 var/flank_speed/type = 3
-var/flank_speed/value = 135.01
+var/flank_speed/value = 125.0
 var/flank_speed/hint = 1
 var/flank_speed/hint_string = "10, 1000, 10"
 var/charge_speed/name = &"charge_speed"
 var/charge_speed/type = 3
-var/charge_speed/value = 126.101
+var/charge_speed/value = 125.0
 var/charge_speed/hint = 1
 var/charge_speed/hint_string = "10, 1000, 10"
 

@@ -87,13 +87,15 @@ position = Vector2(349, -373)
 
 [node name="enemy_werewolf_black3" parent="." instance=ExtResource("5_fx2tr")]
 position = Vector2(1196, -155)
-scale = Vector2(1.25, 1.25)
 
 [node name="enemy_werewolf_black" parent="." instance=ExtResource("14_de7nn")]
 position = Vector2(1182, -116)
 
 [node name="enemy_werewolf_black2" parent="." instance=ExtResource("4_rmc6o")]
-position = Vector2(1886, -45)
+position = Vector2(1978, -47)
 
 [node name="enemy_werewolf_black4" parent="." instance=ExtResource("5_fx2tr")]
-position = Vector2(2294, -49)
+position = Vector2(2363, -48)
+
+[node name="enemy_werewolf_black5" parent="." instance=ExtResource("14_de7nn")]
+position = Vector2(2945, -163)

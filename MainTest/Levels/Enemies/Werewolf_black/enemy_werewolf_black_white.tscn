@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://0r4k18os0w3w" path="res://Assets/Character Sprites/White_Werewolf/Idle.png" id="12_8qbcu"]
 [ext_resource type="Texture2D" uid="uid://ddpfbnhwcbx0n" path="res://Assets/Character Sprites/White_Werewolf/Jump.png" id="13_283yn"]
 [ext_resource type="Texture2D" uid="uid://demg1rfhova5" path="res://Assets/Character Sprites/White_Werewolf/Run.png" id="14_ir3ua"]
-[ext_resource type="BehaviorTree" uid="uid://dp678rt0nn2gn" path="res://ai/trees/werewolf_black.tres" id="15_d1csf"]
 [ext_resource type="Texture2D" uid="uid://dot0f4vtd7hvh" path="res://Assets/Character Sprites/White_Werewolf/Walk.png" id="15_mxgcb"]
 [ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="16_7bqan"]
+[ext_resource type="BehaviorTree" uid="uid://cd5ef8iitxjn4" path="res://ai/trees/ww_white.tres" id="16_ex7ic"]
 [ext_resource type="AudioStream" uid="uid://yymiex0l1ix5" path="res://Assets/AudioAssets/Enemies/Werewolf/wswipe.wav" id="17_f7ute"]
 [ext_resource type="AudioStream" uid="uid://b0pmwpublfb07" path="res://Assets/AudioAssets/Enemies/Werewolf/wsmacks.wav" id="18_wp0bp"]
 [ext_resource type="AudioStream" uid="uid://bhuevitb5s7n" path="res://Assets/AudioAssets/Enemies/Werewolf/upper.wav" id="19_0udvs"]
@@ -4938,7 +4938,7 @@ tracks/68/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(33.9286, 23.2143), Vector2(33.9286, 21.4286), Vector2(35.7143, 19.6429), Vector2(35.4167, 20.2381), Vector2(33.9286, 19.6429), Vector2(35.7143, 19.6429), Vector2(35.7143, 21.4286), Vector2(34.8214, 22.3214), Vector2(35.7143, 23.2143)]
+"values": [Vector2(23.8095, 22.619), Vector2(25, 21.4286), Vector2(25, 21.4286), Vector2(23.8095, 20.2381), Vector2(23.8095, 19.0476), Vector2(23.8095, 17.8571), Vector2(25, 20.2381), Vector2(25, 21.4286), Vector2(25, 21.4286)]
 }
 tracks/69/type = "value"
 tracks/69/imported = false
@@ -8519,7 +8519,6 @@ _data = {
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_0xqn1"]
 
 [node name="enemy_werewolf_black" type="CharacterBody2D"]
-scale = Vector2(1.5, 1.5)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_gjva3")
@@ -8607,9 +8606,10 @@ script = ExtResource("5_lhq2b")
 libraries = {
 "": SubResource("AnimationLibrary_l2hkw")
 }
+autoplay = "Idle"
 
 [node name="BTPlayer" type="BTPlayer" parent="."]
-behavior_tree = ExtResource("15_d1csf")
+behavior_tree = ExtResource("16_ex7ic")
 blackboard_plan = SubResource("BlackboardPlan_0xqn1")
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("16_7bqan")]
