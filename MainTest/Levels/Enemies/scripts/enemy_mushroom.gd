@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 signal death
-
-const Projectile := preload("res://Levels/Enemies/Goblin/goblin_projectile.tscn")
+signal damaged_by_player
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
+var _can_be_hit: bool = true  # New variable to track hit cooldown
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -14,24 +14,25 @@ var _moved_this_frame: bool = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
+@onready var stun_bar: ProgressBar = $stunBar
 
-
-const jump_power = -300
 const gravity = 50
 const speed = 100
+
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
+	stun_bar.stunned.connect(_on_stunned)
 	self.collision_layer = 3
 	self.collision_layer = 1 | 2
 
 func _physics_process(_delta: float) -> void:
-	if is_on_wall() and &"InRange":
-		velocity.y = jump_power
-		velocity.x = get_facing() * 10
-	else:
-		velocity.y += gravity
+	#if is_on_wall() and &"InRange":
+		#velocity.y = jump_power
+		#velocity.x = get_facing() * 10
+	#else:
+	velocity.y += gravity
 	move_and_slide()
 	_post_physics_process.call_deferred()
 
@@ -80,20 +81,33 @@ func is_good_position(p_position: Vector2) -> bool:
 
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
+	if not _can_be_hit or _is_dead:
+		return  
+		
+	_can_be_hit = false
+	emit_signal("damaged_by_player")
 	apply_knockback(knockback)
-	animation_player.play(&"Hurt")
+	await get_tree().create_timer(0.3).timeout
+	_can_be_hit = true
+
+		# Optional: show UI indicator
+func _on_stunned() -> void:
+	animation_player.play("Hurt")
 	var btplayer = get_node_or_null("BTPlayer") as BTPlayer
+	var hsm = get_node_or_null("LimboHSM")
+	
 	if btplayer:
 		btplayer.set_active(false)
-	var hsm = get_node_or_null("LimboHSM")
 	if hsm:
 		hsm.set_active(false)
-	await animation_player.animation_finished
+	
+	await get_tree().create_timer(1.5).timeout
+	
 	if btplayer and not _is_dead:
 		btplayer.restart()
 	if hsm and not _is_dead:
 		hsm.set_active(true)
-
+		
 ## Push agent in the knockback direction for the specified number of physics frames.
 func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
 	if knockback.is_zero_approx():
@@ -109,41 +123,19 @@ func die() -> void:
 	_is_dead = true
 	sprite_2d.process_mode = Node.PROCESS_MODE_DISABLED
 	animation_player.play("Death")
-	#collision_shape_2d.set_deferred("disabled", true)
 	self.collision_layer = 0
 	self.collision_mask = 1
+
+	# Disable relevant children and prepare for destruction
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
 
+	# Remove the current instance after 10 seconds
 	if get_tree():
-		await get_tree().create_timer(10.0).timeout
+		await get_tree().create_timer(5.0).timeout
 		queue_free()
 
-func get_health() -> Health:
-	return health
-	
-# Goblin Spawn Bomb Script
-
-func throw_projectile() -> void:
-	# Create the projectile instance
-	var projectile = Projectile.instantiate()
-
-	# Set the facing direction of the projectile based on the goblin's direction
-	projectile.dir = get_facing()
-
-	# Get the parent of the goblin and add the projectile as a child
-	get_parent().add_child(projectile)
-
-	# Adjust the spawn position based on the goblin's current position
-	var offset_x = 20 * get_facing()  # Horizontal offset based on facing direction
-	var offset_y = 60  # Vertical offset to ensure proper spawn alignment
-
-	# Set the global position of the projectile
-	projectile.global_position = global_position + Vector2(offset_x, offset_y)
-
-	# Optionally, adjust additional properties for the projectile if needed
-	#print("Throwing projectile at position: ", projectile.global_position)
 	
 func increase_scale_smoothly():
 	# Create a tween
@@ -158,3 +150,6 @@ func increase_scale_smoothly():
 	
 	# Tween the scale property over 0.5 seconds
 	tween.tween_property(self, "scale", target_scale, 0.5)
+
+func get_health() -> Health:
+	return health

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://qbonyhrk8qe2"]
+[gd_scene load_steps=43 format=3 uid="uid://qbonyhrk8qe2"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_mushroom.gd" id="1_3ln2t"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_avjdy"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dl25okb7sumcy" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomPowerUp.wav" id="17_aqjja"]
 [ext_resource type="AudioStream" uid="uid://b3p331wbn5b58" path="res://Assets/AudioAssets/Enemies/MushroomSounds/MushroomWalk.wav" id="18_5mkfn"]
 [ext_resource type="PackedScene" uid="uid://d086keg0r2yqi" path="res://Levels/Enemies/scripts/healthBar.tscn" id="19_38li8"]
+[ext_resource type="PackedScene" uid="uid://br2u8xjh373ph" path="res://Levels/Enemies/scripts/stun_bar.tscn" id="20_1d8fm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_75ews"]
 radius = 5.0
@@ -2075,7 +2076,7 @@ tracks/15/keys = {
 
 [sub_resource type="Animation" id="Animation_ii4rd"]
 resource_name = "Hurt"
-length = 0.53
+length = 2.0
 step = 0.132
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -6013,9 +6014,8 @@ debug_color = Color(0, 0.621608, 0.552941, 0.42)
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("2_cjarp")
-damage = 2.0
 knockback_enabled = true
-knockback_strength = 30.0
+knockback_strength = 5.0
 
 [node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(1, -6)
@@ -6050,6 +6050,7 @@ debug_color = Color(0.659106, 0.515143, 1.92523e-07, 0.42)
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_x8p2n")
+max_health = 15.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -6097,7 +6098,17 @@ bus = &"SFX"
 
 [node name="HealthBar" parent="." node_paths=PackedStringArray("health_node") instance=ExtResource("19_38li8")]
 offset_left = -20.0
-offset_top = -45.0
+offset_top = -47.0
 offset_right = 20.0
-offset_bottom = -43.0
+offset_bottom = -45.0
 health_node = NodePath("../Health")
+
+[node name="stunBar" parent="." node_paths=PackedStringArray("health_node", "character_node") instance=ExtResource("20_1d8fm")]
+offset_left = -21.0
+offset_top = -44.0
+offset_right = 21.0
+offset_bottom = -42.0
+max_hits = 4
+drain_speed = 50.0
+health_node = NodePath("../Health")
+character_node = NodePath("..")

@@ -1,4 +1,4 @@
-[gd_resource type="BehaviorTree" load_steps=47 format=3 uid="uid://yi4sm8d65iw6"]
+[gd_resource type="BehaviorTree" load_steps=49 format=3 uid="uid://yi4sm8d65iw6"]
 
 [ext_resource type="Script" path="res://ai/tasks/get_first_in_group.gd" id="1_yui2p"]
 [ext_resource type="Script" path="res://ai/tasks/in_range.gd" id="2_1nr4d"]
@@ -23,6 +23,11 @@ var/charge_speed/type = 3
 var/charge_speed/value = 130.0
 var/charge_speed/hint = 1
 var/charge_speed/hint_string = "10,1000,10"
+var/powered_up/name = &"powered_up"
+var/powered_up/type = 1
+var/powered_up/value = false
+var/powered_up/hint = 0
+var/powered_up/hint_string = ""
 
 [sub_resource type="BBNode" id="BBNode_gqij5"]
 saved_value = NodePath("AnimationPlayer")
@@ -151,6 +156,15 @@ custom_name = "Attack2"
 children = [SubResource("BTAction_ifq78"), SubResource("BTPlayAnimation_xhd7t"), SubResource("BTAlwaysSucceed_kjrko"), SubResource("BTAction_fqaf6"), SubResource("BTPlayAnimation_x0nwv"), SubResource("BTWait_0pp7q")]
 metadata/_weight_ = 30.0
 
+[sub_resource type="BBVariant" id="BBVariant_ovken"]
+type = 1
+saved_value = false
+resource_name = "false"
+
+[sub_resource type="BTCheckVar" id="BTCheckVar_s76f1"]
+variable = &"powered_up"
+value = SubResource("BBVariant_ovken")
+
 [sub_resource type="BTAction" id="BTAction_thkgo"]
 script = ExtResource("3_s7tm0")
 target_var = &"target"
@@ -176,13 +190,14 @@ method = &"increase_scale_smoothly"
 script = ExtResource("6_mpsi6")
 charge_speed_var = &"charge_speed"
 speed_var = &"speed"
+powered_up_flag = &"powered_up"
 
 [sub_resource type="BTWait" id="BTWait_xqik8"]
 duration = 0.1
 
 [sub_resource type="BTSequence" id="BTSequence_2oh7s"]
 custom_name = "PowerUp"
-children = [SubResource("BTAction_thkgo"), SubResource("BTPlayAnimation_yi2dt"), SubResource("BTCallMethod_d0fjs"), SubResource("BTAction_ayhqa"), SubResource("BTWait_xqik8")]
+children = [SubResource("BTCheckVar_s76f1"), SubResource("BTAction_thkgo"), SubResource("BTPlayAnimation_yi2dt"), SubResource("BTCallMethod_d0fjs"), SubResource("BTAction_ayhqa"), SubResource("BTWait_xqik8")]
 metadata/_weight_ = 20.0
 
 [sub_resource type="BTProbabilitySelector" id="BTProbabilitySelector_nns1x"]

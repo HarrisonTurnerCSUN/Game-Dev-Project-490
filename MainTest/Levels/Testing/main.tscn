@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dlhgox6rujlws"]
+[gd_scene load_steps=20 format=3 uid="uid://dlhgox6rujlws"]
 
 [ext_resource type="PackedScene" uid="uid://cn8eluy7dmdsl" path="res://Levels/Testing/level_1.tscn" id="1_kqx5x"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="2_2uqdp"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="9_ecqun"]
 [ext_resource type="PackedScene" uid="uid://chwt0atu1i75y" path="res://Levels/Testing/audioareas.tscn" id="11_7rjqt"]
 [ext_resource type="PackedScene" uid="uid://bniujx7ueqgwn" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black_white.tscn" id="14_de7nn"]
+[ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="17_qkj0y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjl8b"]
 radius = 501.761
@@ -89,13 +90,17 @@ position = Vector2(349, -373)
 position = Vector2(1196, -155)
 
 [node name="enemy_werewolf_black" parent="." instance=ExtResource("14_de7nn")]
-position = Vector2(1182, -116)
+position = Vector2(2879, -263)
+
+[node name="enemy_mushroom" parent="." instance=ExtResource("17_qkj0y")]
+position = Vector2(2394, -74)
+scale = Vector2(0.75, 0.75)
 
 [node name="enemy_werewolf_black2" parent="." instance=ExtResource("4_rmc6o")]
-position = Vector2(1978, -47)
+position = Vector2(1404, -141)
 
 [node name="enemy_werewolf_black4" parent="." instance=ExtResource("5_fx2tr")]
-position = Vector2(2363, -48)
+position = Vector2(1056, -288)
 
 [node name="enemy_werewolf_black5" parent="." instance=ExtResource("14_de7nn")]
-position = Vector2(2945, -163)
+position = Vector2(2951, -121)

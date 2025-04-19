@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 signal death
-
+signal damaged_by_player
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
@@ -20,7 +20,7 @@ var _can_be_hit: bool = true  # New variable to track hit cooldown
 #const jump_power = -300
 const gravity = 50
 const speed = 100
-signal damaged_by_player
+
 
 func _ready() -> void:
 	health.damaged.connect(_damaged)
