@@ -1,6 +1,6 @@
-[gd_scene load_steps=52 format=3 uid="uid://bniujx7ueqgwn"]
+[gd_scene load_steps=53 format=3 uid="uid://bniujx7ueqgwn"]
 
-[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_werewolf_black.gd" id="1_gjva3"]
+[ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_werewolf_white.gd" id="1_mx8y6"]
 [ext_resource type="Texture2D" uid="uid://48mt5yuhk1v0" path="res://Assets/Character Sprites/Black_Werewolf/Idle.png" id="2_wvtie"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="3_aneqc"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="4_c512j"]
@@ -27,6 +27,7 @@
 [ext_resource type="AudioStream" uid="uid://day0ew2vci4dw" path="res://Assets/AudioAssets/Enemies/Werewolf/jumps.wav" id="24_u2vb1"]
 [ext_resource type="AudioStream" uid="uid://c36ywrhaemf73" path="res://Assets/AudioAssets/Enemies/Werewolf/run.wav" id="25_o1sr3"]
 [ext_resource type="AudioStream" uid="uid://dami7cq7c5jpb" path="res://Assets/AudioAssets/Enemies/Werewolf/wwalk.wav" id="26_pg6ux"]
+[ext_resource type="PackedScene" uid="uid://br2u8xjh373ph" path="res://Levels/Enemies/scripts/stun_bar.tscn" id="28_bh21k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7mme"]
 radius = 7.5724
@@ -3612,7 +3613,7 @@ tracks/14/keys = {
 
 [sub_resource type="Animation" id="Animation_1roxk"]
 resource_name = "Hurt"
-length = 0.53
+length = 2.0
 step = 0.26
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -8518,10 +8519,10 @@ _data = {
 
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_0xqn1"]
 
-[node name="enemy_werewolf_black" type="CharacterBody2D"]
+[node name="enemy_werewolf_white" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_gjva3")
+script = ExtResource("1_mx8y6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -36)
@@ -8572,6 +8573,8 @@ debug_color = Color(3.36915e-07, 0.62137, 0.554885, 0.42)
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("4_c512j")
+knockback_enabled = true
+knockback_strength = 10.0
 
 [node name="Hit1" type="CollisionShape2D" parent="Sprite2D/Hitbox"]
 position = Vector2(28.5714, 1.78571)
@@ -8601,6 +8604,7 @@ shape = SubResource("CapsuleShape2D_run55")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("5_lhq2b")
+max_health = 40.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -8668,3 +8672,13 @@ bus = &"SFX"
 stream = ExtResource("26_pg6ux")
 max_distance = 500.0
 bus = &"SFX"
+
+[node name="stunBar" parent="." node_paths=PackedStringArray("health_node", "character_node") instance=ExtResource("28_bh21k")]
+offset_left = -32.0
+offset_top = -60.0
+offset_right = 32.0
+offset_bottom = -58.0
+max_hits = 10
+drain_speed = 25.0
+health_node = NodePath("../Health")
+character_node = NodePath("..")
