@@ -27,8 +27,9 @@ func _tick(_delta: float) -> Status:
 
 	var dist_sq: float = agent.global_position.distance_squared_to(target.global_position)
 	var is_above: bool = target.global_position.y < agent.global_position.y - y_threshold
+	var is_on_floor: bool = agent.is_on_floor()
 
-	if dist_sq >= _min_distance_squared and dist_sq <= _max_distance_squared and is_above:
+	if dist_sq >= _min_distance_squared and dist_sq <= _max_distance_squared and is_above and is_on_floor:
 		return SUCCESS
 	else:
 		return FAILURE
