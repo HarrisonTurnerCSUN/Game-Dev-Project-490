@@ -18,8 +18,8 @@ func _tick(_delta: float) -> Status:
 
 	var powered_up := charge_speed >= CHARGE_MAX and speed >= SPEED_MAX
 	blackboard.set_var(powered_up_flag, powered_up)  # true or false
-	print("speed up:", speed)
-	print("chargespeed up:", charge_speed)
-	print("Powered up:", powered_up)
+	#print("speed up:", speed)
+	#print("chargespeed up:", charge_speed)
+	#print("Powered up:", powered_up)
 	
 	return SUCCESS

@@ -20,7 +20,7 @@ func init_health_bar(max_health_value: float):
 	damage_bar.max_value = max_health_value
 	damage_bar.value = health_node.get_current()
 
-func _on_health_damaged(amount: float, knockback: Vector2) -> void:
+func _on_health_damaged(_amount: float, _knockback: Vector2) -> void:
 	# Update the health bar instantly
 	value = health_node.get_current()
 	# Start the timer for delayed update of the damage bar

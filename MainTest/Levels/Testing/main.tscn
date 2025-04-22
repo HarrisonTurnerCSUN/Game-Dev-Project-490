@@ -100,7 +100,7 @@ position = Vector2(1196, -155)
 position = Vector2(2879, -263)
 
 [node name="enemy_mushroom" parent="." instance=ExtResource("17_qkj0y")]
-position = Vector2(1271, -65)
+position = Vector2(2269, -57)
 scale = Vector2(0.75, 0.75)
 
 [node name="enemy_werewolf_black2" parent="." instance=ExtResource("4_rmc6o")]
@@ -113,7 +113,7 @@ position = Vector2(1056, -288)
 position = Vector2(2104.64, -203.963)
 
 [node name="enemy_werewolf_black5" parent="." node_paths=PackedStringArray("heal_area_1", "heal_area_2", "heal_area_3") instance=ExtResource("14_de7nn")]
-position = Vector2(2313, -50)
+position = Vector2(2788, -95)
 heal_area_1 = NodePath("../HealArea")
 heal_area_2 = NodePath("../HealArea2")
 heal_area_3 = NodePath("../HealArea3")

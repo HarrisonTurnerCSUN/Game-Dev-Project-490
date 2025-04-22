@@ -6,7 +6,6 @@ signal damaged_by_player
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
 var _moved_this_frame: bool = false
-var _can_be_hit: bool = true  # New variable to track hit cooldown
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -24,6 +23,7 @@ func _ready() -> void:
 	health.damaged.connect(_damaged)
 	health.death.connect(die)
 	stun_bar.stunned.connect(_on_stunned)
+	damaged_by_player.connect(_enter_invincibility_state)
 	self.collision_layer = 3
 	self.collision_layer = 1 | 2
 
@@ -81,14 +81,10 @@ func is_good_position(p_position: Vector2) -> bool:
 
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
-	if not _can_be_hit or _is_dead:
-		return  
-		
-	_can_be_hit = false
+	if _is_dead:
+		return
 	emit_signal("damaged_by_player")
 	apply_knockback(knockback)
-	await get_tree().create_timer(0.3).timeout
-	_can_be_hit = true
 
 		# Optional: show UI indicator
 func _on_stunned() -> void:
@@ -153,3 +149,35 @@ func increase_scale_smoothly():
 
 func get_health() -> Health:
 	return health
+
+func _enter_invincibility_state() -> void:
+	if _is_dead:
+		return
+	var start_time := Time.get_ticks_msec()
+	#print("Invincibility started at:", start_time, "ms")
+	
+	_set_hurtbox_enabled(false)
+
+	var original_color: Color = Color(1, 1, 1, 1)
+	var blink_timer := 0.0
+	var blink_duration := .4
+	var blink_interval := 0.2
+	var white := Color(0, 0, 0, 0)
+
+	while blink_timer < blink_duration:
+		sprite_2d.modulate = white
+		await get_tree().create_timer(blink_interval / 2).timeout
+		sprite_2d.modulate = original_color
+		await get_tree().create_timer(blink_interval / 2).timeout
+		blink_timer += blink_interval
+
+	sprite_2d.modulate = original_color
+	
+	_set_hurtbox_enabled(true)
+	var end_time := Time.get_ticks_msec()
+	#print("Invincibility ended at:", end_time, "ms")
+	#print("Total invincibility duration:", (end_time - start_time) / 1000.0, "seconds")
+	
+func _set_hurtbox_enabled(enabled: bool) -> void:
+	for shape in hurtbox.get_children():
+		shape.set_deferred("disabled", not enabled)
