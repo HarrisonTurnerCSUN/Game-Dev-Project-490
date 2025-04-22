@@ -32,5 +32,9 @@ func _on_health_death() -> void:
 	#damage_bar.value = 0
 	queue_free()
 
+func update_health_display() -> void:
+	value = health_node.get_current()
+	damage_bar.value = health_node.get_current()
+	
 func _on_timer_timeout() -> void:
 	damage_bar.value = health_node.get_current()

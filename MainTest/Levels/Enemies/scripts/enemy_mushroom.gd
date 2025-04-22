@@ -153,7 +153,7 @@ func get_health() -> Health:
 func _enter_invincibility_state() -> void:
 	if _is_dead:
 		return
-	var start_time := Time.get_ticks_msec()
+	#var start_time := Time.get_ticks_msec()
 	#print("Invincibility started at:", start_time, "ms")
 	
 	_set_hurtbox_enabled(false)
@@ -174,7 +174,7 @@ func _enter_invincibility_state() -> void:
 	sprite_2d.modulate = original_color
 	
 	_set_hurtbox_enabled(true)
-	var end_time := Time.get_ticks_msec()
+	#var end_time := Time.get_ticks_msec()
 	#print("Invincibility ended at:", end_time, "ms")
 	#print("Total invincibility duration:", (end_time - start_time) / 1000.0, "seconds")
 	

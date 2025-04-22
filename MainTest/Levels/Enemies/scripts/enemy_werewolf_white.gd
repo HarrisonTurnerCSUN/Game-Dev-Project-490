@@ -10,6 +10,7 @@ var _can_be_hit: bool = true  # New variable to track hit cooldown
 var has_healed_at_30: bool = false
 var has_healed_at_15: bool = false
 var _is_healing: bool = false
+var _healing_amount: int = 1
 @export var heal_area_1: Area2D
 @export var heal_area_2: Area2D
 @export var heal_area_3: Area2D
@@ -20,8 +21,9 @@ var _is_healing: bool = false
 @onready var hurtbox: Hurtbox = $Sprite2D/Hurtbox
 @onready var hitbox: Hitbox = $Sprite2D/Hitbox
 @onready var stun_bar: ProgressBar = $stunBar
+@onready var health_bar: ProgressBar = $HealthBar
 const EnemyScene1 := preload("res://Levels/Enemies/Werewolf_black/enemy_werewolf_black.tscn")
-const EnemyScene2 := preload("res://Levels/Enemies/Werewolf_black/enemy_werewolf_black_red.tscn")
+const EnemyScene2 := preload("res://Levels/Enemies/Werewolf_black/enemy_werewolf_redd.tscn")
 
 #const jump_power = -300
 const gravity = 50
@@ -101,6 +103,7 @@ func _damaged(_amount: float, knockback: Vector2) -> void:
 	if get_health().get_current() <= 15 and not has_healed_at_15:
 		has_healed_at_15 = true
 		await _teleport_and_heal()
+		_healing_amount = 2
 		return
 	elif get_health().get_current() <= 30 and not has_healed_at_30:
 		has_healed_at_30 = true
@@ -172,6 +175,7 @@ func _teleport_and_heal() -> void:
 	var hsm = get_node_or_null("LimboHSM")
 	if btplayer: btplayer.set_active(false)
 	if hsm: hsm.set_active(false)
+	animation_player.play("PoofAway")
 	var area_data := _get_random_heal_area()
 	var chosen_area: Area2D = area_data["chosen"]
 	var other_areas: Array = area_data["others"]
@@ -179,16 +183,7 @@ func _teleport_and_heal() -> void:
 		push_warning("No valid heal area assigned!")
 		return
 
-	# Spawn enemies at the unused areas
-	if EnemyScene1 and is_instance_valid(other_areas[0]):
-		var enemy1 = EnemyScene1.instantiate()
-		enemy1.global_position = other_areas[0].global_position
-		get_parent().call_deferred("add_child", enemy1)
 
-	if EnemyScene2 and is_instance_valid(other_areas[1]):
-		var enemy2 = EnemyScene2.instantiate()
-		enemy2.global_position = other_areas[1].global_position
-		get_parent().call_deferred("add_child", enemy2)
 
 	var target_pos = chosen_area.global_position
 	
@@ -198,25 +193,37 @@ func _teleport_and_heal() -> void:
 		await get_tree().create_timer(0.1).timeout
 
 	global_position = target_pos
-	animation_player.play("Idle")
+	animation_player.play("HealUP")
+	
+		# Spawn enemies at the unused areas
+	if EnemyScene1 and is_instance_valid(other_areas[0]):
+		var enemy1 = EnemyScene1.instantiate()
+		enemy1.global_position = other_areas[0].global_position
+		get_parent().call_deferred("add_child", enemy1)
 
+	if EnemyScene2 and is_instance_valid(other_areas[1]):
+		var enemy2 = EnemyScene2.instantiate()
+		enemy2.global_position = other_areas[1].global_position
+		get_parent().call_deferred("add_child", enemy2)
+		
 	# Begin healing loop
 	_is_healing = true
 	_can_be_hit = true
 	while _is_healing:
-		await get_tree().create_timer(5.0).timeout
+		await get_tree().create_timer(2.0).timeout
 		if not _is_healing:
 			break  # Interrupted during wait
 
-		health._current = min(health._current + 1, health.max_health)
-		print("Healing... HP:", health._current)
+		health._current = min(health._current + _healing_amount, health.max_health)
+		health_bar.update_health_display()
+		#print("Healing... HP:", health._current)
 
 		if health._current >= health.max_health:
 			_end_healing()
 			break
 
 func _end_healing() -> void:
-	print("Healing ended.")
+	#print("Healing ended.")
 	_is_healing = false
 
 	# Fade back in

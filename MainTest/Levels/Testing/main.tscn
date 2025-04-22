@@ -5,8 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://c2a6axwr84jye" path="res://Assets/AudioAssets/Infinity Crystal_ Awakening wavs/22 romance LOOP.wav" id="2_3qda3"]
 [ext_resource type="AudioStream" uid="uid://dcv2ycpbwi4kl" path="res://Assets/AudioAssets/Infinity Crystal_ Awakening wavs/3 critical INITIAL.wav" id="2_onhbt"]
 [ext_resource type="PackedScene" uid="uid://de1xxdg3tyvj7" path="res://Levels/Objects/Breakable Box/object_breakable_box.tscn" id="3_d30qt"]
-[ext_resource type="PackedScene" uid="uid://c7u1830qjp3wk" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black.tscn" id="4_rmc6o"]
-[ext_resource type="PackedScene" uid="uid://bm4lf207odb05" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black_red.tscn" id="5_fx2tr"]
 [ext_resource type="PackedScene" uid="uid://d35cmyvdibyaa" path="res://Levels/Enemies/Witch/enemy_witch.tscn" id="6_odqg8"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="7_er8qt"]
 [ext_resource type="PackedScene" uid="uid://c2grewbwmu5rs" path="res://Levels/Enemies/Worm_red/enemy_worm_fire.tscn" id="7_qxqhc"]
@@ -15,8 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="9_6c54m"]
 [ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="9_ecqun"]
 [ext_resource type="PackedScene" uid="uid://chwt0atu1i75y" path="res://Levels/Testing/audioareas.tscn" id="11_7rjqt"]
-[ext_resource type="PackedScene" uid="uid://bniujx7ueqgwn" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black_white.tscn" id="14_de7nn"]
+[ext_resource type="PackedScene" uid="uid://bm4lf207odb05" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_redd.tscn" id="16_dd3rx"]
+[ext_resource type="PackedScene" uid="uid://c7u1830qjp3wk" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_black.tscn" id="17_ggcef"]
 [ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="17_qkj0y"]
+[ext_resource type="PackedScene" uid="uid://bniujx7ueqgwn" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_whitee.tscn" id="18_25kba"]
 [ext_resource type="PackedScene" uid="uid://cnx0ybxx0m5ko" path="res://Levels/Enemies/Werewolf_black/heal_area.tscn" id="18_axaub"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vjl8b"]
@@ -93,27 +93,22 @@ position = Vector2(560, -218)
 [node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
 position = Vector2(349, -373)
 
-[node name="enemy_werewolf_black3" parent="." instance=ExtResource("5_fx2tr")]
-position = Vector2(1196, -155)
-
-[node name="enemy_werewolf_black" parent="." instance=ExtResource("14_de7nn")]
-position = Vector2(2879, -263)
-
 [node name="enemy_mushroom" parent="." instance=ExtResource("17_qkj0y")]
-position = Vector2(2269, -57)
+position = Vector2(1587, -67)
 scale = Vector2(0.75, 0.75)
-
-[node name="enemy_werewolf_black2" parent="." instance=ExtResource("4_rmc6o")]
-position = Vector2(1404, -141)
-
-[node name="enemy_werewolf_black4" parent="." instance=ExtResource("5_fx2tr")]
-position = Vector2(1056, -288)
 
 [node name="HealArea" parent="." instance=ExtResource("18_axaub")]
 position = Vector2(2104.64, -203.963)
 
-[node name="enemy_werewolf_black5" parent="." node_paths=PackedStringArray("heal_area_1", "heal_area_2", "heal_area_3") instance=ExtResource("14_de7nn")]
-position = Vector2(2788, -95)
+[node name="enemy_werewolf_redd" parent="." instance=ExtResource("16_dd3rx")]
+position = Vector2(2784, -62)
+scale = Vector2(0.9375, 0.9375)
+
+[node name="enemy_werewolf_black" parent="." instance=ExtResource("17_ggcef")]
+position = Vector2(1306, -104)
+
+[node name="enemy_werewolf_whitee" parent="." node_paths=PackedStringArray("heal_area_1", "heal_area_2", "heal_area_3") instance=ExtResource("18_25kba")]
+position = Vector2(2309, -43)
 heal_area_1 = NodePath("../HealArea")
 heal_area_2 = NodePath("../HealArea2")
 heal_area_3 = NodePath("../HealArea3")
