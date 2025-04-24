@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://b6jpciqqr0frf"]
+[gd_scene load_steps=93 format=3 uid="uid://b6jpciqqr0frf"]
 
 [ext_resource type="Script" path="res://Player/Level/player_state_test.gd" id="1_5mcup"]
 [ext_resource type="Texture2D" uid="uid://dk35juwrvoknr" path="res://Assets/Character Sprites/Player Sprites/_Idle.png" id="2_6ii4s"]
@@ -38,6 +38,7 @@
 [ext_resource type="Script" path="res://Player/Level/player_roll_state.gd" id="22_kqydj"]
 [ext_resource type="Script" path="res://Player/Level/player_airdash_state.gd" id="23_3o8wo"]
 [ext_resource type="Script" path="res://Player/Level/player_doublejump_state.gd" id="24_b6qn1"]
+[ext_resource type="Texture2D" uid="uid://bklkxgrixj1vt" path="res://Assets/Character Sprites/Player Sprites/_Death.png" id="24_mi5j5"]
 [ext_resource type="Script" path="res://Player/Level/player_land_state.gd" id="25_e5wc7"]
 [ext_resource type="PackedScene" uid="uid://bqd5xakf1hqbj" path="res://Player/Level/Ghost.tscn" id="25_q765t"]
 [ext_resource type="Script" path="res://Player/Level/player_wallslide_state.gd" id="26_fuyu1"]
@@ -50,6 +51,7 @@
 [ext_resource type="Script" path="res://Global Scripts/Utilities/state_machine/node_finite_state_machine.gd" id="45_cyayl"]
 [ext_resource type="Script" path="res://Player/Level/crouch_attack.gd" id="45_mio5o"]
 [ext_resource type="Script" path="res://Player/Level/jump_attack.gd" id="45_qhhu0"]
+[ext_resource type="Script" path="res://Player/Level/death_state.gd" id="51_35si7"]
 [ext_resource type="AudioStream" uid="uid://frd87pp8132j" path="res://Assets/AudioAssets/Player/SideAttack.wav" id="52_nl4ep"]
 [ext_resource type="AudioStream" uid="uid://dg1fn7f7780br" path="res://Assets/AudioAssets/Player/hop.wav" id="53_a72dx"]
 [ext_resource type="AudioStream" uid="uid://xue04n63rbdq" path="res://Assets/AudioAssets/Player/Dash.wav" id="54_7unbp"]
@@ -7462,6 +7464,35 @@ tracks/37/keys = {
 "values": [true, true]
 }
 
+[sub_resource type="Animation" id="Animation_hpbb6"]
+resource_name = "Death"
+length = 2.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("24_mi5j5")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lfsi8"]
 _data = {
 "Attack1": SubResource("Animation_dguap"),
@@ -7470,6 +7501,7 @@ _data = {
 "Crouch_Attack": SubResource("Animation_p5tkr"),
 "Crouch_Walk": SubResource("Animation_pmccw"),
 "Dash": SubResource("Animation_sf5eq"),
+"Death": SubResource("Animation_hpbb6"),
 "Fall": SubResource("Animation_frypo"),
 "Hurt": SubResource("Animation_3sw27"),
 "Idle": SubResource("Animation_45b67"),
@@ -7751,9 +7783,11 @@ character_body_2d = NodePath("../..")
 script = ExtResource("45_mio5o")
 character_body_2d = NodePath("../..")
 
+[node name="DeathState" type="Node" parent="StateMachine"]
+script = ExtResource("51_35si7")
+
 [node name="Health" type="Node" parent="."]
 script = ExtResource("32_5e2yj")
-max_health = 14.0
 
 [node name="Dash_Timer" type="Timer" parent="."]
 wait_time = 6.0

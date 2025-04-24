@@ -95,7 +95,7 @@ children = [SubResource("BTCondition_10wox"), SubResource("BTAction_qi2wq"), Sub
 [sub_resource type="BTCondition" id="BTCondition_otdcs"]
 script = ExtResource("2_o1lyx")
 distance_min = 0.0
-distance_max = 50.0
+distance_max = 30.0
 target_var = &"target"
 
 [sub_resource type="BTAction" id="BTAction_jq8dc"]
@@ -162,7 +162,7 @@ animation_name = &"Run"
 
 [sub_resource type="BTCondition" id="BTCondition_wa8e0"]
 script = ExtResource("2_o1lyx")
-distance_min = 51.0
+distance_min = 31.0
 distance_max = 250.0
 target_var = &"target"
 
@@ -174,8 +174,8 @@ target_var = &"target"
 script = ExtResource("7_63i1f")
 target_var = &"target"
 flank_side = 0
-range_min = 1
-range_max = 40
+range_min = 0
+range_max = 30
 position_var = &"pos"
 
 [sub_resource type="BTAction" id="BTAction_htdla"]

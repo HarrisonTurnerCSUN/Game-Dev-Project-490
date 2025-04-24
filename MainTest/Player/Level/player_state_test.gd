@@ -140,3 +140,15 @@ func _start_invincibility():
 	for shape in hurtbox.get_children():
 		if shape is CollisionShape2D:
 			shape.set_deferred("disabled", false)
+
+func _on_player_death() -> void:
+	if _is_dead:
+		return
+
+	_is_dead = true
+	player_died.emit()
+
+
+	# Option B: Transition to a Death state
+	$StateMachine.transition_to("DeathState")
+	
