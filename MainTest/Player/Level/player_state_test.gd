@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var camera: Camera2D = $Camera2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+signal player_died
+
 var _moved_this_frame: bool = false
 var _is_dead: bool = false
 @export_category("Camera Settings")
@@ -29,6 +31,30 @@ func _ready() -> void:
 	camera.position.x = camera_x_transform
 	camera.position.y = camera_y_transform
 	SaveController.connect("PotionAdded", Callable(self, "_on_potion_added"))
+	
+	$Health.connect("death", Callable(self, "_on_player_death"))
+
+func _process(delta: float) -> void:
+	if _is_dead:
+		return
+
+func take_damage(amount: float, knockback: Vector2) -> void:
+	if _is_dead:
+		return
+
+	apply_knockback(knockback)
+
+	$Health.get_current -= amount
+	if $Health.get_current <= 0:
+		die()
+
+func die() -> void:
+	if _is_dead:
+		return
+	_is_dead = true
+	animation_player.play("death")
+	player_died.emit()
+	set_physics_process(false) # stop moving after death
 	
 ## When agent is damaged...
 func _damaged(_amount: float, knockback: Vector2) -> void:
