@@ -125,7 +125,7 @@ func _on_stunned() -> void:
 	if hsm:
 		hsm.set_active(false)
 	
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2).timeout
 	
 	if btplayer and not _is_dead:
 		btplayer.restart()
