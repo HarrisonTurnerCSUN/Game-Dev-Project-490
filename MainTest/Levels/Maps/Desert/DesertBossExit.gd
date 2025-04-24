@@ -14,13 +14,3 @@ func _process(_delta: float) -> void:
 
 func open() -> void:
 	$AnimationPlayer.play("open")
-
-
-#@export var player : CharacterBody2D
-
-#func _ready() -> void:
-#	var call = Callable(self,"name of function to be called")
-#	player.connect("death",call)
-
-#func makedeathscenevisible()->void:
-#	$"whatever".visible = true

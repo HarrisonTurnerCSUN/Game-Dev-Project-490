@@ -258,9 +258,17 @@ text = "Options
 "
 icon = ExtResource("10_7gdb3")
 
+[node name="ExitToOverworld" type="Button" parent="MarginContainer/Stats/VBoxContainer3/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit to Overworld"
+icon = ExtResource("9_46ytm")
+
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer2/ToStats" to="." method="_on_to_stats_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/ExitToOverworld" to="." method="_on_exit_to_overworld_pressed"]
 [connection signal="pressed" from="MarginContainer/Options/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer/Stats/VBoxContainer3/VBoxContainer/ToOptions" to="." method="_on_to_options_pressed"]
+[connection signal="pressed" from="MarginContainer/Stats/VBoxContainer3/VBoxContainer/ExitToOverworld" to="." method="_on_exit_to_overworld_pressed"]

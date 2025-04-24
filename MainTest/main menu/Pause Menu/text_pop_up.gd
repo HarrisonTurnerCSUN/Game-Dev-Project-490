@@ -6,3 +6,6 @@ extends Node2D
 func _ready() -> void:
 	label.text = text
 	pass # Replace with function body.
+	
+func setText(x)->void:
+	label.text = str(x)
