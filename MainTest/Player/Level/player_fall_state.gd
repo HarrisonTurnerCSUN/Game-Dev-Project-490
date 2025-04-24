@@ -66,10 +66,12 @@ func on_physics_process(_delta: float):
 			transition.emit("Jump")
 			
 func _damaged(_amount: float, knockback: Vector2) -> void:
-	# Handle damage and knockback
+	#print("Current Health: ", health.get_current())  # Print the current health
 	apply_knockback(knockback)
-	animation_player.play("Hurt")
-	await animation_player.animation_finished
+	#transition.emit("Hurt")
+	character_body_2d._start_invincibility()
+	#animation_player.play("Hurt")
+	#await animation_player.animation_finished
 
 func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
 	if knockback.is_zero_approx():

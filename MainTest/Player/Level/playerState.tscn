@@ -408,406 +408,346 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.133, 0.266, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(8, -28), Vector2(14, -27), Vector2(8, -22), Vector2(8, -21), Vector2(15, -25), Vector2(8, -21), Vector2(8, -20)]
 }
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.652753, 0.652753, 0.652753, 0.652753]
 }
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 2.73585, 2.73585, 2.73585, 2.73585]
+}
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.0, 2.73585, 2.73585, 2.73585, 2.73585]
+"values": [12.0, 17.8505, 17.8505, 17.8505, 17.8505]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [12.0, 17.8505, 17.8505, 17.8505, 17.8505]
-}
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false]
-}
-tracks/32/type = "value"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.133, 0.266, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(8, -26), Vector2(20, -19), Vector2(9, -22), Vector2(9, -21), Vector2(20, -19), Vector2(9, -21), Vector2(9, -21)]
 }
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.61276, 2.61276, 2.61276, 2.61276, 2.61276]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+}
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.61276, 2.61276, 2.61276, 2.61276, 2.61276]
+"values": [4.20537, 3.0, 3.0, 3.0, 3.0]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"update": 0,
+"values": [12.0, 18.0, 18.0, 18.0, 18.0]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13, 0.133, 0.266, 0.27, 0.4, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [4.20537, 3.0, 3.0, 3.0, 3.0]
+"values": [Vector2(5, -11), Vector2(18, -9), Vector2(11, -9), Vector2(12, -8), Vector2(18, -9), Vector2(12, -9), Vector2(12, -9)]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [12.0, 18.0, 18.0, 18.0, 18.0]
+"values": [0.652753, 0.0, 0.0, 0.0, 0.0]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, false, false, false, false]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.133, 0.266, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(5, -11), Vector2(18, -9), Vector2(11, -9), Vector2(12, -8), Vector2(18, -9), Vector2(12, -9), Vector2(12, -9)]
+"values": [2.0, 2.80358, 2.80358, 2.80358, 2.80358]
 }
 tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.652753, 0.0, 0.0, 0.0, 0.0]
+"values": [16.0, 27.1951, 27.1951, 27.1951, 27.1951]
 }
 tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"update": 0,
+"values": [Vector2(1, -8), Vector2(7, -11), Vector2(7, -11), Vector2(6, -11), Vector2(7, -11)]
 }
 tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.0, 2.80358, 2.80358, 2.80358, 2.80358]
+"values": [0.0, 0.652753, 0.652753, 0.652753, 0.652753]
 }
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [16.0, 27.1951, 27.1951, 27.1951, 27.1951]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false]
+"update": 0,
+"values": [5.0, 2.82703, 2.82703, 2.82703, 2.82703]
 }
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -8), Vector2(7, -11), Vector2(7, -11), Vector2(6, -11), Vector2(7, -11)]
+"values": [14.0, 18.4201, 18.4201, 16.0544, 16.0544]
 }
 tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
-tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.652753, 0.652753, 0.652753, 0.652753]
+"values": [Vector2(3, -21), Vector2(4, -22), Vector2(5, -23), Vector2(6, -25), Vector2(6, -25)]
 }
 tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
-tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
+tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
+"update": 0,
+"values": [0.0, 0.816814, 0.816814, 1.14494, 1.14494]
 }
 tracks/47/type = "value"
 tracks/47/imported = false
 tracks/47/enabled = true
-tracks/47/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/47/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [5.0, 2.82703, 2.82703, 2.82703, 2.82703]
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 tracks/48/type = "value"
 tracks/48/imported = false
 tracks/48/enabled = true
-tracks/48/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/48/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [14.0, 18.4201, 18.4201, 16.0544, 16.0544]
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 tracks/49/type = "value"
 tracks/49/imported = false
 tracks/49/enabled = true
-tracks/49/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/49/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.53),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false, false, false, false]
+"values": [true, true]
 }
 tracks/50/type = "value"
 tracks/50/imported = false
 tracks/50/enabled = true
-tracks/50/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
+tracks/50/path = NodePath("CollisionShape2D:shape:size")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(3, -21), Vector2(4, -22), Vector2(5, -23), Vector2(6, -25), Vector2(6, -25)]
-}
-tracks/51/type = "value"
-tracks/51/imported = false
-tracks/51/enabled = true
-tracks/51/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/51/interp = 1
-tracks/51/loop_wrap = true
-tracks/51/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4, 0.53),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.816814, 0.816814, 1.14494, 1.14494]
-}
-tracks/52/type = "value"
-tracks/52/imported = false
-tracks/52/enabled = true
-tracks/52/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
-tracks/52/interp = 1
-tracks/52/loop_wrap = true
-tracks/52/keys = {
-"times": PackedFloat32Array(0, 0.53),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/53/type = "value"
-tracks/53/imported = false
-tracks/53/enabled = true
-tracks/53/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
-tracks/53/interp = 1
-tracks/53/loop_wrap = true
-tracks/53/keys = {
-"times": PackedFloat32Array(0, 0.53),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/54/type = "value"
-tracks/54/imported = false
-tracks/54/enabled = true
-tracks/54/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
-tracks/54/interp = 1
-tracks/54/loop_wrap = true
-tracks/54/keys = {
-"times": PackedFloat32Array(0, 0.53),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/55/type = "value"
-tracks/55/imported = false
-tracks/55/enabled = true
-tracks/55/path = NodePath("CollisionShape2D:shape:size")
-tracks/55/interp = 1
-tracks/55/loop_wrap = true
-tracks/55/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(6.5, 35)]
 }
-tracks/56/type = "value"
-tracks/56/imported = false
-tracks/56/enabled = true
-tracks/56/path = NodePath("CollisionShape2D:position")
-tracks/56/interp = 1
-tracks/56/loop_wrap = true
-tracks/56/keys = {
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("CollisionShape2D:position")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-0.25, -17.5)]
 }
-tracks/57/type = "value"
-tracks/57/imported = false
-tracks/57/enabled = true
-tracks/57/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:stream")
-tracks/57/interp = 1
-tracks/57/loop_wrap = true
-tracks/57/keys = {
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:stream")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("7_xg4cs")]
 }
-tracks/58/type = "value"
-tracks/58/imported = false
-tracks/58/enabled = true
-tracks/58/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:playing")
-tracks/58/interp = 1
-tracks/58/loop_wrap = true
-tracks/58/keys = {
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:playing")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
 "times": PackedFloat32Array(0, 0.53),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1160,382 +1100,334 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false, false, false]
+"update": 0,
+"values": [Vector2(13, -27), Vector2(13, -27), Vector2(7, -25), Vector2(6, -25), Vector2(5, -26), Vector2(4, -26), Vector2(4, -26)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(13, -27), Vector2(13, -27), Vector2(7, -25), Vector2(6, -25), Vector2(5, -26), Vector2(4, -26), Vector2(4, -26)]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
+"update": 0,
+"values": [2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585]
+"values": [17.8505, 17.8505, 17.8505, 17.8505, 17.8505, 17.8505, 17.8505]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [17.8505, 17.8505, 17.8505, 17.8505, 17.8505, 17.8505, 17.8505]
+"update": 1,
+"values": [false, false, false, false, false, false, false]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false, false, false]
+"update": 0,
+"values": [Vector2(17, -23), Vector2(15, -24), Vector2(14, -22), Vector2(13, -21), Vector2(13, -21), Vector2(11, -21), Vector2(11, -21)]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(17, -23), Vector2(15, -24), Vector2(14, -22), Vector2(13, -21), Vector2(13, -21), Vector2(11, -21), Vector2(11, -21)]
+"values": [2.61276, 2.61276, 2.28638, 2.28638, 2.28638, 2.45044, 2.45044]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [2.61276, 2.61276, 2.28638, 2.28638, 2.28638, 2.45044, 2.45044]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"update": 0,
+"values": [3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [3.0, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+"values": [18.0, 18.0, 18.0, 18.0, 14.0, 18.8241, 18.8241]
 }
 tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [18.0, 18.0, 18.0, 18.0, 14.0, 18.8241, 18.8241]
+"values": [Vector2(16, -9), Vector2(16, -9), Vector2(11, -9), Vector2(11, -9), Vector2(12, -7), Vector2(10, -9), Vector2(10, -9)]
 }
 tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false, false, false]
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, -0.490438, -0.490438]
 }
 tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(16, -9), Vector2(16, -9), Vector2(11, -9), Vector2(11, -9), Vector2(12, -7), Vector2(10, -9), Vector2(10, -9)]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0, -0.490438, -0.490438]
+"values": [2.80358, 2.80358, 2.80358, 2.80358, 2.80358, 2.80358, 2.80358]
 }
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"update": 0,
+"values": [27.1951, 27.1951, 25.6063, 25.6063, 24.0742, 24.0742, 24.0742]
 }
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.80358, 2.80358, 2.80358, 2.80358, 2.80358, 2.80358, 2.80358]
+"values": [Vector2(7, -11), Vector2(6, -11), Vector2(2, -11), Vector2(2, -11), Vector2(1, -9), Vector2(0, -10), Vector2(0, -10)]
 }
 tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
-tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [27.1951, 27.1951, 25.6063, 25.6063, 24.0742, 24.0742, 24.0742]
+"values": [0.652753, 0.652753, 0.652753, 0.652753, 0.816814, 0.652753, 0.652753]
 }
 tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
-tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, false, false, false, false, false, false]
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/47/type = "value"
 tracks/47/imported = false
 tracks/47/enabled = true
-tracks/47/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/47/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(7, -11), Vector2(6, -11), Vector2(2, -11), Vector2(2, -11), Vector2(1, -9), Vector2(0, -10), Vector2(0, -10)]
+"values": [6.70547, 6.70547, 2.70771, 2.70771, 2.70771, 2.70771, 2.70771]
 }
 tracks/48/type = "value"
 tracks/48/imported = false
 tracks/48/enabled = true
-tracks/48/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/48/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.652753, 0.652753, 0.652753, 0.652753, 0.816814, 0.652753, 0.652753]
+"values": [16.0544, 16.0544, 16.0544, 16.0544, 16.0544, 16.0544, 16.0544]
 }
 tracks/49/type = "value"
 tracks/49/imported = false
 tracks/49/enabled = true
-tracks/49/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
+tracks/49/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
+"update": 0,
+"values": [Vector2(4, -21), Vector2(4, -21), Vector2(-3, -21), Vector2(-3, -21), Vector2(-3, -22), Vector2(-4, -23), Vector2(-4, -23)]
 }
 tracks/50/type = "value"
 tracks/50/imported = false
 tracks/50/enabled = true
-tracks/50/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/50/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [6.70547, 6.70547, 2.70771, 2.70771, 2.70771, 2.70771, 2.70771]
+"values": [0.492183, 0.492183, 0.818559, 0.818559, 0.818559, 0.818559, 0.818559]
 }
 tracks/51/type = "value"
 tracks/51/imported = false
 tracks/51/enabled = true
-tracks/51/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/51/path = NodePath("CollisionShape2D:shape")
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [16.0544, 16.0544, 16.0544, 16.0544, 16.0544, 16.0544, 16.0544]
-}
-tracks/52/type = "value"
-tracks/52/imported = false
-tracks/52/enabled = true
-tracks/52/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
-tracks/52/interp = 1
-tracks/52/loop_wrap = true
-tracks/52/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false, false, false]
-}
-tracks/53/type = "value"
-tracks/53/imported = false
-tracks/53/enabled = true
-tracks/53/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
-tracks/53/interp = 1
-tracks/53/loop_wrap = true
-tracks/53/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(4, -21), Vector2(4, -21), Vector2(-3, -21), Vector2(-3, -21), Vector2(-3, -22), Vector2(-4, -23), Vector2(-4, -23)]
-}
-tracks/54/type = "value"
-tracks/54/imported = false
-tracks/54/enabled = true
-tracks/54/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/54/interp = 1
-tracks/54/loop_wrap = true
-tracks/54/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.492183, 0.492183, 0.818559, 0.818559, 0.818559, 0.818559, 0.818559]
-}
-tracks/55/type = "value"
-tracks/55/imported = false
-tracks/55/enabled = true
-tracks/55/path = NodePath("CollisionShape2D:shape")
-tracks/55/interp = 1
-tracks/55/loop_wrap = true
-tracks/55/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("RectangleShape2D_y2vll")]
 }
-tracks/56/type = "value"
-tracks/56/imported = false
-tracks/56/enabled = true
-tracks/56/path = NodePath("CollisionShape2D:shape:size")
-tracks/56/interp = 1
-tracks/56/loop_wrap = true
-tracks/56/keys = {
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("CollisionShape2D:shape:size")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(6.5, 29)]
 }
-tracks/57/type = "value"
-tracks/57/imported = false
-tracks/57/enabled = true
-tracks/57/path = NodePath("CollisionShape2D:position")
-tracks/57/interp = 1
-tracks/57/loop_wrap = true
-tracks/57/keys = {
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("CollisionShape2D:position")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-0.25, -14.5)]
 }
-tracks/58/type = "value"
-tracks/58/imported = false
-tracks/58/enabled = true
-tracks/58/path = NodePath("LightAttack:stream")
-tracks/58/interp = 1
-tracks/58/loop_wrap = true
-tracks/58/keys = {
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("LightAttack:stream")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("9_7ckln")]
 }
-tracks/59/type = "value"
-tracks/59/imported = false
-tracks/59/enabled = true
-tracks/59/path = NodePath("LightAttack:playing")
-tracks/59/interp = 1
-tracks/59/loop_wrap = true
-tracks/59/keys = {
+tracks/55/type = "value"
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/path = NodePath("LightAttack:playing")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -1633,430 +1525,370 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/7/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.0667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, false, false]
+"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/8/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.0667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, false, false]
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/9/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.0667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, false, false]
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.0667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, false, false]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/11/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.0666667, 0.0667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, false, false]
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
+tracks/12/path = NodePath("CollisionShape2D:shape")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.0667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.0667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.0667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.0667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.0667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("CollisionShape2D:shape")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("RectangleShape2D_y2vll")]
 }
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("CollisionShape2D:shape:size")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CollisionShape2D:shape:size")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(6.5, 21)]
 }
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("CollisionShape2D:position")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("CollisionShape2D:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-0.25, -10.5)]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [4.0, 4.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [19.9991, 19.9991]
+}
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
+tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"update": 0,
+"values": [Vector2(3, -16), Vector2(3, -16)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
+tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"update": 0,
+"values": [0.0, 0.0]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
+tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"update": 0,
+"values": [2.09671, 2.09671]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
+tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [4.0, 4.0]
+"values": [17.8505, 17.8505]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
+tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [19.9991, 19.9991]
+"values": [Vector2(6, -8), Vector2(6, -8)]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3, -16), Vector2(3, -16)]
+"values": [0.818559, 0.818559]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [3.0, 3.0]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.09671, 2.09671]
+"values": [18.8241, 18.8241]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [17.8505, 17.8505]
+"values": [Vector2(3, -9), Vector2(3, -9)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(6, -8), Vector2(6, -8)]
+"values": [0.0, 0.0]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.818559, 0.818559]
+"values": [2.80358, 2.80358]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [3.0, 3.0]
+"values": [14.392, 14.392]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [18.8241, 18.8241]
+"values": [Vector2(-6, -6), Vector2(-6, -6)]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3, -9), Vector2(3, -9)]
+"values": [0.652753, 0.652753]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [2.70771, 2.70771]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.80358, 2.80358]
+"values": [16.0544, 16.0544]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [14.392, 14.392]
+"values": [Vector2(-7, -15), Vector2(-7, -15)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-6, -6), Vector2(-6, -6)]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.652753, 0.652753]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2.70771, 2.70771]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [16.0544, 16.0544]
-}
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-7, -15), Vector2(-7, -15)]
-}
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
 "times": PackedFloat32Array(0, 0.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -2406,382 +2238,322 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [Vector2(-6, -16), Vector2(-12, -16)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [0.654498, 1.14494]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [Vector2(-3, -9), Vector2(-8, -7)]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [0.652753, 0.0]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [Vector2(3, -5), Vector2(4, -5)]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-6, -16), Vector2(-12, -16)]
+"values": [0.0, 0.0]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.654498, 1.14494]
+"values": [Vector2(3, -16), Vector2(3, -16)]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-3, -9), Vector2(-8, -7)]
+"values": [2.12581, 2.12581]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.652753, 0.0]
+"values": [Vector2(3, -15), Vector2(-2, -14)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3, -5), Vector2(4, -5)]
+"values": [0.0, 0.0]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [4.0, 4.0]
 }
 tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3, -16), Vector2(3, -16)]
+"values": [26.0, 26.0]
 }
 tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2.12581, 2.12581]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
 }
 tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(3, -15), Vector2(-2, -14)]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [2.09671, 2.09671]
 }
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
+tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [4.0, 4.0]
+"values": [17.8505, 17.8505]
 }
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
+tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [26.0, 26.0]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
-tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
+tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
+"update": 0,
+"values": [3.0, 3.0]
 }
 tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
-tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
+"update": 0,
+"values": [10.0, 10.0]
 }
 tracks/47/type = "value"
 tracks/47/imported = false
 tracks/47/enabled = true
-tracks/47/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/47/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.09671, 2.09671]
+"values": [2.70771, 2.70771]
 }
 tracks/48/type = "value"
 tracks/48/imported = false
 tracks/48/enabled = true
-tracks/48/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/48/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [17.8505, 17.8505]
+"values": [12.8036, 17.0496]
 }
 tracks/49/type = "value"
 tracks/49/imported = false
 tracks/49/enabled = true
-tracks/49/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/49/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/50/type = "value"
 tracks/50/imported = false
 tracks/50/enabled = true
-tracks/50/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/50/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [3.0, 3.0]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/51/type = "value"
 tracks/51/imported = false
 tracks/51/enabled = true
-tracks/51/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/51/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/51/interp = 1
 tracks/51/loop_wrap = true
 tracks/51/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [10.0, 10.0]
+"values": [3.598, 2.0]
 }
 tracks/52/type = "value"
 tracks/52/imported = false
 tracks/52/enabled = true
-tracks/52/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/52/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/52/interp = 1
 tracks/52/loop_wrap = true
 tracks/52/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.70771, 2.70771]
+"values": [21.2139, 14.0]
 }
 tracks/53/type = "value"
 tracks/53/imported = false
 tracks/53/enabled = true
-tracks/53/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/53/path = NodePath("SideAttack:stream")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [12.8036, 17.0496]
-}
-tracks/54/type = "value"
-tracks/54/imported = false
-tracks/54/enabled = true
-tracks/54/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
-tracks/54/interp = 1
-tracks/54/loop_wrap = true
-tracks/54/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
-}
-tracks/55/type = "value"
-tracks/55/imported = false
-tracks/55/enabled = true
-tracks/55/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
-tracks/55/interp = 1
-tracks/55/loop_wrap = true
-tracks/55/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
-}
-tracks/56/type = "value"
-tracks/56/imported = false
-tracks/56/enabled = true
-tracks/56/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
-tracks/56/interp = 1
-tracks/56/loop_wrap = true
-tracks/56/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [3.598, 2.0]
-}
-tracks/57/type = "value"
-tracks/57/imported = false
-tracks/57/enabled = true
-tracks/57/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
-tracks/57/interp = 1
-tracks/57/loop_wrap = true
-tracks/57/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [21.2139, 14.0]
-}
-tracks/58/type = "value"
-tracks/58/imported = false
-tracks/58/enabled = true
-tracks/58/path = NodePath("SideAttack:stream")
-tracks/58/interp = 1
-tracks/58/loop_wrap = true
-tracks/58/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("52_nl4ep")]
 }
-tracks/59/type = "value"
-tracks/59/imported = false
-tracks/59/enabled = true
-tracks/59/path = NodePath("SideAttack:playing")
-tracks/59/interp = 1
-tracks/59/loop_wrap = true
-tracks/59/keys = {
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("SideAttack:playing")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -2951,358 +2723,298 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false, false]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(3, -16), Vector2(3, -16), Vector2(3, -17), Vector2(3, -16.8333), Vector2(3, -16.6667), Vector2(3, -16.5), Vector2(3, -17), Vector2(3, -15), Vector2(3, -16)]
 }
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.875, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.09671, 2.09671, 2.09671, 2.09671, 2.09671, 2.09671]
+}
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [2.09671, 2.09671, 2.09671, 2.09671, 2.09671, 2.09671]
+"values": [17.8505, 17.8505, 17.8505, 17.8505, 17.8505, 17.8505]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [17.8505, 17.8505, 17.8505, 17.8505, 17.8505, 17.8505]
-}
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false, false]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(6, -8), Vector2(5, -8), Vector2(6, -9), Vector2(6, -8.83333), Vector2(6, -8.66667), Vector2(5, -8), Vector2(6, -8), Vector2(6, -9), Vector2(6, -9)]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.818559, 0.818559, 0.818559, 0.818559, 0.818559, 0.818559]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+}
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.818559, 0.818559, 0.818559, 0.818559, 0.818559, 0.818559]
+"values": [3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"update": 0,
+"values": [18.8241, 18.8241, 18.8241, 18.8241, 18.8241, 18.8241]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
+"values": [Vector2(3, -9), Vector2(3, -9), Vector2(3, -9), Vector2(3, -9), Vector2(3, -9), Vector2(3, -9)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [18.8241, 18.8241, 18.8241, 18.8241, 18.8241, 18.8241]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false, false]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(3, -9), Vector2(3, -9), Vector2(3, -9), Vector2(3, -9), Vector2(3, -9), Vector2(3, -9)]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-}
-tracks/28/type = "value"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [2.80358, 2.80358, 4.99979, 4.63375, 4.26772]
 }
-tracks/30/type = "value"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [14.392, 14.392, 14.392, 14.392, 14.392]
 }
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false]
-}
-tracks/32/type = "value"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = {
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-6, -6), Vector2(-3, -8), Vector2(0, -7), Vector2(-1, -6.83333), Vector2(-4.76837e-07, -7), Vector2(1, -6), Vector2(-2, -7), Vector2(-3, -6), Vector2(-4, -6)]
 }
-tracks/33/type = "value"
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/keys = {
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.652753, 0.652753, 0.652753, 0.652753, 0.652753, 0.652753]
 }
-tracks/34/type = "value"
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/keys = {
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
-tracks/35/type = "value"
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/keys = {
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [2.70771, 2.70771, 5.65375, 5.16274, 4.67173, 4.24031, 4.24031]
 }
-tracks/36/type = "value"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = {
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [16.0544, 16.0544, 16.0544, 16.0544, 16.0544, 16.0544, 16.0544]
 }
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
-"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false, false]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.75, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-7, -15), Vector2(-7, -15), Vector2(-5, -15), Vector2(-5.33333, -15), Vector2(-5, -14), Vector2(-6, -15), Vector2(-6, -15)]
 }
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.818559, 0.818559, 0.818559, 0.818559, 0.818559, 0.818559]
 }
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
 }
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, true]
 }
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -3400,43 +3112,43 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/7/path = NodePath("CollisionShape2D:shape")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true, true]
+"values": [SubResource("RectangleShape2D_y2vll")]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/8/path = NodePath("CollisionShape2D:shape:size")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6.5, 32)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/9/path = NodePath("CollisionShape2D:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.25, -16)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/10/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -3448,7 +3160,7 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/11/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -3460,70 +3172,10 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("CollisionShape2D:shape")
+tracks/12/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("RectangleShape2D_y2vll")]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("CollisionShape2D:shape:size")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(6.5, 32)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("CollisionShape2D:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-0.25, -16)]
-}
-tracks/15/type = "value"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -3693,235 +3345,235 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [4.0, 4.0]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [36.0, 36.0]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [Vector2(-2, -20), Vector2(-2, -20)]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [0.0, 0.0]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
+tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
+tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [4.0, 4.0]
+"values": [2.09671, 2.09671]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
+tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [36.0, 36.0]
+"values": [17.8505, 17.8505]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-2, -20), Vector2(-2, -20)]
+"values": [Vector2(4, -26), Vector2(4, -26)]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [2.45219, 2.45219]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.09671, 2.09671]
+"values": [3.0, 3.0]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [17.8505, 17.8505]
+"values": [10.0, 10.0]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(4, -26), Vector2(4, -26)]
+"values": [Vector2(2, -15), Vector2(2, -15)]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.45219, 2.45219]
+"values": [0.0, 0.0]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [3.0, 3.0]
+"values": [2.80358, 2.80358]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [10.0, 10.0]
+"values": [14.392, 14.392]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2, -15), Vector2(2, -15)]
+"values": [Vector2(-6, -20), Vector2(-6, -20)]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
@@ -3933,118 +3585,58 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.80358, 2.80358]
+"values": [2.70771, 2.70771]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [14.392, 14.392]
+"values": [16.0544, 16.0544]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-6, -20), Vector2(-6, -20)]
+"values": [Vector2(-11, -24), Vector2(-11, -24)]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2.70771, 2.70771]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [16.0544, 16.0544]
-}
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-11, -24), Vector2(-11, -24)]
-}
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
@@ -4386,430 +3978,370 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/7/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [true, true]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/8/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [true, true]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/9/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [true, true]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/11/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [4.20537, 4.20537]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
+tracks/12/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"update": 0,
+"values": [19.9991, 19.9991]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
+tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"update": 0,
+"values": [Vector2(-1, -27), Vector2(-1, -27)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
+tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
+"update": 0,
+"values": [0.0, 0.0]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape")
+tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_lqulf"), SubResource("CapsuleShape2D_lqulf")]
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:radius")
+tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [4.20537, 4.20537]
+"values": [2.73585, 2.73585]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt1:shape:height")
+tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [19.9991, 19.9991]
+"values": [17.8505, 17.8505]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1, -27), Vector2(-1, -27)]
+"values": [Vector2(3, -21), Vector2(3, -21)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [-0.326377, -0.326377]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.73585, 2.73585]
+"values": [3.0, 3.0]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [17.8505, 17.8505]
+"values": [20.0, 20.0]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3, -21), Vector2(3, -21)]
+"values": [Vector2(2, -10), Vector2(2, -10)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.326377, -0.326377]
+"values": [0.0, 0.0]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [3.0, 3.0]
+"values": [2.80358, 2.80358]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [20.0, 20.0]
+"values": [24.0742, 24.0742]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2, -10), Vector2(2, -10)]
+"values": [Vector2(-6, -11), Vector2(-6, -11)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [0.162316, 0.162316]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.80358, 2.80358]
+"values": [2.70771, 2.70771]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [24.0742, 24.0742]
+"values": [17.08, 17.08]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-6, -11), Vector2(-6, -11)]
+"values": [Vector2(-8, -21), Vector2(-8, -21)]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.162316, 0.162316]
+"values": [0.328122, 0.328122]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
+tracks/35/path = NodePath("CollisionShape2D:shape")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
-}
-tracks/36/type = "value"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2.70771, 2.70771]
-}
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [17.08, 17.08]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-8, -21), Vector2(-8, -21)]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.328122, 0.328122]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("CollisionShape2D:shape")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("RectangleShape2D_y2vll")]
 }
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("CollisionShape2D:shape:size")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("CollisionShape2D:shape:size")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(6.5, 33)]
 }
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("CollisionShape2D:position")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("CollisionShape2D:position")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -4978,382 +4510,322 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [Vector2(0, -27), Vector2(0, -27)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -27), Vector2(0, -27)]
+"values": [0.0, 0.0]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
+"update": 0,
+"values": [2.73585, 2.73585]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.73585, 2.73585]
+"values": [17.8505, 17.8505]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [17.8505, 17.8505]
+"values": [Vector2(5, -21), Vector2(5, -21)]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [0.816814, 0.816814]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(5, -21), Vector2(5, -21)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.816814, 0.816814]
+"values": [3.0, 3.0]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx")]
+"times": PackedFloat32Array(0, 0.27),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20.0, 20.0]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [3.0, 3.0]
+"values": [Vector2(-1, -13), Vector2(-1, -13)]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [20.0, 20.0]
+"values": [0.0, 0.0]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-1, -13), Vector2(-1, -13)]
+"values": [2.13532, 2.13532]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [24.0742, 24.0742]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"update": 0,
+"values": [Vector2(-5, -12), Vector2(-5, -12)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.13532, 2.13532]
+"values": [0.162316, 0.162316]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [24.0742, 24.0742]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [2.70771, 2.70771]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-5, -12), Vector2(-5, -12)]
+"values": [17.08, 17.08]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.162316, 0.162316]
+"values": [Vector2(-8, -21), Vector2(-8, -21)]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
+"update": 0,
+"values": [0.328122, 0.328122]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/35/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [2.70771, 2.70771]
+"update": 1,
+"values": [true, true]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/36/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [17.08, 17.08]
+"update": 1,
+"values": [true, true]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/37/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0, 0.27),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [true, true]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
+tracks/38/path = NodePath("Jump:stream")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-8, -21), Vector2(-8, -21)]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.328122, 0.328122]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
-"times": PackedFloat32Array(0, 0.27),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/43/type = "value"
-tracks/43/imported = false
-tracks/43/enabled = true
-tracks/43/path = NodePath("Jump:stream")
-tracks/43/interp = 1
-tracks/43/loop_wrap = true
-tracks/43/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("53_a72dx")]
 }
-tracks/44/type = "value"
-tracks/44/imported = false
-tracks/44/enabled = true
-tracks/44/path = NodePath("Jump:playing")
-tracks/44/interp = 1
-tracks/44/loop_wrap = true
-tracks/44/keys = {
+tracks/39/type = "value"
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/path = NodePath("Jump:playing")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/keys = {
 "times": PackedFloat32Array(0, 0.266667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -5667,418 +5139,358 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false]
+"update": 0,
+"values": [Vector2(8, -28), Vector2(14, -27), Vector2(15, -25), Vector2(15, -25)]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(8, -28), Vector2(14, -27), Vector2(15, -25), Vector2(15, -25)]
+"values": [0.0, 0.652753, 0.652753, 0.652753]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.652753, 0.652753, 0.652753]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
+"update": 0,
+"values": [2.0, 2.73585, 2.73585, 2.73585]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [2.0, 2.73585, 2.73585, 2.73585]
+"values": [12.0, 17.8505, 17.8505, 17.8505]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [12.0, 17.8505, 17.8505, 17.8505]
+"values": [Vector2(14, -19), Vector2(20, -19), Vector2(20, -19), Vector2(20, -19)]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false]
+"update": 0,
+"values": [2.61276, 2.61276, 2.61276, 2.61276]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(14, -19), Vector2(20, -19), Vector2(20, -19), Vector2(20, -19)]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [2.61276, 2.61276, 2.61276, 2.61276]
+"values": [4.20537, 3.0, 3.0, 3.0]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"update": 0,
+"values": [12.0, 18.0, 18.0, 18.0]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [4.20537, 3.0, 3.0, 3.0]
+"values": [Vector2(5, -11), Vector2(18, -9), Vector2(18, -9), Vector2(18, -9)]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [12.0, 18.0, 18.0, 18.0]
+"values": [0.652753, 0.0, 0.0, 0.0]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, false, false, false]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/38/type = "value"
 tracks/38/imported = false
 tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/38/interp = 1
 tracks/38/loop_wrap = true
 tracks/38/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(5, -11), Vector2(18, -9), Vector2(18, -9), Vector2(18, -9)]
+"values": [2.0, 2.80358, 2.80358, 2.80358]
 }
 tracks/39/type = "value"
 tracks/39/imported = false
 tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/39/interp = 1
 tracks/39/loop_wrap = true
 tracks/39/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.652753, 0.0, 0.0, 0.0]
+"values": [16.0, 27.1951, 27.1951, 27.1951]
 }
 tracks/40/type = "value"
 tracks/40/imported = false
 tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/40/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/40/interp = 1
 tracks/40/loop_wrap = true
 tracks/40/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"update": 0,
+"values": [Vector2(1, -8), Vector2(7, -11), Vector2(7, -11), Vector2(7, -11)]
 }
 tracks/41/type = "value"
 tracks/41/imported = false
 tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/41/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/41/interp = 1
 tracks/41/loop_wrap = true
 tracks/41/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [2.0, 2.80358, 2.80358, 2.80358]
+"values": [0.0, 0.652753, 0.652753, 0.652753]
 }
 tracks/42/type = "value"
 tracks/42/imported = false
 tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/42/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/42/interp = 1
 tracks/42/loop_wrap = true
 tracks/42/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [16.0, 27.1951, 27.1951, 27.1951]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/43/type = "value"
 tracks/43/imported = false
 tracks/43/enabled = true
-tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/43/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/43/interp = 1
 tracks/43/loop_wrap = true
 tracks/43/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, false, false, false]
+"update": 0,
+"values": [5.0, 2.82703, 2.82703, 2.82703]
 }
 tracks/44/type = "value"
 tracks/44/imported = false
 tracks/44/enabled = true
-tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/44/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/44/interp = 1
 tracks/44/loop_wrap = true
 tracks/44/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -8), Vector2(7, -11), Vector2(7, -11), Vector2(7, -11)]
+"values": [14.0, 18.4201, 18.4201, 18.4201]
 }
 tracks/45/type = "value"
 tracks/45/imported = false
 tracks/45/enabled = true
-tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/45/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/45/interp = 1
 tracks/45/loop_wrap = true
 tracks/45/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.652753, 0.652753, 0.652753]
+"values": [Vector2(3, -21), Vector2(4, -22), Vector2(5, -23), Vector2(5, -23)]
 }
 tracks/46/type = "value"
 tracks/46/imported = false
 tracks/46/enabled = true
-tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
+tracks/46/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/46/interp = 1
 tracks/46/loop_wrap = true
 tracks/46/keys = {
 "times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
+"update": 0,
+"values": [0.0, 0.816814, 0.816814, 0.816814]
 }
 tracks/47/type = "value"
 tracks/47/imported = false
 tracks/47/enabled = true
-tracks/47/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/47/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
 tracks/47/interp = 1
 tracks/47/loop_wrap = true
 tracks/47/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [5.0, 2.82703, 2.82703, 2.82703]
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 tracks/48/type = "value"
 tracks/48/imported = false
 tracks/48/enabled = true
-tracks/48/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/48/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
 tracks/48/interp = 1
 tracks/48/loop_wrap = true
 tracks/48/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [14.0, 18.4201, 18.4201, 18.4201]
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
 }
 tracks/49/type = "value"
 tracks/49/imported = false
 tracks/49/enabled = true
-tracks/49/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/49/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
 tracks/49/interp = 1
 tracks/49/loop_wrap = true
 tracks/49/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false, false, false]
+"values": [true, true]
 }
 tracks/50/type = "value"
 tracks/50/imported = false
 tracks/50/enabled = true
-tracks/50/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
+tracks/50/path = NodePath("CollisionShape2D:shape")
 tracks/50/interp = 1
 tracks/50/loop_wrap = true
 tracks/50/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(3, -21), Vector2(4, -22), Vector2(5, -23), Vector2(5, -23)]
-}
-tracks/51/type = "value"
-tracks/51/imported = false
-tracks/51/enabled = true
-tracks/51/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/51/interp = 1
-tracks/51/loop_wrap = true
-tracks/51/keys = {
-"times": PackedFloat32Array(0, 0.13, 0.27, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.816814, 0.816814, 0.816814]
-}
-tracks/52/type = "value"
-tracks/52/imported = false
-tracks/52/enabled = true
-tracks/52/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
-tracks/52/interp = 1
-tracks/52/loop_wrap = true
-tracks/52/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/53/type = "value"
-tracks/53/imported = false
-tracks/53/enabled = true
-tracks/53/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
-tracks/53/interp = 1
-tracks/53/loop_wrap = true
-tracks/53/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/54/type = "value"
-tracks/54/imported = false
-tracks/54/enabled = true
-tracks/54/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
-tracks/54/interp = 1
-tracks/54/loop_wrap = true
-tracks/54/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/55/type = "value"
-tracks/55/imported = false
-tracks/55/enabled = true
-tracks/55/path = NodePath("CollisionShape2D:shape")
-tracks/55/interp = 1
-tracks/55/loop_wrap = true
-tracks/55/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("RectangleShape2D_y2vll")]
 }
-tracks/56/type = "value"
-tracks/56/imported = false
-tracks/56/enabled = true
-tracks/56/path = NodePath("CollisionShape2D:shape:size")
-tracks/56/interp = 1
-tracks/56/loop_wrap = true
-tracks/56/keys = {
+tracks/51/type = "value"
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/path = NodePath("CollisionShape2D:shape:size")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(6.5, 33)]
 }
-tracks/57/type = "value"
-tracks/57/imported = false
-tracks/57/enabled = true
-tracks/57/path = NodePath("CollisionShape2D:position")
-tracks/57/interp = 1
-tracks/57/loop_wrap = true
-tracks/57/keys = {
+tracks/52/type = "value"
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/path = NodePath("CollisionShape2D:position")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-0.25, -16.5)]
 }
-tracks/58/type = "value"
-tracks/58/imported = false
-tracks/58/enabled = true
-tracks/58/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:stream")
-tracks/58/interp = 1
-tracks/58/loop_wrap = true
-tracks/58/keys = {
+tracks/53/type = "value"
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:stream")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("7_xg4cs")]
 }
-tracks/59/type = "value"
-tracks/59/imported = false
-tracks/59/enabled = true
-tracks/59/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:playing")
-tracks/59/interp = 1
-tracks/59/loop_wrap = true
-tracks/59/keys = {
+tracks/54/type = "value"
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/path = NodePath("Sprite2D/Hurtbox/HeavyAttack:playing")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -7336,358 +6748,298 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"times": PackedFloat32Array(0, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, false]
+"times": PackedFloat32Array(0, 0.1, 0.199282, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -27), Vector2(2, -27), Vector2(2, -27.0909), Vector2(2, -27.1818), Vector2(3, -29), Vector2(2.875, -28.875), Vector2(3, -26), Vector2(2, -26), Vector2(2, -27), Vector2(2, -28), Vector2(2, -28)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.199282, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -27), Vector2(2, -27), Vector2(2, -27.0909), Vector2(2, -27.1818), Vector2(3, -29), Vector2(2.875, -28.875), Vector2(3, -26), Vector2(2, -26), Vector2(2, -27), Vector2(2, -28), Vector2(2, -28)]
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.199282, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-}
-tracks/16/type = "value"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.5, 0.6, 0.733367, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
-tracks/17/type = "value"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.199282, 0.266667, 0.333333, 0.5, 0.6, 0.666667, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585, 2.73585]
 }
-tracks/18/type = "value"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.199282, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [9.85019, 9.85019, 9.85019, 9.85019, 9.85019, 9.85019, 9.85019, 9.85019, 9.85019, 9.85019, 9.85019]
 }
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat32Array(0, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, false]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(10, -25), Vector2(9, -21), Vector2(5, -17), Vector2(2, -19), Vector2(8, -25), Vector2(7.875, -24.75), Vector2(7, -22), Vector2(-0.999998, -13), Vector2(2, -15), Vector2(7, -23), Vector2(7, -23)]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.816814, 0.816814, 2.61276, 2.43316, 0.699877, 0.714494, 0.729111, 0.743728, 0.780271, 0.816814, 0.816814]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+}
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.816814, 0.816814, 2.61276, 2.43316, 0.699877, 0.714494, 0.729111, 0.743728, 0.780271, 0.816814, 0.816814]
+"values": [3.0, 2.0, 2.09091, 2.80358, 2.82541, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.666667, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [3.0, 2.0, 2.09091, 2.80358, 2.82541, 3.0, 3.0, 3.0, 3.0, 3.0, 3.0]
-}
-tracks/24/type = "value"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.399282, 0.499282, 0.599282, 0.667971, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [12.0, 22.0, 10.0, 10.2, 14.0, 16.0, 15.4286, 14.8571, 12.0, 12.0, 12.0]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.652753, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.332616, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(5, -9), Vector2(1, -11), Vector2(2, -13), Vector2(3, -10), Vector2(6, -12), Vector2(5, -11), Vector2(3, -8), Vector2(-3, -7), Vector2(2, -15), Vector2(3, -11), Vector2(3, -11)]
+}
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
-"times": PackedFloat32Array(0, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.499282, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, false, false]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 0.0, 0.0, 0.652753, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+"values": [3.14399, 2.23559, 3.0973, 2.23106, 2.3325, 2.23587, 2.3656, 2.49533, 3.90503, 3.14399, 3.14399]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.332616, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.266667, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(5, -9), Vector2(1, -11), Vector2(2, -13), Vector2(3, -10), Vector2(6, -12), Vector2(5, -11), Vector2(3, -8), Vector2(-3, -7), Vector2(2, -15), Vector2(3, -11), Vector2(3, -11)]
+"values": [19.6965, 13.4136, 20.1806, 20.5034, 20.6647, 13.4113, 17.5222, 21.633, 21.633]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
-"times": PackedFloat32Array(0, 0.499282, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, -11), Vector2(-4, -8), Vector2(-3, -10), Vector2(-4, -11), Vector2(-6, -13), Vector2(-6, -12), Vector2(-5, -11), Vector2(-4, -7), Vector2(-3, -9), Vector2(-4, -12), Vector2(-4, -12)]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [3.14399, 2.23559, 3.0973, 2.23106, 2.3325, 2.23587, 2.3656, 2.49533, 3.90503, 3.14399, 3.14399]
+"values": [1.14145, 1.12777, 0.118682, 0.53058, 0.580225, 1.1205, 1.10006, 1.07961, 0.701622, 0.977384, 0.977384]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.266667, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [19.6965, 13.4136, 20.1806, 20.5034, 20.6647, 13.4113, 17.5222, 21.633, 21.633]
-}
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
-"times": PackedFloat32Array(0, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, false]
-}
-tracks/32/type = "value"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-5, -11), Vector2(-4, -8), Vector2(-3, -10), Vector2(-4, -11), Vector2(-6, -13), Vector2(-6, -12), Vector2(-5, -11), Vector2(-4, -7), Vector2(-3, -9), Vector2(-4, -12), Vector2(-4, -12)]
-}
-tracks/33/type = "value"
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.399282, 0.499282, 0.6, 0.667971, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [1.14145, 1.12777, 0.118682, 0.53058, 0.580225, 1.1205, 1.10006, 1.07961, 0.701622, 0.977384, 0.977384]
-}
-tracks/34/type = "value"
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.5, 0.6, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
-tracks/35/type = "value"
-tracks/35/imported = false
-tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
-tracks/35/interp = 1
-tracks/35/loop_wrap = true
-tracks/35/keys = {
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.667971, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [5.0, 5.0, 5.09091, 5.18182, 5.27273, 5.36364, 5.45455, 5.54545, 5.77273, 6.0, 6.0]
 }
-tracks/36/type = "value"
-tracks/36/imported = false
-tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
-tracks/36/interp = 1
-tracks/36/loop_wrap = true
-tracks/36/keys = {
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.667971, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [12.0, 14.0, 18.0, 17.4, 16.8, 16.2, 15.6, 15.0, 17.0, 12.0, 12.0]
 }
-tracks/37/type = "value"
-tracks/37/imported = false
-tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
-tracks/37/interp = 1
-tracks/37/loop_wrap = true
-tracks/37/keys = {
-"times": PackedFloat32Array(0, 0.733333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, false, false]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.667971, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-8, -23), Vector2(-6, -20), Vector2(-2, -20), Vector2(-1, -21), Vector2(-1, -23), Vector2(-4, -22), Vector2(-2, -21), Vector2(-1, -22), Vector2(-3, -21), Vector2(-6, -23), Vector2(-6, -23)]
 }
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
+tracks/34/type = "value"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.266667, 0.333333, 0.4, 0.5, 0.6, 0.667971, 0.733333, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 }
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
+tracks/35/type = "value"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
+tracks/36/type = "value"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
+tracks/37/type = "value"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -7909,394 +7261,334 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt1:disabled")
+tracks/10/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [Vector2(3, -27), Vector2(3, -27)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Sprite2D/Hurtbox/Hurt1:position")
+tracks/11/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3, -27), Vector2(3, -27)]
+"values": [0.0, 0.0]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Sprite2D/Hurtbox/Hurt1:rotation")
+tracks/12/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape")
+tracks/13/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_belhw"), SubResource("CapsuleShape2D_belhw")]
+"update": 0,
+"values": [2.79437, 2.79437]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
 tracks/14/enabled = true
-tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:radius")
+tracks/14/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.79437, 2.79437]
+"values": [12.0, 12.0]
 }
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt2:shape:height")
+tracks/15/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [12.0, 12.0]
+"values": [Vector2(7, -19), Vector2(7, -19)]
 }
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:disabled")
+tracks/16/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [4.08232, 4.08232]
 }
 tracks/17/type = "value"
 tracks/17/imported = false
 tracks/17/enabled = true
-tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt2:position")
+tracks/17/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(7, -19), Vector2(7, -19)]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
 }
 tracks/18/type = "value"
 tracks/18/imported = false
 tracks/18/enabled = true
-tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt2:rotation")
+tracks/18/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [4.08232, 4.08232]
+"values": [4.20537, 4.20537]
 }
 tracks/19/type = "value"
 tracks/19/imported = false
 tracks/19/enabled = true
-tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape")
+tracks/19/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_2ncmx"), SubResource("CapsuleShape2D_2ncmx")]
+"update": 0,
+"values": [12.0, 12.0]
 }
 tracks/20/type = "value"
 tracks/20/imported = false
 tracks/20/enabled = true
-tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:radius")
+tracks/20/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [4.20537, 4.20537]
+"values": [Vector2(-2, -12), Vector2(-2, -12)]
 }
 tracks/21/type = "value"
 tracks/21/imported = false
 tracks/21/enabled = true
-tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt3:shape:height")
+tracks/21/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
 tracks/21/interp = 1
 tracks/21/loop_wrap = true
 tracks/21/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [12.0, 12.0]
+"values": [0.652753, 0.652753]
 }
 tracks/22/type = "value"
 tracks/22/imported = false
 tracks/22/enabled = true
-tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt3:disabled")
+tracks/22/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
 tracks/22/interp = 1
 tracks/22/loop_wrap = true
 tracks/22/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
 }
 tracks/23/type = "value"
 tracks/23/imported = false
 tracks/23/enabled = true
-tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt3:position")
+tracks/23/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
 tracks/23/interp = 1
 tracks/23/loop_wrap = true
 tracks/23/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-2, -12), Vector2(-2, -12)]
+"values": [2.0, 2.0]
 }
 tracks/24/type = "value"
 tracks/24/imported = false
 tracks/24/enabled = true
-tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt3:rotation")
+tracks/24/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
 tracks/24/interp = 1
 tracks/24/loop_wrap = true
 tracks/24/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.652753, 0.652753]
+"values": [16.0, 16.0]
 }
 tracks/25/type = "value"
 tracks/25/imported = false
 tracks/25/enabled = true
-tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape")
+tracks/25/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
 tracks/25/interp = 1
 tracks/25/loop_wrap = true
 tracks/25/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_dfo2s"), SubResource("CapsuleShape2D_dfo2s")]
+"update": 0,
+"values": [Vector2(-6, -11), Vector2(-6, -11)]
 }
 tracks/26/type = "value"
 tracks/26/imported = false
 tracks/26/enabled = true
-tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:radius")
+tracks/26/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
 tracks/26/interp = 1
 tracks/26/loop_wrap = true
 tracks/26/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [2.0, 2.0]
+"values": [0.0, 0.0]
 }
 tracks/27/type = "value"
 tracks/27/imported = false
 tracks/27/enabled = true
-tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt4:shape:height")
+tracks/27/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
 tracks/27/interp = 1
 tracks/27/loop_wrap = true
 tracks/27/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [16.0, 16.0]
+"update": 1,
+"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
 }
 tracks/28/type = "value"
 tracks/28/imported = false
 tracks/28/enabled = true
-tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt4:disabled")
+tracks/28/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, false]
+"update": 0,
+"values": [5.0, 5.0]
 }
 tracks/29/type = "value"
 tracks/29/imported = false
 tracks/29/enabled = true
-tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt4:position")
+tracks/29/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
 tracks/29/interp = 1
 tracks/29/loop_wrap = true
 tracks/29/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-6, -11), Vector2(-6, -11)]
+"values": [16.0, 16.0]
 }
 tracks/30/type = "value"
 tracks/30/imported = false
 tracks/30/enabled = true
-tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt4:rotation")
+tracks/30/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
 tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 0.0]
+"values": [Vector2(-2, -24), Vector2(-2, -24)]
 }
 tracks/31/type = "value"
 tracks/31/imported = false
 tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape")
+tracks/31/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
 tracks/31/interp = 1
 tracks/31/loop_wrap = true
 tracks/31/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [SubResource("CapsuleShape2D_nujbq"), SubResource("CapsuleShape2D_nujbq")]
+"update": 0,
+"values": [0.0, 0.0]
 }
 tracks/32/type = "value"
 tracks/32/imported = false
 tracks/32/enabled = true
-tracks/32/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:radius")
+tracks/32/path = NodePath("Sprite2D/Hitbox/Attack1:disabled")
 tracks/32/interp = 1
 tracks/32/loop_wrap = true
 tracks/32/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [5.0, 5.0]
+"update": 1,
+"values": [true, true]
 }
 tracks/33/type = "value"
 tracks/33/imported = false
 tracks/33/enabled = true
-tracks/33/path = NodePath("Sprite2D/Hurtbox/Hurt5:shape:height")
+tracks/33/path = NodePath("Sprite2D/Hitbox/Attack2:disabled")
 tracks/33/interp = 1
 tracks/33/loop_wrap = true
 tracks/33/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [16.0, 16.0]
+"update": 1,
+"values": [true, true]
 }
 tracks/34/type = "value"
 tracks/34/imported = false
 tracks/34/enabled = true
-tracks/34/path = NodePath("Sprite2D/Hurtbox/Hurt5:disabled")
+tracks/34/path = NodePath("Sprite2D/Hitbox/Attack3:disabled")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, false]
+"values": [true, true]
 }
 tracks/35/type = "value"
 tracks/35/imported = false
 tracks/35/enabled = true
-tracks/35/path = NodePath("Sprite2D/Hurtbox/Hurt5:position")
+tracks/35/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
 tracks/35/interp = 1
 tracks/35/loop_wrap = true
 tracks/35/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-2, -24), Vector2(-2, -24)]
+"update": 1,
+"values": [true, true]
 }
 tracks/36/type = "value"
 tracks/36/imported = false
 tracks/36/enabled = true
-tracks/36/path = NodePath("Sprite2D/Hurtbox/Hurt5:rotation")
+tracks/36/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 0.0]
+"update": 1,
+"values": [true, true]
 }
 tracks/37/type = "value"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Sprite2D/Hitbox/Attack1:disabled")
+tracks/37/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/38/type = "value"
-tracks/38/imported = false
-tracks/38/enabled = true
-tracks/38/path = NodePath("Sprite2D/Hitbox/Attack2:disabled")
-tracks/38/interp = 1
-tracks/38/loop_wrap = true
-tracks/38/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/39/type = "value"
-tracks/39/imported = false
-tracks/39/enabled = true
-tracks/39/path = NodePath("Sprite2D/Hitbox/Attack3:disabled")
-tracks/39/interp = 1
-tracks/39/loop_wrap = true
-tracks/39/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/40/type = "value"
-tracks/40/imported = false
-tracks/40/enabled = true
-tracks/40/path = NodePath("Sprite2D/LightHitbox/LAttack1:disabled")
-tracks/40/interp = 1
-tracks/40/loop_wrap = true
-tracks/40/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/41/type = "value"
-tracks/41/imported = false
-tracks/41/enabled = true
-tracks/41/path = NodePath("Sprite2D/LightHitbox/LAttack2:disabled")
-tracks/41/interp = 1
-tracks/41/loop_wrap = true
-tracks/41/keys = {
-"times": PackedFloat32Array(0, 0.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, true]
-}
-tracks/42/type = "value"
-tracks/42/imported = false
-tracks/42/enabled = true
-tracks/42/path = NodePath("Sprite2D/LightHitbox/LAttack3:disabled")
-tracks/42/interp = 1
-tracks/42/loop_wrap = true
-tracks/42/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
@@ -8356,6 +7648,7 @@ texture = ExtResource("2_6ii4s")
 hframes = 10
 
 [node name="Hitbox" type="Area2D" parent="Sprite2D"]
+visible = false
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("3_5byb4")
@@ -8382,6 +7675,7 @@ shape = SubResource("CapsuleShape2D_abjk8")
 debug_color = Color(0.961248, 0, 0.511433, 0.42)
 
 [node name="LightHitbox" type="Area2D" parent="Sprite2D"]
+visible = false
 position = Vector2(0, 40)
 collision_layer = 0
 collision_mask = 16
@@ -8596,6 +7890,7 @@ character_body_2d = NodePath("../..")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("32_5e2yj")
+max_health = 14.0
 
 [node name="Dash_Timer" type="Timer" parent="."]
 wait_time = 6.0
@@ -8636,6 +7931,7 @@ stream = ExtResource("56_2k251")
 bus = &"SFX"
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 5
 

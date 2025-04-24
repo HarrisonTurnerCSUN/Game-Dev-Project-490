@@ -38,15 +38,6 @@ func _process(delta: float) -> void:
 	if _is_dead:
 		return
 
-func take_damage(amount: float, knockback: Vector2) -> void:
-	if _is_dead:
-		return
-
-	apply_knockback(knockback)
-
-	$Health.get_current -= amount
-	if $Health.get_current <= 0:
-		die()
 
 func die() -> void:
 	if _is_dead:
@@ -55,22 +46,6 @@ func die() -> void:
 	animation_player.play("death")
 	player_died.emit()
 	set_physics_process(false) # stop moving after death
-	
-## When agent is damaged...
-func _damaged(_amount: float, knockback: Vector2) -> void:
-	apply_knockback(knockback)
-	#animation_player.play(&"hurt")
-	var btplayer := get_node_or_null(^"BTPlayer") as BTPlayer
-	if btplayer:
-		btplayer.set_active(false)
-	var hsm := get_node_or_null(^"LimboHSM")
-	if hsm:
-		hsm.set_active(false)
-	#await animation_player.animation_finished
-	if btplayer and not _is_dead:
-		btplayer.restart()
-	if hsm and not _is_dead:
-		hsm.set_active(true)
 
 #func receives_knockback(damage_source_pos: Vector2, received_damage: int):
 	#pass
@@ -127,3 +102,40 @@ func update_jump() -> void:
 	var jumpPotions = SaveController.getPotionCount("Elixir of Jumping")
 	if jumpPotions > 0:
 		$StateMachine/Jump.jump_power *= (1.1 ** jumpPotions)
+
+func _start_invincibility():
+	if _is_dead:
+		return
+
+	# Don't restart if already blinking
+	if get_node("Sprite2D").modulate.a < 1.0:
+		return
+
+	var sprite := $Sprite2D
+	var hurtbox := $Sprite2D/Hurtbox
+
+	# Disable hurtbox shapes
+	for shape in hurtbox.get_children():
+		if shape is CollisionShape2D:
+			shape.set_deferred("disabled", true)
+
+	var original_color := Color(1, 1, 1, 1)
+	var transparent := Color(1, 1, 1, 0)
+	var blink_duration := 1
+	var blink_interval := 0.2
+	var blink_timer := 0.0
+
+	# Coroutine-style blink loop
+	await get_tree().process_frame
+	while blink_timer < blink_duration:
+		sprite.modulate = transparent
+		await get_tree().create_timer(blink_interval / 2).timeout
+		sprite.modulate = original_color
+		await get_tree().create_timer(blink_interval / 2).timeout
+		blink_timer += blink_interval
+
+	# Ensure visibility and re-enable hurtbox
+	sprite.modulate = original_color
+	for shape in hurtbox.get_children():
+		if shape is CollisionShape2D:
+			shape.set_deferred("disabled", false)
