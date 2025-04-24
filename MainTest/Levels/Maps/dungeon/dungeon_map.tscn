@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://djtq6x7u3m2t5"]
+[gd_scene load_steps=26 format=4 uid="uid://djtq6x7u3m2t5"]
 
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_gncfs"]
 [ext_resource type="Script" path="res://Levels/Maps/dungeon/dungeon_map.gd" id="1_o1f7a"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="7_blmyi"]
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="9_xd1bu"]
 [ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="10_hb5uh"]
+[ext_resource type="PackedScene" uid="uid://bk72r0j0r7dhn" path="res://main menu/Game Over Menu/game_over_menu.tscn" id="12_00jwa"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hitbox.gd" id="12_chq0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_klxtn"]
@@ -708,6 +709,12 @@ visible = false
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("6_s5pcx")]
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("7_blmyi")]
+
+[node name="GameOverMenu" parent="CanvasLayer" instance=ExtResource("12_00jwa")]
+offset_left = 25.0
+offset_top = 28.0
+offset_right = 65.0
+offset_bottom = 68.0
 
 [node name="falling1" type="Area2D" parent="."]
 position = Vector2(1210, 12)
