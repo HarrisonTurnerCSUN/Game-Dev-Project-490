@@ -52,8 +52,6 @@ func on_physics_process(_delta: float):
 	if GameInputEvents.shift_input():
 		if stamina.use_stamina(2):
 			transition.emit("Dash")
-		else:
-			print("Not enough stamina!")
 
 func _post_physics_process() -> void:
 	if not _moved_this_frame:

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var camera: Camera2D = $Camera2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var hurt: AudioStreamPlayer2D = $Hurt
 
 signal player_died
 
@@ -106,7 +107,7 @@ func update_jump() -> void:
 func _start_invincibility():
 	if _is_dead:
 		return
-
+	hurt.play()
 	# Don't restart if already blinking
 	if get_node("Sprite2D").modulate.a < 1.0:
 		return
