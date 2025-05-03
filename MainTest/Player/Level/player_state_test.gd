@@ -20,6 +20,7 @@ var _is_dead: bool = false
 @export var camera_y_transform: float = 0 
 @export var inventory: Inventory
 @export var base_damage: int = 0
+@onready var health: Health = $Health
 
 var reward_node = get_node
 func _ready() -> void:
@@ -87,6 +88,8 @@ func update_health() -> void:
 	var current_health = $Health.get_current()+2
 	$Camera2D/StatusUI.set_max_health($Health.max_health)
 	$Camera2D/StatusUI.update_health(current_health)
+	health._current = current_health
+	
 	
 func update_stamina() -> void:
 	var staminaPotions = SaveController.getPotionCount("Elixir of Stamina")

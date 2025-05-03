@@ -2,13 +2,15 @@ extends Control  # Attach this script to your MainCardContainer
 
 class_name Item
 
+
 #signal ui_closed
 
 var Item = preload("res://main menu/Reward Menu/Item.tscn")
+var input_blocked := true
 
 func _ready():
-	_update_position()  # Call once initially
-	get_tree().paused = true # Pause the game immediately
+	_update_position()
+	get_tree().paused = true
 	generate_rewards()
 	
 func generate_rewards():
@@ -29,6 +31,8 @@ func generate_rewards():
 		item_pool.remove_at(0)
 		
 func _on_select_reward(reward_card):
+	if input_blocked:
+		return
 	SaveController.addPotion(reward_card.title)
 	hide_ui()
 
@@ -76,3 +80,7 @@ func generate_item_data(item_id):
 			print("Unmatched item_id: ", item_id)
 	
 	return item_data
+
+
+func _on_timer_timeout() -> void:
+	input_blocked = false

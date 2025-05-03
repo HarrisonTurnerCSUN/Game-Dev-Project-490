@@ -126,7 +126,6 @@ func die() -> void:
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
-
 	# Remove the current instance after 10 seconds
 	if get_tree():
 		await get_tree().create_timer(5.0).timeout

@@ -20,6 +20,7 @@ SaveController="*res://Global Scripts/Utilities/SaveLoad/SaveController.cs"
 AudioManager="*res://Global Scripts/Audio_Manager.gd"
 KeyManager="*res://Global Scripts/key_manager.gd"
 DungeonSpawn="*res://Levels/Maps/dungeon/dungeon_spawn.gd"
+RewardController="*res://Global Scripts/Utilities/SaveLoad/RewardController.gd"
 
 [display]
 

@@ -157,7 +157,7 @@ func die() -> void:
 			child.set_active(false)
 
 	# Schedule spawning a new enemy after death animation
-
+	RewardController.show_reward_screen()
 	# Remove the current instance after 10 seconds
 	if get_tree():
 		await get_tree().create_timer(5.0).timeout
