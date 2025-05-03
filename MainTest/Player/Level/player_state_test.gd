@@ -9,6 +9,7 @@ signal player_died
 
 var _moved_this_frame: bool = false
 var _is_dead: bool = false
+var _is_healing := false
 @export_category("Camera Settings")
 @export var left: int = -10000000
 @export var right: int = 10000000
@@ -37,9 +38,14 @@ func _ready() -> void:
 	$Health.connect("death", Callable(self, "_on_player_death"))
 
 func _process(delta: float) -> void:
-	if _is_dead:
+	if _is_dead or _is_healing:
 		return
-
+	if Input.is_action_just_pressed("interact"):
+		if health.get_current() <= health.max_health - 1:
+			if not inventory.has_items():
+				#print("Inventory is empty!")
+				return
+			heal_player()
 
 func die() -> void:
 	if _is_dead:
@@ -88,7 +94,8 @@ func update_health() -> void:
 	var current_health = $Health.get_current()+2
 	$Camera2D/StatusUI.set_max_health($Health.max_health)
 	$Camera2D/StatusUI.update_health(current_health)
-	health._current = current_health
+	if health.get_current() <= health.max_health - 2:
+		health._current = current_health
 	
 	
 func update_stamina() -> void:
@@ -155,3 +162,20 @@ func _on_player_death() -> void:
 	# Option B: Transition to a Death state
 	$StateMachine.transition_to("DeathState")
 	
+func heal_player() -> void:
+	_is_healing = true
+	# Disable input/movement during healing
+	$StateMachine.set_physics_process(false)
+
+	animation_player.play("Healing")
+	await get_tree().create_timer(0.7).timeout  # Match animation length
+
+	# Heal 2 HP, clamped to max
+	var used_item = inventory.consume_first_item()
+	#print("Used item:", used_item.name)
+	health._current = min(health._current + 1, health.max_health)
+	$Camera2D/StatusUI.update_health(health._current)
+
+	# Re-enable input/movement
+	$StateMachine.set_physics_process(true)
+	_is_healing = false

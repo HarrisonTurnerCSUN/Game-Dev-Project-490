@@ -32,3 +32,21 @@ func removeSlot(inventorySlot: InventorySlot):
 func insertSlot(index: int, inventorySlot: InventorySlot):
 	slots[index] = inventorySlot
 	updated.emit()
+	
+func has_items() -> bool:
+	for slot in slots:
+		if slot.item != null and slot.amount > 0:
+			return true
+	return false
+
+func consume_first_item() -> InventoryItem:
+	for i in range(slots.size()):
+		var slot = slots[i]
+		if slot.item != null and slot.amount > 0:
+			slot.amount -= 1
+			var item = slot.item
+			if slot.amount == 0:
+				slots[i] = InventorySlot.new()
+			updated.emit()
+			return item
+	return null  # No item found
