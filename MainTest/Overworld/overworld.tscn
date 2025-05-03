@@ -2661,7 +2661,7 @@ shape = SubResource("RectangleShape2D_ry0pt")
 
 [node name="Sign3" parent="." node_paths=PackedStringArray("popup") instance=ExtResource("10_w18nq")]
 z_index = 0
-position = Vector2(-353, 162)
+position = Vector2(-353, 179)
 popup = NodePath("TextPopUp")
 
 [node name="TextPopUp" parent="Sign3" instance=ExtResource("11_hi12u")]
@@ -2669,28 +2669,26 @@ position = Vector2(-361, 117)
 text = "To Forest"
 
 [node name="Sign4" parent="." node_paths=PackedStringArray("popup") instance=ExtResource("10_w18nq")]
-position = Vector2(380, 8)
+position = Vector2(381, 17)
 popup = NodePath("TextPopUp")
 
 [node name="TextPopUp" parent="Sign4" instance=ExtResource("11_hi12u")]
 position = Vector2(371, -30)
-text = "To Desert"
+text = "To Desert, Beware, Dangerous Foes"
 
 [node name="Sign5" parent="." node_paths=PackedStringArray("popup") instance=ExtResource("10_w18nq")]
 position = Vector2(429, -524)
 popup = NodePath("TextPopUp")
 
 [node name="TextPopUp" parent="Sign5" instance=ExtResource("11_hi12u")]
-visible = true
 position = Vector2(425, -565)
-text = "To Desert"
+text = "To Goblin Camp"
 
 [node name="Sign6" parent="." node_paths=PackedStringArray("popup") instance=ExtResource("10_w18nq")]
 position = Vector2(-437, -593)
 popup = NodePath("TextPopUp2")
 
 [node name="TextPopUp2" parent="Sign6" instance=ExtResource("11_hi12u")]
-visible = true
 position = Vector2(-447, -636)
 text = "To mountain"
 

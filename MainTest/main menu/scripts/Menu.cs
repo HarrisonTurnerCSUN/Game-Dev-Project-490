@@ -12,8 +12,9 @@ public partial class Menu : Control
 	private void Play()
 	{
 		_audioPopUp.Play();
-		//GetTree().ChangeSceneToFile("res://Levels/Testing/main.tscn");
-		GetTree().ChangeSceneToFile("res://Levels/Maps/Forest/forest.tscn");
+		GetTree().ChangeSceneToFile(SaveController.playerData.savedScene);
+		//GetTree().ChangeSceneToFile("res://Overworld/overworld.tscn");
+		//GetTree().ChangeSceneToFile("res://Levels/Maps/Forest/forest.tscn");
 	}
 
 	// Called when the Options button is pressed
@@ -27,6 +28,8 @@ public partial class Menu : Control
 	private void Quit()
 	{
 		_audioClose.Play();
+		SaveController.savePlayer();
+		SaveController.saveGame();
 		GetTree().Quit();
 	}
 	
@@ -42,6 +45,7 @@ public partial class Menu : Control
 		_audioClose = GetNode<AudioStreamPlayer>("AudioClose");
 		
 		int busIndex;
+		SaveController.loadPlayer();
 		SaveController.loadGame();
 		busIndex = AudioServer.GetBusIndex("Master");
 		GD.Print(SaveController.gameData.MasterVol);

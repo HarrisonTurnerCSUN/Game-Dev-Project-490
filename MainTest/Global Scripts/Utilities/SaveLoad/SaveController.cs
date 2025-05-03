@@ -65,6 +65,7 @@ public partial class SaveController : Node
 		if(type == SaveType.gameDat){
 			//jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(gameData);
 			jsonString = JsonSerializer.Serialize(gameData);
+			GD.Print("Saving to: " + filePath);
 		}
 		
 		saveGame.StoreLine(jsonString);
@@ -102,7 +103,16 @@ public partial class SaveController : Node
 	public static void setVolume(String bus_name,float vol) { 
 		gameData.setVolume(bus_name,vol); 
 	}
-
+	
+	public static void setSavedScene(string x){ playerData.setSavedScene(x); }
+	public string getSavedScene(){ return playerData.getSavedScene();}
+	
+	public static void setOverworldPositionX (int x){ playerData.setOverworldPositionX(x);}
+	public float getOverworldPositionX () { return playerData.getOverworldPositionX();}
+	
+	public static void setOverworldPositionY (int x){ playerData.setOverworldPositionY(x);}
+	public float getOverworldPositionY () { return playerData.getOverworldPositionY();}
+	
 	public static List<string> Inventory { get; set; } = new List<string>();
 
 	public void addPotion(string item)

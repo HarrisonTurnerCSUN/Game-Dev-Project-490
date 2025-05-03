@@ -7,7 +7,8 @@ public class PlayerData
 	//List of player data variables
 	public int checkpoint {get; set;}
 	public int overworldCheckpoint {get; set;}
-	public bool isInOverworld {get; set;}
+	public float overworldPositionX {get; set;}
+	public float overworldPositionY {get; set;}
 	public string savedScene {get; set;}
 	
 	//public Godot.Collections.Dictionary<string ,int> saveDictionary = 
@@ -17,9 +18,18 @@ public class PlayerData
 	public void init(){
 		checkpoint = 0;
 		overworldCheckpoint = 0;
-		isInOverworld = false;
-		savedScene = "res://Scenes/game.tscn";
+		overworldPositionX = 448;
+		overworldPositionY = 666;
+		savedScene = "res://Overworld/overworld.tscn";;
 		//allows storing of dictionary of simple data types, maybe useful
 		//playerDictionary.Add("zero",0);
 	}
+	public void setSavedScene (string x){ savedScene = x;}
+	public string getSavedScene () { return savedScene;}
+	
+	public void setOverworldPositionX (int x){ overworldPositionX = x;}
+	public float getOverworldPositionX () { return overworldPositionX;}
+	
+	public void setOverworldPositionY (int x){ overworldPositionY = x;}
+	public float getOverworldPositionY () { return overworldPositionY;}
 }

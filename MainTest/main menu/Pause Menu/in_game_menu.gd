@@ -27,6 +27,9 @@ extends Control
 var stopwatch : Stopwatch
 
 func _ready() -> void:
+	print(get_tree().current_scene.scene_file_path)
+	SaveController.setSavedScene(get_tree().current_scene.scene_file_path)
+	SaveController.savePlayer()
 	#var busIndex
 	#busIndex = AudioServer.get_bus_index("Master")
 	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.MasterVol));
@@ -128,8 +131,8 @@ func _on_exit_to_overworld_pressed() -> void:
 	comp_button.hide()
 	comp_label.hide()
 	Engine.time_scale = 1
-	get_tree().change_scene_to_file("res://Overworld/overworld.tscn")
 	SaveController.saveGame();
+	get_tree().change_scene_to_file("res://Overworld/overworld.tscn")
 
 
 func _on_level_end_body_entered(body: Node2D) -> void:
@@ -139,3 +142,6 @@ func _on_level_end_body_entered(body: Node2D) -> void:
 		
 func _set_is_complete() -> void:
 		is_level_complete = true
+		
+func _run_saves() -> void:
+	pass

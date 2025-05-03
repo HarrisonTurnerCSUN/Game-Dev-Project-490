@@ -19,8 +19,10 @@ func _on_yes_pressed() -> void:
 		get_tree().paused = false
 		get_tree().change_scene_to_file("res://main menu/menu.tscn")
 		SaveController.saveGame();
+		SaveController.savePlayer();
 	elif destination == "Quit":
 		SaveController.saveGame();
+		SaveController.savePlayer();
 		get_tree().quit()
 
 

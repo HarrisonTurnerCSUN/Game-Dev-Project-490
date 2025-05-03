@@ -24,12 +24,13 @@ var door2_open: bool = false
 var stopwatch : Stopwatch
 func _ready() -> void:
 	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
-	current_wave = 5
+	current_wave = 0
 	starting_nodes = get_child_count()
 	current_nodes = get_child_count()
 	#_to_next_wave()
-	#menu.flip_star1()
-	#menu.flip_star2()
+	menu.flip_star1()
+	menu.flip_star2()
+	menu.flip_star3()
 	
 
 func _process(delta: float) -> void:
@@ -58,9 +59,6 @@ func _process(delta: float) -> void:
 		
 	if stopwatch.time/60 >= 10:
 		menu.flip_star2()
-	
-	if stopwatch.time/60 >= 15:
-		menu.flip_star1()
 
 	
 func _to_next_wave() ->void:
@@ -202,3 +200,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		door1_open = false
 		$Objects/Tile_Platform_desert/AnimationPlayer.play("open")
 		flip_spawning_status()
+
+
+func _on_star_2d_body_entered(body: Node2D) -> void:
+	menu.flip_star1()
