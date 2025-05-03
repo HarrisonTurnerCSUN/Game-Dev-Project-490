@@ -3,10 +3,12 @@ extends CharacterBody2D
 signal death
 signal rock_drop
 
-const RewardScreen = preload("res://main menu/Reward Menu/RewardScreen.tscn")
 const Projectile := preload("res://Levels/Enemies/Goblin/goblin_projectile.tscn")
 const RockScene := preload("res://Levels/Enemies/Stone Golem/RumblingRock.tscn")
 const FallingRocks := preload("res://Levels/Enemies/Stone Golem/falingRocks.tscn")
+@onready var top_leftm: Marker2D = $TopLeft
+@onready var bottom_rightm: Marker2D = $BottomRight
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var _frames_since_facing_update: int = 0
 var _is_dead: bool = false
@@ -110,9 +112,7 @@ func die() -> void:
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
 	
-	var reward_screen = RewardScreen.instantiate()
-	get_tree().current_scene.add_child(reward_screen)
-	
+	RewardController.show_reward_screen()
 	if get_tree():
 		await get_tree().create_timer(10.0).timeout
 		queue_free()
@@ -133,48 +133,54 @@ func increase_scale_smoothly():
 	tween.tween_property(self, "scale", target_scale, 0.5)
 
 func spawn_rumbling_rocks():
-	for i in range(randi_range(6, 10)):  
+	var count := randi_range(6, 10)
+	for i in range(count):
+		await get_tree().create_timer(0.2).timeout  # Spawns 1 rock every 0.1s
+
 		var rock = RockScene.instantiate()
 		get_parent().add_child(rock)
-		var offset = Vector2(randi_range(-200, 200), 0)
-		rock.global_position = global_position + offset
+
+		# Random horizontal offset around the golem
+		var offset_x = randi_range(-200, 200)
+		var spawn_pos = global_position + Vector2(offset_x, 0)
+
+		# Snap to the ground (basic approximation)
+		spawn_pos.y = get_ground_y_below(spawn_pos)
+
+		rock.global_position = spawn_pos
 		rock.scale.x = -1 if randi() % 2 == 0 else 1
-		rock.ensure_on_ground()
 		rock.play_animation_first()
 		
-func spawn_rocks_in_area() -> void:
-	# Declare area_rect early to avoid scope issues
-	var area_rect : Rect2
+func spawn_rocks_in_area():
+	var top_left = top_leftm.global_position
+	var bottom_right = bottom_rightm.global_position
 
-	# Get the rock area from the parent
-	var rock_area = get_parent().get_node_or_null("rockArea")
-	if rock_area:
-		# Get the CollisionShape2D node to use its size for bounding
-		var collision_shape = rock_area.get_node_or_null("CollisionShape2D")
-		if collision_shape:
-			# Ensure the CollisionShape2D has a RectangleShape2D
-			var shape = collision_shape.shape
-			if shape is RectangleShape2D:
-				area_rect = shape.get_rect()
+	var min_x = min(top_left.x, bottom_right.x)
+	var max_x = max(top_left.x, bottom_right.x)
+	var min_y = min(top_left.y, bottom_right.y)
+	var max_y = max(top_left.y, bottom_right.y)
 
-				# Get the global position of the rock area
-				var rock_area_global_position = rock_area.global_position
+	var rock_count = randi_range(6, 10)
+	
+	audio_stream_player_2d.play()
+	for i in range(rock_count):
+		await get_tree().create_timer(0.2).timeout
+		var rock = FallingRocks.instantiate()
+		var random_x = randf_range(min_x, max_x)
+		var random_y = randf_range(min_y, max_y)
+		rock.global_position = Vector2(random_x, random_y)
+		get_tree().current_scene.add_child(rock)
+		rock.scale.x = 1 if randf() > 0.5 else -1
+	audio_stream_player_2d.stop()
 
-				# Adjust the area_rect to be in global space
-				var global_area_rect = Rect2(rock_area_global_position, area_rect.size)
+func get_ground_y_below(start_pos: Vector2, max_distance: float = 300.0) -> float:
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(start_pos, start_pos + Vector2.DOWN * max_distance)
+	query.collide_with_areas = false
+	query.collide_with_bodies = true
 
-				# Start spawning rocks
-				for i in range(randi_range(6, 10)):
-					var rock = FallingRocks.instantiate()
-					if rock:
-						get_parent().add_child(rock)
-
-						# Calculate the spawn position relative to the global area’s position
-						var random_x = randf_range(global_area_rect.position.x, global_area_rect.position.x + global_area_rect.size.x)
-						var random_y = randf_range(global_area_rect.position.y, global_area_rect.position.y + global_area_rect.size.y)
-
-						rock.global_position = Vector2(random_x, random_y)
-
-						# Ensure the rock velocity and scale are set properly
-						#rock.velocity = Vector2(0, 1500)  # Falls quickly if not on ground
-						rock.scale.x = 1 if randf() > 0.5 else -1  # Randomly face left or right
+	var result = space_state.intersect_ray(query)
+	if result:
+		return result.position.y
+	else:
+		return start_pos.y  # No ground found, fallback to original Y

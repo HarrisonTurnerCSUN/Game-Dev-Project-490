@@ -88,10 +88,10 @@ shape = SubResource("RectangleShape2D_0j7an")
 position = Vector2(560, -218)
 
 [node name="enemy_stone_golem" parent="." instance=ExtResource("9_ecqun")]
-position = Vector2(349, -373)
+position = Vector2(2174, -195)
 
 [node name="enemy_mushroom" parent="." instance=ExtResource("17_qkj0y")]
-position = Vector2(2161, -60)
+position = Vector2(1277, -128)
 scale = Vector2(0.75, 0.75)
 
 [node name="HealArea" parent="." instance=ExtResource("18_axaub")]

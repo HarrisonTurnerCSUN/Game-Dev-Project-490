@@ -229,7 +229,7 @@ func die() -> void:
 	for child in get_children():
 		if child is BTPlayer or child is LimboHSM:
 			child.set_active(false)
-
+	RewardController.show_reward_screen()
 	if get_tree():
 		await get_tree().create_timer(10.0).timeout
 		queue_free()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d1g604mr0yjcx"]
+[gd_scene load_steps=38 format=3 uid="uid://d1g604mr0yjcx"]
 
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/hurtbox.gd" id="1_40mg5"]
 [ext_resource type="Script" path="res://Levels/Enemies/scripts/enemy_stone_golem.gd" id="1_brhg7"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://kc1n1tbe6qnl" path="res://Assets/AudioAssets/Enemies/Golem/rockwalk.wav" id="10_jv3w6"]
 [ext_resource type="AudioStream" uid="uid://brbbggdm0e1po" path="res://Assets/AudioAssets/Enemies/Golem/energize.wav" id="11_uxs12"]
 [ext_resource type="AudioStream" uid="uid://1eurinl6bbh0" path="res://Assets/AudioAssets/Enemies/Golem/lazer-2.wav" id="12_ig4ga"]
+[ext_resource type="AudioStream" uid="uid://bcu83ejrumpjg" path="res://Assets/AudioAssets/Enemies/Golem/falling-rocks.wav" id="12_mey6m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2pjs7"]
 radius = 5.0
@@ -5604,7 +5605,7 @@ shape = SubResource("CapsuleShape2D_s116c")
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_0bw20")
-max_health = 20.0
+max_health = 30.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -5638,3 +5639,14 @@ bus = &"SFX"
 [node name="lazer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_ig4ga")
 bus = &"SFX"
+
+[node name="TopLeft" type="Marker2D" parent="."]
+position = Vector2(-204, -109)
+
+[node name="BottomRight" type="Marker2D" parent="."]
+position = Vector2(149, -70)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_mey6m")
+volume_db = -2.811
+max_distance = 500.0
