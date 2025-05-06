@@ -115,7 +115,7 @@ public partial class SaveController : Node
 	
 	public static List<string> Inventory { get; set; } = new List<string>();
 	public static void setPlayerInventory(List<string> x){ playerData.setPlayerInventory(x); }
-	public List<string> getPlayerInventory(){ return playerData.getPlayerInventory(); }
+	public void getPlayerInventory(){ Inventory = playerData.getPlayerInventory(); }
 	
 	public void addPotion(string item)
 	{

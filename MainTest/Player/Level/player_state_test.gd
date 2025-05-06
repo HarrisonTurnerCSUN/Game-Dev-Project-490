@@ -36,6 +36,7 @@ func _ready() -> void:
 	camera.position.x = camera_x_transform
 	camera.position.y = camera_y_transform
 	SaveController.connect("PotionAdded", Callable(self, "_on_potion_added"))
+	SaveController.getPlayerInventory()
 	_on_potion_added()
 	$Health.connect("death", Callable(self, "_on_player_death"))
 

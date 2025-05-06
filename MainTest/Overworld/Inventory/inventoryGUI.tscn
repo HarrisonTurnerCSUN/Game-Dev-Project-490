@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Overworld/Inventory/inventory_gui.gd" id="1_2d713"]
 [ext_resource type="Texture2D" uid="uid://c4fqsgln3j348" path="res://Overworld/Potions/InventoryRect.png" id="1_w8h0r"]
-[ext_resource type="PackedScene" path="res://Overworld/Inventory/slotGUI.tscn" id="2_iqqeu"]
+[ext_resource type="PackedScene" uid="uid://cw7wn7old5nn0" path="res://Overworld/Inventory/slotGUI.tscn" id="2_iqqeu"]
 
 [node name="InventoryGUI" type="Control"]
 custom_minimum_size = Vector2(650, 350)
