@@ -36,9 +36,9 @@ func _physics_process(delta):
 			print("Boomerang Reached Max Distance, Returning...")
 
 	elif returning and player:
-		# Move back toward the player
+		collision_shape.disabled = true  # ✅ Disable collision so it doesn’t get stuck
 		var return_dir = (player.global_position - global_position).normalized()
-		move_and_collide(return_dir * return_speed * delta)
+		position += return_dir * return_speed * delta
 
 		# Delete when it reaches the player
 		if global_position.distance_to(player.global_position) < 5: 
@@ -54,6 +54,7 @@ func throw(dir: Vector2, player_ref: Node2D):
 	start_position = global_position 
 	visible = true
 	print("Boomerang Thrown From:", global_position, "| Direction:", direction)
+	collision_shape.disabled = false  # ✅ Re-enable collision for next throw
 
 
 func _on_pickup_area_entered(area):

@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://d055kv58btqs1"]
+
+[ext_resource type="Script" path="res://Overworld/shopnpc.gd" id="1_7yiav"]
+[ext_resource type="Texture2D" uid="uid://cucwk8q288psr" path="res://Overworld/a.png" id="2_6863p"]
+[ext_resource type="Resource" uid="uid://bkc5ngxb43h1q" path="res://Overworld/Items/coin.tres" id="2_yj8wg"]
+[ext_resource type="Resource" uid="uid://4yqoydo8ygv4" path="res://Overworld/Inventory/Items/speedpot.tres" id="3_easew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e8e60"]
+size = Vector2(231, 264)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_incqu"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.294118, 0.294118, 0.294118, 0.380392)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="NPC" type="Area2D"]
+scale = Vector2(0.135, 0.135)
+script = ExtResource("1_7yiav")
+cost_item = ExtResource("2_yj8wg")
+reward_item = ExtResource("3_easew")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6863p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e8e60")
+
+[node name="TradePopup" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.5
+offset_top = -250.0
+offset_right = 72.5
+offset_bottom = -186.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_incqu")
+
+[node name="TradeLayout" type="HBoxContainer" parent="TradePopup"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="CostIcon" type="TextureRect" parent="TradePopup/TradeLayout"]
+custom_minimum_size = Vector2(180, 96)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="ArrowLabel" type="Label" parent="TradePopup/TradeLayout"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+
+[node name="RewardIcon" type="TextureRect" parent="TradePopup/TradeLayout"]
+custom_minimum_size = Vector2(180, 96)
+layout_mode = 2
+stretch_mode = 5

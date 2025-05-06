@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsi0t0grw25ve"
-path="res://.godot/imported/thunder_potion.png-4a76403d46d125ad2133388f6dfa75a9.ctex"
+uid="uid://biu1jr5cwb1sp"
+path="res://.godot/imported/redcoin.png-1a5b5371f5a2b5f590a328292e55ff15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Potions/thunder_potion.png"
-dest_files=["res://.godot/imported/thunder_potion.png-4a76403d46d125ad2133388f6dfa75a9.ctex"]
+source_file="res://Overworld/Items/redcoin.png"
+dest_files=["res://.godot/imported/redcoin.png-1a5b5371f5a2b5f590a328292e55ff15.ctex"]
 
 [params]
 

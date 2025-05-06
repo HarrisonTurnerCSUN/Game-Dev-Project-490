@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://6nnpesk27mf8"]
+
+[ext_resource type="Script" path="res://Overworld/Inventory/inventoryItem.gd" id="1_dtjmv"]
+[ext_resource type="Texture2D" uid="uid://biu1jr5cwb1sp" path="res://Overworld/Items/redcoin.png" id="2_hrpyx"]
+
+[resource]
+script = ExtResource("1_dtjmv")
+name = "RedCoin"
+texture = ExtResource("2_hrpyx")
+maxAmountPrStack = 99
+value = 5

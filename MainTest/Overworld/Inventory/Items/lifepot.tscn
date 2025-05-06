@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqheyxit8f7o3"]
 
 [ext_resource type="PackedScene" uid="uid://csl2vhovuxb17" path="res://Overworld/Inventory/collectible.tscn" id="1_i21sv"]
-[ext_resource type="Texture2D" uid="uid://d27vjlpsruyag" path="res://Overworld/Potions/health_potion.png" id="1_ydhoi"]
+[ext_resource type="Texture2D" uid="uid://d27vjlpsruyag" path="res://Overworld/Potions/lifepot.png" id="1_ydhoi"]
 [ext_resource type="Resource" uid="uid://f7i0ar0spd6j" path="res://Overworld/Inventory/Items/lifepot.tres" id="2_l2u0v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ryms"]

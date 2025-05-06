@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://4yqoydo8ygv4"]
+
+[ext_resource type="Script" path="res://Overworld/Inventory/inventoryItem.gd" id="1_72u2q"]
+[ext_resource type="Texture2D" uid="uid://bfxtfru2hof2c" path="res://Overworld/Potions/speedpot.png" id="2_xvj85"]
+
+[resource]
+script = ExtResource("1_72u2q")
+name = "speedpotion"
+texture = ExtResource("2_xvj85")
+maxAmountPrStack = 10

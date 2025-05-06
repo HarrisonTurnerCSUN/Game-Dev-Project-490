@@ -33,7 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="20_nws7u"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="21_fr54d"]
 [ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="22_p5nlq"]
-[ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="26_bowak"]
+[ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/Items/lifepot.tscn" id="26_bowak"]
 [ext_resource type="PackedScene" uid="uid://byq4553wadp8r" path="res://Levels/Enemies/Worm_purple/enemy_worm_purple.tscn" id="29_p1f0l"]
 [ext_resource type="Script" path="res://Levels/Objects/star_pickup.gd" id="32_eea2p"]
 [ext_resource type="PackedScene" uid="uid://de1xxdg3tyvj7" path="res://Levels/Objects/Breakable Box/object_breakable_box.tscn" id="33_aongb"]

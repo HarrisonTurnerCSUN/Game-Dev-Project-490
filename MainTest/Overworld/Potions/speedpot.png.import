@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfir4f2yv6426"
-path="res://.godot/imported/antidote_potion.png-cfb2e6bd31edb796edd2c74d0a95fb8b.ctex"
+uid="uid://bfxtfru2hof2c"
+path="res://.godot/imported/speedpot.png-f678bd24e9b6470446eea5563d50590c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Potions/antidote_potion.png"
-dest_files=["res://.godot/imported/antidote_potion.png-cfb2e6bd31edb796edd2c74d0a95fb8b.ctex"]
+source_file="res://Overworld/Potions/speedpot.png"
+dest_files=["res://.godot/imported/speedpot.png-f678bd24e9b6470446eea5563d50590c.ctex"]
 
 [params]
 

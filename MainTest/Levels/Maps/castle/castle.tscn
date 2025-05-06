@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="11_0dyv6"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="12_1j5em"]
 [ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="14_dhisv"]
-[ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/lifepot.tscn" id="15_cv4os"]
+[ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/Items/lifepot.tscn" id="15_cv4os"]
 [ext_resource type="PackedScene" uid="uid://disg4aaminqaf" path="res://Levels/Maps/Forest/tile_moving_platform.tscn" id="16_d0n6g"]
 [ext_resource type="PackedScene" uid="uid://qbonyhrk8qe2" path="res://Levels/Enemies/Mushroom/enemy_mushroom.tscn" id="16_xurhi"]
 [ext_resource type="Texture2D" uid="uid://di7518lwkg212" path="res://Assets/Items/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="19_wk70x"]

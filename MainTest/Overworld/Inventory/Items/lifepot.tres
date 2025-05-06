@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://f7i0ar0spd6j"]
 
 [ext_resource type="Script" path="res://Overworld/Inventory/inventoryItem.gd" id="1_ofrt8"]
-[ext_resource type="Texture2D" uid="uid://d27vjlpsruyag" path="res://Overworld/Potions/health_potion.png" id="2_ewfx3"]
+[ext_resource type="Texture2D" uid="uid://d27vjlpsruyag" path="res://Overworld/Potions/lifepot.png" id="2_ewfx3"]
 
 [resource]
 script = ExtResource("1_ofrt8")
 name = "lifepot"
 texture = ExtResource("2_ewfx3")
+maxAmountPrStack = 10

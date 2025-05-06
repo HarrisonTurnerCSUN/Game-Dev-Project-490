@@ -4,12 +4,15 @@ extends CharacterBody2D
 @onready var camera: Camera2D = $Camera2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var hurt: AudioStreamPlayer2D = $Hurt
+var selected_hotbar_index := -1
 
 signal player_died
 
 var _moved_this_frame: bool = false
 var _is_dead: bool = false
 var _is_healing := false
+var _is_speed_boosted := false
+
 @export_category("Camera Settings")
 @export var left: int = -10000000
 @export var right: int = 10000000
@@ -23,7 +26,6 @@ var _is_healing := false
 @export var base_damage: int = 0
 @onready var health: Health = $Health
 
-var reward_node = get_node
 func _ready() -> void:
 	camera.limit_bottom = bottom
 	camera.limit_top = top
@@ -34,18 +36,18 @@ func _ready() -> void:
 	camera.position.x = camera_x_transform
 	camera.position.y = camera_y_transform
 	SaveController.connect("PotionAdded", Callable(self, "_on_potion_added"))
-	
 	$Health.connect("death", Callable(self, "_on_player_death"))
 
 func _process(delta: float) -> void:
 	if _is_dead or _is_healing:
 		return
-	if Input.is_action_just_pressed("interact"):
-		if health.get_current() <= health.max_health - 1:
-			if not inventory.has_items():
-				#print("Inventory is empty!")
-				return
-			heal_player()
+
+	for i in range(6):
+		if Input.is_action_just_pressed("hotbar_" + str(i + 1)):
+			selected_hotbar_index = i
+
+	if Input.is_action_just_pressed("interact") and selected_hotbar_index != -1:
+		use_item_from_slot(selected_hotbar_index)
 
 func die() -> void:
 	if _is_dead:
@@ -53,10 +55,8 @@ func die() -> void:
 	_is_dead = true
 	animation_player.play("death")
 	player_died.emit()
-	set_physics_process(false) # stop moving after death
+	set_physics_process(false)
 
-#func receives_knockback(damage_source_pos: Vector2, received_damage: int):
-	#pass
 func apply_knockback(knockback: Vector2, frames: int = 10) -> void:
 	if knockback.is_zero_approx():
 		return
@@ -75,68 +75,62 @@ func get_facing() -> float:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.has_method("collect"):
 		area.collect(inventory)
-		
+
 func _on_potion_added() -> void:
 	update_damage()
 	update_health()
 	update_stamina()
 	update_speed()
 	update_jump()
-	
+
 func update_damage() -> void:
 	var strPotions = SaveController.getPotionCount("Elixir of Strength")
-	$Sprite2D/Hitbox.damage = $Sprite2D/Hitbox.damage + strPotions
-	$Sprite2D/LightHitbox.damage = $Sprite2D/LightHitbox.damage + strPotions
+	$Sprite2D/Hitbox.damage += strPotions
+	$Sprite2D/LightHitbox.damage += strPotions
 
 func update_health() -> void:
 	var healthPotions = SaveController.getPotionCount("Elixir of Fortitude")
-	$Health.max_health = $Health.max_health + 2*(healthPotions)
-	var current_health = $Health.get_current()+2
+	$Health.max_health += 2 * healthPotions
+	var current_health = $Health.get_current() + 2
 	$Camera2D/StatusUI.set_max_health($Health.max_health)
 	$Camera2D/StatusUI.update_health(current_health)
 	if health.get_current() <= health.max_health - 2:
 		health._current = current_health
-	
-	
+
 func update_stamina() -> void:
 	var staminaPotions = SaveController.getPotionCount("Elixir of Stamina")
-	$Stamina.max_stamina = $Stamina.max_stamina + staminaPotions
-	
-	
+	$Stamina.max_stamina += staminaPotions
+
 func update_speed() -> void:
 	var speedPotions = SaveController.getPotionCount("Elixir of Swiftness")
 	if speedPotions > 0:
-		$StateMachine/Run.speed *= (1.1 ** speedPotions)
-		$StateMachine/Run.max_horizontal_speed *= (1.1 ** speedPotions)
-	
+		$StateMachine/Run.speed *= pow(1.1, speedPotions)
+		$StateMachine/Run.max_horizontal_speed *= pow(1.1, speedPotions)
+
 func update_jump() -> void:
 	var jumpPotions = SaveController.getPotionCount("Elixir of Jumping")
 	if jumpPotions > 0:
-		$StateMachine/Jump.jump_power *= (1.1 ** jumpPotions)
+		$StateMachine/Jump.jump_power *= pow(1.1, jumpPotions)
 
 func _start_invincibility():
 	if _is_dead:
 		return
 	hurt.play()
-	# Don't restart if already blinking
-	if get_node("Sprite2D").modulate.a < 1.0:
+	if $Sprite2D.modulate.a < 1.0:
 		return
 
 	var sprite := $Sprite2D
 	var hurtbox := $Sprite2D/Hurtbox
-
-	# Disable hurtbox shapes
 	for shape in hurtbox.get_children():
 		if shape is CollisionShape2D:
 			shape.set_deferred("disabled", true)
 
 	var original_color := Color(1, 1, 1, 1)
 	var transparent := Color(1, 1, 1, 0)
-	var blink_duration := 1
+	var blink_duration := 1.0
 	var blink_interval := 0.2
 	var blink_timer := 0.0
 
-	# Coroutine-style blink loop
 	await get_tree().process_frame
 	while blink_timer < blink_duration:
 		sprite.modulate = transparent
@@ -145,7 +139,6 @@ func _start_invincibility():
 		await get_tree().create_timer(blink_interval / 2).timeout
 		blink_timer += blink_interval
 
-	# Ensure visibility and re-enable hurtbox
 	sprite.modulate = original_color
 	for shape in hurtbox.get_children():
 		if shape is CollisionShape2D:
@@ -154,28 +147,61 @@ func _start_invincibility():
 func _on_player_death() -> void:
 	if _is_dead:
 		return
-
 	_is_dead = true
 	player_died.emit()
-
-
-	# Option B: Transition to a Death state
 	$StateMachine.transition_to("DeathState")
-	
-func heal_player() -> void:
+
+func heal_player(amount: int) -> void:
 	_is_healing = true
-	# Disable input/movement during healing
 	$StateMachine.set_physics_process(false)
-
 	animation_player.play("Healing")
-	await get_tree().create_timer(0.7).timeout  # Match animation length
+	await get_tree().create_timer(0.7).timeout
 
-	# Heal 2 HP, clamped to max
-	var used_item = inventory.consume_first_item()
-	#print("Used item:", used_item.name)
-	health._current = min(health._current + 1, health.max_health)
+	health._current = min(health._current + amount, health.max_health)
 	$Camera2D/StatusUI.update_health(health._current)
 
-	# Re-enable input/movement
 	$StateMachine.set_physics_process(true)
 	_is_healing = false
+
+func use_item_from_slot(index: int) -> void:
+	if index >= inventory.slots.size():
+		return
+
+	var slot = inventory.slots[index]
+	if slot.item == null or slot.amount <= 0:
+		return
+
+	match slot.item.name:
+		"lifepot":
+			if health.get_current() < health.max_health:
+				heal_player(1)
+				slot.amount -= 1
+		"staminapotion":
+			var stamina = $Stamina
+			stamina.set_current_stamina(stamina.get_current_stamina() + 25)
+			slot.amount -= 1
+		"speedpotion":
+			apply_speed_boost()
+			slot.amount -= 1
+
+	if slot.amount == 0:
+		slot.item = null
+	inventory.updated.emit()
+
+func apply_speed_boost():
+	if _is_speed_boosted:
+		return
+	_is_speed_boosted = true
+
+	var run_node = $StateMachine/Run
+	var original_speed = run_node.speed
+	var original_max = run_node.max_horizontal_speed
+
+	run_node.speed *= 1.3
+	run_node.max_horizontal_speed *= 1.3
+
+	await get_tree().create_timer(5.0).timeout
+
+	run_node.speed = original_speed
+	run_node.max_horizontal_speed = original_max
+	_is_speed_boosted = false

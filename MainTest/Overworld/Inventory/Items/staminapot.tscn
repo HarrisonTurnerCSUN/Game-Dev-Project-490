@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dadyw5mfd33qs"]
 
 [ext_resource type="PackedScene" uid="uid://csl2vhovuxb17" path="res://Overworld/Inventory/collectible.tscn" id="1_qejub"]
-[ext_resource type="Resource" uid="uid://03t8ji23756y" path="res://Overworld/Inventory/Items/antidote.tres" id="2_3uryr"]
-[ext_resource type="Texture2D" uid="uid://cfir4f2yv6426" path="res://Overworld/Potions/antidote_potion.png" id="2_pwrro"]
+[ext_resource type="Resource" uid="uid://03t8ji23756y" path="res://Overworld/Inventory/Items/staminapot.tres" id="2_3uryr"]
+[ext_resource type="Texture2D" uid="uid://cfir4f2yv6426" path="res://Overworld/Potions/staminapotionm.png" id="2_pwrro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqauj"]
 resource_local_to_scene = true
