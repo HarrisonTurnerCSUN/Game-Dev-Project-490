@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://cfslyfkfqilxu"]
+[gd_scene load_steps=66 format=4 uid="uid://cfslyfkfqilxu"]
 
 [ext_resource type="Script" path="res://Levels/Maps/Desert/desert.gd" id="1_eidn7"]
 [ext_resource type="TileSet" uid="uid://cmq4eu4qhi1x2" path="res://Assets/mk_16_16_nature_tileset_godot/mk_16_16_nature_tileset_godot/tileset_mk_16_16_nature_tileset_godot.tres" id="1_kxmht"]
@@ -19,10 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c2grewbwmu5rs" path="res://Levels/Enemies/Worm_red/enemy_worm_fire.tscn" id="6_w2f4u"]
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="7_7jx2t"]
 [ext_resource type="Texture2D" uid="uid://cs6ow0nmcn5on" path="res://Assets/Textures-16.png" id="7_hjvxp"]
-[ext_resource type="Script" path="res://Overworld/canvas_layer.gd" id="10_flvbs"]
 [ext_resource type="PackedScene" uid="uid://csrsp72fcixac" path="res://Levels/Maps/Desert/tile_platform_desert.tscn" id="10_yvgbc"]
-[ext_resource type="PackedScene" uid="uid://cccut3d2kje15" path="res://Overworld/Inventory/inventoryGUI.tscn" id="11_mxky5"]
-[ext_resource type="PackedScene" uid="uid://bsfiddtulqx03" path="res://Overworld/Inventory/hotbar.tscn" id="12_57b7q"]
 [ext_resource type="PackedScene" uid="uid://dkqjnddjsgi7c" path="res://main menu/Pause Menu/text_pop_up.tscn" id="21_p6dco"]
 [ext_resource type="Script" path="res://Levels/Maps/Desert/DesertBossExit.gd" id="22_7e6b3"]
 [ext_resource type="Texture2D" uid="uid://di7518lwkg212" path="res://Assets/Items/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="23_kblx8"]
@@ -2875,35 +2872,6 @@ camera_y_transform = -25.0
 [node name="desert_parallax" parent="." instance=ExtResource("1_mpmu3")]
 z_index = -5
 position = Vector2(-9, -99)
-
-[node name="Inventory" type="CanvasLayer" parent="."]
-script = ExtResource("10_flvbs")
-
-[node name="InventoryGUI" parent="Inventory" instance=ExtResource("11_mxky5")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -325.0
-offset_top = -175.0
-offset_right = 325.0
-offset_bottom = 175.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Hotbar" parent="Inventory" instance=ExtResource("12_57b7q")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 0
 
 [node name="TileMapLayers" type="Node" parent="."]
 

@@ -8,3 +8,4 @@ script = ExtResource("1_isjn0")
 name = "Coin"
 texture = ExtResource("2_feiq7")
 maxAmountPrStack = 99
+value = 1
