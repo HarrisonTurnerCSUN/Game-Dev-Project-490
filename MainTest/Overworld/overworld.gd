@@ -1,8 +1,11 @@
 extends Node2D
 
+@onready var sceneChangeAnim = $CanvasLayer/SceneTransition
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$YSORT/PlayerOverworld.position = Vector2(SaveController.getOverworldPositionX(),SaveController.getOverworldPositionY())
+	sceneChangeAnim.play("fadeOut")
+	await sceneChangeAnim.animation_finished
 	pass # Replace with function body.
 
 

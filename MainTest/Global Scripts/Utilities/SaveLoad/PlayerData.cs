@@ -1,6 +1,6 @@
 using Godot;
 using System;
-
+using System.Collections.Generic;
 
 public class PlayerData
 {
@@ -10,6 +10,7 @@ public class PlayerData
 	public float overworldPositionX {get; set;}
 	public float overworldPositionY {get; set;}
 	public string savedScene {get; set;}
+	public List<string> Inventory { get; set; }
 	
 	//public Godot.Collections.Dictionary<string ,int> saveDictionary = 
 	//	new Godot.Collections.Dictionary<string ,int>();
@@ -20,7 +21,8 @@ public class PlayerData
 		overworldCheckpoint = 0;
 		overworldPositionX = 448;
 		overworldPositionY = 666;
-		savedScene = "res://Overworld/overworld.tscn";;
+		savedScene = "res://Overworld/overworld.tscn";
+		Inventory = new List<string>();
 		//allows storing of dictionary of simple data types, maybe useful
 		//playerDictionary.Add("zero",0);
 	}
@@ -32,4 +34,7 @@ public class PlayerData
 	
 	public void setOverworldPositionY (int x){ overworldPositionY = x;}
 	public float getOverworldPositionY () { return overworldPositionY;}
+	
+	public void setPlayerInventory(List<string> x){ Inventory = x; }
+	public List<string> getPlayerInventory(){ return Inventory; }
 }

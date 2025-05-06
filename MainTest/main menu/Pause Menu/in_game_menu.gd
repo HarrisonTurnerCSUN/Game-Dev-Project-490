@@ -1,5 +1,6 @@
 extends Control
 
+@onready var sceneChangeAnim = get_tree().current_scene.get_node("CanvasLayer/SceneTransition")
 @onready var popup = $Save_Confirmation_Popup
 @onready var options = $MarginContainer/Options
 @onready var stats = $MarginContainer/Stats
@@ -29,6 +30,7 @@ var stopwatch : Stopwatch
 func _ready() -> void:
 	print(get_tree().current_scene.scene_file_path)
 	SaveController.setSavedScene(get_tree().current_scene.scene_file_path)
+	SaveController.loadPlayer()
 	SaveController.savePlayer()
 	#var busIndex
 	#busIndex = AudioServer.get_bus_index("Master")
@@ -43,8 +45,11 @@ func _ready() -> void:
 	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
 	if is_stats_hidden:
 		stats_button.hide()
-	
-
+		
+	if get_tree().current_scene.scene_file_path == "res://Overworld/overworld.tscn":
+		$MarginContainer/Options/VBoxContainer/VBoxContainer/ExitToOverworld.visible = false
+	else:
+		$MarginContainer/Options/VBoxContainer/VBoxContainer/ExitToOverworld.visible = true
 func resume():
 	get_tree().paused = false
 	$".".hide()
@@ -132,6 +137,8 @@ func _on_exit_to_overworld_pressed() -> void:
 	comp_label.hide()
 	Engine.time_scale = 1
 	SaveController.saveGame();
+	sceneChangeAnim.play("fadeIn")
+	await sceneChangeAnim.animation_finished
 	get_tree().change_scene_to_file("res://Overworld/overworld.tscn")
 
 

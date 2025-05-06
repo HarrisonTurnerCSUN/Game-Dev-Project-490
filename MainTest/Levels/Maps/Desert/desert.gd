@@ -4,6 +4,7 @@ extends Node2D
 @onready var menu = $CanvasLayer/InGameMenu
 @export var tilemaplayer : TileMapLayer
 @export var player : CharacterBody2D
+@onready var sceneChangeAnim = $CanvasLayer/SceneTransition
 
 var current_wave: int
 var starting_nodes: int
@@ -31,8 +32,10 @@ func _ready() -> void:
 	menu.flip_star1()
 	menu.flip_star2()
 	menu.flip_star3()
-	
+	sceneChangeAnim.play("fadeOut")
+	await sceneChangeAnim.animation_finished
 
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	#var player_tile_data = tilemaplayer.get_cell_tile_data(tilemaplayer.local_to_map(player.position))
 	#if player_tile_data:
@@ -88,9 +91,11 @@ func spawn_type(type,mob_spawn_rounds,mob_wait_time):
 	if type == "bats":
 		if mob_spawn_rounds > 3:
 			mob_spawn_rounds = (int)(mob_spawn_rounds/2)
+		@warning_ignore("unused_variable")
 		var bat_spawn1 = $Enemies/BatSpawn1
 		var bat_spawn2 = $Enemies/BatSpawn2
 		var bat_spawn3 = $Enemies/BatSpawn3
+		@warning_ignore("unused_variable")
 		var bat_spawn4 = $Enemies/BatSpawn4
 		if mob_spawn_rounds >= 1:
 			for i in mob_spawn_rounds:
@@ -112,6 +117,7 @@ func spawn_type(type,mob_spawn_rounds,mob_wait_time):
 		if mob_spawn_rounds > 3:
 			mob_spawn_rounds = (int)(mob_spawn_rounds/3)
 		var goblin_spawn1 = $Enemies/GoblinSpawn1
+		@warning_ignore("unused_variable")
 		var goblin_spawn2 = $Enemies/GoblinSpawn2
 		print("goblin")
 		print(mob_spawn_rounds)
@@ -132,6 +138,7 @@ func spawn_type(type,mob_spawn_rounds,mob_wait_time):
 	elif type == "worm":
 		if mob_spawn_rounds > 3:
 			mob_spawn_rounds = (int)(mob_spawn_rounds/3)
+		@warning_ignore("unused_variable")
 		var worm_spawn1 = $Enemies/WormSpawn1
 		var worm_spawn2 = $Enemies/WormSpawn2
 		if mob_spawn_rounds >= 1:
@@ -195,6 +202,7 @@ func flip_spawning_status()->void:
 	spawning_allowed = !spawning_allowed
 
 
+@warning_ignore("unused_parameter")
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if door1_open:
 		door1_open = false
@@ -202,5 +210,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		flip_spawning_status()
 
 
+@warning_ignore("unused_parameter")
 func _on_star_2d_body_entered(body: Node2D) -> void:
 	menu.flip_star1()

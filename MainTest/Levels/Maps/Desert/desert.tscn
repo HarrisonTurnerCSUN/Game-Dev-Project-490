@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://cfslyfkfqilxu"]
+[gd_scene load_steps=67 format=4 uid="uid://cfslyfkfqilxu"]
 
 [ext_resource type="Script" path="res://Levels/Maps/Desert/desert.gd" id="1_eidn7"]
 [ext_resource type="TileSet" uid="uid://cmq4eu4qhi1x2" path="res://Assets/mk_16_16_nature_tileset_godot/mk_16_16_nature_tileset_godot/tileset_mk_16_16_nature_tileset_godot.tres" id="1_kxmht"]
@@ -23,9 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://dkqjnddjsgi7c" path="res://main menu/Pause Menu/text_pop_up.tscn" id="21_p6dco"]
 [ext_resource type="Script" path="res://Levels/Maps/Desert/DesertBossExit.gd" id="22_7e6b3"]
 [ext_resource type="Texture2D" uid="uid://di7518lwkg212" path="res://Assets/Items/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="23_kblx8"]
+[ext_resource type="PackedScene" uid="uid://dth7nthg4r6rn" path="res://Levels/Objects/scene_transition.tscn" id="23_spmjr"]
 [ext_resource type="PackedScene" uid="uid://7l4hua6x02sj" path="res://Levels/Objects/star_pickup.tscn" id="24_4nhs1"]
 [ext_resource type="Script" path="res://Levels/Objects/star_pickup.gd" id="25_je65l"]
-[ext_resource type="PackedScene" uid="uid://cnx0ybxx0m5ko" path="res://Levels/Enemies/Werewolf_black/heal_area.tscn" id="26_u60aq"]
+[ext_resource type="PackedScene" path="res://Levels/Enemies/Werewolf_black/heal_area.tscn" id="26_u60aq"]
 [ext_resource type="PackedScene" uid="uid://bniujx7ueqgwn" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_whitee.tscn" id="27_b5i0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekbxq"]
@@ -2966,6 +2967,8 @@ position = Vector2(1882.69, -54.1645)
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("3_v77b7")]
 process_mode = 1
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("23_spmjr")]
 
 [node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("4_32qth")]
 visible = false

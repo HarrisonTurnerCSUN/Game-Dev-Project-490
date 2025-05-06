@@ -114,11 +114,14 @@ public partial class SaveController : Node
 	public float getOverworldPositionY () { return playerData.getOverworldPositionY();}
 	
 	public static List<string> Inventory { get; set; } = new List<string>();
-
+	public static void setPlayerInventory(List<string> x){ playerData.setPlayerInventory(x); }
+	public List<string> getPlayerInventory(){ return playerData.getPlayerInventory(); }
+	
 	public void addPotion(string item)
 	{
 		Inventory.Add(item);
 		EmitSignal("PotionAdded");
+		setPlayerInventory(Inventory);
 	}
 	public static int getPotionCount(string item)
 	{
