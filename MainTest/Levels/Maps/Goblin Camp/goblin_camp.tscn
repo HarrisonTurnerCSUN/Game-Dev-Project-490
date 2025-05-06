@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bbxls6egs0lly"]
+[gd_scene load_steps=38 format=4 uid="uid://bbxls6egs0lly"]
 
 [ext_resource type="Texture2D" uid="uid://j4mpuog823y8" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/Tileset.png" id="1_fb0er"]
 [ext_resource type="Texture2D" uid="uid://d2t21sgi1voey" path="res://Assets/Tiles/oak_woods_tileset.png" id="2_o2xmx"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="11_r5id7"]
 [ext_resource type="PackedScene" uid="uid://yrbdeqhp6gl2" path="res://main menu/hud.tscn" id="12_q5pam"]
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="13_pp465"]
+[ext_resource type="PackedScene" uid="uid://dth7nthg4r6rn" path="res://Levels/Objects/scene_transition.tscn" id="14_t1sp8"]
 [ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="14_wvu8x"]
 [ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="15_s4c4r"]
 [ext_resource type="PackedScene" uid="uid://ha2c5sfcswao" path="res://Levels/Enemies/Eyeball/enemy_eyeball.tscn" id="16_x6ru8"]
@@ -3991,6 +3992,8 @@ position = Vector2(2138, -34)
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("12_q5pam")]
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("13_pp465")]
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("14_t1sp8")]
 
 [node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("14_wvu8x")]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=4 uid="uid://cw3pmx4kmcs3j"]
+[gd_scene load_steps=111 format=4 uid="uid://cw3pmx4kmcs3j"]
 
 [ext_resource type="TileSet" uid="uid://cmq4eu4qhi1x2" path="res://Assets/mk_16_16_nature_tileset_godot/mk_16_16_nature_tileset_godot/tileset_mk_16_16_nature_tileset_godot.tres" id="1_hn47r"]
 [ext_resource type="Script" path="res://Levels/Maps/Mountain/mountain.gd" id="1_mwab1"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b5pebb61jhh6f" path="res://Levels/Maps/Mountain/tile_platform_mountain.tscn" id="15_ryukk"]
 [ext_resource type="Script" path="res://Levels/Maps/Mountain/stone_door_lower.gd" id="16_56m47"]
 [ext_resource type="PackedScene" uid="uid://d1g604mr0yjcx" path="res://Levels/Enemies/Stone Golem/enemy_stone_golem.tscn" id="16_m4v2a"]
+[ext_resource type="PackedScene" uid="uid://dth7nthg4r6rn" path="res://Levels/Objects/scene_transition.tscn" id="17_5byra"]
 [ext_resource type="PackedScene" uid="uid://c2grewbwmu5rs" path="res://Levels/Enemies/Worm_red/enemy_worm_fire.tscn" id="17_jvnc4"]
 [ext_resource type="Script" path="res://Levels/Maps/Mountain/stone_door_upper.gd" id="17_m7bum"]
 [ext_resource type="PackedScene" uid="uid://7l4hua6x02sj" path="res://Levels/Objects/star_pickup.tscn" id="18_gemsu"]
@@ -6263,6 +6264,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("4_1b0n5")]
 process_mode = 1
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("17_5byra")]
 
 [node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("5_rkuu1")]
 visible = false

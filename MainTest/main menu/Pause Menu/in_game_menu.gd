@@ -30,7 +30,6 @@ var stopwatch : Stopwatch
 func _ready() -> void:
 	print(get_tree().current_scene.scene_file_path)
 	SaveController.setSavedScene(get_tree().current_scene.scene_file_path)
-	SaveController.loadPlayer()
 	SaveController.savePlayer()
 	#var busIndex
 	#busIndex = AudioServer.get_bus_index("Master")

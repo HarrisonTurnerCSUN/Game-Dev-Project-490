@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dth7nthg4r6rn" path="res://Levels/Objects/scene_transition.tscn" id="23_spmjr"]
 [ext_resource type="PackedScene" uid="uid://7l4hua6x02sj" path="res://Levels/Objects/star_pickup.tscn" id="24_4nhs1"]
 [ext_resource type="Script" path="res://Levels/Objects/star_pickup.gd" id="25_je65l"]
-[ext_resource type="PackedScene" path="res://Levels/Enemies/Werewolf_black/heal_area.tscn" id="26_u60aq"]
+[ext_resource type="PackedScene" uid="uid://cnx0ybxx0m5ko" path="res://Levels/Enemies/Werewolf_black/heal_area.tscn" id="26_u60aq"]
 [ext_resource type="PackedScene" uid="uid://bniujx7ueqgwn" path="res://Levels/Enemies/Werewolf_black/enemy_werewolf_whitee.tscn" id="27_b5i0p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekbxq"]

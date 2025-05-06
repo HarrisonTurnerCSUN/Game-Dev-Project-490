@@ -4,7 +4,7 @@ extends Node2D
 @onready var menu = $CanvasLayer/InGameMenu
 @export var tilemaplayer : TileMapLayer
 @export var player : CharacterBody2D
-@onready var sceneChangeAnim = $CanvasLayer/SceneTransition
+#@onready var sceneChangeAnim = $CanvasLayer/SceneTransition
 
 var current_wave: int
 var starting_nodes: int
@@ -32,8 +32,8 @@ func _ready() -> void:
 	menu.flip_star1()
 	menu.flip_star2()
 	menu.flip_star3()
-	sceneChangeAnim.play("fadeOut")
-	await sceneChangeAnim.animation_finished
+	#sceneChangeAnim.play("fadeOut")
+	#await sceneChangeAnim.animation_finished
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:

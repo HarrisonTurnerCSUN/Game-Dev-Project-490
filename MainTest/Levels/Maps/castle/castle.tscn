@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://da087tc0j47m"]
+[gd_scene load_steps=59 format=4 uid="uid://da087tc0j47m"]
 
 [ext_resource type="Texture2D" uid="uid://dyutso4v8sa51" path="res://Assets/Tiles/castle.png/ground.png" id="1_2xbwm"]
 [ext_resource type="Script" path="res://Levels/Maps/castle/castle.gd" id="1_oulha"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://yrbdeqhp6gl2" path="res://main menu/hud.tscn" id="10_o48wh"]
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="11_0dyv6"]
 [ext_resource type="PackedScene" uid="uid://hmo60pommvs7" path="res://Levels/Enemies/Goblin/enemy_goblin.tscn" id="12_1j5em"]
+[ext_resource type="PackedScene" uid="uid://dth7nthg4r6rn" path="res://Levels/Objects/scene_transition.tscn" id="12_cgr5d"]
 [ext_resource type="PackedScene" uid="uid://dw5jn73q5owhu" path="res://Levels/Enemies/Undead_Excutioner/enemy_undead_Executioner.tscn" id="14_dhisv"]
 [ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/Items/lifepot.tscn" id="15_cv4os"]
 [ext_resource type="PackedScene" uid="uid://disg4aaminqaf" path="res://Levels/Maps/Forest/tile_moving_platform.tscn" id="16_d0n6g"]
@@ -1811,6 +1812,8 @@ offset_right = -1152.0
 offset_bottom = -648.0
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("11_0dyv6")]
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("12_cgr5d")]
 
 [node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("9_8c7q2")]
 visible = false

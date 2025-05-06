@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dth7nthg4r6rn"]
+[gd_scene load_steps=6 format=3 uid="uid://dth7nthg4r6rn"]
+
+[ext_resource type="Script" path="res://Levels/Objects/scene_transition.gd" id="1_1qmcf"]
 
 [sub_resource type="Animation" id="Animation_xq87s"]
 length = 0.001
@@ -46,10 +48,11 @@ _data = {
 libraries = {
 "": SubResource("AnimationLibrary_vub8k")
 }
+script = ExtResource("1_1qmcf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -93.0
 offset_top = -43.0
 offset_right = 1335.0
 offset_bottom = 743.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)

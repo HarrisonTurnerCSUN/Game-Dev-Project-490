@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://c0ehxun5hum71"]
+[gd_scene load_steps=28 format=4 uid="uid://c0ehxun5hum71"]
 
 [ext_resource type="Script" path="res://Levels/Maps/dungeon/dungeon_map_2.gd" id="1_gid76"]
 [ext_resource type="Texture2D" uid="uid://dyss3p4ajijny" path="res://Assets/Tiles/fantasyinterior.png" id="1_vypvx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://y7gl3sx67yxt" path="res://Levels/Objects/door_2.tscn" id="7_k1mmy"]
 [ext_resource type="PackedScene" uid="uid://b6jpciqqr0frf" path="res://Player/Level/playerState.tscn" id="7_logdv"]
 [ext_resource type="PackedScene" uid="uid://b8cfmhl3gu8rq" path="res://Levels/Objects/chest.tscn" id="8_s473k"]
+[ext_resource type="PackedScene" uid="uid://dth7nthg4r6rn" path="res://Levels/Objects/scene_transition.tscn" id="8_vrj4t"]
 [ext_resource type="PackedScene" uid="uid://dm87k1ebgcv12" path="res://main menu/Pause Menu/in_game_menu.tscn" id="8_wdbq3"]
 [ext_resource type="PackedScene" uid="uid://yrbdeqhp6gl2" path="res://main menu/hud.tscn" id="9_ftt4m"]
 [ext_resource type="PackedScene" uid="uid://c1npp3oajpua8" path="res://main menu/Pause Menu/stopwatch.tscn" id="10_gl525"]
@@ -661,10 +662,12 @@ shape = SubResource("CircleShape2D_ct3qh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("9_ftt4m")]
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("8_vrj4t")]
+
 [node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("8_wdbq3")]
 visible = false
-
-[node name="Hud" parent="CanvasLayer" instance=ExtResource("9_ftt4m")]
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("10_gl525")]
 

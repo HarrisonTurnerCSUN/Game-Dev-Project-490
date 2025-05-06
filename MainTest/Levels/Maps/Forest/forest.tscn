@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://duo0drk110rtf"]
+[gd_scene load_steps=105 format=4 uid="uid://duo0drk110rtf"]
 
 [ext_resource type="Texture2D" uid="uid://j4mpuog823y8" path="res://Assets/FreeCuteTilesetv1/FreeCuteTileset/Tileset.png" id="1_s8ngb"]
 [ext_resource type="Script" path="res://Levels/Maps/Forest/forest.gd" id="1_sckwm"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://dqheyxit8f7o3" path="res://Overworld/Inventory/Items/lifepot.tscn" id="28_viypi"]
 [ext_resource type="PackedScene" uid="uid://dadyw5mfd33qs" path="res://Overworld/Inventory/Items/staminapot.tscn" id="29_0vo88"]
 [ext_resource type="Texture2D" uid="uid://di7518lwkg212" path="res://Assets/Items/Items/Checkpoints/Checkpoint/Checkpoint (Flag Out) (64x64).png" id="30_18vd2"]
+[ext_resource type="PackedScene" uid="uid://dth7nthg4r6rn" path="res://Levels/Objects/scene_transition.tscn" id="30_pvtqm"]
 [ext_resource type="PackedScene" uid="uid://16cubl6ttua6" path="res://Levels/Enemies/Bat/enemy_bat.tscn" id="31_opsnw"]
 [ext_resource type="PackedScene" uid="uid://cx2th6yx3dgqj" path="res://Levels/Enemies/Dummy/training_dummy.tscn" id="35_ai7dx"]
 
@@ -2754,6 +2755,8 @@ shape = SubResource("RectangleShape2D_0oive")
 
 [node name="Stopwatch" parent="CanvasLayer" instance=ExtResource("20_xf44k")]
 process_mode = 1
+
+[node name="SceneTransition" parent="CanvasLayer" instance=ExtResource("30_pvtqm")]
 
 [node name="InGameMenu" parent="CanvasLayer" instance=ExtResource("19_y754a")]
 visible = false
