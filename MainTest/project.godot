@@ -21,6 +21,7 @@ AudioManager="*res://Global Scripts/Audio_Manager.gd"
 KeyManager="*res://Global Scripts/key_manager.gd"
 DungeonSpawn="*res://Levels/Maps/dungeon/dungeon_spawn.gd"
 RewardController="*res://Global Scripts/Utilities/SaveLoad/RewardController.gd"
+GameOverController="*res://Global Scripts/game_over_controller.gd"
 
 [display]
 
