@@ -6217,7 +6217,7 @@ tilemaplayer = NodePath("TileMapLayers/Liquidlayer")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_au3vn")]
-position = Vector2(4604, -2306)
+position = Vector2(1557, -962)
 camera_y_transform = -25.0
 
 [node name="1" type="Sprite2D" parent="Player"]

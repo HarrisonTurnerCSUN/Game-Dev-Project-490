@@ -30,7 +30,7 @@ var stopwatch : Stopwatch
 func _ready() -> void:
 	print(get_tree().current_scene.scene_file_path)
 	SaveController.setSavedScene(get_tree().current_scene.scene_file_path)
-	SaveController.savePlayer()
+	SaveController.loadPlayer()
 	#var busIndex
 	#busIndex = AudioServer.get_bus_index("Master")
 	#AudioServer.set_bus_volume_db(busIndex, linear_to_db(SaveController.gameData.MasterVol));
@@ -64,6 +64,7 @@ func _on_resume_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	popup.destination = "Quit"
+	SaveController.savePlayer()
 	popup.show()
 	#get_tree().quit()
 	
@@ -97,6 +98,7 @@ func _on_main_menu_pressed() -> void:
 	#get_tree().paused = false
 	#get_tree().change_scene_to_file("res://main menu/menu.tscn")
 	popup.destination = "Main Menu"
+	SaveController.savePlayer()
 	popup.show()
 	
 
@@ -136,6 +138,7 @@ func _on_exit_to_overworld_pressed() -> void:
 	comp_label.hide()
 	Engine.time_scale = 1
 	SaveController.saveGame();
+	SaveController.savePlayer()
 	sceneChangeAnim.play("fadeIn")
 	await sceneChangeAnim.animation_finished
 	get_tree().change_scene_to_file("res://Overworld/overworld.tscn")

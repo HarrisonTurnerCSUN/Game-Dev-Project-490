@@ -34,6 +34,7 @@ func _on_select_reward(reward_card):
 	if input_blocked:
 		return
 	SaveController.addPotion(reward_card.title)
+	SaveController.setPlayerInventory()
 	hide_ui()
 
 # Function to hide the UI and unpause the game

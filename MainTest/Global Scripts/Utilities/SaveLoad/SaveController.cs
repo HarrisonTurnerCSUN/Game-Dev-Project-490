@@ -114,19 +114,19 @@ public partial class SaveController : Node
 	public float getOverworldPositionY () { return playerData.getOverworldPositionY();}
 	
 	public static List<string> Inventory { get; set; } = new List<string>();
-	public static void setPlayerInventory(List<string> x){ playerData.setPlayerInventory(x); }
+	public static void setPlayerInventory(){ playerData.setPlayerInventory(Inventory); }
 	public void getPlayerInventory(){ Inventory = playerData.getPlayerInventory(); }
 	
 	public void addPotion(string item)
 	{
+		getPlayerInventory();
 		Inventory.Add(item);
 		EmitSignal("PotionAdded");
-		setPlayerInventory(Inventory);
+		setPlayerInventory();
 	}
 	public static int getPotionCount(string item)
 	{
 		int count = 0;
-
 		// Iterate through the list and count occurrences of the item
 		foreach (var potion in Inventory)
 		{
