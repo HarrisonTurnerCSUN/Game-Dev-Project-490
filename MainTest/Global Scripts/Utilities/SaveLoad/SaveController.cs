@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
-
+//Code is a common json serialization system of saving, based on "vidyagamemaka" save load code
+// but altered for single file and needs of project
 public partial class SaveController : Node
 {
 	[Signal]
