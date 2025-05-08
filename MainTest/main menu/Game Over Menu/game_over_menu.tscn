@@ -8,6 +8,7 @@ atlas = ExtResource("2_70ist")
 region = Rect2(128, 128, 64, 64)
 
 [node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
 
 [node name="GameOverMenu" type="Control" parent="."]
 layout_mode = 3
